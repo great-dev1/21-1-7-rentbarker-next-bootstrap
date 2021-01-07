@@ -1,0 +1,28 @@
+.credit_circle {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #090446;
+  background-color: white;
+}
+
+.credit_circle:hover,
+.credit_circle:active,
+.credit_circle:focus {
+  border-color: #090446 !important;
+  box-shadow: none !important;
+  color: #090446 !important;
+  background-color: white !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .credit_circle {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+  }
+}

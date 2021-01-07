@@ -1,0 +1,28 @@
+.blue_btn,
+.white_btn {
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.blue_btn {
+  border: none;
+  color: white;
+  background-color: #090446;
+}
+
+.blue_btn:hover {
+  color: #090446 !important;
+  background-color: white !important;
+}
+
+.white_btn {
+  border: 1px solid #d8d8d8 !important;
+  color: #090446;
+  background-color: white;
+}
+
+.white_btn:hover {
+  color: white !important;
+  background-color: #090446 !important;
+}

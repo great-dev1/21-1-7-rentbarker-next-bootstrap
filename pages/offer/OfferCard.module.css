@@ -1,0 +1,30 @@
+.offer_card {
+  border: 1px solid #d6d6d6;
+  border-radius: 0;
+}
+
+.card_img {
+  border-radius: 0;
+}
+
+.offer_name {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.offer_address {
+  margin: 10px 0 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.offer_cost {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.offer_deposit {
+  margin-bottom: 15px;
+  font-size: 13px;
+}

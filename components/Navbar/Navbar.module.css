@@ -1,0 +1,51 @@
+.navbar {
+  padding: 5px 0 0;
+  text-align: center;
+}
+
+.toggle,
+.toggle:hover,
+.toggle:active {
+  border: none;
+  outline: none;
+}
+
+.toggle img {
+  width: 24px;
+  height: 19px;
+}
+
+.brand {
+  position: absolute;
+  top: 0;
+  left: calc(50vw - 50px);
+  font-size: 21px;
+  font-weight: bold;
+  color: inherit !important;
+  transition: 0.3s;
+}
+
+.brand:hover,
+.link:hover {
+  color: grey !important;
+}
+
+.link {
+  margin: 0 6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: inherit !important;
+  transition: 0.3s;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 30px 24px;
+  }
+
+  .brand {
+    top: 18px;
+    left: 26px;
+    font-size: 26px;
+  }
+}

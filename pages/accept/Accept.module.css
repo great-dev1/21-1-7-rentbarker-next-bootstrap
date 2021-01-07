@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+  padding: 60px 10px 30px;
+  border-radius: 45px;
+  box-shadow: 0 3px 8px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.detail {
+  margin: 30px 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.btn_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    padding: 83px 12% 75px;
+  }
+
+  .detail {
+    margin: 32px 0;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+
+  .btn_group {
+    width: 300px;
+  }
+}

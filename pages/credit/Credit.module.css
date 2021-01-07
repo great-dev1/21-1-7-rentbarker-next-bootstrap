@@ -1,0 +1,57 @@
+/* Header */
+@media only screen and (min-width: 768px) {
+  .header {
+    background-image: url("/bed/header-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 138px;
+    color: white;
+  }
+}
+
+/* Main */
+.main {
+  padding: 40px 0 50px;
+  text-align: center;
+}
+
+.circle_group {
+  /* width: 300px; */
+  margin: 40px 0;
+}
+
+.credit_title {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.save_btn,
+.back_btn {
+  width: 80%;
+  margin: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    padding: 68px 0 66px;
+  }
+
+  .circle_group {
+    width: 100%;
+    margin: 64px 0 50px;
+  }
+
+  .credit_title {
+    margin-bottom: 70px;
+  }
+
+  .save_btn {
+    width: 223px;
+  }
+
+  .back_btn {
+    width: 150px;
+  }
+}

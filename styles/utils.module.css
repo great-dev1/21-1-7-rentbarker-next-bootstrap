@@ -1,0 +1,27 @@
+@media only screen and (min-width: 1600px) {
+  .container {
+    max-width: 1540px !important;
+  }
+}
+
+.primary_title {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.secondary_title {
+  font-size: 15px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .primary_title {
+    margin-bottom: 20px;
+  }
+
+  .secondary_title {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  padding: 20px;
+  text-align: center;
+  color: #090446;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 11px;
+  line-height: 20px;
+  font-weight: bold;
+}
