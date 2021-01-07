@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Container } from 'react-bootstrap'
-import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider'
+import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
