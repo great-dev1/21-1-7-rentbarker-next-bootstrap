@@ -120,7 +120,7 @@ export default function Budget() {
             </Slider>
           </div>
 
-          <div className="d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
+          <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
             <div className={styles.back_btn}>
               <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
             </div>

@@ -1,5 +1,5 @@
 export default function Handle({
-  handle: { value, percent },
+  handle: { id, value, percent },
   getHandleProps,
   budget,
 }) {
@@ -19,7 +19,7 @@ export default function Handle({
         borderRadius: '50%',
         backgroundColor: '#f36b16',
       }}
-      {...getHandleProps()}
+      {...getHandleProps(id)}
     >
       <div style={{ width: 90, fontSize: 18, fontWeight: 'bold', marginTop: 45, marginLeft: -30 }}>
         {budget ? `$${value}` : `${value} months`}
