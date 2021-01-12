@@ -26,8 +26,8 @@ export default function Accept() {
         <Link href="/offer">
           <a className={styles.prev_link}>
             <FontAwesomeIcon icon={faAngleLeft} className={styles.arrow_left} />
-              Back to offers
-            </a>
+            Back to offers
+          </a>
         </Link>
 
         <Container className={utils.container}>
