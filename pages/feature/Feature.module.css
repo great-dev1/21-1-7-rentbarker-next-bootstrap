@@ -30,7 +30,6 @@
 }
 
 .single_btn,
-.option_btn,
 .twin_btn,
 .double_btn {
   height: 50px;
@@ -43,8 +42,7 @@
   background-color: white;
 }
 
-.single_btn,
-.option_btn {
+.single_btn {
   width: 100%;
   border: 2px solid #d6d6d6;
 }
@@ -52,9 +50,6 @@
 .single_btn:hover,
 .single_btn:active,
 .single_btn:focus,
-.option_btn:hover,
-.option_btn:active,
-.option_btn:focus,
 .double_btn:hover,
 .double_btn:active,
 .double_btn:focus {
@@ -70,20 +65,13 @@
   width: 100%;
 }
 
-.option_btn {
-  width: 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .twin_btn {
   position: relative;
   right: 0;
   width: 100%;
   margin-top: -11px;
   border: 2px solid #090446;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
 }
 
 .left_btn,
@@ -99,13 +87,11 @@
 .left_btn {
   border-right: 2px solid #090446;
   border-radius: 8px;
-  border-top-left-radius: 0;
 }
 
 .right_btn {
   border-left: 1px solid #090446;
   border-radius: 8px;
-  border-top-right-radius: 0;
 }
 
 .left_btn:hover,
@@ -189,14 +175,8 @@
 @media only screen and (min-width: 992px) {
 
   .single_btn,
-  .option_btn,
   .double_btn {
     width: 380px;
-  }
-
-  .option_btn {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
   }
 
   .btn_group {
@@ -205,23 +185,13 @@
   }
 
   .wide_btn {
-    width: 70%;
+    width: 66%;
   }
 
   .twin_btn {
     position: absolute;
     width: 262px;
     margin-top: 12px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .left_btn {
-    border-top-left-radius: 8px;
-  }
-
-  .right_btn {
-    border-top-right-radius: 8px;
   }
 
   .next_btn,

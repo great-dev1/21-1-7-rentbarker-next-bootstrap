@@ -232,7 +232,7 @@ export default function Brochure() {
             <div className={styles.info_table}>
               <div className="d-flex justify-content-between">
                 <h3 className={styles.table_title}>Preferences</h3>
-                <Link href="/brochure/bed">
+                <Link href="/bed">
                   <a className={styles.edit_link}>Edit</a>
                 </Link>
               </div>
