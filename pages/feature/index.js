@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Form, Button, ButtonGroup } from 'react-bootstrap'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -70,12 +71,17 @@ export default function Featrue() {
           </Form>
 
           <div className="d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
-            <div className={styles.skip_btn}>
-              <MyButton width="100%" height="50px" margin="0">SKIP THIS STEP</MyButton>
-            </div>
-            <div className={styles.next_btn}>
-              <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
-            </div>
+            <Link href="#">
+              <div className={styles.skip_btn}>
+                <MyButton width="100%" height="50px" margin="0">SKIP THIS STEP</MyButton>
+              </div>
+            </Link>
+
+            <Link href="/budget">
+              <div className={styles.next_btn}>
+                <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
+              </div>
+            </Link>
           </div>
 
         </Container>

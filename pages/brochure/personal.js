@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Form, Row, Col } from 'react-bootstrap'
 import { ProgressBar, Step } from 'react-step-progress-bar'
 import 'react-step-progress-bar/styles.css'
@@ -179,9 +180,11 @@ export default function Brochure() {
               </Row>
             </Form>
 
-            <div className={styles.continue_btn}>
-              <MyButton blue width="205px" height="45px" margin="0">CONTINUE</MyButton>
-            </div>
+            <Link href="/brochure/additional">
+              <div className={styles.continue_btn}>
+                <MyButton blue width="205px" height="45px" margin="0">CONTINUE</MyButton>
+              </div>
+            </Link>
           </div>
         </Container>
       </main>

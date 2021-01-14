@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Row, Col, Form, FormControl, Tabs, Tab } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
@@ -85,7 +86,9 @@ export default function Property() {
           </Row>
 
           <div className={styles.continue_btn}>
-            <MyButton blue width="100%" height="44px" margin="0">CONTITUE</MyButton>
+            <Link href="/bed">
+              <MyButton blue width="100%" height="44px" margin="0">CONTITUE</MyButton>
+            </Link>
           </div>
         </Container>
       </main>

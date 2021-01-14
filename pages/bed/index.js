@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Form, Button } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
@@ -56,8 +57,13 @@ export default function Bed() {
 
             <div className={styles.btn_group}>
               <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
-                <MyButton width="150px" height="50px" margin="12px">BACK</MyButton>
-                <MyButton blue width="150px" height="50px" margin="12px">NEXT</MyButton>
+                <Link href="/property">
+                  <MyButton width="150px" height="50px" margin="12px">BACK</MyButton>
+                </Link>
+                
+                <Link href="/feature">
+                  <MyButton blue width="150px" height="50px" margin="12px">NEXT</MyButton>
+                </Link>
               </div>
             </div>
           </Form>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Form } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
@@ -66,12 +67,17 @@ export default function Credit() {
             </div>
 
             <div className="d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
-              <div className={styles.back_btn}>
-                <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
-              </div>
-              <div className={styles.save_btn}>
-                <MyButton blue width="100%" height="50px" margin="0">SAVE & CREATE ACCOUNT</MyButton>
-              </div>
+              <Link href="/budget">
+                <div className={styles.back_btn}>
+                  <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
+                </div>
+              </Link>
+
+              <Link href="/signup">
+                <div className={styles.save_btn}>
+                  <MyButton blue width="100%" height="50px" margin="0">SAVE & CREATE ACCOUNT</MyButton>
+                </div>
+              </Link>
             </div>
           </Form>
         </Container>

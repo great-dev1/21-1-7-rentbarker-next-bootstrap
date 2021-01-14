@@ -26,7 +26,11 @@ export default function Home() {
         <div className={styles.header_container}>
           <Container className={utils.container}>
             <h1 className={styles.primary_title}>Welcome to RentBarker.</h1>
-            <MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton>
+
+            <Link href="/property">
+              <MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton>
+            </Link>
+            
             <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
           </Container>
         </div>
@@ -36,7 +40,7 @@ export default function Home() {
 
         {/* Intro Seciton */}
         <section className={styles.intro_section}>
-          <Container className={styles.container}>
+          <Container className={utils.container}>
             <h2 className={styles.intro_title}>Is it hot in here... or is it just you?</h2>
             <p className={styles.intro_detail}>
               You've worked hard to be an attractive tenant, so you deserve the best deal on your next lease. Rental properties are desperately seeking
@@ -53,7 +57,7 @@ export default function Home() {
         <section className={styles.service_section}>
           <img className={styles.service_back} src="/home/service-back.jpg" alt="service back" />
           <img className={styles.service_back_mobile} src="home/service-back-mobile.jpg" alt="service back" />
-          <Container className={styles.container}>
+          <Container className={utils.container}>
             <h2 className={styles.secondary_title}>What we do</h2>
             <Row className={styles.service_row}>
               <Col md={4} className={styles.service_item}>
@@ -120,7 +124,7 @@ export default function Home() {
 
         {/* Review Section */}
         <section className={styles.review_section}>
-          <Container className={styles.container}>
+          <Container className={utils.container}>
             <h2 className={styles.secondary_title}>Why Tenants Love Us</h2>
 
             <Row className={styles.review_row}>
@@ -233,7 +237,7 @@ export default function Home() {
 
         {/* Start Section */}
         <section className={styles.start_section}>
-          <Container className={styles.container}>
+          <Container className={utils.container}>
             <h2 className={styles.secondary_title}>Get Started!</h2>
 
             <Form className={styles.form}>
@@ -260,7 +264,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <Container className={styles.container}>
+        <Container className={utils.container}>
           <h2 className={styles.secondary_title}>RentBarker</h2>
 
           <div className={styles.footer_links}>

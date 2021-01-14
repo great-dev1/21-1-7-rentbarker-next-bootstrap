@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 
@@ -121,12 +122,17 @@ export default function Budget() {
           </div>
 
           <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
-            <div className={styles.back_btn}>
-              <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
-            </div>
-            <div className={styles.next_btn}>
-              <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
-            </div>
+            <Link href="/feature">
+              <div className={styles.back_btn}>
+                <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
+              </div>
+            </Link>
+
+            <Link href="/credit">
+              <div className={styles.next_btn}>
+                <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
+              </div>
+            </Link>
           </div>
         </Container>
       </main>

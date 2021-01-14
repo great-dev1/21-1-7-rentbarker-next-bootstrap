@@ -465,9 +465,15 @@ input:checked+.slider:before {
   background-color: #fbfbfb;
 }
 
-.table_title {
+.table_title, .edit_link {
   font-size: 18px;
   font-weight: bold;
+}
+
+.edit_link:hover {
+  text-decoration: none;
+  color: grey;
+  transition: 0.3s;
 }
 
 .table_content {

@@ -39,7 +39,9 @@ export default function Signup() {
               </Link>
             </div>
 
-            <MyButton blue width="100%" height="45px" margin="0">CREATE ACCOUNT</MyButton>
+            <Link href="/welcome">
+              <MyButton blue width="100%" height="45px" margin="0">CREATE ACCOUNT</MyButton>
+            </Link>
             <p className={styles.mid_text}>Or log in with:</p>
             <MyButton width="100%" height="45px" margin="0">GOOGLE</MyButton>
             <div className={styles.split_space}></div>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ProgressBar, Step } from 'react-step-progress-bar'
 import 'react-step-progress-bar/styles.css'
@@ -71,7 +72,9 @@ export default function Brochure() {
             <div className={styles.info_table}>
               <div className="d-flex justify-content-between">
                 <h3 className={styles.table_title}>Personal Information</h3>
-                <h3 className={styles.table_title}>Edit</h3>
+                <Link href="/brochure/personal">
+                  <a className={styles.edit_link}>Edit</a>
+                </Link>
               </div>
 
               <Row className={styles.table_content}>
@@ -140,7 +143,9 @@ export default function Brochure() {
             <div className={styles.info_table}>
               <div className="d-flex justify-content-between">
                 <h3 className={styles.table_title}>Additional Information</h3>
-                <h3 className={styles.table_title}>Edit</h3>
+                <Link href="/brochure/additional">
+                  <a className={styles.edit_link}>Edit</a>
+                </Link>
               </div>
 
               <Row className={styles.table_content}>
@@ -186,7 +191,9 @@ export default function Brochure() {
             <div className={styles.info_table}>
               <div className="d-flex justify-content-between">
                 <h3 className={styles.table_title}>Employment Information</h3>
-                <h3 className={styles.table_title}>Edit</h3>
+                <Link href="/brochure/employment">
+                  <a className={styles.edit_link}>Edit</a>
+                </Link>
               </div>
 
               <Row className={styles.table_content}>
@@ -225,7 +232,9 @@ export default function Brochure() {
             <div className={styles.info_table}>
               <div className="d-flex justify-content-between">
                 <h3 className={styles.table_title}>Preferences</h3>
-                <h3 className={styles.table_title}>Edit</h3>
+                <Link href="/brochure/bed">
+                  <a className={styles.edit_link}>Edit</a>
+                </Link>
               </div>
 
               <Row className={styles.table_content}>
@@ -266,7 +275,9 @@ export default function Brochure() {
             </div>
 
             <div className={styles.continue_btn}>
-              <MyButton blue width="205px" height="45px" margin="10px">CONTINUE</MyButton>
+              <Link href="/brochure">
+                <MyButton blue width="205px" height="45px" margin="10px">SUBMIT</MyButton>
+              </Link>
             </div>
           </div>
         </Container>
