@@ -176,10 +176,6 @@ input:checked+.slider:before {
   padding: 32px 0 20px;
 }
 
-.credit_img {
-  /* margin-bottom: 40px; */
-}
-
 .credit_blocks {
   display: flex;
   margin: 40px 0;

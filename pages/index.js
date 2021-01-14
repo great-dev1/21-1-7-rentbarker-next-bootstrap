@@ -27,11 +27,12 @@ export default function Home() {
           <Container className={utils.container}>
             <h1 className={styles.primary_title}>Welcome to RentBarker.</h1>
 
-            <Link href="/property">
-              <MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton>
-            </Link>
-            
-            <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
+            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+              <Link href="/property">
+                <MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton>
+              </Link>
+              <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
+            </div>
           </Container>
         </div>
       </header>

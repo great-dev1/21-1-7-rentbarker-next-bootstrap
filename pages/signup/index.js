@@ -21,6 +21,7 @@ export default class Signup extends React.Component {
   handleSubmit = () => {
     const { fullName } = this.state;
     localStorage.setItem('fullName', fullName);
+    localStorage.setItem('logged', true);
   }
 
   render() {

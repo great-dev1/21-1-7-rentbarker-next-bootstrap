@@ -233,7 +233,7 @@ export default class Brochure extends React.Component {
                 </div>
               </Form>
 
-              <div className={styles.continue_btn}>
+              <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
                 <Link href="/brochure/personal">
                   <MyButton width="205px" height="45px" margin="10px">PREVIOUS PAGE</MyButton>
                 </Link>

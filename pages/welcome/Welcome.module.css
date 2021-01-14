@@ -27,7 +27,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -44,9 +43,5 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 27px;
-  }
-
-  .btn_group {
-    width: 300px;
   }
 }
