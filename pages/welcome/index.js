@@ -13,7 +13,7 @@ export default class Welcome extends React.Component {
   }
 
   componentDidMount() {
-    const firstName = localStorage.getItem('firstName');
+    const firstName = localStorage.getItem('fullName').split(' ')[0];
     this.setState({ firstName });
   }
 

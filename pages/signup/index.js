@@ -20,8 +20,7 @@ export default class Signup extends React.Component {
 
   handleSubmit = () => {
     const { fullName } = this.state;
-    const firstName = fullName.split(' ')[0];
-    localStorage.setItem('firstName', firstName);
+    localStorage.setItem('fullName', fullName);
   }
 
   render() {
