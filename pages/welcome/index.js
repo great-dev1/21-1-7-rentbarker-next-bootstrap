@@ -8,24 +8,24 @@ import utils from '../../styles/utils.module.css'
 import styles from './Welcome.module.css'
 
 export default class Welcome extends React.Component {
-  // state = {
-  //   firstName: '',
-  // }
+  state = {
+    firstName: '',
+  }
 
-  // componentDidMount() {
-  //   const firstName = localStorage.getItem('firstName');
-  //   this.setState({ firstName });
-  // }
+  componentDidMount() {
+    const firstName = localStorage.getItem('firstName');
+    this.setState({ firstName });
+  }
 
   render() {
-    // const { firstName } = this.state;
+    const { firstName } = this.state;
     return (
       <div>
         {/* <img src="/testback-8.png" style={{ position: "absolute", "zIndex": "99", top: "-250px", width: "100%", opacity: "0.5" }} /> */}
 
         <Container className={utils.container}>
           <main className={styles.main}>
-            <h1 className={styles.title}>Welcome, {localStorage.getItem('firstName')}!</h1>
+            <h1 className={styles.title}>Welcome, {firstName}!</h1>
             <p className={styles.detail}>
               All of your properties and preferences have been saved! There's only one step
               left to create your Barker Brochure: the free application. Again, we won't
