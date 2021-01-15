@@ -87,7 +87,7 @@ export default function Property() {
 
           <div className={styles.continue_btn}>
             <Link href="/bed">
-              <MyButton blue width="100%" height="44px" margin="0">CONTITUE</MyButton>
+              <a><MyButton blue width="100%" height="44px" margin="0">CONTITUE</MyButton></a>
             </Link>
           </div>
         </Container>

@@ -14,7 +14,7 @@ export default class Signup extends React.Component {
     fullName: '',
   }
 
-  handleChange = (e) => {
+  handleChange = () => {
     this.setState({ fullName: e.target.value });
   }
 
@@ -22,6 +22,11 @@ export default class Signup extends React.Component {
     const { fullName } = this.state;
     localStorage.setItem('fullName', fullName);
     localStorage.setItem('logged', true);
+  }
+
+  componentDidMount() {
+    const fullName = localStorage.getItem('fullName') !== null ? localStorage.getItem('fullName') : 'Amanda Norman';
+    this.setState({ fullName });
   }
 
   render() {

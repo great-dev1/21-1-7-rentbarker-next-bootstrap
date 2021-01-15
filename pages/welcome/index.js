@@ -36,11 +36,11 @@ export default class Welcome extends React.Component {
 
             <div className={styles.btn_group}>
               <Link href="/brochure/personal">
-                <MyButton blue width="275px" height="45px" margin="10px">CONTINUE TO MY APPLICATION</MyButton>
+                <a><MyButton blue width="275px" height="45px" margin="10px">CONTINUE TO MY APPLICATION</MyButton></a>
               </Link>
 
-              <Link href="#">
-                <MyButton width="275px" height="45px" margin="10px">SAVE FOR LATER</MyButton>
+              <Link href="/">
+                <a><MyButton width="275px" height="45px" margin="10px">SAVE FOR LATER</MyButton></a>
               </Link>
             </div>
           </main>

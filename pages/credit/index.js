@@ -13,21 +13,42 @@ import styles from './Credit.module.css'
 export default class Credit extends React.Component {
   state = {
     useGuarantor: false,
+    myCredit: '',
+    roommateCredit: '',
+    guarantorCredit: '',
   }
 
-  handleChange = (e) => {
+  handleCheck = (e) => {
     const value = e.target.checked;
     this.setState({ useGuarantor: value });
   }
 
-  handleSubmit = (e) => {
-    const { useGuarantor } = this.state;
+  handleChange = (variable, value) => () => {
+    this.setState({
+      [variable]: value
+    });
+  }
+
+  handleSubmit = () => {
+    const { useGuarantor, myCredit, roommateCredit, guarantorCredit } = this.state;
+
     localStorage.setItem('useGuarantor', useGuarantor);
+    localStorage.setItem('myCredit', myCredit);
+    localStorage.setItem('roommateCredit', roommateCredit);
+    localStorage.setItem('guarantorCredit', guarantorCredit);
   }
 
   componentDidMount() {
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    this.setState({ useGuarantor });
+    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : 'Good 680-719';
+    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : 'Good 680-719';
+    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : 'Good 680-719';
+
+    this.setState({ useGuarantor, myCredit, roommateCredit, guarantorCredit });
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
@@ -56,18 +77,29 @@ export default class Credit extends React.Component {
             <Form>
               <Form.Check
                 name="useGuarantor"
-                checked={this.state.useGuarantor}
-                onChange={this.handleChange}
+                checked={useGuarantor}
+                onChange={this.handleCheck}
                 type="checkbox"
                 label="I am using a guarantor, and estimating their credit score."
               />
 
               <div className={styles.circle_group}>
                 <div className="d-flex justify-content-center flex-wrap">
-                  <CreditCircle>Excellent<br />720+</CreditCircle>
-                  <CreditCircle>Good<br />680-719</CreditCircle>
-                  <CreditCircle>Fair<br />640-679</CreditCircle>
-                  <CreditCircle>Poor<br />639-</CreditCircle>
+                  <a onClick={this.handleChange('myCredit', 'Excellent 720+')}>
+                    <CreditCircle>Excellent<br />720+</CreditCircle>
+                  </a>
+
+                  <a onClick={this.handleChange('myCredit', 'Good 680-719')}>
+                    <CreditCircle>Good<br />680-719</CreditCircle>
+                  </a>
+
+                  <a onClick={this.handleChange('myCredit', 'Fair 640-679')}>
+                    <CreditCircle>Fair<br />640-679</CreditCircle>
+                  </a>
+
+                  <a onClick={this.handleChange('myCredit', 'Poor 639-')}>
+                    <CreditCircle>Poor<br />639-</CreditCircle>
+                  </a>
                 </div>
               </div>
 
@@ -78,10 +110,21 @@ export default class Credit extends React.Component {
                       Please estimate your roommate's credit score.
                     </h2>
                     <div className="d-flex justify-content-center flex-wrap">
-                      <CreditCircle>Excellent<br />720+</CreditCircle>
-                      <CreditCircle>Good<br />680-719</CreditCircle>
-                      <CreditCircle>Fair<br />640-679</CreditCircle>
-                      <CreditCircle>Poor<br />639-</CreditCircle>
+                      <a onClick={this.handleChange('roommateCredit', 'Excellent 720+')}>
+                        <CreditCircle>Excellent<br />720+</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('roommateCredit', 'Good 680-719')}>
+                        <CreditCircle>Good<br />680-719</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('roommateCredit', 'Fair 640-679')}>
+                        <CreditCircle>Fair<br />640-679</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('roommateCredit', 'Poor 639-')}>
+                        <CreditCircle>Poor<br />639-</CreditCircle>
+                      </a>
                     </div>
                   </div>
 
@@ -90,10 +133,21 @@ export default class Credit extends React.Component {
                       Please estimate your guarantor's credit score.
                     </h2>
                     <div className="d-flex justify-content-center flex-wrap">
-                      <CreditCircle>Excellent<br />720+</CreditCircle>
-                      <CreditCircle>Good<br />680-719</CreditCircle>
-                      <CreditCircle>Fair<br />640-679</CreditCircle>
-                      <CreditCircle>Poor<br />639-</CreditCircle>
+                      <a onClick={this.handleChange('guarantorCredit', 'Excellent 720+')}>
+                        <CreditCircle>Excellent<br />720+</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('guarantorCredit', 'Good 680-719')}>
+                        <CreditCircle>Good<br />680-719</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('guarantorCredit', 'Fair 640-679')}>
+                        <CreditCircle>Fair<br />640-679</CreditCircle>
+                      </a>
+
+                      <a onClick={this.handleChange('guarantorCredit', 'Poor 639-')}>
+                        <CreditCircle>Poor<br />639-</CreditCircle>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -107,7 +161,7 @@ export default class Credit extends React.Component {
                 </Link>
 
                 <Link href="/signup">
-                  <div className={styles.save_btn}>
+                  <div className={styles.save_btn} onClick={this.handleSubmit}>
                     <Button className={utils.submit_btn} onClick={this.handleSubmit}>SAVE & CREATE ACCOUNT</Button>
                   </div>
                 </Link>

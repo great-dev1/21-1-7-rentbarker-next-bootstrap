@@ -26,11 +26,20 @@ export default class Featrue extends React.Component {
     poolToggle: false, poolMust: false, poolNice: false,
   }
 
-  // In-unit washer and dryer
-  handleInunitToggle = () => {
-    let temp = this.state.inunitToggle;
-    this.setState({ inunitToggle: !temp });
+  handleToggle = (featureToggle) => () => {
+    let temp = this.state.featureToggle;
+    this.setState({ [featureToggle]: !temp });
   }
+
+  // handleInitial = (featureToggle, featureMust, featureNice) => () => {
+  //   this.setState({ [featureToggle]: false, [featureMust]: false, [featureNice]: false })
+  // }
+
+  // handleMust = (featureToggle, featureMust, featureNice) => () => {
+  //   this.setState({ [featureToggle]: false, [featureMust]: true, [featureNice]: false });
+  // }
+
+  // In-unit washer and dryer
   handleInunitMust = () => {
     this.setState({ inunitToggle: false, inunitMust: true, inunitNice: false });
   }
@@ -42,10 +51,6 @@ export default class Featrue extends React.Component {
   }
 
   // Washer & dryer connections
-  handleConnectionToggle = () => {
-    let temp = this.state.connectionToggle;
-    this.setState({ connectionToggle: !temp });
-  }
   handleConnectionMust = () => {
     this.setState({ connectionToggle: false, connectionMust: true, connectionNice: false });
   }
@@ -57,10 +62,6 @@ export default class Featrue extends React.Component {
   }
 
   // On-site lanundry
-  handleLaundryToggle = () => {
-    let temp = this.state.laundryToggle;
-    this.setState({ laundryToggle: !temp });
-  }
   handleLaundryMust = () => {
     this.setState({ laundryToggle: false, laundryMust: true, laundryNice: false });
   }
@@ -72,10 +73,6 @@ export default class Featrue extends React.Component {
   }
 
   // Dishwasher
-  handleDishwasherToggle = () => {
-    let temp = this.state.dishwasherToggle;
-    this.setState({ dishwasherToggle: !temp });
-  }
   handleDishwasherMust = () => {
     this.setState({ dishwasherToggle: false, dishwasherMust: true, dishwasherNice: false });
   }
@@ -87,10 +84,6 @@ export default class Featrue extends React.Component {
   }
 
   // Balcony/Patio
-  handleBalconyToggle = () => {
-    let temp = this.state.balconyToggle;
-    this.setState({ balconyToggle: !temp });
-  }
   handleBalconyMust = () => {
     this.setState({ balconyToggle: false, balconyMust: true, balconyNice: false });
   }
@@ -102,10 +95,6 @@ export default class Featrue extends React.Component {
   }
 
   // Parking
-  handleParkingToggle = () => {
-    let temp = this.state.balconyToggle;
-    this.setState({ parkingToggle: !temp });
-  }
   handleParkingMust = () => {
     this.setState({ parkingToggle: false, parkingMust: true, parkingNice: false });
   }
@@ -117,10 +106,6 @@ export default class Featrue extends React.Component {
   }
 
   // Garage
-  handleGarageToggle = () => {
-    let temp = this.state.garageToggle;
-    this.setState({ garageToggle: !temp });
-  }
   handleGarageMust = () => {
     this.setState({ garageToggle: false, garageMust: true, garageNice: false });
   }
@@ -132,10 +117,6 @@ export default class Featrue extends React.Component {
   }
 
   // Fitness center
-  handleFitnessToggle = () => {
-    let temp = this.state.fitnessToggle;
-    this.setState({ fitnessToggle: !temp });
-  }
   handleFitnessMust = () => {
     this.setState({ fitnessToggle: false, fitnessMust: true, fitnessNice: false });
   }
@@ -147,10 +128,6 @@ export default class Featrue extends React.Component {
   }
 
   // Enclosed yard
-  handleYardToggle = () => {
-    let temp = this.state.yardToggle;
-    this.setState({ yardToggle: !temp });
-  }
   handleYardMust = () => {
     this.setState({ yardToggle: false, yardMust: true, yardNice: false });
   }
@@ -162,10 +139,6 @@ export default class Featrue extends React.Component {
   }
 
   // Pets allowed
-  handlePetToggle = () => {
-    let temp = this.state.petToggle;
-    this.setState({ petToggle: !temp });
-  }
   handlePetMust = () => {
     this.setState({ petToggle: false, petMust: true, petNice: false });
   }
@@ -177,10 +150,6 @@ export default class Featrue extends React.Component {
   }
 
   // Swimming pool
-  handlePoolToggle = () => {
-    let temp = this.state.poolToggle;
-    this.setState({ poolToggle: !temp });
-  }
   handlePoolMust = () => {
     this.setState({ poolToggle: false, poolMust: true, poolNice: false });
   }
@@ -189,6 +158,108 @@ export default class Featrue extends React.Component {
   }
   handlePoolInitial = () => {
     this.setState({ poolToggle: false, poolMust: false, poolNice: false });
+  }
+
+  handleSubmit = () => {
+    const {
+      inunitMust, inunitNice,
+      connectionMust, connectionNice,
+      laundryMust, laundryNice,
+      dishwasherMust, dishwasherNice,
+      balconyMust, balconyNice,
+      parkingMust, parkingNice,
+      garageMust, garageNice,
+      fitnessMust, fitnessNice,
+      yardMust, yardNice,
+      petMust, petNice,
+      poolMust, poolNice,
+    } = this.state;
+
+    localStorage.setItem('inunitMust', inunitMust);
+    localStorage.setItem('inunitNice', inunitNice);
+
+    localStorage.setItem('connectionMust', connectionMust);
+    localStorage.setItem('connectionNice', connectionNice);
+
+    localStorage.setItem('laundryMust', laundryMust);
+    localStorage.setItem('laundryNice', laundryNice);
+
+    localStorage.setItem('dishwasherMust', dishwasherMust);
+    localStorage.setItem('dishwasherNice', dishwasherNice);
+
+    localStorage.setItem('balconyMust', balconyMust);
+    localStorage.setItem('balconyNice', balconyNice);
+
+    localStorage.setItem('parkingMust', parkingMust);
+    localStorage.setItem('parkingNice', parkingNice);
+
+    localStorage.setItem('garageMust', garageMust);
+    localStorage.setItem('garageNice', garageNice);
+
+    localStorage.setItem('fitnessMust', fitnessMust);
+    localStorage.setItem('fitnessNice', fitnessNice);
+
+    localStorage.setItem('yardMust', yardMust);
+    localStorage.setItem('yardNice', yardNice);
+
+    localStorage.setItem('petMust', petMust);
+    localStorage.setItem('petNice', petNice);
+
+    localStorage.setItem('poolMust', poolMust);
+    localStorage.setItem('poolNice', poolNice);
+  }
+
+  componentDidMount() {
+    const inunitMust = localStorage.getItem('inunitMust') === 'true';
+    const inunitNice = localStorage.getItem('inunitNice') === 'true';
+
+    const connectionMust = localStorage.getItem('connectionMust') === 'true';
+    const connectionNice = localStorage.getItem('connectionNice') === 'true';
+
+    const laundryMust = localStorage.getItem('laundryMust') === 'true';
+    const laundryNice = localStorage.getItem('laundryNice') === 'true';
+
+    const dishwasherMust = localStorage.getItem('dishwasherMust') === 'true';
+    const dishwasherNice = localStorage.getItem('dishwasherNice') === 'true';
+
+    const balconyMust = localStorage.getItem('balconyMust') === 'true';
+    const balconyNice = localStorage.getItem('balconyNice') === 'true';
+
+    const parkingMust = localStorage.getItem('parkingMust') === 'true';
+    const parkingNice = localStorage.getItem('parkingNice') === 'true';
+
+    const garageMust = localStorage.getItem('garageMust') === 'true';
+    const garageNice = localStorage.getItem('garageNice') === 'true';
+
+    const fitnessMust = localStorage.getItem('fitnessMust') === 'true';
+    const fitnessNice = localStorage.getItem('fitnessNice') === 'true';
+
+    const yardMust = localStorage.getItem('yardMust') === 'true';
+    const yardNice = localStorage.getItem('yardNice') === 'true';
+
+    const petMust = localStorage.getItem('petMust') === 'true';
+    const petNice = localStorage.getItem('petNice') === 'true';
+
+    const poolMust = localStorage.getItem('poolMust') === 'true';
+    const poolNice = localStorage.getItem('poolNice') === 'true';
+
+    this.setState({
+      inunitMust, inunitNice,
+      connectionMust, connectionNice,
+      laundryMust, laundryNice,
+      dishwasherMust, dishwasherNice,
+      balconyMust, balconyNice,
+      parkingMust, parkingNice,
+      garageMust, garageNice,
+      fitnessMust, fitnessNice,
+      yardMust, yardNice,
+      petMust, petNice,
+      poolMust, poolNice,
+    });
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
@@ -230,7 +301,9 @@ export default class Featrue extends React.Component {
                 {/* In-unit washer and dryer */}
                 <div className={styles.btn_group}>
                   {!(inunitMust || inunitNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleInunitToggle}>In-unit washer and dryer</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('inunitToggle')}>
+                      In-unit washer and dryer
+                    </Button>
                   }
 
                   {(inunitMust || inunitNice) &&
@@ -254,7 +327,9 @@ export default class Featrue extends React.Component {
                 {/* Washer & dryer connections */}
                 <div className={styles.btn_group}>
                   {!(connectionMust || connectionNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleConnectionToggle}>Washer & dryer connections</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('connectionToggle')}>
+                      Washer & dryer connections
+                    </Button>
                   }
 
                   {(connectionMust || connectionNice) &&
@@ -278,7 +353,9 @@ export default class Featrue extends React.Component {
                 {/* On-site laundry */}
                 <div className={styles.btn_group}>
                   {!(laundryMust || laundryNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleLaundryToggle}>On-site laundry</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('laundryToggle')}>
+                      On-site laundry
+                    </Button>
                   }
 
                   {(laundryMust || laundryNice) &&
@@ -302,7 +379,9 @@ export default class Featrue extends React.Component {
                 {/* Dishwasher */}
                 <div className={styles.btn_group}>
                   {!(dishwasherMust || dishwasherNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleDishwasherToggle}>Dishwasher</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('dishwasherToggle')}>
+                      Dishwasher
+                    </Button>
                   }
 
                   {(dishwasherMust || dishwasherNice) &&
@@ -326,7 +405,9 @@ export default class Featrue extends React.Component {
                 {/* Balcony/Patio */}
                 <div className={styles.btn_group}>
                   {!(balconyMust || balconyNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleBalconyToggle}>Balcony/Patio</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('balconyToggle')}>
+                      Balcony/Patio
+                    </Button>
                   }
 
                   {(balconyMust || balconyNice) &&
@@ -350,7 +431,9 @@ export default class Featrue extends React.Component {
                 {/* Parking */}
                 <div className={styles.btn_group}>
                   {!(parkingMust || parkingNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleParkingToggle}>Parking</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('parkingToggle')}>
+                      Parking
+                    </Button>
                   }
 
                   {(parkingMust || parkingNice) &&
@@ -374,7 +457,9 @@ export default class Featrue extends React.Component {
                 {/* Garage/Covered parking */}
                 <div className={styles.btn_group}>
                   {!(garageMust || garageNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleGarageToggle}>Garage/Covered parking</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('garageToggle')}>
+                      Garage/Covered parking
+                    </Button>
                   }
 
                   {(garageMust || garageNice) &&
@@ -398,7 +483,9 @@ export default class Featrue extends React.Component {
                 {/* Fitness center */}
                 <div className={styles.btn_group}>
                   {!(fitnessMust || fitnessNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleFitnessToggle}>Fitness center</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('fitnessToggle')}>
+                      Fitness center
+                    </Button>
                   }
 
                   {(fitnessMust || fitnessNice) &&
@@ -422,7 +509,9 @@ export default class Featrue extends React.Component {
                 {/* Enclosed yard */}
                 <div className={styles.btn_group}>
                   {!(yardMust || yardNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handleYardToggle}>Enclosed yard</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('yardToggle')}>
+                      Enclosed yard
+                    </Button>
                   }
 
                   {(yardMust || yardNice) &&
@@ -446,7 +535,9 @@ export default class Featrue extends React.Component {
                 {/* Pets allowed */}
                 <div className={styles.btn_group}>
                   {!(petMust || petNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handlePetToggle}>Pets allowed</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('petToggle')}>
+                      Pets allowed
+                    </Button>
                   }
 
                   {(petMust || petNice) &&
@@ -470,7 +561,9 @@ export default class Featrue extends React.Component {
                 {/* Swimming pool */}
                 <div className={styles.btn_group}>
                   {!(poolMust || poolNice) &&
-                    <Button className={styles.single_btn} block onClick={this.handlePoolToggle}>Swimming pool</Button>
+                    <Button className={styles.single_btn} block onClick={this.handleToggle('poolToggle')}>
+                      Swimming pool
+                    </Button>
                   }
 
                   {(poolMust || poolNice) &&
@@ -501,7 +594,7 @@ export default class Featrue extends React.Component {
               </Link>
 
               <Link href="/budget">
-                <div className={styles.next_btn}>
+                <div className={styles.next_btn} onClick={this.handleSubmit}>
                   <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
                 </div>
               </Link>

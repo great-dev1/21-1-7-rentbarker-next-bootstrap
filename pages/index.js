@@ -29,7 +29,7 @@ export default function Home() {
 
             <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
               <Link href="/property">
-                <MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton>
+                <a><MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton></a>
               </Link>
               <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
 
             <div className={styles.select_panel}>
               <h2 className={styles.select_title}>Are you a rental property professional or landlord?</h2>
-              <Link href="#">
+              <Link href="/">
                 <a className={styles.learn_more}>
                   LEARN MORE
                   <FontAwesomeIcon icon={faAngleRight} className={styles.arrow_right} />
