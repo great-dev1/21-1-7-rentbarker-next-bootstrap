@@ -67,8 +67,8 @@ export default function Accept() {
                   <div className={styles.table_item}>
                     <h4 className={styles.table_subtitle}>Additional monthly fees:</h4>
                     <p className={styles.table_detail}>
-                      Amenities: $30 monthly/$$360 per lease<br />
-                      Pest Control: $3 monthly/$$36 per lease<br />
+                      Amenities: $30 monthly/$360 per lease<br />
+                      Pest Control: $3 monthly/$36 per lease<br />
                       Trash: $6 monthly/$72 per lease
                     </p>
                   </div>
@@ -135,7 +135,10 @@ export default function Accept() {
             <div className={styles.btn_group}>
               <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
                 <MyButton width="230px" height="45px" margin="10px">MESSAGE LANDLORD</MyButton>
-                <MyButton blue width="230px" height="45px" margin="10px">ACCEPT OFFER</MyButton>
+
+                <Link href="/accept">
+                  <a><MyButton blue width="230px" height="45px" margin="10px">ACCEPT OFFER</MyButton></a>
+                </Link>
               </div>
             </div>
           </div>

@@ -492,7 +492,7 @@ export default class Submit extends React.Component {
                       <h4 className={styles.table_subtitle}>Unique Features:</h4>
                       <p className={styles.table_detail}>
                         {(inunitMust || inunitNice) && <div>In-unit washer/dryer</div>}
-                        {(connectionMust || connectionNice) && <div>Washer $ dryer connection</div>}
+                        {(connectionMust || connectionNice) && <div>Washer & dryer connection</div>}
                         {(laundryMust || laundryNice) && <div>On-site laundry</div>}
                         {(dishwasherMust || dishwasherNice) && <div>Dishwasher</div>}
                         {(balconyMust || balconyNice) && <div>Balcony/Patio</div>}

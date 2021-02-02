@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Tabs, Tab, Row, Col, Form } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
@@ -235,7 +236,9 @@ export default class Brochure extends React.Component {
                 <span className={styles.check_detail}>I APPROVE MY BARKER BROCHURE</span>
               </div>
 
-              <MyButton blue width="307px" height="75px">TAKE ME TO MY OFFERS</MyButton>
+              <Link href="/offer">
+                <a><MyButton blue width="307px" height="75px">TAKE ME TO MY OFFERS</MyButton></a>
+              </Link>
             </div>
           </Container>
         </main>

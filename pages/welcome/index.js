@@ -9,16 +9,19 @@ import styles from './Welcome.module.css'
 
 export default class Welcome extends React.Component {
   state = {
+    logged: false,
     firstName: '',
   }
 
   componentDidMount() {
-    const firstName = localStorage.getItem('fullName').split(' ')[0];
-    this.setState({ firstName });
+    const logged = localStorage.getItem('logged') === 'true';
+    const firstName = logged ? localStorage.getItem('fullName').split(' ')[0] : '';
+    this.setState({ logged, firstName });
   }
 
   render() {
-    const { firstName } = this.state;
+    const { logged, firstName } = this.state;
+
     return (
       <div>
         {/* <img src="/testback-8.png" style={{ position: "absolute", "zIndex": "99", top: "-250px", width: "100%", opacity: "0.5" }} /> */}

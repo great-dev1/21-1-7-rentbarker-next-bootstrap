@@ -22,22 +22,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
 }
 
 @media only screen and (min-width: 768px) {
   .main {
     padding: 83px 12% 75px;
   }
-
+  
   .detail {
     margin: 32px 0;
     font-size: 21px;
     font-weight: 500;
     line-height: 27px;
-  }
-
-  .btn_group {
-    width: 300px;
   }
 }

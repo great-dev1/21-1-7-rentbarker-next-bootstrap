@@ -17,7 +17,7 @@
 
 .brand {
   position: absolute;
-  top: 0;
+  top: 5px;
   left: calc(50vw - 50px);
   font-size: 21px;
   font-weight: bold;

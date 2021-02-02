@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Card } from 'react-bootstrap'
 
 import MyButton from '../../components/MyButton'
@@ -13,13 +14,16 @@ export default function OfferCard({
   return (
     <Card className={styles.offer_card}>
       <Card.Img className={styles.card_img} variant="top" src={img} alt="offer" />
-      
+
       <Card.Body>
         <h3 className={styles.offer_name}> {name} </h3>
         <h4 className={styles.offer_address}> {address} </h4>
         <h4 className={styles.offer_cost}> {cost} </h4>
         <h4 className={styles.offer_deposit}> {deposit} </h4>
-        <MyButton blue width="100%" height="44px" margin="0">VIEW OFFER</MyButton>
+
+        <Link href="/offer/accept">
+          <a><MyButton blue width="100%" height="44px" margin="0">VIEW OFFER</MyButton></a>
+        </Link>
       </Card.Body>
     </Card>
   )

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 
 import Footer from '../../components/Footer'
@@ -20,8 +21,13 @@ export default function Welcome({ children }) {
           </p>
 
           <div className={styles.btn_group}>
-            <MyButton blue width="100%" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
-            <MyButton width="100%" height="45px" margin="10px">BACK TO OFFER</MyButton>
+            <Link href="/offer/review">
+              <MyButton blue width="285px" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
+            </Link>
+
+            <Link href="/offer">
+              <MyButton width="285px" height="45px" margin="10px">BACK TO OFFER</MyButton>
+            </Link>
           </div>
         </main>
       </Container>

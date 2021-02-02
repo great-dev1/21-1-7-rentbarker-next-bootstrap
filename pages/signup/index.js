@@ -14,7 +14,7 @@ export default class Signup extends React.Component {
     fullName: '',
   }
 
-  handleChange = () => {
+  handleChange = (e) => {
     this.setState({ fullName: e.target.value });
   }
 

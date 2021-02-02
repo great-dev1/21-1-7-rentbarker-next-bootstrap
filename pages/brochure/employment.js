@@ -26,20 +26,6 @@ export default class Employment extends React.Component {
     useGuarantor: false,
   }
 
-  state = {
-    employerOccupation: 'Teacher at Renner Middle School',
-    employerName: 'Mark Smith',
-    employerLength: '3 years',
-    employerAddress: '1234 Magnolia Ave',
-    employerCity: 'Dallas',
-    employerState: 'TX',
-    employerZipcode: '55555',
-    myIncome: '4000',
-    guarantorIncome: '8000',
-    roommateIncome: '5000',
-    useGuarantor: true,
-  }
-
   handleChange = (e) => {
     const value = e.target.value;
     this.setState({ [e.target.name]: value.toString() });

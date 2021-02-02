@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import { Container, Row, Col } from 'react-bootstrap'
 
@@ -8,58 +9,73 @@ import OfferCard from './OfferCard'
 import utils from '../../styles/utils.module.css'
 import styles from './Offer.module.css'
 
-export default function Offer() {
-  return (
-    <div>
-      {/* <img src="/testback-14.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
+export default class Offer extends React.Component {
+  state = {
+    logged: false,
+    firstName: '',
+  }
 
-      <Head>
-        <title>Offers</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  componentDidMount() {
+    const logged = localStorage.getItem('logged') === 'true';
+    const firstName = logged ? localStorage.getItem('fullName').split(' ')[0] : '';
+    this.setState({ logged, firstName });
+  }
 
-      <Navbar />
+  render() {
+    const { logged, firstName } = this.state;
 
-      <main className={styles.main}>
-        <Container className={utils.container}>
-          <h1 className={utils.primary_title}>Welcome, Amanda!</h1>
-          <h2 className={utils.secondary_title}>You have 4 new offers!</h2>
+    return (
+      <div>
+        {/* <img src="/testback-14.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
 
-          <div className={styles.offer_block}>
-            <h2 className={styles.offer_title}>Solicited Offers</h2>
+        <Head>
+          <title>Offers</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-            <Row className={styles.offer_row}>
-              <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                <OfferCard img="/offer/offer-1.jpg" />
-              </Col>
+        <Navbar />
 
-              <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                <OfferCard img="/offer/offer-2.jpg" />
-              </Col>
+        <main className={styles.main}>
+          <Container className={utils.container}>
+            <h1 className={utils.primary_title}>Welcome, {logged ? firstName : 'Amanda'}!</h1>
+            <h2 className={utils.secondary_title}>You have 4 new offers!</h2>
 
-              <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                <OfferCard img="/offer/offer-3.jpg" />
-              </Col>
-            </Row>
+            <div className={styles.offer_block}>
+              <h2 className={styles.offer_title}>Solicited Offers</h2>
 
-            <div className={styles.view_btn}>
-              <MyButton width="190px" height="44px" margin="10px">+ ADD A PROPERTY</MyButton>
+              <Row className={styles.offer_row}>
+                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                  <OfferCard img="/offer/offer-1.jpg" />
+                </Col>
+
+                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                  <OfferCard img="/offer/offer-2.jpg" />
+                </Col>
+
+                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                  <OfferCard img="/offer/offer-3.jpg" />
+                </Col>
+              </Row>
+
+              <div className={styles.view_btn}>
+                <MyButton width="190px" height="44px" margin="10px">+ ADD A PROPERTY</MyButton>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.offer_block}>
-            <h2 className={styles.offer_title}>Unsolicited Offers</h2>
+            <div className={styles.offer_block}>
+              <h2 className={styles.offer_title}>Unsolicited Offers</h2>
 
-            <Row className={styles.offer_row}>
-              <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                <OfferCard img="/offer/offer-4.jpg" />
-              </Col>
-            </Row>
-          </div>
-        </Container>
-      </main>
+              <Row className={styles.offer_row}>
+                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                  <OfferCard img="/offer/offer-4.jpg" />
+                </Col>
+              </Row>
+            </div>
+          </Container>
+        </main>
 
-      <Footer />
-    </div>
-  )
+        <Footer />
+      </div>
+    )
+  }
 }
