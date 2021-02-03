@@ -25,27 +25,36 @@
   transition: 0.3s;
 }
 
-.brand:hover,
-.link:hover {
-  color: grey !important;
-}
-
 .link {
-  margin: 0 6px;
+  margin: 6px;
   font-size: 13px;
   font-weight: bold;
   color: inherit !important;
   transition: 0.3s;
 }
 
+.brand:hover,
+.link:hover {
+  color: grey !important;
+}
+
+.nav_item {
+  font-size: 15px;
+  color: #090446;
+}
+
 @media only screen and (min-width: 768px) {
   .navbar {
-    padding: 30px 24px;
+    padding: 30px 40px;
   }
 
   .brand {
     top: 18px;
     left: 26px;
     font-size: 26px;
+  }
+
+  .link {
+    margin: 0 6px;
   }
 }

@@ -57,14 +57,32 @@ export default class Signup extends React.Component {
 
               <div className={styles.check_block}>
                 <h3 className={styles.check_title}>I'm a landlord or property professional</h3>
-                <Form.Check className={styles.check_item} type="checkbox" inline />Owner<br />
-                <Form.Check className={styles.check_item} type="checkbox" inline />Property Manager<br />
-                <Form.Check className={styles.check_item} type="checkbox" inline />Agent<br />
+
+                <label className="d-block m-0">
+                  <Form.Check className={styles.check_item} type="checkbox" inline />
+                  Owner
+                </label>
+
+                <label className="d-block m-0">
+                  <Form.Check className={styles.check_item} type="checkbox" inline />
+                  Property Manager
+                </label>
+
+                <label className="d-block m-0">
+                  <Form.Check className={styles.check_item} type="checkbox" inline />
+                  Agent
+                </label>
+
                 <hr className={styles.split_line} />
-                <Form.Check className={styles.check_item} type="checkbox" inline />I agree to{' '}
-                <Link href="#">
-                  <a><u>Terms & Conditions</u></a>
-                </Link>
+
+                <label className="d-block m-0">
+                  <Form.Check className={styles.check_item} type="checkbox" inline />
+                  I agree to{' '}
+
+                  <Link href="#">
+                    <a><u>Terms & Conditions</u></a>
+                  </Link>
+                </label>
               </div>
 
               <Link href="/welcome">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 import styles from './Navbar.module.css'
 
@@ -32,7 +32,11 @@ export default class Navmenu extends React.Component {
             <Nav>
               {logged ? (
                 <Nav>
-                  <Nav.Link className={styles.link} href="#">Hello, {firstName}</Nav.Link>
+                  <NavDropdown className={styles.link} title={`Hello, ${firstName}`}>
+                    <NavDropdown.Item className={styles.nav_item} href="#">Offers(2)</NavDropdown.Item>
+                    <NavDropdown.Item className={styles.nav_item} href="/message">Inbox(3)</NavDropdown.Item>
+                    <NavDropdown.Item className={styles.nav_item} href="#">Sign out</NavDropdown.Item>
+                  </NavDropdown>
                 </Nav>
               ) : (
                   <Nav>

@@ -232,8 +232,10 @@ export default class Brochure extends React.Component {
               </p>
 
               <div className={styles.check}>
-                <Form.Check className={styles.check_box} type="checkbox" inline />
-                <span className={styles.check_detail}>I APPROVE MY BARKER BROCHURE</span>
+                <label className={styles.check_detail}>
+                  <Form.Check className={styles.check_box} type="checkbox" inline />
+                  I APPROVE MY BARKER BROCHURE
+                </label>
               </div>
 
               <Link href="/offer">
