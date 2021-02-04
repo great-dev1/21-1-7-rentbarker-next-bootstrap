@@ -1,11 +1,22 @@
+.back_img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 150px auto;
+  margin: 10vw auto;
   padding: 60px 10px 30px;
   border-radius: 45px;
+  background-color: white;
   box-shadow: 0 3px 8px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -26,9 +37,9 @@
 
 @media only screen and (min-width: 768px) {
   .main {
+    margin: 15vw auto;
     padding: 83px 12% 75px;
   }
-  
   .detail {
     margin: 32px 0;
     font-size: 21px;

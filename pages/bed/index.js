@@ -31,8 +31,8 @@ export default class Bed extends React.Component {
   }
 
   componentDidMount() {
-    const roommateNum = localStorage.getItem('roommateNum') !== null ? localStorage.getItem('roommateNum') : '1';
-    const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : '1';
+    const roommateNum = localStorage.getItem('roommateNum') !== null ? localStorage.getItem('roommateNum') : '0';
+    const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : 'studio';
     const bathroomNum = localStorage.getItem('bathroomNum') !== null ? localStorage.getItem('bathroomNum') : '1';
 
     this.setState({ roommateNum, bedroomNum, bathroomNum });
@@ -43,6 +43,8 @@ export default class Bed extends React.Component {
   }
 
   render() {
+    const { roommateNum, bedroomNum, bathroomNum } = this.state;
+
     return (
       <div>
         {/* <img src="/testback-3.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
@@ -64,28 +66,28 @@ export default class Bed extends React.Component {
               <h2 className={styles.secondary_title}>Roomates</h2>
               <div className={styles.box_group}>
                 <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={styles.box} onClick={this.handleChange('roommateNum', '0')}>0</Button>
-                  <Button className={styles.box} onClick={this.handleChange('roommateNum', '1')}>1</Button>
-                  <Button className={styles.box} onClick={this.handleChange('roommateNum', '2')}>2</Button>
+                  <Button className={roommateNum === '0' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '0')}>0</Button>
+                  <Button className={roommateNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '1')}>1</Button>
+                  <Button className={roommateNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '2')}>2</Button>
                 </div>
               </div>
 
               <h2 className={styles.secondary_title}>Bedrooms</h2>
               <div className={styles.box_group}>
                 <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={styles.box} onClick={this.handleChange('bedroomNum', 'studio')}>Studio</Button>
-                  <Button className={styles.box} onClick={this.handleChange('bedroomNum', '1')}>1</Button>
-                  <Button className={styles.box} onClick={this.handleChange('bedroomNum', '2')}>2</Button>
-                  <Button className={styles.box} onClick={this.handleChange('bedroomNum', '3+')}>3+</Button>
+                  <Button className={bedroomNum === 'studio' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', 'studio')}>Studio</Button>
+                  <Button className={bedroomNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '1')}>1</Button>
+                  <Button className={bedroomNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '2')}>2</Button>
+                  <Button className={bedroomNum === '3+' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '3+')}>3+</Button>
                 </div>
               </div>
 
               <h2 className={styles.secondary_title}>Bathrooms</h2>
               <div className={styles.box_group}>
                 <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={styles.box} onClick={this.handleChange('bathroomNum', '1')}>1</Button>
-                  <Button className={styles.box} onClick={this.handleChange('bathroomNum', '2')}>2</Button>
-                  <Button className={styles.box} onClick={this.handleChange('bathroomNum', '3+')}>3+</Button>
+                  <Button className={bathroomNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '1')}>1</Button>
+                  <Button className={bathroomNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '2')}>2</Button>
+                  <Button className={bathroomNum === '3+' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '3+')}>3+</Button>
                 </div>
               </div>
 

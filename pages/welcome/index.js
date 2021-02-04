@@ -20,7 +20,7 @@ export default class Welcome extends React.Component {
   }
 
   render() {
-    const { logged, firstName } = this.state;
+    const { firstName } = this.state;
 
     return (
       <div>

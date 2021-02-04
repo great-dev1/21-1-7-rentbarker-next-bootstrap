@@ -6,7 +6,6 @@ import { Container, Form, Button } from 'react-bootstrap'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import MyButton from '../../components/MyButton'
-import CreditCircle from './CreditCircle'
 import utils from '../../styles/utils.module.css'
 import styles from './Credit.module.css'
 
@@ -40,9 +39,9 @@ export default class Credit extends React.Component {
 
   componentDidMount() {
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : 'Good 680-719';
-    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : 'Good 680-719';
-    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : 'Good 680-719';
+    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : 'Excellent 720+';
+    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : 'Excellent 720+';
+    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : 'Excellent 720+';
 
     this.setState({ useGuarantor, myCredit, roommateCredit, guarantorCredit });
   }
@@ -52,7 +51,7 @@ export default class Credit extends React.Component {
   }
 
   render() {
-    const { useGuarantor } = this.state;
+    const { useGuarantor, myCredit, roommateCredit, guarantorCredit } = this.state;
 
     return (
       <div>
@@ -75,31 +74,51 @@ export default class Credit extends React.Component {
             </h2>
 
             <Form>
-              <Form.Check
-                name="useGuarantor"
-                checked={useGuarantor}
-                onChange={this.handleCheck}
-                type="checkbox"
-                label="I am using a guarantor, and estimating their credit score."
-              />
+              <label>
+                <Form.Check
+                  className="mr-1"
+                  name="useGuarantor"
+                  checked={useGuarantor}
+                  onChange={this.handleCheck}
+                  type="checkbox"
+                  inline
+                />
+                I am using a guarantor, and estimating their credit score.
+              </label>
 
               <div className={styles.circle_group}>
                 <div className="d-flex justify-content-center flex-wrap">
-                  <a onClick={this.handleChange('myCredit', 'Excellent 720+')}>
-                    <CreditCircle>Excellent<br />720+</CreditCircle>
-                  </a>
+                  <Button
+                    className={myCredit === 'Excellent 720+' ? styles.circle_active : styles.circle_inactive}
+                    onClick={this.handleChange('myCredit', 'Excellent 720+')}
+                  >
+                    Excellent<br />
+                    720+
+                  </Button>
 
-                  <a onClick={this.handleChange('myCredit', 'Good 680-719')}>
-                    <CreditCircle>Good<br />680-719</CreditCircle>
-                  </a>
+                  <Button
+                    className={myCredit === 'Good 680-719' ? styles.circle_active : styles.circle_inactive}
+                    onClick={this.handleChange('myCredit', 'Good 680-719')}
+                  >
+                    Good<br />
+                    680-719
+                  </Button>
 
-                  <a onClick={this.handleChange('myCredit', 'Fair 640-679')}>
-                    <CreditCircle>Fair<br />640-679</CreditCircle>
-                  </a>
+                  <Button
+                    className={myCredit === 'Fair 640-679' ? styles.circle_active : styles.circle_inactive}
+                    onClick={this.handleChange('myCredit', 'Fair 640-679')}
+                  >
+                    Fair<br />
+                    640-679
+                  </Button>
 
-                  <a onClick={this.handleChange('myCredit', 'Poor 639-')}>
-                    <CreditCircle>Poor<br />639-</CreditCircle>
-                  </a>
+                  <Button
+                    className={myCredit === 'Poor 639-' ? styles.circle_active : styles.circle_inactive}
+                    onClick={this.handleChange('myCredit', 'Poor 639-')}
+                  >
+                    Poor<br />
+                    639-
+                  </Button>
                 </div>
               </div>
 
@@ -109,45 +128,79 @@ export default class Credit extends React.Component {
                     <h2 className={styles.credit_title}>
                       Please estimate your roommate's credit score.
                     </h2>
+
                     <div className="d-flex justify-content-center flex-wrap">
-                      <a onClick={this.handleChange('roommateCredit', 'Excellent 720+')}>
-                        <CreditCircle>Excellent<br />720+</CreditCircle>
-                      </a>
+                      <Button
+                        className={roommateCredit === 'Excellent 720+' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('roommateCredit', 'Excellent 720+')}
+                      >
+                        Excellent<br />
+                        720+
+                      </Button>
 
-                      <a onClick={this.handleChange('roommateCredit', 'Good 680-719')}>
-                        <CreditCircle>Good<br />680-719</CreditCircle>
-                      </a>
+                      <Button
+                        className={roommateCredit === 'Good 680-719' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('roommateCredit', 'Good 680-719')}
+                      >
+                        Good<br />
+                        680-719
+                      </Button>
 
-                      <a onClick={this.handleChange('roommateCredit', 'Fair 640-679')}>
-                        <CreditCircle>Fair<br />640-679</CreditCircle>
-                      </a>
+                      <Button
+                        className={roommateCredit === 'Fair 640-679' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('roommateCredit', 'Fair 640-679')}
+                      >
+                        Fair<br />
+                        640-679
+                      </Button>
 
-                      <a onClick={this.handleChange('roommateCredit', 'Poor 639-')}>
-                        <CreditCircle>Poor<br />639-</CreditCircle>
-                      </a>
+                      <Button
+                        className={roommateCredit === 'Poor 639-' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('roommateCredit', 'Poor 639-')}
+                      >
+                        Poor<br />
+                        639-
+                      </Button>
                     </div>
                   </div>
 
                   <div className={styles.circle_group}>
                     <h2 className={styles.credit_title}>
-                      Please estimate your guarantor's credit score.
+                      Please estimate your roommate's credit score.
                     </h2>
+
                     <div className="d-flex justify-content-center flex-wrap">
-                      <a onClick={this.handleChange('guarantorCredit', 'Excellent 720+')}>
-                        <CreditCircle>Excellent<br />720+</CreditCircle>
-                      </a>
+                      <Button
+                        className={guarantorCredit === 'Excellent 720+' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('guarantorCredit', 'Excellent 720+')}
+                      >
+                        Excellent<br />
+                        720+
+                      </Button>
 
-                      <a onClick={this.handleChange('guarantorCredit', 'Good 680-719')}>
-                        <CreditCircle>Good<br />680-719</CreditCircle>
-                      </a>
+                      <Button
+                        className={guarantorCredit === 'Good 680-719' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('guarantorCredit', 'Good 680-719')}
+                      >
+                        Good<br />
+                        680-719
+                      </Button>
 
-                      <a onClick={this.handleChange('guarantorCredit', 'Fair 640-679')}>
-                        <CreditCircle>Fair<br />640-679</CreditCircle>
-                      </a>
+                      <Button
+                        className={guarantorCredit === 'Fair 640-679' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('guarantorCredit', 'Fair 640-679')}
+                      >
+                        Fair<br />
+                        640-679
+                      </Button>
 
-                      <a onClick={this.handleChange('guarantorCredit', 'Poor 639-')}>
-                        <CreditCircle>Poor<br />639-</CreditCircle>
-                      </a>
+                      <Button
+                        className={guarantorCredit === 'Poor 639-' ? styles.circle_active : styles.circle_inactive}
+                        onClick={this.handleChange('guarantorCredit', 'Poor 639-')}
+                      >
+                        Poor<br />
+                        639-
+                      </Button>
                     </div>
                   </div>
                 </div>

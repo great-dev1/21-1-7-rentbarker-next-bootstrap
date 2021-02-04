@@ -1,4 +1,5 @@
 /* Header */
+
 @media only screen and (min-width: 768px) {
   .header {
     background-image: url("/bed/header-back.jpg");
@@ -12,6 +13,7 @@
 }
 
 /* Main */
+
 .main {
   padding: 40px 0 50px;
   text-align: center;
@@ -27,8 +29,30 @@
   font-size: 18px;
 }
 
-.save_btn,
-.back_btn {
+.circle_inactive, .circle_active {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #090446;
+  background-color: white;
+}
+
+.circle_inactive:hover, .circle_inactive:focus, .circle_active:hover, .circle_active:focus {
+  border-color: #090446;
+  box-shadow: none !important;
+  color: #090446 !important;
+  background-color: white !important;
+}
+
+.circle_active {
+  border-color: #090446;
+}
+
+.save_btn, .back_btn {
   width: 80%;
   margin: 10px;
 }
@@ -37,20 +61,21 @@
   .main {
     padding: 68px 0 66px;
   }
-
   .circle_group {
     width: 100%;
     margin: 64px 0 50px;
   }
-
   .credit_title {
     margin-bottom: 70px;
   }
-
+  .circle_inactive, .circle_active {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+  }
   .save_btn {
     width: 223px;
   }
-
   .back_btn {
     width: 150px;
   }

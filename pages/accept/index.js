@@ -1,15 +1,14 @@
 import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 
-import Footer from '../../components/Footer'
 import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Accept.module.css'
 
-export default function Welcome({ children }) {
+export default function Accept() {
   return (
     <div>
-      {/* <img src="/testback-8.png" style={{ position: "absolute", "zIndex": "99", top: "-250px", width: "100%", opacity: "0.5" }} /> */}
+      <img className={styles.back_img} src="/accept/back.jpg" />
 
       <Container className={utils.container}>
         <main className={styles.main}>
@@ -22,17 +21,15 @@ export default function Welcome({ children }) {
 
           <div className={styles.btn_group}>
             <Link href="/offer/review">
-              <MyButton blue width="285px" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
+              <MyButton blue width="275px" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
             </Link>
 
             <Link href="/offer">
-              <MyButton width="285px" height="45px" margin="10px">BACK TO OFFER</MyButton>
+              <MyButton width="275px" height="45px" margin="10px">BACK TO OFFER</MyButton>
             </Link>
           </div>
         </main>
       </Container>
-
-      <Footer />
     </div>
   )
 }

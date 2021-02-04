@@ -1,4 +1,5 @@
 /* Header */
+
 @media only screen and (min-width: 768px) {
   .header {
     background-image: url("/bed/header-back.jpg");
@@ -12,6 +13,7 @@
 }
 
 /* Main */
+
 .main {
   padding: 65px 0;
   text-align: center;
@@ -37,21 +39,18 @@
   .main {
     padding: 68px 0 102px;
   }
-
   .primary_title {
     margin-bottom: 65px;
   }
-
   .secondary_title {
     font-size: 18px;
   }
-
   .box_group {
     width: 100%;
   }
 }
 
-.box {
+.box_inactive, .box_active {
   width: 105px;
   height: 105px;
   margin: 7px;
@@ -63,13 +62,15 @@
   background-color: white;
 }
 
-.box:hover,
-.box:active,
-.box:focus {
-  border-color: #090446 !important;
+.box_inactive:hover, .box_inactive:focus, .box_active:hover, .box_active:focus {
+  border-color: #090446;
   box-shadow: none !important;
   color: #090446 !important;
   background-color: white !important;
+}
+
+.box_active {
+  border-color: #090446;
 }
 
 .btn_group {
