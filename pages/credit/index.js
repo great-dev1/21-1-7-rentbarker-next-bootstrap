@@ -39,9 +39,9 @@ export default class Credit extends React.Component {
 
   componentDidMount() {
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : 'Excellent 720+';
-    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : 'Excellent 720+';
-    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : 'Excellent 720+';
+    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '';
+    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : '';
+    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : '';
 
     this.setState({ useGuarantor, myCredit, roommateCredit, guarantorCredit });
   }

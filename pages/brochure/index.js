@@ -128,7 +128,7 @@ export default class Brochure extends React.Component {
                   <div className={styles.property_section}>
                     <h2 className={styles.section_title}>Properties</h2>
                     <Row>
-                      <Col md={4}>
+                      <Col lg={4}>
                         <div className={styles.property_card}>
                           <img className={styles.property_img} src="/brochure/property-1.jpg" alt="property" />
                           <p className={styles.property_name}>1234 Street Name</p>
@@ -137,7 +137,7 @@ export default class Brochure extends React.Component {
                         </div>
                       </Col>
 
-                      <Col md={4}>
+                      <Col lg={4}>
                         <div className={styles.property_card}>
                           <img className={styles.property_img} src="/brochure/property-1.jpg" alt="property" />
                           <p className={styles.property_name}>1234 Street Name</p>
@@ -146,7 +146,7 @@ export default class Brochure extends React.Component {
                         </div>
                       </Col>
 
-                      <Col md={4}>
+                      <Col lg={4}>
                         <div className={styles.property_card}>
                           <img className={styles.property_img} src="/brochure/property-1.jpg" alt="property" />
                           <p className={styles.property_name}>1234 Street Name</p>
