@@ -1,3 +1,7 @@
+.body {
+  filter: blur(4px);
+}
+
 .main {
   padding: 64px 0;
 }

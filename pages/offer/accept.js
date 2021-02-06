@@ -32,7 +32,7 @@ export default class Accept extends React.Component {
     const { show } = this.state;
 
     return (
-      <div>
+      <div className={show ? styles.body : null}>
         {/* <img src="/testback-15.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.6" }} /> */}
 
         <Head>
@@ -161,7 +161,6 @@ export default class Accept extends React.Component {
               </div>
 
               <Modal show={show} onHide={this.handleClose}>
-                {/* <Modal.Body> */}
                 <div className={styles.modal_container}>
                   <p className={styles.modal_detail}>
                     You may only accept one offer. Upon accecpting, all other offers will be voided and the
@@ -180,7 +179,6 @@ export default class Accept extends React.Component {
                     </Link>
                   </div>
                 </div>
-                {/* </Modal.Body> */}
               </Modal>
             </div>
           </Container>
