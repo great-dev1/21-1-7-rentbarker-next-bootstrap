@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -17,6 +17,8 @@ export default class Message extends React.Component {
   }
 
   handleChange = (num) => () => this.setState({ property: num });
+
+  handleClick = () => fileUp.click();
 
   render() {
     const { property } = this.state;
@@ -124,7 +126,8 @@ export default class Message extends React.Component {
 
                     <div className={styles.btn_group}>
                       <div className="d-flex justify-content-end align-items-center">
-                        <img className={styles.clip_icon} src="/message/clip.png" alt="clip icon" />
+                        <img className={styles.clip_icon} src="/message/clip.png" onClick={this.handleClick} alt="clip icon" />
+                        <Form.File className="d-none" id="fileUp" />
                         <MyButton blue width="170px" height="45px" margin="0">SEND</MyButton>
                       </div>
                     </div>
