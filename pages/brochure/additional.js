@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form, Row, Col } from 'react-bootstrap'
+import Router from 'next/router'
+import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import { ProgressBar, Step } from 'react-step-progress-bar'
 import 'react-step-progress-bar/styles.css'
 
@@ -34,6 +35,7 @@ export default class Additional extends React.Component {
     bankruptcyMonth: '',
     bankruptcyDate: '',
     bankruptcyYear: '',
+    validated: false,
   }
 
   handleChange = (e) => {
@@ -86,7 +88,14 @@ export default class Additional extends React.Component {
     }
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({
+      validated: true,
+    })
+
     const {
       moveMonth, moveDate, moveYear, petYes, petNo, petInfo, esaYes, esaNo,
       smokerYes, smokerNo, evictionYes, evictionNo, evictionInfo, judgeYes, judgeNo, judgeInfo,
@@ -114,6 +123,11 @@ export default class Additional extends React.Component {
     localStorage.setItem('bankruptcyMonth', bankruptcyMonth);
     localStorage.setItem('bankruptcyDate', bankruptcyDate);
     localStorage.setItem('bankruptcyYear', bankruptcyYear);
+
+    const form = e.currentTarget;
+    if (form.checkValidity()) {
+      Router.push('/brochure/employment');
+    }
   }
 
   componentDidMount() {
@@ -151,6 +165,7 @@ export default class Additional extends React.Component {
       moveMonth, moveDate, moveYear, petYes, petNo, petInfo, esaYes, esaNo,
       smokerYes, smokerNo, evictionYes, evictionNo, evictionInfo, judgeYes, judgeNo, judgeInfo,
       bankruptcyYes, bankruptcyNo, bankruptcyMonth, bankruptcyDate, bankruptcyYear,
+      validated,
     } = this.state;
 
     return (
@@ -210,11 +225,19 @@ export default class Additional extends React.Component {
             <div className={styles.form_container}>
               <h2 className={styles.form_title}>Additional Information</h2>
 
-              <Form className={styles.form}>
+              <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
                 <h4 className={styles.input_title}>Desired Move-in Date</h4>
                 <Row>
                   <Col md={4}>
-                    <Form.Control className={styles.input_box} name="moveMonth" value={moveMonth} onChange={this.handleChange} as="select" custom>
+                    <Form.Control
+                      className={styles.input_box}
+                      name="moveMonth"
+                      as="select"
+                      value={moveMonth}
+                      onChange={this.handleChange}
+                      custom
+                      required
+                    >
                       <option value="">Month</option>
                       <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option>
                       <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
@@ -222,7 +245,15 @@ export default class Additional extends React.Component {
                     </Form.Control>
                   </Col>
                   <Col md={4}>
-                    <Form.Control className={styles.input_box} name="moveDate" value={moveDate} onChange={this.handleChange} as="select" custom>
+                    <Form.Control
+                      className={styles.input_box}
+                      name="moveDate"
+                      as="select"
+                      value={moveDate}
+                      onChange={this.handleChange}
+                      custom
+                      required
+                    >
                       <option value="">Day</option>
                       <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
                       <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option>
@@ -237,10 +268,11 @@ export default class Additional extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="moveYear"
-                      value={moveYear}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Year (YYYY)"
+                      value={moveYear}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                 </Row>
@@ -254,6 +286,7 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="Yes"
+                    required
                   />
                   <Form.Check
                     id="petRadio2"
@@ -262,6 +295,7 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="No"
+                    required
                   />
 
                   {petYes &&
@@ -278,6 +312,7 @@ export default class Additional extends React.Component {
                             onChange={this.handleChange}
                             type="text"
                             placeholder="Species, breed, age, and weight"
+                            required
                           />
                         </Col>
                       </Row>
@@ -295,14 +330,16 @@ export default class Additional extends React.Component {
                       onChange={this.handleRadio}
                       type="radio"
                       label="Yes"
+                      required
                     />
                     <Form.Check
                       id="esaRadio2"
-                      name="esaNo"
+                      name="esaYes"
                       checked={esaNo}
                       onChange={this.handleRadio}
                       type="radio"
                       label="No"
+                      required
                     />
                   </div>
                 }
@@ -316,14 +353,16 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="Yes"
+                    required
                   />
                   <Form.Check
                     id="smokerRadio2"
-                    name="smokerNo"
+                    name="smokerYes"
                     checked={smokerNo}
                     onChange={this.handleRadio}
                     type="radio"
                     label="No"
+                    required
                   />
                 </div>
 
@@ -336,33 +375,38 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="Yes"
+                    required
                   />
                   <Form.Check
                     id="evictionRadio2"
-                    name="evictionNo"
+                    name="evictionYes"
                     checked={evictionNo}
                     onChange={this.handleRadio}
                     type="radio"
                     label="No"
+                    required
                   />
 
-                  <div className={styles.addition_input}>
-                    <h4 className={styles.input_title}>
-                      If yes, please explain:
-                    </h4>
-                    <Row>
-                      <Col md={8}>
-                        <Form.Control
-                          className={styles.input_box}
-                          name="evictionInfo"
-                          value={evictionInfo}
-                          onChange={this.handleChange}
-                          type="text"
-                          placeholder="Explain eviction details"
-                        />
-                      </Col>
-                    </Row>
-                  </div>
+                  {evictionYes &&
+                    <div className={styles.addition_input}>
+                      <h4 className={styles.input_title}>
+                        If yes, please explain:
+                      </h4>
+                      <Row>
+                        <Col md={8}>
+                          <Form.Control
+                            className={styles.input_box}
+                            name="evictionInfo"
+                            value={evictionInfo}
+                            onChange={this.handleChange}
+                            type="text"
+                            placeholder="Explain eviction details"
+                            required
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                  }
                 </div>
 
                 <div className={styles.quiz}>
@@ -374,33 +418,38 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="Yes"
+                    required
                   />
                   <Form.Check
                     id="judgeRadio2"
-                    name="judgeNo"
+                    name="judgeYes"
                     checked={judgeNo}
                     onChange={this.handleRadio}
                     type="radio"
                     label="No"
+                    required
                   />
 
-                  <div className={styles.addition_input}>
-                    <h4 className={styles.input_title}>
-                      If yes, please explain:
-                    </h4>
-                    <Row>
-                      <Col md={8}>
-                        <Form.Control
-                          className={styles.input_box}
-                          name="judgeInfo"
-                          value={judgeInfo}
-                          onChange={this.handleChange}
-                          type="text"
-                          placeholder="Explain judgement or liens"
-                        />
-                      </Col>
-                    </Row>
-                  </div>
+                  {judgeYes &&
+                    <div className={styles.addition_input}>
+                      <h4 className={styles.input_title}>
+                        If yes, please explain:
+                      </h4>
+                      <Row>
+                        <Col md={8}>
+                          <Form.Control
+                            className={styles.input_box}
+                            name="judgeInfo"
+                            value={judgeInfo}
+                            onChange={this.handleChange}
+                            type="text"
+                            placeholder="Explain judgement or liens"
+                            required
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                  }
                 </div>
 
                 <div className={styles.quiz}>
@@ -412,65 +461,84 @@ export default class Additional extends React.Component {
                     onChange={this.handleRadio}
                     type="radio"
                     label="Yes"
+                    required
                   />
                   <Form.Check
                     id="bankruptcyRadio2"
-                    name="bankruptcyNo"
+                    name="bankruptcyYes"
                     checked={bankruptcyNo}
                     onChange={this.handleRadio}
                     type="radio"
                     label="No"
+                    required
                   />
 
-                  <div className={styles.addition_input}>
-                    <h4 className={styles.input_title}>
-                      If yes, please provide the date:
-                    </h4>
-                    <Row>
-                      <Col md={4}>
-                        <Form.Control className={styles.input_box} name="bankruptcyMonth" value={bankruptcyMonth} onChange={this.handleChange} as="select" custom>
-                          <option value="">Month</option>
-                          <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option>
-                          <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
-                          <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
-                        </Form.Control>
-                      </Col>
-                      <Col md={4}>
-                        <Form.Control className={styles.input_box} name="bankruptcyDate" value={bankruptcyDate} onChange={this.handleChange} as="select" custom>
-                          <option value="">Day</option>
-                          <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
-                          <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option>
-                          <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option>
-                          <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option>
-                          <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option>
-                          <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option>
-                          <option value="31">31</option>
-                        </Form.Control>
-                      </Col>
-                      <Col md={4}>
-                        <Form.Control
-                          className={styles.input_box}
-                          name="bankruptcyYear"
-                          value={bankruptcyYear}
-                          onChange={this.handleChange}
-                          type="text"
-                          placeholder="Year (YYYY)"
-                        />
-                      </Col>
-                    </Row>
-                  </div>
+                  {bankruptcyYes &&
+                    <div className={styles.addition_input}>
+                      <h4 className={styles.input_title}>
+                        If yes, please provide the date:
+                      </h4>
+                      <Row>
+                        <Col md={4}>
+                          <Form.Control
+                            className={styles.input_box}
+                            name="bankruptcyMonth"
+                            as="select"
+                            value={bankruptcyMonth}
+                            onChange={this.handleChange}
+                            custom
+                            required
+                          >
+                            <option value="">Month</option>
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option>
+                            <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
+                            <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                          </Form.Control>
+                        </Col>
+                        <Col md={4}>
+                          <Form.Control
+                            className={styles.input_box}
+                            name="bankruptcyDate"
+                            as="select"
+                            value={bankruptcyDate}
+                            onChange={this.handleChange}
+                            custom
+                            required
+                          >
+                            <option value="">Day</option>
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
+                            <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option>
+                            <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option>
+                            <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option>
+                            <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option>
+                            <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option>
+                            <option value="31">31</option>
+                          </Form.Control>
+                        </Col>
+                        <Col md={4}>
+                          <Form.Control
+                            className={styles.input_box}
+                            name="bankruptcyYear"
+                            value={bankruptcyYear}
+                            onChange={this.handleChange}
+                            type="text"
+                            placeholder="Year (YYYY)"
+                            required
+                          />
+                        </Col>
+                      </Row>
+                    </div>
+                  }
+                </div>
+
+                <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
+                  <Link href="/brochure/personal">
+                    <a><MyButton width="205px" height="45px" margin="20px">PREVIOUS PAGE</MyButton></a>
+                  </Link>
+
+                  <Button className={styles.continue_btn} type="submit">CONTINUE</Button>
                 </div>
               </Form>
-
-              <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
-                <Link href="/brochure/personal">
-                  <a><MyButton width="205px" height="45px" margin="10px">PREVIOUS PAGE</MyButton></a>
-                </Link>
-
-                <Link href="/brochure/employment">
-                  <a onClick={this.handleSubmit}><MyButton blue width="205px" height="45px" margin="10px">CONTINUE</MyButton></a>
-                </Link>
-              </div>
             </div>
           </Container>
         </main>

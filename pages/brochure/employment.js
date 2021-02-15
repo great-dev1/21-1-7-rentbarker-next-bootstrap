@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form, Row, Col } from 'react-bootstrap'
+import Router from 'next/router'
+import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import { ProgressBar, Step } from 'react-step-progress-bar'
 import 'react-step-progress-bar/styles.css'
 
@@ -24,6 +25,7 @@ export default class Employment extends React.Component {
     guarantorIncome: '',
     roommateIncome: '',
     useGuarantor: false,
+    validated: false,
   }
 
   handleChange = (e) => {
@@ -31,7 +33,14 @@ export default class Employment extends React.Component {
     this.setState({ [e.target.name]: value.toString() });
   }
 
-  handleSumit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({
+      validated: true,
+    })
+
     const {
       employerOccupation, employerName, employerLength, employerAddress, employerCity,
       employerState, employerZipcode, myIncome, guarantorIncome, roommateIncome,
@@ -47,6 +56,11 @@ export default class Employment extends React.Component {
     localStorage.setItem('myIncome', myIncome);
     localStorage.setItem('guarantorIncome', guarantorIncome);
     localStorage.setItem('roommateIncome', roommateIncome);
+
+    const form = e.currentTarget;
+    if (form.checkValidity()) {
+      Router.push('/brochure/submit');
+    }
   }
 
   componentDidMount() {
@@ -72,6 +86,7 @@ export default class Employment extends React.Component {
     const {
       employerOccupation, employerName, employerLength, employerAddress, employerCity,
       employerState, employerZipcode, myIncome, guarantorIncome, roommateIncome, useGuarantor,
+      validated,
     } = this.state;
 
     return (
@@ -131,7 +146,7 @@ export default class Employment extends React.Component {
             <div className={styles.form_container}>
               <h2 className={styles.form_title}>Employment Information</h2>
 
-              <Form className={styles.form}>
+              <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
                 <h4 className={styles.input_title_bg}>Add employment history for the past year</h4>
                 <Row>
                   <Col md={12}>
@@ -142,6 +157,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Current Occupation"
+                      required
                     />
                   </Col>
                   <Col md={6}>
@@ -152,6 +168,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Employer Name"
+                      required
                     />
                   </Col>
                   <Col md={6}>
@@ -162,6 +179,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Length of Time"
+                      required
                     />
                   </Col>
                   <Col md={12}>
@@ -172,6 +190,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Employer Address"
+                      required
                     />
                   </Col>
                   <Col md={6}>
@@ -182,6 +201,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="City"
+                      required
                     />
                   </Col>
                   <Col md={3}>
@@ -192,6 +212,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       as="select"
                       custom
+                      required
                     >
                       <option value="">State</option>
                       <option value="TX">TX</option>
@@ -207,6 +228,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Zipcode"
+                      required
                     />
                   </Col>
                 </Row>
@@ -226,6 +248,7 @@ export default class Employment extends React.Component {
                       onChange={this.handleChange}
                       type="text"
                       placeholder="Gross Monthly Income"
+                      required
                     />
                   </Col>
                 </Row>
@@ -242,6 +265,7 @@ export default class Employment extends React.Component {
                           onChange={this.handleChange}
                           type="text"
                           placeholder="Gross Monthly Income"
+                          required
                         />
                       </Col>
                     </Row>
@@ -256,22 +280,21 @@ export default class Employment extends React.Component {
                           onChange={this.handleChange}
                           type="text"
                           placeholder="Gross Monthly Income (combined if more than one)"
+                          required
                         />
                       </Col>
                     </Row>
                   </div>
                 }
+
+                <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
+                  <Link href="/brochure/additional">
+                    <a><MyButton width="205px" height="45px" margin="20px">PREVIOUS PAGE</MyButton></a>
+                  </Link>
+
+                  <Button className={styles.continue_btn} type="submit">CONTINUE</Button>
+                </div>
               </Form>
-
-              <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
-                <Link href="/brochure/additional">
-                  <a><MyButton width="205px" height="45px" margin="10px">PREVIOUS PAGE</MyButton></a>
-                </Link>
-
-                <Link href="/brochure/submit">
-                  <a onClick={this.handleSumit}><MyButton blue width="205px" height="45px" margin="10px">CONTINUE</MyButton></a>
-                </Link>
-              </div>
             </div>
           </Container>
         </main>

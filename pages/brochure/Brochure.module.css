@@ -39,6 +39,7 @@
 }
 
 /* Toggle Switch */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -137,24 +138,19 @@ input:checked+.slider:before {
   .view_toggle {
     display: none;
   }
-
   .brochure_tabs {
     display: flex;
   }
-
   .brochure_tab {
     border: 1px solid #dee2e6;
     border-top: none;
   }
-
   .tab_head {
     padding: 28px 24px;
   }
-
   .username {
     font-size: 33px;
   }
-
   .tab_main {
     padding: 28px 32px 66px;
   }
@@ -333,6 +329,7 @@ input:checked+.slider:before {
 }
 
 /* Personal Information */
+
 .progress_bar {
   max-width: 895px;
   height: 167px;
@@ -340,8 +337,7 @@ input:checked+.slider:before {
   padding: 65px 10px;
 }
 
-.complete,
-.incomplete {
+.complete, .incomplete {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -385,9 +381,7 @@ input:checked+.slider:before {
   font-weight: bold;
 }
 
-.input_box:hover,
-.input_box:active,
-.input_box:focus {
+.input_box:hover, .input_box:active, .input_box:focus {
   box-shadow: none !important;
 }
 
@@ -406,7 +400,19 @@ input:checked+.slider:before {
 }
 
 .continue_btn {
-  text-align: center;
+  width: 205px;
+  height: 45px;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  background-color: #090446;
+  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.continue_btn:hover {
+  color: #090446 !important;
+  background-color: white !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -414,13 +420,10 @@ input:checked+.slider:before {
     margin: 36px 0 20px;
     padding: 35px 30px 5px;
   }
-
-  .continue_btn {
-    text-align: right;
-  }
 }
 
 /* Additional Information */
+
 .quiz {
   margin: 6px 0 30px;
   font-size: 15px;
@@ -433,6 +436,7 @@ input:checked+.slider:before {
 }
 
 /* Employment Information */
+
 .input_title_bg {
   margin-bottom: 28px;
   font-size: 15px;
@@ -455,6 +459,7 @@ input:checked+.slider:before {
 }
 
 /* Review & Submit */
+
 .info_table {
   margin: 30px 0;
   padding: 22px 29px 0;

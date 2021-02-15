@@ -1,13 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import { Container, Form, Row, Col } from 'react-bootstrap'
+import Router from 'next/router'
+import { Container, Form, Row, Col, Button } from 'react-bootstrap'
 import { ProgressBar, Step } from 'react-step-progress-bar'
 import 'react-step-progress-bar/styles.css'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
@@ -35,6 +34,7 @@ export default class Personal extends React.Component {
     prevRent: '',
     prevLength: '',
     prevReason: '',
+    validated: false,
   }
 
   handleChange = (e) => {
@@ -42,7 +42,14 @@ export default class Personal extends React.Component {
     this.setState({ [e.target.name]: value.toString() });
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    this.setState({
+      validated: true,
+    })
+
     const {
       firstName, middleName, lastName, birthMonth, birthDate, birthYear,
       currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
@@ -71,6 +78,11 @@ export default class Personal extends React.Component {
     localStorage.setItem('prevRent', prevRent);
     localStorage.setItem('prevLength', prevLength);
     localStorage.setItem('prevReason', prevReason);
+
+    const form = e.currentTarget;
+    if (form.checkValidity()) {
+      Router.push('/brochure/additional');
+    }
   }
 
   componentDidMount() {
@@ -109,6 +121,7 @@ export default class Personal extends React.Component {
       firstName, middleName, lastName, birthMonth, birthDate, birthYear,
       currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
       prevAddress, prevUnit, prevCity, prevState, prevZipcode, prevRent, prevLength, prevReason,
+      validated,
     } = this.state;
 
     return (
@@ -169,43 +182,54 @@ export default class Personal extends React.Component {
             <div className={styles.form_container}>
               <h2 className={styles.form_title}>Personal Information</h2>
 
-              <Form className={styles.form}>
+              <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
                 <Row>
                   <Col md={8}>
                     <Form.Control
                       className={styles.input_box}
                       name="firstName"
-                      value={firstName}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="First Name"
+                      value={firstName}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                   <Col md={4}>
                     <Form.Control
                       className={styles.input_box}
                       name="middleName"
-                      value={middleName}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Middle Name (optional)"
+                      value={middleName}
+                      onChange={this.handleChange}
                     />
                   </Col>
                   <Col md={12}>
                     <Form.Control
                       className={styles.input_box}
                       name="lastName"
+                      type="text"
+                      placeholder="Last Name"
                       value={lastName}
                       onChange={this.handleChange}
-                      type="text"
-                      placeholder="Last Name" />
+                      required
+                    />
                   </Col>
                 </Row>
 
                 <h4 className={styles.input_title}>Date of Birth</h4>
                 <Row className={styles.input_row}>
                   <Col md={4}>
-                    <Form.Control className={styles.input_box} name="birthMonth" value={birthMonth} onChange={this.handleChange} as="select" custom>
+                    <Form.Control
+                      className={styles.input_box}
+                      name="birthMonth"
+                      as="select"
+                      value={birthMonth}
+                      onChange={this.handleChange}
+                      custom
+                      required
+                    >
                       <option value="">Month</option>
                       <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option>
                       <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
@@ -213,7 +237,15 @@ export default class Personal extends React.Component {
                     </Form.Control>
                   </Col>
                   <Col md={4}>
-                    <Form.Control className={styles.input_box} name="birthDate" value={birthDate} onChange={this.handleChange} as="select" custom>
+                    <Form.Control
+                      className={styles.input_box}
+                      name="birthDate"
+                      as="select"
+                      value={birthDate}
+                      onChange={this.handleChange}
+                      custom
+                      required
+                    >
                       <option value="">Day</option>
                       <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
                       <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option>
@@ -228,10 +260,11 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="birthYear"
-                      value={birthYear}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Year (YYYY)"
+                      value={birthYear}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                 </Row>
@@ -242,20 +275,21 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="currentAddress"
-                      value={currentAddress}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Address"
+                      value={currentAddress}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                   <Col md={4}>
                     <Form.Control
                       className={styles.input_box}
                       name="currentUnit"
-                      value={currentUnit}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Unit/Apart (optional)"
+                      value={currentUnit}
+                      onChange={this.handleChange}
                     />
                   </Col>
 
@@ -263,20 +297,22 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="currentCity"
-                      value={currentCity}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="City"
+                      value={currentCity}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                   <Col md={3}>
                     <Form.Control
                       className={styles.input_box}
                       name="currentState"
+                      as="select"
                       value={currentState}
                       onChange={this.handleChange}
-                      as="select"
                       custom
+                      required
                     >
                       <option value="">State</option>
                       <option value="TX">TX</option>
@@ -288,10 +324,11 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="currentZipcode"
-                      value={currentZipcode}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Zipcode"
+                      value={currentZipcode}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
 
@@ -299,30 +336,33 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="currentRent"
-                      value={currentRent}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Monthly Rent"
+                      value={currentRent}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                   <Col md={6}>
                     <Form.Control
                       className={styles.input_box}
                       name="currentLength"
-                      value={currentLength}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Length of Time"
+                      value={currentLength}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                   <Col md={12}>
                     <Form.Control
                       className={styles.input_box}
                       name="currentReason"
-                      value={currentReason}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Reason for Moving"
+                      value={currentReason}
+                      onChange={this.handleChange}
+                      required
                     />
                   </Col>
                 </Row>
@@ -333,20 +373,20 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="prevAddress"
-                      value={prevAddress}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Address"
+                      value={prevAddress}
+                      onChange={this.handleChange}
                     />
                   </Col>
                   <Col md={4}>
                     <Form.Control
                       className={styles.input_box}
                       name="prevUnit"
-                      value={prevUnit}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Unit/Apart (optional)"
+                      value={prevUnit}
+                      onChange={this.handleChange}
                     />
                   </Col>
 
@@ -354,10 +394,10 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="prevCity"
-                      value={prevCity}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="City"
+                      value={prevCity}
+                      onChange={this.handleChange}
                     />
                   </Col>
                   <Col md={3}>
@@ -379,10 +419,10 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="prevZipcode"
-                      value={prevZipcode}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Zipcode"
+                      value={prevZipcode}
+                      onChange={this.handleChange}
                     />
                   </Col>
 
@@ -390,40 +430,38 @@ export default class Personal extends React.Component {
                     <Form.Control
                       className={styles.input_box}
                       name="prevRent"
-                      value={prevRent}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Monthly Rent"
+                      value={prevRent}
+                      onChange={this.handleChange}
                     />
                   </Col>
                   <Col md={6}>
                     <Form.Control
                       className={styles.input_box}
                       name="prevLength"
-                      value={prevLength}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Length of Time"
+                      value={prevLength}
+                      onChange={this.handleChange}
                     />
                   </Col>
                   <Col md={12}>
                     <Form.Control
                       className={styles.input_box}
                       name="prevReason"
-                      value={prevReason}
-                      onChange={this.handleChange}
                       type="text"
                       placeholder="Reason for Moving"
+                      value={prevReason}
+                      onChange={this.handleChange}
                     />
                   </Col>
                 </Row>
-              </Form>
 
-              <Link href="/brochure/additional">
-                <div className={styles.continue_btn} onClick={this.handleSubmit}>
-                  <MyButton blue width="205px" height="45px" margin="0">CONTINUE</MyButton>
+                <div className="text-center text-md-right">
+                  <Button className={styles.continue_btn} type="submit">CONTINUE</Button>
                 </div>
-              </Link>
+              </Form>
             </div>
           </Container>
         </main>

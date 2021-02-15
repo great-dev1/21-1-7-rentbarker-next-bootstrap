@@ -527,7 +527,7 @@ export default class Submit extends React.Component {
                 </Row>
               </div>
 
-              <div className={styles.continue_btn}>
+              <div className="text-center text-md-right">
                 <Link href="/brochure">
                   <a><MyButton blue width="205px" height="45px" margin="10px">SUBMIT</MyButton></a>
                 </Link>
