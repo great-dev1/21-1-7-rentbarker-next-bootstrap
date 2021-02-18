@@ -17,17 +17,16 @@
   .main {
     padding: 82px 0 256px;
   }
-
   .primary_title {
     font-size: 38px;
   }
-
   .secondary_title {
     margin: 21px 0 52px;
   }
 }
 
 /* Property Tabs */
+
 .form {
   margin-bottom: 19px;
 }
@@ -48,8 +47,7 @@
   color: grey;
 }
 
-.search_btn,
-.continue_btn {
+.search_btn, .continue_btn {
   min-width: 125px !important;
 }
 
@@ -118,13 +116,13 @@
   .search_btn {
     min-width: 210px !important;
   }
-
   .splitbar {
     margin: 0 15px;
   }
 }
 
 /* Property Cards */
+
 .property_row {
   margin-top: 55px;
 }
@@ -138,12 +136,10 @@
   .property_row {
     margin: 11px 40px 75px -15px;
   }
-
   .property_card_wrapper {
     margin-bottom: 54px;
     padding-right: 35px;
   }
-
   .continue_btn {
     width: 224px;
   }

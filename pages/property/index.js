@@ -12,7 +12,7 @@ import styles from './Property.module.css'
 export default function Property() {
   return (
     <div>
-      {/* <img src="/testback-2.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
+      <img src="/testback-2.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} />
 
       <Head>
         <title>Add your properties</title>
