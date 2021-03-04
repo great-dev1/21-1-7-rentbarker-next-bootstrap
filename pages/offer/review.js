@@ -137,7 +137,7 @@ export default function Review() {
 
             <div className={styles.btn_group}>
               <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-                <MyButton blue width="230px" height="45px" margin="10px">ONE LAST THING...</MyButton>
+                <MyButton green={true} width="230px" height="45px" margin="10px">ONE LAST THING...</MyButton>
               </div>
             </div>
           </div>

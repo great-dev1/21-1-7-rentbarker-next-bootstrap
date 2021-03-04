@@ -595,7 +595,7 @@ export default class Featrue extends React.Component {
 
               <Link href="/budget">
                 <div className={styles.next_btn} onClick={this.handleSubmit}>
-                  <MyButton blue width="100%" height="50px" margin="0">NEXT</MyButton>
+                  <MyButton green={true} width="100%" height="50px" margin="0">NEXT</MyButton>
                 </div>
               </Link>
             </div>

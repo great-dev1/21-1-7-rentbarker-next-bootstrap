@@ -1,5 +1,5 @@
 .main {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .primary_title {
@@ -68,7 +68,7 @@
   margin: 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
   .property_tab {
     padding: 13px 22px 51px;
     border: 1px solid #d3dbde;
@@ -76,6 +76,9 @@
     border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important;
   }
+}
+
+@media only screen and (min-width: 768px) {
   .group_title {
     font-size: 18px;
     letter-spacing: normal;

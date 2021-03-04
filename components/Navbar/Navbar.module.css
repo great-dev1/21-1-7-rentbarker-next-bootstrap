@@ -1,6 +1,7 @@
 .navbar {
-  padding: 12px 0 0;
+  padding: 12px 0;
   text-align: center;
+  background-color: white;
 }
 
 .toggle,
@@ -26,16 +27,18 @@
 }
 
 .link {
-  margin: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
-  color: inherit !important;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  color: #126660 !important;
   transition: 0.3s;
 }
 
-.brand:hover,
+/* .brand:hover, */
 .link:hover {
   color: grey !important;
+  text-decoration: underline;
 }
 
 .nav_item {
@@ -45,7 +48,7 @@
 
 @media only screen and (min-width: 768px) {
   .navbar {
-    padding: 30px 40px;
+    padding: 18px 40px;
   }
 
   .brand {

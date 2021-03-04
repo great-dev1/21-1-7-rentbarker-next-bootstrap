@@ -26,7 +26,7 @@ export default function Login() {
           <Form className={styles.form}>
             <Form.Control className={styles.input_box} type="text" placeholder="Full Name" />
             <Form.Control className={styles.input_box} type="email" placeholder="Email" />
-            <MyButton blue width="100%" height="45px" margin="0">LOG IN</MyButton>
+            <MyButton green={true} width="100%" height="45px" margin="0">LOG IN</MyButton>
             <p className={styles.mid_text}>Or log in with:</p>
             <MyButton width="100%" height="45px" margin="0">GOOGLE</MyButton>
             <div className={styles.split_space}></div>

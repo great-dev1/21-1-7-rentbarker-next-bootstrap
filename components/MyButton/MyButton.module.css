@@ -1,31 +1,29 @@
 .green_btn,
 .white_btn {
+  border: 1.6px solid #126660 !important;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
 }
 
 .green_btn {
-  border: none;
   color: white;
   background-color: #126660;
 }
 
 .green_btn:hover {
-  border: 1.6px solid #126660 !important;
   color: #126660;
   background-color: white !important;
 }
 
 .white_btn {
-  border: 1.6px solid #126660 !important;
   color: #126660;
   background-color: white;
 }
 
 .white_btn:hover {
-  border: none;
   color: white !important;
   background-color: #126660 !important;
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form, Button } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Container } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -54,55 +56,214 @@ export default class Bed extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <header className={styles.header}>
-          <Navbar />
-        </header>
+        {/* <header className={styles.header}> */}
+        <Navbar />
+        {/* </header> */}
+
+        <img className={styles.body_back} src="/bed/main-back.jpg" alt="back" />
 
         <main className={styles.main}>
+          <Container className="d-flex justify-content-md-center align-items-center">
+            <Link href="/property">
+              <a className="d-block d-sm-none">
+                <FontAwesomeIcon icon={faChevronLeft} className={utils.chevron_left} />
+              </a>
+            </Link>
+
+            <h1 className={styles.primary_title}>
+              Roommates, Beds, and Baths
+            </h1>
+          </Container>
+
           <Container className={utils.container}>
-            <h1 className={styles.primary_title}>Roommates, Beds, and Baths</h1>
-
-            <Form>
-              <h2 className={styles.secondary_title}>Roomates</h2>
+            <div className={styles.main_content}>
+              <h4 className={styles.secondary_title}>Roomates</h4>
               <div className={styles.box_group}>
-                <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={roommateNum === '0' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '0')}>0</Button>
-                  <Button className={roommateNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '1')}>1</Button>
-                  <Button className={roommateNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('roommateNum', '2')}>2</Button>
+                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
+                <div
+                  className={roommateNum === '0' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('roommateNum', '0')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className="d-none d-md-block invisible" src="/bed/roommate-1.png" alt="roommate" />
+                    <div>
+                      <p className={styles.box_num}>0</p>
+                      <p className={styles.box_text}>Nobody</p>
+                    </div>
+                  </div>
                 </div>
+
+                <div
+                  className={roommateNum === '1' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('roommateNum', '1')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/roommate-1.png" alt="roommate" />
+                    <div>
+                      <p className={styles.box_num}>1</p>
+                      <p className={styles.box_text}>Roommate</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={roommateNum === '2' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('roommateNum', '2')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/roommate-2.png" alt="roommate" />
+                    <div>
+                      <p className={styles.box_num}>2</p>
+                      <p className={styles.box_text}>Roommates</p>
+                    </div>
+                  </div>
+                </div>
+                {/* </div> */}
               </div>
 
-              <h2 className={styles.secondary_title}>Bedrooms</h2>
+              <h4 className={styles.secondary_title}>Bedrooms</h4>
               <div className={styles.box_group}>
-                <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={bedroomNum === 'studio' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', 'studio')}>Studio</Button>
-                  <Button className={bedroomNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '1')}>1</Button>
-                  <Button className={bedroomNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '2')}>2</Button>
-                  <Button className={bedroomNum === '3+' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bedroomNum', '3+')}>3+</Button>
+                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
+                <div
+                  className={bedroomNum === 'studio' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bedroomNum', 'studio')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} className="d-none d-md-block invisible" src="/bed/bed-1.png" alt="bedroom" />
+                    <p className={styles.box_num}>Studio</p>
+                  </div>
                 </div>
+
+                <div
+                  className={bedroomNum === '1' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bedroomNum', '1')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bed-1.png" alt="bedroom" />
+                    <div>
+                      <p className={styles.box_num}>1</p>
+                      <p className={styles.box_text}>Bedroom</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={bedroomNum === '2' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bedroomNum', '2')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bed-2.png" alt="bedroom" />
+                    <div>
+                      <p className={styles.box_num}>2</p>
+                      <p className={styles.box_text}>Bedrooms</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={bedroomNum === '3' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bedroomNum', '3')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bed-3.png" alt="bedroom" />
+                    <div>
+                      <p className={styles.box_num}>3</p>
+                      <p className={styles.box_text}>Bedrooms</p>
+                    </div>
+                  </div>
+                </div>
+                {/* </div> */}
               </div>
 
-              <h2 className={styles.secondary_title}>Bathrooms</h2>
+              <h4 className={styles.secondary_title}>Bathrooms</h4>
               <div className={styles.box_group}>
-                <div className="d-flex justify-content-between justify-content-md-center flex-wrap">
-                  <Button className={bathroomNum === '1' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '1')}>1</Button>
-                  <Button className={bathroomNum === '2' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '2')}>2</Button>
-                  <Button className={bathroomNum === '3+' ? styles.box_active : styles.box_inactive} onClick={this.handleChange('bathroomNum', '3+')}>3+</Button>
+                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
+                <div
+                  className={bathroomNum === '1' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bathroomNum', '1')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bath-1.png" alt="bathroom" />
+                    <div>
+                      <p className={styles.box_num}>1</p>
+                      <p className={styles.box_text}>Bathroom</p>
+                    </div>
+                  </div>
                 </div>
+
+                <div
+                  className={bathroomNum === '2' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bathroomNum', '2')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bath-2.png" alt="bathroom" />
+                    <div>
+                      <p className={styles.box_num}>2</p>
+                      <p className={styles.box_text}>Bathrooms</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={bathroomNum === '3' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('bathroomNum', '3')}
+                >
+                  <div className={styles.circle}>
+                    <div className={styles.inner_circle}></div>
+                  </div>
+                  <div className={styles.box_content}>
+                    <img className={styles.icon} src="/bed/bath-2.png" alt="bathroom" />
+                    <div>
+                      <p className={styles.box_num}>3</p>
+                      <p className={styles.box_text}>Bathrooms</p>
+                    </div>
+                  </div>
+                </div>
+                {/* </div> */}
               </div>
 
               <div className={styles.btn_group}>
-                <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
+                <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
                   <Link href="/property">
-                    <a><MyButton width="150px" height="50px" margin="12px">BACK</MyButton></a>
+                    <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
                   <Link href="/feature">
-                    <a onClick={this.handleSubmit}><MyButton blue width="150px" height="50px" margin="12px">NEXT</MyButton></a>
+                    <a className={utils.continue_btn} onClick={this.handleSubmit}>
+                      <span className="pl-3">CONTINUE</span>
+                      <img className="ml-2" src="/right-arrow.png" alt="arrow" />
+                    </a>
                   </Link>
                 </div>
               </div>
-            </Form>
+            </div>
           </Container>
         </main>
 

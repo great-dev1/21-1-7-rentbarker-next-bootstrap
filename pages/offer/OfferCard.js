@@ -22,7 +22,7 @@ export default function OfferCard({
         <h4 className={styles.offer_deposit}> {deposit} </h4>
 
         <Link href="/offer/accept">
-          <a><MyButton blue width="100%" height="44px" margin="0">VIEW OFFER</MyButton></a>
+          <a><MyButton green={true} width="100%" height="44px" margin="0">VIEW OFFER</MyButton></a>
         </Link>
       </Card.Body>
     </Card>

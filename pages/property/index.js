@@ -22,10 +22,12 @@ export default function Property() {
       <Navbar />
 
       <main className={styles.main}>
-        <Container className={utils.container}>
+        <Container>
           <h1 className={styles.primary_title}>Add your properties</h1>
           <h2 className={styles.secondary_title}>Search for the properties you would like to compete for you.</h2>
+        </Container>
 
+        <Container className={utils.container}>
           <Tabs defaultActiveKey="url" className={styles.property_tabs}>
             <Tab className={styles.property_tab} eventKey="url" title="Listing URL">
               <Form>

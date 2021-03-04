@@ -29,7 +29,7 @@ export default function Home() {
 
             <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
               <Link href="/property">
-                <a><MyButton blue width="224px" height="45px" margin="12px">FOR TENANTS</MyButton></a>
+                <a><MyButton green={true} width="224px" height="45px" margin="12px">FOR TENANTS</MyButton></a>
               </Link>
               <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
             </div>
@@ -256,7 +256,7 @@ export default function Home() {
                   />
                 </InputGroup>
                 <div className={styles.start_btn}>
-                  <MyButton blue width="100%" height="60px" margin="0">START BARKING</MyButton>
+                  <MyButton green={true} width="100%" height="60px" margin="0">START BARKING</MyButton>
                 </div>
               </div>
             </Form>

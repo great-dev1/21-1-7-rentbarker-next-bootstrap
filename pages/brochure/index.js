@@ -239,7 +239,7 @@ export default class Brochure extends React.Component {
               </div>
 
               <Link href="/offer">
-                <a><MyButton blue width="307px" height="75px">TAKE ME TO MY OFFERS</MyButton></a>
+                <a><MyButton green={true} width="307px" height="75px">TAKE ME TO MY OFFERS</MyButton></a>
               </Link>
             </div>
           </Container>

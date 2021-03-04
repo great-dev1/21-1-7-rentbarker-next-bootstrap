@@ -1,3 +1,9 @@
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+}
+
 /* @media only screen and (min-width: 1600px) {
   .container {
     max-width: 1540px !important;
@@ -14,6 +20,15 @@
 .secondary_title {
   font-size: 15px;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .primary_title {
+    margin-bottom: 20px;
+  }
+  .secondary_title {
+    font-size: 18px;
+  }
 }
 
 .submit_btn {
@@ -33,12 +48,59 @@
   background-color: white !important;
 }
 
-@media only screen and (min-width: 768px) {
-  .primary_title {
-    margin-bottom: 20px;
-  }
+.chevron_left {
+  position: relative;
+  top: -7px;
+  width: 15px;
+  margin-right: 25px;
+}
 
-  .secondary_title {
-    font-size: 18px;
+.prev_link {
+  display: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.prev_link:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+@media only screen and (min-width: 576px) {
+  .prev_link {
+    display: block;
+  }
+}
+
+.continue_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: #126660;
+  transition: 0.3s;
+}
+
+.continue_btn:hover {
+  color: white;
+  background-color: grey;
+}
+
+@media only screen and (min-width: 576px) {
+  .continue_btn {
+    width: 214px;
+    height: 44px;
+    border-radius: 6px;
   }
 }

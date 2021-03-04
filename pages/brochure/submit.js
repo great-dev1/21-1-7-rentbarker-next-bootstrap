@@ -529,7 +529,7 @@ export default class Submit extends React.Component {
 
               <div className="text-center text-md-right">
                 <Link href="/brochure">
-                  <a><MyButton blue width="205px" height="45px" margin="10px">SUBMIT</MyButton></a>
+                  <a><MyButton green={true} width="205px" height="45px" margin="10px">SUBMIT</MyButton></a>
                 </Link>
               </div>
             </div>

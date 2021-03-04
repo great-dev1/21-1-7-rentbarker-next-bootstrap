@@ -156,7 +156,7 @@ export default class Accept extends React.Component {
                 <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
                   <MyButton width="230px" height="45px" margin="10px">MESSAGE LANDLORD</MyButton>
 
-                  <a onClick={this.handleShow}><MyButton blue width="230px" height="45px" margin="10px">ACCEPT OFFER</MyButton></a>
+                  <a onClick={this.handleShow}><MyButton green={true} width="230px" height="45px" margin="10px">ACCEPT OFFER</MyButton></a>
                 </div>
               </div>
 
@@ -171,7 +171,7 @@ export default class Accept extends React.Component {
 
                   <div className={styles.modal_btn_group}>
                     <Link href="/offer/review">
-                      <MyButton blue width="275px" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
+                      <MyButton green={true} width="275px" height="45px" margin="10px">AGREE & ACCEPT OFFER</MyButton>
                     </Link>
 
                     <Link href="/offer">

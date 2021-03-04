@@ -42,8 +42,11 @@ export default class Navmenu extends React.Component {
                 </Nav>
               ) : (
                   <Nav>
-                    <Nav.Link className={styles.link} href="/login">Login</Nav.Link>
-                    <Nav.Link className={styles.link} href="/signup">Signup</Nav.Link>
+                    <Nav.Link className={styles.link} href="/login">
+                      <img className="mr-2" src="/navbar/user-icon.png" alt="user" />
+                      SIGN IN
+                    </Nav.Link>
+                    {/* <Nav.Link className={styles.link} href="/signup">Signup</Nav.Link> */}
                   </Nav>
                 )}
             </Nav>

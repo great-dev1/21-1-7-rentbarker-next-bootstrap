@@ -128,7 +128,7 @@ export default class Message extends React.Component {
                       <div className="d-flex justify-content-end align-items-center">
                         <img className={styles.clip_icon} src="/message/clip.png" onClick={this.handleClick} alt="clip icon" />
                         <Form.File className="d-none" id="fileUp" />
-                        <MyButton blue width="170px" height="45px" margin="0">SEND</MyButton>
+                        <MyButton green={true} width="170px" height="45px" margin="0">SEND</MyButton>
                       </div>
                     </div>
                   </div>
