@@ -1,0 +1,95 @@
+.property_card {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #dce6e6;
+  border-radius: 4px;
+}
+
+.action_btn {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+.property_img {
+  border-radius: 4px;
+}
+
+.property_body {
+  padding: 12px 0;
+}
+
+.property_name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.property_price {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #086627;
+}
+
+.property_address {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #606d6b;
+}
+
+.property_feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0 12px;
+  padding: 14px 4px;
+  border-top: 1px solid #e1e8eb;
+  border-bottom: 1px solid #e1e8eb;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.feature_icon {
+  margin-right: 8px;
+}
+
+.splitbar {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #d8d8d8;
+}
+
+.sup {
+  left: -4%;
+}
+
+.amenity_title {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.67px;
+  color: #b0b8b8;
+}
+
+.amenity_item {
+  font-size: 12px;
+  line-height: 1.83;
+}
+
+.add_link {
+  display: block;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.add_link:hover {
+  color: green;
+}

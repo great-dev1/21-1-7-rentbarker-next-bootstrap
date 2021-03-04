@@ -22,10 +22,12 @@ export default class Navmenu extends React.Component {
       <div>
         <Navbar className={styles.navbar} collapseOnSelect expand="md" variant="light">
           <Navbar.Toggle className={styles.toggle} aria-controls="responsive-navbar-nav">
-            <img src="/navbar/navbar-toggler.png" alt="navbar toggler" />
+            <img src="/navbar/menu.png" alt="menu" />
           </Navbar.Toggle>
 
-          <Navbar.Brand className={styles.brand} href="/">RentBarker</Navbar.Brand>
+          <Navbar.Brand className={styles.brand} href="/">
+            <img src="/navbar/logo.png" alt="logo" />
+          </Navbar.Brand>
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>

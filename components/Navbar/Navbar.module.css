@@ -1,5 +1,5 @@
 .navbar {
-  padding: 5px 0 0;
+  padding: 12px 0 0;
   text-align: center;
 }
 
@@ -10,19 +10,19 @@
   outline: none;
 }
 
-.toggle img {
+/* .toggle img {
   width: 24px;
   height: 19px;
-}
+} */
 
 .brand {
   position: absolute;
-  top: 5px;
-  left: calc(50vw - 50px);
-  font-size: 21px;
+  top: 8px;
+  left: calc(50vw - 60px);
+  /* font-size: 21px;
   font-weight: bold;
   color: inherit !important;
-  transition: 0.3s;
+  transition: 0.3s; */
 }
 
 .link {

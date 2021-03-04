@@ -1,28 +1,31 @@
-.blue_btn,
+.green_btn,
 .white_btn {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
 }
 
-.blue_btn {
+.green_btn {
   border: none;
   color: white;
-  background-color: #090446;
+  background-color: #126660;
 }
 
-.blue_btn:hover {
-  color: #090446 !important;
+.green_btn:hover {
+  border: 1.6px solid #126660 !important;
+  color: #126660;
   background-color: white !important;
 }
 
 .white_btn {
-  border: 1px solid #d8d8d8 !important;
-  color: #090446;
+  border: 1.6px solid #126660 !important;
+  color: #126660;
   background-color: white;
 }
 
 .white_btn:hover {
+  border: none;
   color: white !important;
-  background-color: #090446 !important;
+  background-color: #126660 !important;
 }

@@ -1,11 +1,12 @@
 import { Button } from 'react-bootstrap'
+
 import styles from './MyButton.module.css'
 
-export default function MyButton({ children, blue, width = '150px', height = '50px', margin = '12px', ...rest }) {
+export default function MyButton({ children, green, width = '150px', height = '50px', margin = '12px', ...rest }) {
   return (
     <div>
-      {blue ? (
-        <Button className={styles.blue_btn} style={{ width, height, margin }} {...rest}>
+      {green ? (
+        <Button className={styles.green_btn} style={{ width, height, margin }} {...rest}>
           {children}
         </Button>
       ) : (
