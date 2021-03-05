@@ -58,32 +58,6 @@
   flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 768px) {
-  .main {
-    padding: 80px 0 102px;
-    backdrop-filter: blur(4px);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .primary_title {
-    margin-bottom: 40px;
-    font-size: 56px;
-    line-height: normal;
-    text-align: center;
-    color: white;
-  }
-  .main_content {
-    padding: 40px 48px;
-    border-radius: 8px;
-    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
-  }
-  .secondary_title {
-    font-size: 18px;
-  }
-  .box_group {
-    width: 100%;
-  }
-}
-
 .box_inactive, .box_active {
   display: flex;
   flex-direction: row-reverse;
@@ -94,6 +68,7 @@
   padding: 16px 20px 16px 17px;
   border: 1px solid #dce6e6;
   border-radius: 2px;
+  background-color: white;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -101,6 +76,7 @@
 .box_inactive:hover, .box_active {
   border-color: #126660;
   color: #126660;
+  background-color: #f5fafa;
 }
 
 .circle {
@@ -156,17 +132,46 @@
   color: #7f8585;
 }
 
+.box_inactive:hover .box_text, .box_active .box_text {
+  color: #126660;
+}
+
 .btn_group {
   padding-top: 20px;
 }
 
 @media only screen and (min-width: 768px) {
+  .main {
+    padding: 80px 0 102px;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .primary_title {
+    margin-bottom: 40px;
+    font-size: 56px;
+    line-height: normal;
+    text-align: center;
+    color: white;
+  }
+  .main_content {
+    max-width: 972px;
+    margin: auto;
+    padding: 40px 48px;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  }
+  .secondary_title {
+    font-size: 18px;
+  }
+  .box_group {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
   .box_inactive, .box_active {
     display: block;
     width: 192px;
     height: 216px;
-    margin-right: 36px;
-    margin-bottom: 40px;
+    margin: 0 18px 40px;
     padding: 20px 18px 24px 24px;
     border-width: 2px;
     border-radius: 8px;
@@ -174,6 +179,9 @@
   .box_content {
     display: block;
     margin-top: 38px;
+  }
+  .icon {
+    width: auto;
   }
   .box_num {
     margin: 28px 0 12px;

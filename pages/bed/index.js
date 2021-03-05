@@ -1,13 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Container } from 'react-bootstrap'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Container } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Bed.module.css'
 
@@ -77,6 +76,8 @@ export default class Bed extends React.Component {
 
           <Container className={utils.container}>
             <div className={styles.main_content}>
+
+              {/* Rommmates */}
               <h4 className={styles.secondary_title}>Roomates</h4>
               <div className={styles.box_group}>
                 {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
@@ -130,6 +131,7 @@ export default class Bed extends React.Component {
                 {/* </div> */}
               </div>
 
+              {/* Bedrooms */}
               <h4 className={styles.secondary_title}>Bedrooms</h4>
               <div className={styles.box_group}>
                 {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
@@ -196,6 +198,7 @@ export default class Bed extends React.Component {
                 {/* </div> */}
               </div>
 
+              {/* Bathrooms */}
               <h4 className={styles.secondary_title}>Bathrooms</h4>
               <div className={styles.box_group}>
                 {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
