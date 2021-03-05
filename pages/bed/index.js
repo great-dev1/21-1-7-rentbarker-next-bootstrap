@@ -65,16 +65,16 @@ export default class Bed extends React.Component {
               </a>
             </Link>
 
-            <h1 className={styles.primary_title}>
+            <h2 className={styles.primary_title}>
               Roommates, Beds, and Baths
-            </h1>
+            </h2>
           </Container>
 
           <Container className={utils.container}>
             <div className={styles.main_content}>
 
               {/* Rommmates */}
-              <h4 className={styles.secondary_title}>Roomates</h4>
+              <h3 className={styles.secondary_title}>Roomates</h3>
               <div className={styles.box_group}>
                 <div
                   className={roommateNum === '0' ? styles.box_active : styles.box_inactive}
@@ -126,7 +126,7 @@ export default class Bed extends React.Component {
               </div>
 
               {/* Bedrooms */}
-              <h4 className={styles.secondary_title}>Bedrooms</h4>
+              <h3 className={styles.secondary_title}>Bedrooms</h3>
               <div className={styles.box_group}>
                 <div
                   className={bedroomNum === 'studio' ? styles.box_active : styles.box_inactive}
@@ -191,7 +191,7 @@ export default class Bed extends React.Component {
               </div>
 
               {/* Bathrooms */}
-              <h4 className={styles.secondary_title}>Bathrooms</h4>
+              <h3 className={styles.secondary_title}>Bathrooms</h3>
               <div className={styles.box_group}>
                 <div
                   className={bathroomNum === '1' ? styles.box_active : styles.box_inactive}

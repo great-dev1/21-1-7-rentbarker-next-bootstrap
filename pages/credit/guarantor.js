@@ -66,16 +66,16 @@ export default class Credit extends React.Component {
               </a>
             </Link>
 
-            <h1 className={styles.primary_title}>
+            <h2 className={styles.primary_title}>
               Credit Score
-            </h1>
+            </h2>
           </Container>
 
           <Container className={utils.container}>
             <div className={styles.main_content}>
-              <h4 className={styles.secondary_title}>
+              <h3 className={styles.secondary_title}>
                 Please estimate your guarantor’s credit score.
-              </h4>
+              </h3>
 
               <div className={styles.box_group}>
                 <div

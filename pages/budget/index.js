@@ -94,16 +94,16 @@ export default class Budget extends React.Component {
               </a>
             </Link>
 
-            <h1 className={styles.primary_title}>
+            <h2 className={styles.primary_title}>
               Budget & Lease Length
-            </h1>
+            </h2>
           </Container>
 
           <Container className={utils.container}>
             <div className={styles.main_content}>
-              <h4 className={styles.secondary_title}>
+              <h3 className={styles.secondary_title}>
                 Please select a price range and lease length you are comfortable with.
-              </h4>
+              </h3>
 
               <div className={styles.slider_container}>
                 <Slider

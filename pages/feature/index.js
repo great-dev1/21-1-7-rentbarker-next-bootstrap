@@ -193,16 +193,16 @@ export default class Featrue extends React.Component {
               </a>
             </Link>
 
-            <h1 className={styles.primary_title}>
+            <h2 className={styles.primary_title}>
               Unique Features
-            </h1>
+            </h2>
           </Container>
 
           <Container className={utils.container}>
             <div className={styles.main_content}>
-              <h4 className={styles.secondary_title}>
+              <h3 className={styles.secondary_title}>
                 Select the apartment features you want in and indicate the importance.
-              </h4>
+              </h3>
 
               <div className={styles.feature_group}>
                 {/* In-unit washer and dryer */}
