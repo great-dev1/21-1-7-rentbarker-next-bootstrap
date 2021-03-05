@@ -1,11 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form, Button } from 'react-bootstrap'
 
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Signup.module.css'
 
@@ -20,83 +16,140 @@ export default class Signup extends React.Component {
 
   handleSubmit = () => {
     const { fullName } = this.state;
+
     localStorage.setItem('fullName', fullName);
     localStorage.setItem('logged', true);
   }
 
   componentDidMount() {
     const fullName = localStorage.getItem('fullName') !== null ? localStorage.getItem('fullName') : 'Amanda Norman';
+
     this.setState({ fullName });
   }
 
   render() {
+    const { fullName } = this.state;
+
     return (
-      <div className={styles.container}>
+      <div>
         <Head>
           <title>Sign up</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <Link href="/">
+          <a><img className={styles.logo_bar} src="/login/logo-bar.jpg" alt="logo" /></a>
+        </Link>
 
-        <main className={styles.main}>
-          <Container className={utils.container}>
-            <h1 className={styles.primary_title}>Create Account</h1>
+        <Link href="/">
+          <a><img className={styles.logo_bar_mid} src="/login/logo-bar-1.jpg" alt="logo" /></a>
+        </Link>
 
-            <Form className={styles.form}>
-              <Form.Control
-                className={styles.input_box}
-                name="fullName"
-                value={this.state.fullName}
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Full Name"
-              />
-              <Form.Control className={styles.input_box} type="email" placeholder="Email" />
-              <Form.Control className={styles.input_box} type="password" placeholder="Password" />
+        <main className="d-flex flex-column flex-xl-row">
+          <div className={styles.main_img}>
+            <img className={styles.main_back} src="/login/main-back.png" alt="back" />
 
-              <div className={styles.check_block}>
-                <h3 className={styles.check_title}>I'm a landlord or property professional</h3>
+            <Link href="/">
+              <a><img className={styles.logo} src="/login/logo.png" alt="logo" /></a>
+            </Link>
+          </div>
 
-                <label className="d-block m-0">
-                  <Form.Check className={styles.check_item} type="checkbox" inline />
-                  Owner
-                </label>
+          <div className="flex-grow-1 d-flex justify-content-center align-items-center">
+            <div className={styles.main_content}>
+              <h2 className={styles.title}>
+                Create your free<br />
+                account
+              </h2>
 
-                <label className="d-block m-0">
-                  <Form.Check className={styles.check_item} type="checkbox" inline />
-                  Property Manager
-                </label>
+              <form className={styles.form}>
+                <input
+                  className={styles.email_box}
+                  name="fullName"
+                  value={fullName}
+                  onChange={this.handleChange}
+                  type="text"
+                  placeholder="What's your full name?"
+                  required
+                />
 
-                <label className="d-block m-0">
-                  <Form.Check className={styles.check_item} type="checkbox" inline />
-                  Agent
-                </label>
+                <input
+                  className={styles.email_box}
+                  name="email"
+                  type="email"
+                  placeholder="Please enter your email"
+                />
 
-                <hr className={styles.split_line} />
+                <input
+                  className={styles.password_box}
+                  name="password"
+                  type="password"
+                  placeholder="Enter 8 characters or more"
+                />
 
-                <label className="d-block m-0">
-                  <Form.Check className={styles.check_item} type="checkbox" inline />
-                  I agree to{' '}
+                <div className={styles.check_block}>
+                  <h3 className={styles.check_title}>
+                    I'm a landlord or property professional
+                  </h3>
 
-                  <Link href="#">
-                    <a><u>Terms & Conditions</u></a>
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_box}
+                      name="remember"
+                      type="checkbox"
+                    />
+                    Property Manager
+                  </label>
+
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_box}
+                      name="remember"
+                      type="checkbox"
+                    />
+                    Owner
+                  </label>
+
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_box}
+                      name="remember"
+                      type="checkbox"
+                    />
+                    Agent
+                  </label>
+
+                  <hr />
+
+                  <label className={styles.check_label}>
+                    <input
+                      className={styles.check_box}
+                      name="remember"
+                      type="checkbox"
+                    />
+                    <Link href="/">
+                      <a className={styles.terms_link}>
+                        I agree to Terms and Conditions
+                      </a>
+                    </Link>
+                  </label>
+                </div>
+                
+                <Link href="/welcome">
+                  <button className={utils.sign_btn} onClick={this.handleSubmit} type="submit">CREATE YOUR ACCOUNT</button>
+                </Link>
+              </form>
+
+              <div className={styles.bottom_links}>
+                <div className="d-flex align-items-center">
+                  <p className={styles.bottom_text}>Already have an account?</p>
+                  <Link href="/login">
+                    <a className={styles.bottom_link}>Sign In</a>
                   </Link>
-                </label>
+                </div>
               </div>
-
-              <Link href="/welcome">
-                <Button className={utils.submit_btn} onClick={this.handleSubmit}>CREATE ACCOUNT</Button>
-              </Link>
-              <p className={styles.mid_text}>Or log in with:</p>
-              <MyButton width="100%" height="45px" margin="0">GOOGLE</MyButton>
-              <div className={styles.split_space}></div>
-              <MyButton width="100%" height="45px" margin="0">FACEBOOK</MyButton>
-            </Form>
-          </Container>
+            </div>
+          </div>
         </main>
-
-        <Footer />
       </div>
     )
   }

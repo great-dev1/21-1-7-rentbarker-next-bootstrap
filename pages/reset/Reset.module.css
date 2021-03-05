@@ -1,3 +1,5 @@
+/* Logo Bar */
+
 .logo_bar {
   width: 100%;
   height: auto;
@@ -26,6 +28,8 @@
     display: none;
   }
 }
+
+/* Main */
 
 .main_img {
   display: none;
@@ -63,12 +67,13 @@
 }
 
 .form {
-  margin: 28px 0 18px;
+  margin: 36px 0 18px;
 }
 
-.email_box, .password_box {
+.email_box {
   width: 100%;
   height: 46px;
+  margin-bottom: 36px;
   padding: 14px 16px;
   border: 1px solid #c9d6d5;
   border-radius: 4px;
@@ -77,54 +82,9 @@
   line-height: 1.3;
 }
 
-.email_box::placeholder, .password_box::placeholder {
+.email_box::placeholder {
   font-weight: 500;
   color: #adadad;
-}
-
-.email_box {
-  margin-bottom: 20px;
-}
-
-.check_block {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-.check_title {
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.check_label {
-  display: block;
-  margin-bottom: 14px;
-  font-size: 16px;
-  line-height: 1.38;
-}
-
-.check_box {
-  position: relative;
-  top: 1px;
-  margin-right: 9px;
-}
-
-.check_box[type=checkbox] {
-  transform: scale(1.2);
-}
-
-.terms_link {
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.38;
-  color: #126660;
-  transition: 0.3s;
-}
-
-.terms_link:hover {
-  color: grey;
 }
 
 .bottom_text {
@@ -155,23 +115,11 @@
     line-height: 1.22;
   }
   .form {
-    margin: 40px 0;
-  }
-  .email_box, .password_box {
-    height: 50px;
+    margin: 48px 0;
   }
   .email_box {
-    margin-bottom: 32px;
-  }
-  .check_block {
-    margin-top: 24px;
-    margin-bottom: 40px;
-  }
-  .check_title {
-    font-size: 18px;
-  }
-  .check_label {
-    margin-top: 12px;
+    height: 50px;
+    margin-bottom: 48px;
   }
   .bottom_text {
     font-size: 15px;

@@ -15,7 +15,7 @@ export default function Login() {
       <Link href="/">
         <a><img className={styles.logo_bar} src="/login/logo-bar.jpg" alt="logo" /></a>
       </Link>
-      
+
       <Link href="/">
         <a><img className={styles.logo_bar_mid} src="/login/logo-bar-1.jpg" alt="logo" /></a>
       </Link>
@@ -62,7 +62,7 @@ export default function Login() {
                   Remember me
                 </label>
 
-                <Link href="/forgot">
+                <Link href="/reset">
                   <a className={styles.forgot_link}>Forgot Password?</a>
                 </Link>
               </div>
