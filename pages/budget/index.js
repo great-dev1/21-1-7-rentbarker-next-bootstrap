@@ -2,14 +2,14 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import Handle from './Handle'
 import Track from './Track'
-
 import utils from '../../styles/utils.module.css'
 import styles from './Budget.module.css'
 
@@ -25,128 +25,185 @@ const railStyle = {
   height: 8,
   marginTop: 35,
   borderRadius: 5,
-  backgroundColor: '#d8d8d8',
+  backgroundColor: '#e7e8e8',
 }
 
 export default class Budget extends React.Component {
   state = {
-    budget: '1500',
-    leaseLeng: '14',
+    budgetMin: '',
+    budgetMax: '',
+    lengthMin: '',
+    lengthMax: '',
+  }
+
+  handleBudget = (values) => {
+    this.setState({
+      budgetMin: values[0].toString(),
+      budgetMax: values[1].toString(),
+    });
+  }
+
+  handleLength = (values) => {
+    this.setState({
+      lengthMin: values[0].toString(),
+      lengthMax: values[1].toString(),
+    });
   }
 
   handleSubmit = () => {
-    const { budget, leaseLeng } = this.state;
+    const { budgetMin, budgetMax, lengthMin, lengthMax } = this.state;
 
-    localStorage.setItem('budget', budget);
-    localStorage.setItem('leaseLeng', leaseLeng);
+    localStorage.setItem('budgetMin', budgetMin);
+    localStorage.setItem('budgetMax', budgetMax);
+    localStorage.setItem('lengthMin', lengthMin);
+    localStorage.setItem('lengthMax', lengthMax);
+  }
+
+  componentDidMount() {
+    const budgetMin = localStorage.getItem('budgetMin') !== null ? localStorage.getItem('budgetMin') : '900';
+    const budgetMax = localStorage.getItem('budgetMax') !== null ? localStorage.getItem('budgetMax') : '1150';
+    const lengthMin = localStorage.getItem('lengthMin') !== null ? localStorage.getItem('lengthMin') : '6';
+    const lengthMax = localStorage.getItem('lengthMax') !== null ? localStorage.getItem('lengthMax') : '15';
+
+    this.setState({ budgetMin, budgetMax, lengthMin, lengthMax });
   }
 
   render() {
+    const { budgetMin, budgetMax, lengthMin, lengthMax } = this.state;
+
     return (
       <div>
-        {/* <img src="/testback-5.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
-
         <Head>
           <title>Budget & Lease Length</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <header className={styles.header}>
-          <Navbar />
-        </header>
+        <Navbar />
+
+        <img className={styles.body_back} src="/bed/main-back.jpg" alt="back" />
 
         <main className={styles.main}>
+          <Container className="d-flex justify-content-md-center align-items-center">
+            <Link href="/feature">
+              <a className="d-block d-sm-none">
+                <FontAwesomeIcon icon={faChevronLeft} className={utils.chevron_left} />
+              </a>
+            </Link>
+
+            <h1 className={styles.primary_title}>
+              Budget & Lease Length
+            </h1>
+          </Container>
+
           <Container className={utils.container}>
-            <h1 className={utils.primary_title}>Budget & Lease Length</h1>
-            <h2 className={utils.secondary_title}>
-              Please select a price range and lease length you are comfortable with.
-            </h2>
+            <div className={styles.main_content}>
+              <h4 className={styles.secondary_title}>
+                Please select a price range and lease length you are comfortable with.
+              </h4>
 
-            <div className={styles.slider_container}>
-              <Slider className={styles.budget_slider} rootStyle={sliderStyle} domain={[850, 1250]} step={1} mode={2} values={[900, 1150]}>
-                <Rail>
-                  {({ getRailProps }) => (
-                    <div style={railStyle} {...getRailProps()} />
-                  )}
-                </Rail>
-                <Handles>
-                  {({ handles, getHandleProps }) => (
-                    <div className="slider-handles">
-                      {handles.map(handle => (
-                        <Handle
-                          key={handle.id}
-                          handle={handle}
-                          getHandleProps={getHandleProps}
-                          budget
-                        />
-                      ))}
-                    </div>
-                  )}
-                </Handles>
-                <Tracks left={false} right={false}>
-                  {({ tracks, getTrackProps }) => (
-                    <div className="slider-tracks">
-                      {tracks.map(({ id, source, target }) => (
-                        <Track
-                          key={id}
-                          source={source}
-                          target={target}
-                          getTrackProps={getTrackProps}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </Tracks>
-              </Slider>
+              <div className={styles.slider_container}>
+                <Slider
+                  className={styles.budget_slider}
+                  rootStyle={sliderStyle}
+                  mode={2}
+                  step={10}
+                  domain={[500, 1500]}
+                  values={[budgetMin, budgetMax]}
+                  onUpdate={this.handleBudget}
+                >
+                  <Rail>
+                    {({ getRailProps }) => (
+                      <div style={railStyle} {...getRailProps()} />
+                    )}
+                  </Rail>
+                  <Handles>
+                    {({ handles, getHandleProps }) => (
+                      <div className="slider-handles">
+                        {handles.map(handle => (
+                          <Handle
+                            key={handle.id}
+                            handle={handle}
+                            getHandleProps={getHandleProps}
+                            budget
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </Handles>
+                  <Tracks left={false} right={false}>
+                    {({ tracks, getTrackProps }) => (
+                      <div className="slider-tracks">
+                        {tracks.map(({ id, source, target }) => (
+                          <Track
+                            key={id}
+                            source={source}
+                            target={target}
+                            getTrackProps={getTrackProps}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </Tracks>
+                </Slider>
 
-              <Slider className={styles.time_slider} rootStyle={sliderStyle} domain={[4, 18]} step={1} mode={2} values={[6, 15]}>
-                <Rail>
-                  {({ getRailProps }) => (
-                    <div style={railStyle} {...getRailProps()} />
-                  )}
-                </Rail>
-                <Handles>
-                  {({ handles, getHandleProps }) => (
-                    <div className="slider-handles">
-                      {handles.map(handle => (
-                        <Handle
-                          key={handle.id}
-                          handle={handle}
-                          getHandleProps={getHandleProps}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </Handles>
-                <Tracks left={false} right={false}>
-                  {({ tracks, getTrackProps }) => (
-                    <div className="slider-tracks">
-                      {tracks.map(({ id, source, target }) => (
-                        <Track
-                          key={id}
-                          source={source}
-                          target={target}
-                          getTrackProps={getTrackProps}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </Tracks>
-              </Slider>
-            </div>
+                <Slider
+                  className={styles.time_slider}
+                  rootStyle={sliderStyle}
+                  mode={2}
+                  step={1}
+                  domain={[3, 18]}
+                  values={[lengthMin, lengthMax]}
+                  onUpdate={this.handleLength}
+                >
+                  <Rail>
+                    {({ getRailProps }) => (
+                      <div style={railStyle} {...getRailProps()} />
+                    )}
+                  </Rail>
+                  <Handles>
+                    {({ handles, getHandleProps }) => (
+                      <div className="slider-handles">
+                        {handles.map(handle => (
+                          <Handle
+                            key={handle.id}
+                            handle={handle}
+                            getHandleProps={getHandleProps}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </Handles>
+                  <Tracks left={false} right={false}>
+                    {({ tracks, getTrackProps }) => (
+                      <div className="slider-tracks">
+                        {tracks.map(({ id, source, target }) => (
+                          <Track
+                            key={id}
+                            source={source}
+                            target={target}
+                            getTrackProps={getTrackProps}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </Tracks>
+                </Slider>
+              </div>
 
-            <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
-              <Link href="/feature">
-                <div className={styles.back_btn}>
-                  <MyButton width="100%" height="50px" margin="0">BACK</MyButton>
+              <div className={styles.btn_group}>
+                <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                  <Link href="/feature">
+                    <a className={utils.prev_link}>PREVIOUS PAGE</a>
+                  </Link>
+
+                  <Link href="/credit">
+                    <a className={utils.continue_btn} onClick={this.handleSubmit}>
+                      <span className="pl-3">CONTINUE</span>
+                      <img className="ml-2" src="/right-arrow.png" alt="arrow" />
+                    </a>
+                  </Link>
                 </div>
-              </Link>
-
-              <Link href="/credit">
-                <div className={styles.next_btn} onClick={this.handleSubmit}>
-                  <MyButton green={true} width="100%" height="50px" margin="0">NEXT</MyButton>
-                </div>
-              </Link>
+              </div>
             </div>
           </Container>
         </main>

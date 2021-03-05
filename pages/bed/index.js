@@ -48,16 +48,12 @@ export default class Bed extends React.Component {
 
     return (
       <div>
-        {/* <img src="/testback-3.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
-
         <Head>
           <title>Roommates, Beds and Baths</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        {/* <header className={styles.header}> */}
         <Navbar />
-        {/* </header> */}
 
         <img className={styles.body_back} src="/bed/main-back.jpg" alt="back" />
 

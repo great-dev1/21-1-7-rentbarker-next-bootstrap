@@ -27,7 +27,7 @@ export default class Featrue extends React.Component {
 
   handleToggle = (featureToggle) => () => {
     this.setState(prevState => ({
-      [featureToggle]: !prevState.[featureToggle]
+      [featureToggle]: !prevState[featureToggle]
     }));
   }
 
@@ -176,16 +176,12 @@ export default class Featrue extends React.Component {
 
     return (
       <div>
-        {/* <img src="/testback-4.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
-
         <Head>
           <title>Unique Features</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        {/* <header className={styles.header}> */}
         <Navbar />
-        {/* </header> */}
 
         <img className={styles.body_back} src="/bed/main-back.jpg" alt="back" />
 
@@ -203,7 +199,6 @@ export default class Featrue extends React.Component {
           </Container>
 
           <Container className={utils.container}>
-
             <div className={styles.main_content}>
               <h4 className={styles.secondary_title}>
                 Select the apartment features you want in and indicate the importance.
