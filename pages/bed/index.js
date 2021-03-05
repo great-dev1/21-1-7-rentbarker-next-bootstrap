@@ -76,7 +76,6 @@ export default class Bed extends React.Component {
               {/* Rommmates */}
               <h4 className={styles.secondary_title}>Roomates</h4>
               <div className={styles.box_group}>
-                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
                 <div
                   className={roommateNum === '0' ? styles.box_active : styles.box_inactive}
                   onClick={this.handleChange('roommateNum', '0')}
@@ -124,13 +123,11 @@ export default class Bed extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/* </div> */}
               </div>
 
               {/* Bedrooms */}
               <h4 className={styles.secondary_title}>Bedrooms</h4>
               <div className={styles.box_group}>
-                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
                 <div
                   className={bedroomNum === 'studio' ? styles.box_active : styles.box_inactive}
                   onClick={this.handleChange('bedroomNum', 'studio')}
@@ -191,13 +188,11 @@ export default class Bed extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/* </div> */}
               </div>
 
               {/* Bathrooms */}
               <h4 className={styles.secondary_title}>Bathrooms</h4>
               <div className={styles.box_group}>
-                {/* <div className="d-flex justify-content-between justify-content-md-center flex-wrap"> */}
                 <div
                   className={bathroomNum === '1' ? styles.box_active : styles.box_inactive}
                   onClick={this.handleChange('bathroomNum', '1')}
@@ -245,7 +240,6 @@ export default class Bed extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/* </div> */}
               </div>
 
               <div className={styles.btn_group}>

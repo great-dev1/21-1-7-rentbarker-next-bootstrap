@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -13,7 +13,7 @@ import styles from './Credit.module.css'
 export default class Credit extends React.Component {
   state = {
     useGuarantor: false,
-    myCredit: '',
+    guarantorCredit: '',
   }
 
   handleCheck = (e) => {
@@ -28,17 +28,16 @@ export default class Credit extends React.Component {
   }
 
   handleSubmit = () => {
-    const { useGuarantor, myCredit } = this.state;
+    const { guarantorCredit } = this.state;
 
-    localStorage.setItem('useGuarantor', useGuarantor);
-    localStorage.setItem('myCredit', myCredit);
+    localStorage.setItem('guarantorCredit', guarantorCredit);
   }
 
   componentDidMount() {
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '';
+    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : '';
 
-    this.setState({ useGuarantor, myCredit });
+    this.setState({ useGuarantor, guarantorCredit });
   }
 
   componentDidUpdate() {
@@ -46,12 +45,12 @@ export default class Credit extends React.Component {
   }
 
   render() {
-    const { useGuarantor, myCredit } = this.state;
+    const { guarantorCredit } = this.state;
 
     return (
       <div>
         <Head>
-          <title>Credit Score</title>
+          <title>Credit Score - Guarantor</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -61,7 +60,7 @@ export default class Credit extends React.Component {
 
         <main className={styles.main}>
           <Container className="d-flex justify-content-md-center align-items-center">
-            <Link href="/budget">
+            <Link href="/credit/roommate">
               <a className="d-block d-sm-none">
                 <FontAwesomeIcon icon={faChevronLeft} className={utils.chevron_left} />
               </a>
@@ -75,25 +74,13 @@ export default class Credit extends React.Component {
           <Container className={utils.container}>
             <div className={styles.main_content}>
               <h4 className={styles.secondary_title}>
-                Please estimate your current credit score. This credit score will be verified.
+                Please estimate your guarantor’s credit score.
               </h4>
-
-              <label className={styles.check_label}>
-                <Form.Check
-                  className="mr-1"
-                  name="useGuarantor"
-                  checked={useGuarantor}
-                  onChange={this.handleCheck}
-                  type="checkbox"
-                  inline
-                />
-                I am using a guarantor, and estimating their credit score.
-              </label>
 
               <div className={styles.box_group}>
                 <div
-                  className={myCredit === '639-' ? styles.box_active : styles.box_inactive}
-                  onClick={this.handleChange('myCredit', '639-')}
+                  className={guarantorCredit === '639-' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('guarantorCredit', '639-')}
                 >
                   <div className={styles.circle}>
                     <div className={styles.inner_circle}></div>
@@ -107,8 +94,8 @@ export default class Credit extends React.Component {
                 </div>
 
                 <div
-                  className={myCredit === '640-679' ? styles.box_active : styles.box_inactive}
-                  onClick={this.handleChange('myCredit', '640-679')}
+                  className={guarantorCredit === '640-679' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('guarantorCredit', '640-679')}
                 >
                   <div className={styles.circle}>
                     <div className={styles.inner_circle}></div>
@@ -122,8 +109,8 @@ export default class Credit extends React.Component {
                 </div>
 
                 <div
-                  className={myCredit === '680-719' ? styles.box_active : styles.box_inactive}
-                  onClick={this.handleChange('myCredit', '680-719')}
+                  className={guarantorCredit === '680-719' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('guarantorCredit', '680-719')}
                 >
                   <div className={styles.circle}>
                     <div className={styles.inner_circle}></div>
@@ -137,8 +124,8 @@ export default class Credit extends React.Component {
                 </div>
 
                 <div
-                  className={myCredit === '720+' ? styles.box_active : styles.box_inactive}
-                  onClick={this.handleChange('myCredit', '720+')}
+                  className={guarantorCredit === '720+' ? styles.box_active : styles.box_inactive}
+                  onClick={this.handleChange('guarantorCredit', '720+')}
                 >
                   <div className={styles.circle}>
                     <div className={styles.inner_circle}></div>
@@ -154,11 +141,11 @@ export default class Credit extends React.Component {
 
               <div className={styles.btn_group}>
                 <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
-                  <Link href="/budget">
+                  <Link href="/credit/roommate">
                     <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
-                  <Link href={useGuarantor ? "/credit/roommate" : "/login"}>
+                  <Link href="/login">
                     <a className={utils.continue_btn} onClick={this.handleSubmit}>
                       <span className="pl-3">CONTINUE</span>
                       <img className="ml-2" src="/right-arrow.png" alt="arrow" />

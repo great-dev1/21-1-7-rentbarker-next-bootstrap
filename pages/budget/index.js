@@ -68,6 +68,10 @@ export default class Budget extends React.Component {
     this.setState({ budgetMin, budgetMax, lengthMin, lengthMax });
   }
 
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+
   render() {
     const { budgetMin, budgetMax, lengthMin, lengthMax } = this.state;
 
