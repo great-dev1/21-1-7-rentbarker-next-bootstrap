@@ -198,7 +198,7 @@ export default class Featrue extends React.Component {
             </h2>
           </Container>
 
-          <Container className={utils.container}>
+          <Container className={styles.container}>
             <div className={styles.main_content}>
               <h3 className={styles.secondary_title}>
                 Select the apartment features you want in and indicate the importance.

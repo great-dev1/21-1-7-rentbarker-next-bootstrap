@@ -6,7 +6,6 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import MyButton from '../../components/MyButton'
 import PropertyCard from './PropertyCard'
-import utils from '../../styles/utils.module.css'
 import styles from './Property.module.css'
 
 export default function Property() {
@@ -25,7 +24,7 @@ export default function Property() {
           <h2 className={styles.secondary_title}>Search for the properties you would like to compete for you.</h2>
         </Container>
 
-        <Container className={utils.container}>
+        <Container className={styles.container}>
           <Tabs defaultActiveKey="url" className={styles.property_tabs}>
             <Tab className={styles.property_tab} eventKey="url" title="Listing URL">
               <Form>
@@ -104,7 +103,7 @@ export default function Property() {
 
               <div className={styles.submit_btn}>
                 <Link href="/bed">
-                  <a><MyButton green width="100%" height="44px" margin="0">SUBMIT</MyButton></a>
+                  <a><MyButton>SUBMIT</MyButton></a>
                 </Link>
               </div>
             </Tab>

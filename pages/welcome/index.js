@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 
@@ -24,7 +25,10 @@ export default class Welcome extends React.Component {
 
     return (
       <div>
-        {/* <img src="/testback-8.png" style={{ position: "absolute", "zIndex": "99", top: "-250px", width: "100%", opacity: "0.5" }} /> */}
+        <Head>
+          <title>Welcome</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
         <Container className={utils.container}>
           <main className={styles.main}>
@@ -37,19 +41,23 @@ export default class Welcome extends React.Component {
               offer, such as your requirements, job history and credit score.
             </p>
 
-            <div className={styles.btn_group}>
-              <Link href="/brochure/personal">
-                <a><MyButton green={true} width="275px" height="45px" margin="10px">CONTINUE TO MY APPLICATION</MyButton></a>
-              </Link>
+            <div className="d-sm-flex flex-column align-items-center">
+              <div className="m-2">
+                <Link href="/brochure/personal">
+                  <a><MyButton width="275px" height="45px">CONTINUE TO MY APPLICATION</MyButton></a>
+                </Link>
+              </div>
 
-              <Link href="/">
-                <a><MyButton width="275px" height="45px" margin="10px">SAVE FOR LATER</MyButton></a>
-              </Link>
+              <div className="m-2">
+                <Link href="/">
+                  <a><MyButton width="275px" height="45px" borderColor="#" color="#126660" backgroundColor="#ffffff">SAVE FOR LATER</MyButton></a>
+                </Link>
+              </div>
             </div>
           </main>
         </Container>
         <Footer />
-      </div>
+      </div >
     )
   }
 }

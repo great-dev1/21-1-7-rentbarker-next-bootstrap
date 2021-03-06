@@ -1,4 +1,5 @@
 /* General */
+
 .primary_title {
   margin-bottom: 34px;
   font-size: 36px;
@@ -15,13 +16,13 @@
   .primary_title {
     font-size: 55px;
   }
-
   .secondary_title {
     font-size: 28px;
   }
 }
 
 /* Header */
+
 .header {
   background-image: url("/home/header-back.jpg");
   background-repeat: no-repeat;
@@ -35,11 +36,13 @@
 }
 
 /* Main */
+
 .main {
   text-align: center;
 }
 
 /* Intro Section */
+
 .intro_section {
   padding: 50px 0;
 }
@@ -57,25 +60,23 @@
   line-height: 24px;
 }
 
-
 @media only screen and (min-width: 768px) {
   .intro_section {
     padding: 100px 0 118px;
   }
-
   .intro_title {
     font-size: 32px;
   }
 }
 
 /* Service Section */
+
 .service_section {
   position: relative;
   padding: 50px 0;
 }
 
-.service_back,
-.service_back_mobile {
+.service_back, .service_back_mobile {
   display: none;
   position: absolute;
   z-index: -1;
@@ -121,21 +122,19 @@
   .service_section {
     padding: 93px 0;
   }
-
   .service_back {
     display: block;
   }
-
   .service_back_mobile {
     display: none;
   }
-
   .service_row {
     margin: 50px 0;
   }
 }
 
 /* Select Section */
+
 .select_section {
   padding: 60px 0 64px;
 }
@@ -185,7 +184,6 @@
     width: 40vw;
     margin-left: 40px;
   }
-
   .select_panel {
     top: 0;
     left: -60px;
@@ -197,24 +195,22 @@
     width: 60vw;
     margin-left: 60px;
   }
-
   .select_panel {
     top: -13px;
     left: -93px;
     padding: 28px 55px 44px;
   }
-
   .select_title {
     margin-bottom: 33px;
     font-size: 34px;
   }
-
   .learn_more {
     font-size: 18px;
   }
 }
 
 /* Review Section */
+
 .review_section {
   padding-bottom: 50px;
 }
@@ -273,13 +269,13 @@
   .review_section {
     padding: 107px 0 182px;
   }
-
   .review_row {
     margin: 81px 0 0;
   }
 }
 
 /* Free section */
+
 .free_row {
   margin: 0;
   color: white;
@@ -292,8 +288,7 @@
   text-align: left;
 }
 
-.free_title,
-.free_title_1 {
+.free_title, .free_title_1 {
   font-size: 30px;
   font-weight: 500;
 }
@@ -317,22 +312,19 @@
   .free_description {
     padding: 30px 20px;
   }
-
-  .free_title,
-  .free_title_1 {
+  .free_title, .free_title_1 {
     font-size: 38px;
   }
-
   .free_title {
     margin-bottom: 40px;
   }
-
   .free_detail {
     font-size: 19px;
   }
 }
 
 /* Start Section */
+
 .start_section {
   padding: 50px 0 80px;
   background-color: #f5f5f5;
@@ -343,8 +335,7 @@
   margin: 60px auto 0;
 }
 
-.prepend,
-.input_box {
+.prepend, .input_box {
   height: 60px;
   border: none !important;
   color: #5e6870 !important;
@@ -375,7 +366,6 @@
     padding: 82px 0 118px;
     background-color: #f5f5f5;
   }
-
   .search_box {
     margin-right: 18px;
     margin-bottom: 0;
@@ -383,6 +373,7 @@
 }
 
 /* Footer */
+
 .footer {
   margin: 50px 0 18px;
   text-align: center;
@@ -431,16 +422,13 @@
     margin: 19px 0;
     text-align: center;
   }
-
   .footer_links {
     max-width: 700px;
     margin: 42px auto 27px;
   }
-
   .social_links {
     max-width: 328px;
   }
-
   .copyright {
     margin-top: 39px;
   }

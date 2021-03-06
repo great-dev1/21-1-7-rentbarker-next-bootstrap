@@ -2,6 +2,12 @@
   padding: 20px 0;
 }
 
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+}
+
 .primary_title {
   font-size: 24px;
   font-weight: bold;
@@ -96,7 +102,7 @@
   margin-top: 40px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
   .property_card_wrapper {
     margin: 16px 0 0;
   }

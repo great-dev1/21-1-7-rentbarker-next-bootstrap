@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -72,15 +72,15 @@ export default class Credit extends React.Component {
             </h2>
           </Container>
 
-          <Container className={utils.container}>
+          <Container className={styles.container}>
             <div className={styles.main_content}>
               <h3 className={styles.secondary_title}>
                 Please estimate your current credit score. This credit score will be verified.
               </h3>
 
               <label className={styles.check_label}>
-                <Form.Check
-                  className="mr-1"
+                <input
+                  className={styles.check_box}
                   name="useGuarantor"
                   checked={useGuarantor}
                   onChange={this.handleCheck}
@@ -158,7 +158,7 @@ export default class Credit extends React.Component {
                     <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
-                  <Link href={useGuarantor ? "/credit/roommate" : "/login"}>
+                  <Link href={useGuarantor ? "/credit/roommate" : "/signup"}>
                     <a className={utils.continue_btn} onClick={this.handleSubmit}>
                       <span className="pl-3">CONTINUE</span>
                       <img className="ml-2" src="/right-arrow.png" alt="arrow" />

@@ -70,7 +70,7 @@ export default class Bed extends React.Component {
             </h2>
           </Container>
 
-          <Container className={utils.container}>
+          <Container className={styles.container}>
             <div className={styles.main_content}>
 
               {/* Rommmates */}

@@ -1,29 +1,25 @@
-.green_btn,
-.white_btn {
-  border: 1.6px solid #126660 !important;
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+@media only screen and (max-width: 576px) {
+  .btn_style {
+    width: 100% !important;
+  }
+}
+
+.btn_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1.6px;
+  border-style: solid;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
   transition: 0.3s;
 }
 
-.green_btn {
-  color: white;
-  background-color: #126660;
-}
-
-.green_btn:hover {
-  color: #126660;
-  background-color: white !important;
-}
-
-.white_btn {
-  color: #126660;
-  background-color: white;
-}
-
-.white_btn:hover {
+.btn_style:hover, .btn_style:focus {
+  border: none;
   color: white !important;
-  background-color: #126660 !important;
+  background-color: grey !important;
 }

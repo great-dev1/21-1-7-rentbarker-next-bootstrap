@@ -13,8 +13,6 @@ import styles from '../styles/index.module.css'
 export default function Home() {
   return (
     <div>
-      {/* <img src="/testback-1.png" alt="" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
-
       <Head>
         <title>RentBarker</title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,11 +25,26 @@ export default function Home() {
           <Container className={utils.container}>
             <h1 className={styles.primary_title}>Welcome to RentBarker.</h1>
 
-            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-              <Link href="/property">
-                <a><MyButton green={true} width="224px" height="45px" margin="12px">FOR TENANTS</MyButton></a>
-              </Link>
-              <MyButton width="224px" height="45px" margin="12px">FOR LANDLORDS</MyButton>
+            <div className="d-sm-flex justify-content-center">
+              <div className="m-2">
+                <Link href="/property">
+                  <a>
+                    <MyButton width="224px" height="45px">
+                      FOR TENANTS
+                    </MyButton>
+                  </a>
+                </Link>
+              </div>
+
+              <div className="m-2">
+                <Link href="/">
+                  <a>
+                    <MyButton width="224px" height="45px" color="#126660" backgroundColor="#ffffff">
+                      FOR LANDLORDS
+                    </MyButton>
+                  </a>
+                </Link>
+              </div>
             </div>
           </Container>
         </div>

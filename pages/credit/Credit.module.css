@@ -22,6 +22,12 @@
   padding: 20px 0;
 }
 
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 0;
+  }
+}
+
 .primary_title {
   margin-bottom: 12px;
   font-size: 20px;
@@ -45,6 +51,16 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.57;
+}
+
+.check_box {
+  position: relative;
+  top: 2px;
+  margin-right: 9px;
+}
+
+.check_box[type=checkbox] {
+  transform: scale(1.2);
 }
 
 .box_group {

@@ -99,7 +99,7 @@ export default class Budget extends React.Component {
             </h2>
           </Container>
 
-          <Container className={utils.container}>
+          <Container className={styles.container}>
             <div className={styles.main_content}>
               <h3 className={styles.secondary_title}>
                 Please select a price range and lease length you are comfortable with.
