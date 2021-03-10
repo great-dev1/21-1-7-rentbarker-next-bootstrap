@@ -15,8 +15,9 @@
   left: calc(50vw - 70px);
 }
 
-.avatar {
-  object-fit: none;
+.username {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .link {

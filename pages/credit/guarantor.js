@@ -145,7 +145,7 @@ export default class Credit extends React.Component {
                     <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
-                  <Link href="/login">
+                  <Link href="/signup">
                     <a className={utils.continue_btn} onClick={this.handleSubmit}>
                       <span className="pl-3">CONTINUE</span>
                       <img className="ml-2" src="/right-arrow.png" alt="arrow" />

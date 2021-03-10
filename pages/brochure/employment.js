@@ -2,13 +2,12 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import { Container, Form, Row, Col, Button } from 'react-bootstrap'
-import { ProgressBar, Step } from 'react-step-progress-bar'
-import 'react-step-progress-bar/styles.css'
+import { Form, Row, Col } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
@@ -59,7 +58,7 @@ export default class Employment extends React.Component {
 
     const form = e.currentTarget;
     if (form.checkValidity()) {
-      Router.push('/brochure/submit');
+      Router.push('/brochure/review');
     }
   }
 
@@ -68,7 +67,7 @@ export default class Employment extends React.Component {
     const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : 'Mark Smith';
     const employerLength = localStorage.getItem('employerLength') !== null ? localStorage.getItem('employerLength') : '3 years';
     const employerAddress = localStorage.getItem('employerAddress') !== null ? localStorage.getItem('employerAddress') : '1234 Magnolia Ave';
-    const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : 'Dallas';
+    const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : 'City 1';
     const employerState = localStorage.getItem('employerState') !== null ? localStorage.getItem('employerState') : 'TX';
     const employerZipcode = localStorage.getItem('employerZipcode') !== null ? localStorage.getItem('employerZipcode') : '55555';
     const myIncome = localStorage.getItem('myIncome') !== null ? localStorage.getItem('myIncome') : '4000';
@@ -91,63 +90,105 @@ export default class Employment extends React.Component {
 
     return (
       <div>
-        {/* <img src="/testback-11.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
         <Head>
-          <title>Employment Information</title>
+          <title>Employment</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <div className={styles.navbar}>
+          <Navbar />
+        </div>
+
+        <header className={styles.header}>
+          <Link href="/brochure/additional">
+            <a>
+              <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
+            </a>
+          </Link>
+
+          <div className="d-flex justify-content-center">
+            <Link href="/">
+              <a className={styles.brand}>
+                <img src="/brochure/brand.png" alt="brand" />
+              </a>
+            </Link>
+          </div>
+
+          <div className={styles.header_step}>
+            <img src="/brochure/info-icon.png" alt="info" />
+            <div className={styles.progress_step_text}>
+              <p className={styles.progress_step_title_orange}>STEP 03 <span className={styles.progress_step_title_grey}> / 04</span></p>
+              <p className={styles.progress_step_detail_white}>Employment</p>
+            </div>
+          </div>
+
+          <div className={styles.progress_bar}>
+            <div className={styles.progress_step_three}></div>
+            <div className={styles.progress_step_rest}></div>
+          </div>
+        </header>
 
         <main className={styles.main}>
-          <Container className={utils.container}>
-            <h1 className={styles.primary_title}>Build Your Barker Brochure</h1>
-            <p>
-              This free application will be used for all landlords that bid on you.<br />
-              No hidden fees and hassel-free! Your personal information will remain anonymous to all landlords.
-            </p>
+          <div className={styles.main_content}>
+            <div className={styles.left_content}>
+              <div className={styles.progress_header}>
+                <img src="/brochure/info-icon.png" alt="info" />
+                <p className={styles.progress_header_text}>
+                  COMPLETE<br />
+                  ALL STEPS:
+                </p>
+              </div>
 
-            <div className={styles.progress_bar}>
-              <ProgressBar percent={66.66} filledBackground="#007c77">
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 01</p>
+                  <p className={styles.progress_step_detail_white}>Basic Details</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_divider_white}></div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 02</p>
+                  <p className={styles.progress_step_detail_white}>Additional Info</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.incomplete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
-              </ProgressBar>
+              <div className={styles.progress_divider_white}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-3-orange.png" alt="step 3" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_orange}>STEP 03</p>
+                  <p className={styles.progress_step_detail_white}>Employment</p>
+                </div>
+              </div>
+
+              <div className={styles.progress_divider_grey}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-4-grey.png" alt="step 4" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 04</p>
+                  <p className={styles.progress_step_detail_grey}>Review</p>
+                </div>
+              </div>
             </div>
 
-            <div className={styles.form_container}>
-              <h2 className={styles.form_title}>Employment Information</h2>
+            <div className={styles.right_content}>
+              <div className="d-none d-md-block">
+                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <p className={styles.primary_detail}>
+                  This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
+                  Your personal information will remain anonymous to all landlords.
+                </p>
+              </div>
 
               <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
-                <h4 className={styles.input_title_bg}>Add employment history for the past year</h4>
+                <h4 className={styles.secondary_title}>Employment History for the Past Year</h4>
                 <Row>
                   <Col md={12}>
                     <Form.Control
@@ -193,18 +234,23 @@ export default class Employment extends React.Component {
                       required
                     />
                   </Col>
-                  <Col md={6}>
+                  <Col xs={4} md={6}>
                     <Form.Control
                       className={styles.input_box}
                       name="employerCity"
+                      as="select"
                       value={employerCity}
                       onChange={this.handleChange}
-                      type="text"
-                      placeholder="City"
+                      custom
                       required
-                    />
+                    >
+                      <option value="">City</option>
+                      <option value="City 1">City 1</option>
+                      <option value="City 2">City 2</option>
+                      <option value="City 3">City 3</option>
+                    </Form.Control>
                   </Col>
-                  <Col md={3}>
+                  <Col xs={4} md={3}>
                     <Form.Control
                       className={styles.input_box}
                       name="employerState"
@@ -220,7 +266,7 @@ export default class Employment extends React.Component {
                       <option value="NV">NV</option>
                     </Form.Control>
                   </Col>
-                  <Col md={3}>
+                  <Col xs={4} md={3}>
                     <Form.Control
                       className={styles.input_box}
                       name="employerZipcode"
@@ -233,12 +279,12 @@ export default class Employment extends React.Component {
                   </Col>
                 </Row>
 
-                <h3 className={styles.add_text}>
-                  <div className={styles.plus_btn}>+</div>
-                  Add Employment
-                </h3>
+                <div className="d-flex align-items-center mb-4">
+                  <img src="/brochure/plus-icon.png" alt="plus" />
+                  <p className={styles.add_text}>ADD EMPLOYMENT</p>
+                </div>
 
-                <h4 className={styles.input_title_bg}>Estimate your income</h4>
+                <h4 className={styles.secondary_title}>Estimation</h4>
                 <Row>
                   <Col md={12}>
                     <Form.Control
@@ -247,7 +293,7 @@ export default class Employment extends React.Component {
                       value={myIncome}
                       onChange={this.handleChange}
                       type="text"
-                      placeholder="Gross Monthly Income"
+                      placeholder="Estimate Your Income (Monthly)"
                       required
                     />
                   </Col>
@@ -255,7 +301,6 @@ export default class Employment extends React.Component {
 
                 {useGuarantor &&
                   <div>
-                    <h4 className={styles.input_title_bg}>Estimate your guarantor's income</h4>
                     <Row>
                       <Col md={12}>
                         <Form.Control
@@ -264,14 +309,11 @@ export default class Employment extends React.Component {
                           value={guarantorIncome}
                           onChange={this.handleChange}
                           type="text"
-                          placeholder="Gross Monthly Income"
+                          placeholder="Estimate Your Guarantor’s Income (Monthly)"
                           required
                         />
                       </Col>
-                    </Row>
 
-                    <h4 className={styles.input_title_bg}>Estimate your roommate(s) income</h4>
-                    <Row>
                       <Col md={12}>
                         <Form.Control
                           className={styles.input_box}
@@ -279,7 +321,7 @@ export default class Employment extends React.Component {
                           value={roommateIncome}
                           onChange={this.handleChange}
                           type="text"
-                          placeholder="Gross Monthly Income (combined if more than one)"
+                          placeholder="Estimate Your Roommate(s) Income (Monthly)"
                           required
                         />
                       </Col>
@@ -287,16 +329,20 @@ export default class Employment extends React.Component {
                   </div>
                 }
 
-                <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
+                <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
                   <Link href="/brochure/additional">
-                    <a><MyButton width="205px" height="45px" margin="20px">PREVIOUS PAGE</MyButton></a>
+                    <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
-                  <Button className={styles.continue_btn} type="submit">CONTINUE</Button>
+                  <button className={utils.continue_btn} type="submit">
+                    <span className="pl-3">CONTINUE</span>
+                    <img className="ml-2" src="/right-arrow.png" alt="arrow" />
+                  </button>
                 </div>
               </Form>
+
             </div>
-          </Container>
+          </div>
         </main>
 
         <Footer />

@@ -2,13 +2,12 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Router from 'next/router'
-import { Container, Form, Row, Col, Button } from 'react-bootstrap'
-import { ProgressBar, Step } from 'react-step-progress-bar'
-import 'react-step-progress-bar/styles.css'
+import { Form, Row, Col } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
@@ -170,65 +169,107 @@ export default class Additional extends React.Component {
 
     return (
       <div>
-        {/* <img src="/testback-10.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
         <Head>
           <title>Additional Information</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <div className={styles.navbar}>
+          <Navbar />
+        </div>
+
+        <header className={styles.header}>
+          <Link href="/brochure">
+            <a>
+              <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
+            </a>
+          </Link>
+
+          <div className="d-flex justify-content-center">
+            <Link href="/">
+              <a className={styles.brand}>
+                <img src="/brochure/brand.png" alt="brand" />
+              </a>
+            </Link>
+          </div>
+
+          <div className={styles.header_step}>
+            <img src="/brochure/info-icon.png" alt="info" />
+            <div className={styles.progress_step_text}>
+              <p className={styles.progress_step_title_orange}>STEP 02 <span className={styles.progress_step_title_grey}> / 04</span></p>
+              <p className={styles.progress_step_detail_white}>Additional Info</p>
+            </div>
+          </div>
+
+          <div className={styles.progress_bar}>
+            <div className={styles.progress_step_two}></div>
+            <div className={styles.progress_step_rest}></div>
+          </div>
+        </header>
 
         <main className={styles.main}>
-          <Container className={utils.container}>
-            <h1 className={styles.primary_title}>Build Your Barker Brochure</h1>
-            <p>
-              This free application will be used for all landlords that bid on you.<br />
-              No hidden fees and hassel-free! Your personal information will remain anonymous to all landlords.
-            </p>
+          <div className={styles.main_content}>
+            <div className={styles.left_content}>
+              <div className={styles.progress_header}>
+                <img src="/brochure/info-icon.png" alt="info" />
+                <p className={styles.progress_header_text}>
+                  COMPLETE<br />
+                  ALL STEPS:
+                </p>
+              </div>
 
-            <div className={styles.progress_bar}>
-              <ProgressBar percent={33.33} filledBackground="#007c77">
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 01</p>
+                  <p className={styles.progress_step_detail_white}>Basic Details</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_divider_white}></div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.incomplete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-2-orange.png" alt="step 2" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_orange}>STEP 02</p>
+                  <p className={styles.progress_step_detail_white}>Additional Info</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.incomplete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
-              </ProgressBar>
+              <div className={styles.progress_divider_grey}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-3-grey.png" alt="step 3" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 03</p>
+                  <p className={styles.progress_step_detail_grey}>Employment</p>
+                </div>
+              </div>
+
+              <div className={styles.progress_divider_grey}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-4-grey.png" alt="step 4" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 04</p>
+                  <p className={styles.progress_step_detail_grey}>Review</p>
+                </div>
+              </div>
             </div>
 
-            <div className={styles.form_container}>
-              <h2 className={styles.form_title}>Additional Information</h2>
+            <div className={styles.right_content}>
+              <div className="d-none d-md-block">
+                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <p className={styles.primary_detail}>
+                  This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
+                  Your personal information will remain anonymous to all landlords.
+                </p>
+              </div>
 
               <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
-                <h4 className={styles.input_title}>Desired Move-in Date</h4>
+                <h4 className={styles.secondary_title}>Desired Move-in Date</h4>
                 <Row>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Form.Control
                       className={styles.input_box}
                       name="moveMonth"
@@ -244,7 +285,7 @@ export default class Additional extends React.Component {
                       <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
                     </Form.Control>
                   </Col>
-                  <Col md={4}>
+                  <Col xs={6} md={4}>
                     <Form.Control
                       className={styles.input_box}
                       name="moveDate"
@@ -278,208 +319,196 @@ export default class Additional extends React.Component {
                 </Row>
 
                 <div className={styles.quiz}>
-                  <p>Do you (or any household member) have any pets?</p>
-                  <Form.Check
-                    id="petRadio1"
-                    name="petYes"
-                    checked={petYes}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="Yes"
-                    required
-                  />
-                  <Form.Check
-                    id="petRadio2"
-                    name="petYes"
-                    checked={petNo}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="No"
-                    required
-                  />
-
-                  {petYes &&
-                    <div className={styles.addition_input}>
-                      <h4 className={styles.input_title}>
-                        Please provide the species, breed, age, and weight of the pet:
-                      </h4>
-                      <Row>
-                        <Col md={8}>
-                          <Form.Control
-                            className={styles.input_box}
-                            name="petInfo"
-                            value={petInfo}
-                            onChange={this.handleChange}
-                            type="text"
-                            placeholder="Species, breed, age, and weight"
-                            required
-                          />
-                        </Col>
-                      </Row>
-                    </div>
-                  }
-                </div>
-
-                {petYes &&
-                  <div className={styles.quiz}>
-                    <p>Is the pet a registered Emotional Support Animal?</p>
+                  <h4 className={styles.secondary_title}>Do you (or any household member) have any pets?</h4>
+                  <div className={styles.radio_group}>
                     <Form.Check
-                      id="esaRadio1"
-                      name="esaYes"
-                      checked={esaYes}
+                      id="petRadio1"
+                      name="petYes"
+                      checked={petYes}
                       onChange={this.handleRadio}
                       type="radio"
                       label="Yes"
                       required
                     />
                     <Form.Check
-                      id="esaRadio2"
-                      name="esaYes"
-                      checked={esaNo}
+                      id="petRadio2"
+                      name="petYes"
+                      checked={petNo}
                       onChange={this.handleRadio}
                       type="radio"
                       label="No"
                       required
                     />
                   </div>
+
+                  {petYes &&
+                    <div className={styles.addition_input}>
+                      <Form.Control
+                        className={styles.input_box}
+                        name="petInfo"
+                        value={petInfo}
+                        onChange={this.handleChange}
+                        type="text"
+                        placeholder="Please provide the species, breed, age, and weight of the pet:"
+                        required
+                      />
+                    </div>
+                  }
+                </div>
+
+                {petYes &&
+                  <div className={styles.quiz}>
+                    <h4 className={styles.secondary_title}>Is the pet a registered Emotional Support Animal?</h4>
+                    <div className={styles.radio_group}>
+                      <Form.Check
+                        id="esaRadio1"
+                        name="esaYes"
+                        checked={esaYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        label="Yes"
+                        required
+                      />
+                      <Form.Check
+                        id="esaRadio2"
+                        name="esaYes"
+                        checked={esaNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        label="No"
+                        required
+                      />
+                    </div>
+                  </div>
                 }
 
                 <div className={styles.quiz}>
-                  <p>Are you (or any household member) a smoker?</p>
-                  <Form.Check
-                    id="smokerRadio1"
-                    name="smokerYes"
-                    checked={smokerYes}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="Yes"
-                    required
-                  />
-                  <Form.Check
-                    id="smokerRadio2"
-                    name="smokerYes"
-                    checked={smokerNo}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="No"
-                    required
-                  />
+                  <h4 className={styles.secondary_title}>Are you (or any household member) a smoker?</h4>
+                  <div className={styles.radio_group}>
+                    <Form.Check
+                      id="smokerRadio1"
+                      name="smokerYes"
+                      checked={smokerYes}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="Yes"
+                      required
+                    />
+                    <Form.Check
+                      id="smokerRadio2"
+                      name="smokerYes"
+                      checked={smokerNo}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="No"
+                      required
+                    />
+                  </div>
                 </div>
 
                 <div className={styles.quiz}>
-                  <p>Have you ever been evicted?</p>
-                  <Form.Check
-                    id="evictionRadio1"
-                    name="evictionYes"
-                    checked={evictionYes}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="Yes"
-                    required
-                  />
-                  <Form.Check
-                    id="evictionRadio2"
-                    name="evictionYes"
-                    checked={evictionNo}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="No"
-                    required
-                  />
+                  <h4 className={styles.secondary_title}>Have you ever been evicted?</h4>
+                  <div className={styles.radio_group}>
+                    <Form.Check
+                      id="evictionRadio1"
+                      name="evictionYes"
+                      checked={evictionYes}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="Yes"
+                      required
+                    />
+                    <Form.Check
+                      id="evictionRadio2"
+                      name="evictionYes"
+                      checked={evictionNo}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="No"
+                      required
+                    />
+                  </div>
 
                   {evictionYes &&
                     <div className={styles.addition_input}>
-                      <h4 className={styles.input_title}>
-                        If yes, please explain:
-                      </h4>
-                      <Row>
-                        <Col md={8}>
-                          <Form.Control
-                            className={styles.input_box}
-                            name="evictionInfo"
-                            value={evictionInfo}
-                            onChange={this.handleChange}
-                            type="text"
-                            placeholder="Explain eviction details"
-                            required
-                          />
-                        </Col>
-                      </Row>
+                      <Form.Control
+                        className={styles.input_box}
+                        name="evictionInfo"
+                        value={evictionInfo}
+                        onChange={this.handleChange}
+                        type="text"
+                        placeholder="Explain eviction details"
+                        required
+                      />
                     </div>
                   }
                 </div>
 
                 <div className={styles.quiz}>
-                  <p>Do you have any judgements or liens?</p>
-                  <Form.Check
-                    id="judgeRadio1"
-                    name="judgeYes"
-                    checked={judgeYes}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="Yes"
-                    required
-                  />
-                  <Form.Check
-                    id="judgeRadio2"
-                    name="judgeYes"
-                    checked={judgeNo}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="No"
-                    required
-                  />
+                  <h4 className={styles.secondary_title}>Do you have any judgements or liens?</h4>
+                  <div className={styles.radio_group}>
+                    <Form.Check
+                      id="judgeRadio1"
+                      name="judgeYes"
+                      checked={judgeYes}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="Yes"
+                      required
+                    />
+                    <Form.Check
+                      id="judgeRadio2"
+                      name="judgeYes"
+                      checked={judgeNo}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="No"
+                      required
+                    />
+                  </div>
 
                   {judgeYes &&
                     <div className={styles.addition_input}>
-                      <h4 className={styles.input_title}>
-                        If yes, please explain:
-                      </h4>
-                      <Row>
-                        <Col md={8}>
-                          <Form.Control
-                            className={styles.input_box}
-                            name="judgeInfo"
-                            value={judgeInfo}
-                            onChange={this.handleChange}
-                            type="text"
-                            placeholder="Explain judgement or liens"
-                            required
-                          />
-                        </Col>
-                      </Row>
+                      <Form.Control
+                        className={styles.input_box}
+                        name="judgeInfo"
+                        value={judgeInfo}
+                        onChange={this.handleChange}
+                        type="text"
+                        placeholder="Explain judgement or liens"
+                        required
+                      />
                     </div>
                   }
                 </div>
 
                 <div className={styles.quiz}>
-                  <p>Have you ever filed for bankruptcy?</p>
-                  <Form.Check
-                    id="bankruptcyRadio1"
-                    name="bankruptcyYes"
-                    checked={bankruptcyYes}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="Yes"
-                    required
-                  />
-                  <Form.Check
-                    id="bankruptcyRadio2"
-                    name="bankruptcyYes"
-                    checked={bankruptcyNo}
-                    onChange={this.handleRadio}
-                    type="radio"
-                    label="No"
-                    required
-                  />
+                  <h4 className={styles.secondary_title}>Have you ever filed for bankruptcy?</h4>
+                  <div className={styles.radio_group}>
+                    <Form.Check
+                      id="bankruptcyRadio1"
+                      name="bankruptcyYes"
+                      checked={bankruptcyYes}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="Yes"
+                      required
+                    />
+                    <Form.Check
+                      id="bankruptcyRadio2"
+                      name="bankruptcyYes"
+                      checked={bankruptcyNo}
+                      onChange={this.handleRadio}
+                      type="radio"
+                      label="No"
+                      required
+                    />
+                  </div>
 
                   {bankruptcyYes &&
                     <div className={styles.addition_input}>
-                      <h4 className={styles.input_title}>
-                        If yes, please provide the date:
-                      </h4>
                       <Row>
-                        <Col md={4}>
+                        <Col xs={6} md={4}>
                           <Form.Control
                             className={styles.input_box}
                             name="bankruptcyMonth"
@@ -495,7 +524,7 @@ export default class Additional extends React.Component {
                             <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
                           </Form.Control>
                         </Col>
-                        <Col md={4}>
+                        <Col xs={6} md={4}>
                           <Form.Control
                             className={styles.input_box}
                             name="bankruptcyDate"
@@ -531,16 +560,19 @@ export default class Additional extends React.Component {
                   }
                 </div>
 
-                <div className="d-flex flex-column flex-md-row justify-content-end align-items-center">
-                  <Link href="/brochure/personal">
-                    <a><MyButton width="205px" height="45px" margin="20px">PREVIOUS PAGE</MyButton></a>
+                <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                  <Link href="/brochure">
+                    <a className={utils.prev_link}>PREVIOUS PAGE</a>
                   </Link>
 
-                  <Button className={styles.continue_btn} type="submit">CONTINUE</Button>
+                  <button className={utils.continue_btn} type="submit">
+                    <span className="pl-3">CONTINUE</span>
+                    <img className="ml-2" src="/right-arrow.png" alt="arrow" />
+                  </button>
                 </div>
               </Form>
             </div>
-          </Container>
+          </div>
         </main>
 
         <Footer />

@@ -19,8 +19,8 @@
 
 .chevron_left {
   position: absolute;
-  top: 17px;
-  left: 10px;
+  top: 16px;
+  left: 12px;
   width: 16px;
   height: auto;
   color: white;
@@ -47,6 +47,16 @@
 
 .progress_step_one {
   width: 25%;
+  background-color: #ff8e47;
+}
+
+.progress_step_two {
+  width: 50%;
+  background-color: #ff8e47;
+}
+
+.progress_step_three {
+  width: 75%;
   background-color: #ff8e47;
 }
 
@@ -135,11 +145,14 @@
   opacity: 0.5;
 }
 
-.progress_divider {
+.progress_divider_grey, .progress_divider_white {
   width: 1px;
   height: 48px;
   margin: 8px 21px;
   background-color: white;
+}
+
+.progress_divider_grey {
   opacity: 0.25;
 }
 
@@ -161,20 +174,18 @@
 }
 
 .primary_detail {
+  margin-bottom: 32px;
   font-size: 14px;
   line-height: 1.43;
   color: #888e8e;
-}
-
-.form {
-  margin-top: 32px;
 }
 
 .secondary_title {
   margin-bottom: 24px;
   font-size: 14px;
   font-weight: bold;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.5;
 }
 
 .input_box {
@@ -210,13 +221,31 @@
   .primary_title {
     font-size: 28px;
   }
-  .form {
-    margin-top: 40px;
+  .primary_detail {
+    margin-bottom: 40px;
   }
   .secondary_title {
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: 600;
+    text-transform: capitalize;
     letter-spacing: normal;
   }
+}
+
+/* Additional Info */
+
+.radio_group {
+  margin-bottom: 20px;
+}
+
+/* Employment */
+
+.add_text {
+  margin-left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: #56918d;
 }

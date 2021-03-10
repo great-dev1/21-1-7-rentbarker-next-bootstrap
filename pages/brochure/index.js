@@ -11,7 +11,7 @@ import Footer from '../../components/Footer'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
-export default class Personal extends React.Component {
+export default class Basic extends React.Component {
   state = {
     firstName: '',
     middleName: '',
@@ -128,7 +128,7 @@ export default class Personal extends React.Component {
     return (
       <div>
         <Head>
-          <title>Personal Information</title>
+          <title>Basic Details</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -184,7 +184,7 @@ export default class Personal extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.progress_divider}></div>
+              <div className={styles.progress_divider_grey}></div>
 
               <div className={styles.progress_step}>
                 <img src="/brochure/step-2-grey.png" alt="step 2" />
@@ -194,7 +194,7 @@ export default class Personal extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.progress_divider}></div>
+              <div className={styles.progress_divider_grey}></div>
 
               <div className={styles.progress_step}>
                 <img src="/brochure/step-3-grey.png" alt="step 3" />
@@ -204,7 +204,7 @@ export default class Personal extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.progress_divider}></div>
+              <div className={styles.progress_divider_grey}></div>
 
               <div className={styles.progress_step}>
                 <img src="/brochure/step-4-grey.png" alt="step 4" />
@@ -219,8 +219,8 @@ export default class Personal extends React.Component {
               <h1 className={styles.primary_title}>Your Barker Brochure</h1>
               <p className={styles.primary_detail}>
                 This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
-                  Your personal information will remain anonymous to all landlords.
-                </p>
+                Your personal information will remain anonymous to all landlords.
+              </p>
 
               <Form className={styles.form} noValidate validated={validated} onSubmit={this.handleSubmit}>
                 <h4 className={styles.secondary_title}>Personal Information</h4>
