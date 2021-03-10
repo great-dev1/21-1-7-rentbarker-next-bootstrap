@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 768px) {
   .main {
-    padding: 80px 0 102px;
+    padding: 80px 0 110px;
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.5);
   }

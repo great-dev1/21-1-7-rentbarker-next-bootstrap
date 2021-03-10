@@ -6,17 +6,17 @@ import styles from './Navbar.module.css'
 export default class Navmenu extends React.Component {
   state = {
     logged: false,
-    firstName: '',
+    name: '',
   }
 
   componentDidMount() {
     const logged = localStorage.getItem('logged') === 'true';
-    const firstName = logged ? localStorage.getItem('fullName').split(' ')[0] : '';
-    this.setState({ logged, firstName });
+    const name = logged ? localStorage.getItem('fullName').split(' ')[0] + ' ' + localStorage.getItem('fullName').split(' ')[1][0] + '.' : '';
+    this.setState({ logged, name });
   }
 
   render() {
-    const { logged, firstName } = this.state;
+    const { logged, name } = this.state;
 
     return (
       <div>
@@ -34,19 +34,19 @@ export default class Navmenu extends React.Component {
             <Nav>
               {logged ? (
                 <Nav>
-                  <NavDropdown className={styles.link} title={`Hello, ${firstName}`}>
-                    <NavDropdown.Item className={styles.nav_item} href="#">Offers(2)</NavDropdown.Item>
-                    <NavDropdown.Item className={styles.nav_item} href="/message">Inbox(3)</NavDropdown.Item>
-                    <NavDropdown.Item className={styles.nav_item} href="#">Sign out</NavDropdown.Item>
+                  <img className="d-none d-md-inline" src="/navbar/avatar.png" alt="avatar" />
+                  <NavDropdown alignRight className={styles.link} title={name}>
+                    <NavDropdown.Item className={styles.dropdown_item} href="#">Offers(2)</NavDropdown.Item>
+                    <NavDropdown.Item className={styles.dropdown_item} href="/message">Inbox(3)</NavDropdown.Item>
+                    <NavDropdown.Item className={styles.dropdown_item} href="#">Sign out</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
               ) : (
                   <Nav>
                     <Nav.Link className={styles.link} href="/login">
-                      <img className="mr-2" src="/navbar/user-icon.png" alt="user" />
-                      SIGN IN
-                    </Nav.Link>
-                    {/* <Nav.Link className={styles.link} href="/signup">Signup</Nav.Link> */}
+                      <img className="d-none d-md-inline mr-2" src="/navbar/user-icon.png" alt="user" />
+                        SIGN IN
+                      </Nav.Link>
                   </Nav>
                 )}
             </Nav>
