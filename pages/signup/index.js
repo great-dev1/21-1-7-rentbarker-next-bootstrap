@@ -22,7 +22,7 @@ export default class Signup extends React.Component {
   }
 
   componentDidMount() {
-    const fullName = localStorage.getItem('fullName') !== null ? localStorage.getItem('fullName') : 'Amanda Norman';
+    const fullName = localStorage.getItem('fullName') !== null ? localStorage.getItem('fullName') : 'Saepul Rohman';
 
     this.setState({ fullName });
   }

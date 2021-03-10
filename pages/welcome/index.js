@@ -43,7 +43,7 @@ export default class Welcome extends React.Component {
 
             <div className="d-sm-flex flex-column align-items-center">
               <div className="m-2">
-                <Link href="/brochure/personal">
+                <Link href="/brochure">
                   <a><MyButton width="275px" height="45px">CONTINUE TO MY APPLICATION</MyButton></a>
                 </Link>
               </div>

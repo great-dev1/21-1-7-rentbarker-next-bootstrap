@@ -11,7 +11,7 @@ import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
-export default class Submit extends React.Component {
+export default class Review extends React.Component {
   state = {
     firstName: '', middleName: '', lastName: '', birthMonth: '', birthDate: '', birthYear: '',
     currentAddress: '', currentUnit: '', currentCity: '', currentState: '', currentZipcode: '', currentRent: '', currentLength: '', currentReason: '',
