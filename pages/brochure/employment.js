@@ -128,7 +128,7 @@ export default class Employment extends React.Component {
           </div>
         </header>
 
-        <main className={styles.main}>
+        <main>
           <div className={styles.main_content}>
             <div className={styles.left_content}>
               <div className={styles.progress_header}>
@@ -140,7 +140,7 @@ export default class Employment extends React.Component {
               </div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 01</p>
                   <p className={styles.progress_step_detail_white}>Basic Details</p>
@@ -150,7 +150,7 @@ export default class Employment extends React.Component {
               <div className={styles.progress_divider_white}></div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 02</p>
                   <p className={styles.progress_step_detail_white}>Additional Info</p>
@@ -180,7 +180,7 @@ export default class Employment extends React.Component {
 
             <div className={styles.right_content}>
               <div className="d-none d-md-block">
-                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <h2 className={styles.primary_title}>Your Barker Brochure</h2>
                 <p className={styles.primary_detail}>
                   This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
                   Your personal information will remain anonymous to all landlords.

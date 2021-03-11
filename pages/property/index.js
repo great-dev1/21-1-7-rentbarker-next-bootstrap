@@ -20,7 +20,7 @@ export default function Property() {
 
       <main className={styles.main}>
         <Container>
-          <h1 className={styles.primary_title}>Add your properties</h1>
+          <h2 className={styles.primary_title}>Add your properties</h2>
           <h2 className={styles.secondary_title}>Search for the properties you would like to compete for you.</h2>
         </Container>
 

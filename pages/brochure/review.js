@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import utils from '../../styles/utils.module.css'
 import styles from './Brochure.module.css'
 
@@ -252,7 +251,7 @@ export default class Review extends React.Component {
           </div>
         </header>
 
-        <main className={styles.main}>
+        <main>
           <div className={styles.main_content}>
             <div className={styles.left_content}>
               <div className={styles.progress_header}>
@@ -264,7 +263,7 @@ export default class Review extends React.Component {
               </div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 01</p>
                   <p className={styles.progress_step_detail_white}>Basic Details</p>
@@ -274,7 +273,7 @@ export default class Review extends React.Component {
               <div className={styles.progress_divider_white}></div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 02</p>
                   <p className={styles.progress_step_detail_white}>Additional Info</p>
@@ -284,7 +283,7 @@ export default class Review extends React.Component {
               <div className={styles.progress_divider_white}></div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 03</p>
                   <p className={styles.progress_step_detail_white}>Employment</p>
@@ -304,7 +303,7 @@ export default class Review extends React.Component {
 
             <div className={styles.right_content}>
               <div className="d-none d-md-block">
-                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <h2 className={styles.primary_title}>Your Barker Brochure</h2>
                 <p className={styles.primary_detail}>
                   This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
                   Your personal information will remain anonymous to all landlords.
@@ -312,7 +311,7 @@ export default class Review extends React.Component {
               </div>
 
               <div className="d-none d-md-block">
-                <h1 className={styles.primary_title}>Review & Submit</h1>
+                <h2 className={styles.primary_title}>Review & Submit</h2>
                 <hr />
               </div>
 
@@ -550,7 +549,7 @@ export default class Review extends React.Component {
                 </Link>
 
                 <Link href="/brochure/approve">
-                  <a className={utils.continue_btn}>CONTINUE</a>
+                  <a className={utils.continue_btn}>SUBMIT</a>
                 </Link>
               </div>
             </div>

@@ -165,7 +165,7 @@ export default class Personal extends React.Component {
           </div>
         </header>
 
-        <main className={styles.main}>
+        <main>
           <div className={styles.main_content}>
             <div className={styles.left_content}>
               <div className={styles.progress_header}>
@@ -216,7 +216,7 @@ export default class Personal extends React.Component {
             </div>
 
             <div className={styles.right_content}>
-              <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+              <h2 className={styles.primary_title}>Your Barker Brochure</h2>
               <p className={styles.primary_detail}>
                 This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
                 Your personal information will remain anonymous to all landlords.

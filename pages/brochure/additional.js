@@ -135,7 +135,7 @@ export default class Additional extends React.Component {
     const moveYear = localStorage.getItem('moveYear') !== null ? localStorage.getItem('moveYear') : '2020';
     const petYes = localStorage.getItem('petYes') === 'true';
     const petNo = localStorage.getItem('petNo') === 'true';
-    const petInfo = localStorage.getItem('petInfo') !== null ? localStorage.getItem('petInfo') : 'Dog, Yellow, Lab, 2 yers old, 60 lbs';
+    const petInfo = localStorage.getItem('petInfo') !== null ? localStorage.getItem('petInfo') : 'Dog, Yellow, Lab, 2 years old, 60 lbs';
     const esaYes = localStorage.getItem('esaYes') === 'true';
     const esaNo = localStorage.getItem('esaNo') === 'true';
     const smokerYes = localStorage.getItem('smokerYes') === 'true';
@@ -207,7 +207,7 @@ export default class Additional extends React.Component {
           </div>
         </header>
 
-        <main className={styles.main}>
+        <main>
           <div className={styles.main_content}>
             <div className={styles.left_content}>
               <div className={styles.progress_header}>
@@ -219,7 +219,7 @@ export default class Additional extends React.Component {
               </div>
 
               <div className={styles.progress_step}>
-                <img src="/brochure/check.png" alt="check" />
+                <img src="/brochure/check-icon.png" alt="check" />
                 <div className={styles.progress_step_text}>
                   <p className={styles.progress_step_title_grey}>STEP 01</p>
                   <p className={styles.progress_step_detail_white}>Basic Details</p>
@@ -259,7 +259,7 @@ export default class Additional extends React.Component {
 
             <div className={styles.right_content}>
               <div className="d-none d-md-block">
-                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <h2 className={styles.primary_title}>Your Barker Brochure</h2>
                 <p className={styles.primary_detail}>
                   This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
                   Your personal information will remain anonymous to all landlords.

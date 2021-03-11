@@ -32,7 +32,7 @@ export default class Welcome extends React.Component {
 
         <Container className={utils.container}>
           <main className={styles.main}>
-            <h1 className={styles.title}>Welcome, {firstName}!</h1>
+            <h2 className={styles.title}>Welcome, {firstName}!</h2>
             <p className={styles.detail}>
               All of your properties and preferences have been saved! There's only one step
               left to create your Barker Brochure: the free application. Again, we won't
