@@ -60,6 +60,11 @@
   background-color: #ff8e47;
 }
 
+.progress_step_four {
+  width: 100%;
+  background-color: #ff8e47;
+}
+
 .progress_step_rest {
   flex-grow: 1;
   background-color: black;
@@ -233,13 +238,13 @@
   }
 }
 
-/* Additional Info */
+/* Additional Information */
 
 .radio_group {
   margin-bottom: 20px;
 }
 
-/* Employment */
+/* Employment Information */
 
 .add_text {
   margin-left: 7px;
@@ -248,4 +253,29 @@
   letter-spacing: 0.5px;
   line-height: 1;
   color: #56918d;
+}
+
+/* Review & Submit */
+
+.edit_link {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #126660;
+  opacity: 0.75;
+}
+
+.info_title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #888e8e;
+}
+
+.info_detail {
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
 }

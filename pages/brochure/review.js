@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Row, Col } from 'react-bootstrap'
-import { ProgressBar, Step } from 'react-step-progress-bar'
-import 'react-step-progress-bar/styles.css'
+import { Row, Col } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -24,21 +24,22 @@ export default class Review extends React.Component {
 
     employerOccupation: '', employerName: '', employerLength: '', employerAddress: '', employerCity: '', employerState: '', employerZipcode: '',
     myIncome: '', guarantorIncome: '', roommateIncome: '',
+
     roommateNum: '', bedroomNum: '', bathroomNum: '',
 
-    inunitMust: false, inunitNice: false,
-    connectionMust: false, connectionNice: false,
-    laundryMust: false, laundryNice: false,
-    dishwasherMust: false, dishwasherNice: false,
-    balconyMust: false, balconyNice: false,
-    parkingMust: false, parkingNice: false,
-    garageMust: false, garageNice: false,
-    fitnessMust: false, fitnessNice: false,
-    yardMust: false, yardNice: false,
-    petMust: false, petNice: false,
-    poolMust: false, poolNice: false,
+    inunitToggle: false, inunitMust: false, inunitNice: false,
+    connectionToggle: false, connectionMust: false, connectionNice: false,
+    laundryToggle: false, laundryMust: false, laundryNice: false,
+    dishwasherToggle: false, dishwasherMust: false, dishwasherNice: false,
+    balconyToggle: false, balconyMust: false, balconyNice: false,
+    parkingToggle: false, parkingMust: false, parkingNice: false,
+    garageToggle: false, garageMust: false, garageNice: false,
+    fitnessToggle: false, fitnessMust: false, fitnessNice: false,
+    yardToggle: false, yardMust: false, yardNice: false,
+    petToggle: false, petMust: false, petNice: false,
+    poolToggle: false, poolMust: false, poolNice: false,
 
-    budget: '', leaseLeng: '',
+    budgetMin: '', budgetMax: '', lengthMin: '', lengthMax: '',
 
     useGuarantor: false, myCredit: '', roommateCredit: '', guarantorCredit: '',
   }
@@ -104,31 +105,44 @@ export default class Review extends React.Component {
     const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : '';
     const bathroomNum = localStorage.getItem('bathroomNum') !== null ? localStorage.getItem('bathroomNum') : '';
 
+    const inunitToggle = localStorage.getItem('inunitToggle') === 'true';
     const inunitMust = localStorage.getItem('inunitMust') === 'true';
     const inunitNice = localStorage.getItem('inunitNice') === 'true';
+    const connectionToggle = localStorage.getItem('connectionToggle') === 'true';
     const connectionMust = localStorage.getItem('connectionMust') === 'true';
     const connectionNice = localStorage.getItem('connectionNice') === 'true';
+    const laundryToggle = localStorage.getItem('laundryToggle') === 'true';
     const laundryMust = localStorage.getItem('laundryMust') === 'true';
     const laundryNice = localStorage.getItem('laundryNice') === 'true';
+    const dishwasherToggle = localStorage.getItem('dishwasherToggle') === 'true';
     const dishwasherMust = localStorage.getItem('dishwasherMust') === 'true';
     const dishwasherNice = localStorage.getItem('dishwasherNice') === 'true';
+    const balconyToggle = localStorage.getItem('balconyToggle') === 'true';
     const balconyMust = localStorage.getItem('balconyMust') === 'true';
     const balconyNice = localStorage.getItem('balconyNice') === 'true';
+    const parkingToggle = localStorage.getItem('parkingToggle') === 'true';
     const parkingMust = localStorage.getItem('parkingMust') === 'true';
     const parkingNice = localStorage.getItem('parkingNice') === 'true';
+    const garageToggle = localStorage.getItem('garageToggle') === 'true';
     const garageMust = localStorage.getItem('garageMust') === 'true';
     const garageNice = localStorage.getItem('garageNice') === 'true';
+    const fitnessToggle = localStorage.getItem('fitnessToggle') === 'true';
     const fitnessMust = localStorage.getItem('fitnessMust') === 'true';
     const fitnessNice = localStorage.getItem('fitnessNice') === 'true';
+    const yardToggle = localStorage.getItem('yardToggle') === 'true';
     const yardMust = localStorage.getItem('yardMust') === 'true';
     const yardNice = localStorage.getItem('yardNice') === 'true';
+    const petToggle = localStorage.getItem('petToggle') === 'true';
     const petMust = localStorage.getItem('petMust') === 'true';
     const petNice = localStorage.getItem('petNice') === 'true';
+    const poolToggle = localStorage.getItem('poolToggle') === 'true';
     const poolMust = localStorage.getItem('poolMust') === 'true';
     const poolNice = localStorage.getItem('poolNice') === 'true';
 
-    const budget = localStorage.getItem('budget') !== null ? localStorage.getItem('budget') : '';
-    const leaseLeng = localStorage.getItem('leaseLeng') !== null ? localStorage.getItem('leaseLeng') : '';
+    const budgetMin = localStorage.getItem('budgetMin') !== null ? localStorage.getItem('budgetMin') : '';
+    const budgetMax = localStorage.getItem('budgetMax') !== null ? localStorage.getItem('budgetMax') : '';
+    const lengthMin = localStorage.getItem('lengthMin') !== null ? localStorage.getItem('lengthMin') : '';
+    const lengthMax = localStorage.getItem('lengthMax') !== null ? localStorage.getItem('lengthMax') : '';
 
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
     const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '';
@@ -149,19 +163,19 @@ export default class Review extends React.Component {
 
       roommateNum, bedroomNum, bathroomNum,
 
-      inunitMust, inunitNice,
-      connectionMust, connectionNice,
-      laundryMust, laundryNice,
-      dishwasherMust, dishwasherNice,
-      balconyMust, balconyNice,
-      parkingMust, parkingNice,
-      garageMust, garageNice,
-      fitnessMust, fitnessNice,
-      yardMust, yardNice,
-      petMust, petNice,
-      poolMust, poolNice,
+      inunitToggle, inunitMust, inunitNice,
+      connectionToggle, connectionMust, connectionNice,
+      laundryToggle, laundryMust, laundryNice,
+      dishwasherToggle, dishwasherMust, dishwasherNice,
+      balconyToggle, balconyToggle, balconyMust, balconyNice,
+      parkingToggle, parkingToggle, parkingMust, parkingNice,
+      garageToggle, garageMust, garageNice,
+      fitnessToggle, fitnessMust, fitnessNice,
+      yardToggle, yardMust, yardNice,
+      petToggle, petMust, petNice,
+      poolToggle, poolMust, poolNice,
 
-      budget, leaseLeng,
+      budgetMin, budgetMax, lengthMin, lengthMax,
 
       useGuarantor, myCredit, roommateCredit, guarantorCredit,
     });
@@ -182,358 +196,365 @@ export default class Review extends React.Component {
 
       roommateNum, bedroomNum, bathroomNum,
 
-      inunitMust, inunitNice,
-      connectionMust, connectionNice,
-      laundryMust, laundryNice,
-      dishwasherMust, dishwasherNice,
-      balconyMust, balconyNice,
-      parkingMust, parkingNice,
-      garageMust, garageNice,
-      fitnessMust, fitnessNice,
-      yardMust, yardNice,
-      petMust, petNice,
-      poolMust, poolNice,
+      inunitToggle, inunitMust, inunitNice,
+      connectionToggle, connectionMust, connectionNice,
+      laundryToggle, laundryMust, laundryNice,
+      dishwasherToggle, dishwasherMust, dishwasherNice,
+      balconyToggle, balconyMust, balconyNice,
+      parkingToggle, parkingMust, parkingNice,
+      garageToggle, garageMust, garageNice,
+      fitnessToggle, fitnessMust, fitnessNice,
+      yardToggle, yardMust, yardNice,
+      petToggle, petMust, petNice,
+      poolToggle, poolMust, poolNice,
 
-      budget, leaseLeng,
+      budgetMin, budgetMax, lengthMin, lengthMax,
 
       useGuarantor, myCredit, roommateCredit, guarantorCredit,
     } = this.state;
 
     return (
       <div>
-        {/* <img src="/testback-12.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.6" }} /> */}
-
         <Head>
-          <title>Borchure - Review & Submit</title>
+          <title>Review & Submit</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <div className={styles.navbar}>
+          <Navbar />
+        </div>
+
+        <header className={styles.header}>
+          <Link href="/brochure/employment">
+            <a>
+              <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
+            </a>
+          </Link>
+
+          <div className="d-flex justify-content-center">
+            <Link href="/">
+              <a className={styles.brand}>
+                <img src="/brochure/brand.png" alt="brand" />
+              </a>
+            </Link>
+          </div>
+
+          <div className={styles.header_step}>
+            <img src="/brochure/info-icon.png" alt="info" />
+            <div className={styles.progress_step_text}>
+              <p className={styles.progress_step_title_orange}>STEP 04 <span className={styles.progress_step_title_grey}> / 04</span></p>
+              <p className={styles.progress_step_detail_white}>Review & Submit</p>
+            </div>
+          </div>
+
+          <div className={styles.progress_bar}>
+            <div className={styles.progress_step_four}></div>
+          </div>
+        </header>
 
         <main className={styles.main}>
-          <Container className={utils.container}>
-            <h1 className={styles.primary_title}>Build Your Barker Brochure</h1>
-            <p>
-              This free application will be used for all landlords that bid on you.<br />
-              No hidden fees and hassel-free! Your personal information will remain anonymous to all landlords.
-            </p>
+          <div className={styles.main_content}>
+            <div className={styles.left_content}>
+              <div className={styles.progress_header}>
+                <img src="/brochure/info-icon.png" alt="info" />
+                <p className={styles.progress_header_text}>
+                  COMPLETE<br />
+                  ALL STEPS:
+                </p>
+              </div>
 
-            <div className={styles.progress_bar}>
-              <ProgressBar percent={100} filledBackground="#007c77">
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 01</p>
+                  <p className={styles.progress_step_detail_white}>Basic Details</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_divider_white}></div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 02</p>
+                  <p className={styles.progress_step_detail_white}>Additional Info</p>
+                </div>
+              </div>
 
-                <Step>
-                  {({ accomplished, index }) => (
-                    <div className={styles.complete}>
-                      {index + 1}
-                    </div>
-                  )}
-                </Step>
-              </ProgressBar>
+              <div className={styles.progress_divider_white}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/check.png" alt="check" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_grey}>STEP 03</p>
+                  <p className={styles.progress_step_detail_white}>Employment</p>
+                </div>
+              </div>
+
+              <div className={styles.progress_divider_white}></div>
+
+              <div className={styles.progress_step}>
+                <img src="/brochure/step-4-orange.png" alt="step 4" />
+                <div className={styles.progress_step_text}>
+                  <p className={styles.progress_step_title_orange}>STEP 04</p>
+                  <p className={styles.progress_step_detail_white}>Review</p>
+                </div>
+              </div>
             </div>
 
-            <div className={styles.form_container}>
-              <h2 className={styles.form_title}>Review & Submit</h2>
+            <div className={styles.right_content}>
+              <div className="d-none d-md-block">
+                <h1 className={styles.primary_title}>Your Barker Brochure</h1>
+                <p className={styles.primary_detail}>
+                  This free application will be used for all landlords that bid on you.No hidden fees and hassle-free!<br />
+                  Your personal information will remain anonymous to all landlords.
+                </p>
+              </div>
 
-              <div className={styles.info_table}>
+              <div className="d-none d-md-block">
+                <h1 className={styles.primary_title}>Review & Submit</h1>
+                <hr />
+              </div>
+
+              {/* Personal Information */}
+              <div className={styles.info_container}>
                 <div className="d-flex justify-content-between">
-                  <h3 className={styles.table_title}>Personal Information</h3>
-                  <Link href="/brochure/personal">
-                    <a className={styles.edit_link}>Edit</a>
+                  <h4 className={styles.secondary_title}>Personal Information</h4>
+
+                  <Link href="/brochure">
+                    <a>
+                      <div className="d-flex align-items-center">
+                        <img src="/brochure/pencil-icon.png" alt="pencil" />
+                        <span className={styles.edit_link}>EDIT</span>
+                      </div>
+                    </a>
                   </Link>
                 </div>
 
-                <Row className={styles.table_content}>
-                  <Col md={6}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Name:</h4>
-                      <p className={styles.table_detail}>
-                        {firstName} {middleName} {lastName}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Date of birth:</h4>
-                      <p className={styles.table_detail}>
-                        {birthMonth}/{birthDate}/{birthYear}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Present home address:</h4>
-                      <p className={styles.table_detail}>
-                        {currentAddress} {currentUnit}<br />
-                        {currentCity} {currentState}, {currentZipcode}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Monthly Rent:</h4>
-                      <p className={styles.table_detail}>
-                        ${currentRent}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Length of time:</h4>
-                      <p className={styles.table_detail}>
-                        {currentLength}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Reason for moving:</h4>
-                      <p className={styles.table_detail}>
-                        {currentReason}
-                      </p>
-                    </div>
+                <Row className={styles.info_content}>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Name</p>
+                    <p className={styles.info_detail}>{firstName} {middleName} {lastName}</p>
                   </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Date of Birth</p>
+                    <p className={styles.info_detail}>{birthMonth}/{birthDate}/{birthYear}</p>
+                  </Col>
+                </Row>
 
-                  <Col md={6} className={styles.right_content}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Previous home address:</h4>
-                      <p className={styles.table_detail}>
-                        {prevAddress} {prevUnit}<br />
-                        {prevCity} {prevState}, {prevZipcode}
-                      </p>
-                    </div>
+                <Row className={styles.info_content}>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Monthly Rent</p>
+                    <p className={styles.info_detail}>${currentRent}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Length of Time</p>
+                    <p className={styles.info_detail}>{currentLength}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Current Address</p>
+                    <p className={styles.info_detail}>
+                      {currentAddress} {currentUnit}<br />
+                      {currentCity} {currentState}, {currentZipcode}
+                    </p>
+                  </Col>
+                  <Col xs={6} md={12}>
+                    <p className={styles.info_title}>Reason for Moving</p>
+                    <p className={styles.info_detail}>{currentReason}</p>
+                  </Col>
+                </Row>
 
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Monthly Rent:</h4>
-                      <p className={styles.table_detail}>
-                        ${prevRent}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Length of time:</h4>
-                      <p className={styles.table_detail}>
-                        {prevLength}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Reason for moving:</h4>
-                      <p className={styles.table_detail}>
-                        {prevReason}
-                      </p>
-                    </div>
+                <Row className={styles.info_content}>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Monthly Rent</p>
+                    <p className={styles.info_detail}>${prevRent}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Length of Time</p>
+                    <p className={styles.info_detail}>{prevLength}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Current Address</p>
+                    <p className={styles.info_detail}>
+                      {prevAddress} {prevUnit}<br />
+                      {prevCity} {prevState}, {prevZipcode}
+                    </p>
+                  </Col>
+                  <Col xs={6} md={12}>
+                    <p className={styles.info_title}>Reason for Moving</p>
+                    <p className={styles.info_detail}>{prevReason}</p>
                   </Col>
                 </Row>
               </div>
+              <hr />
 
-              <div className={styles.info_table}>
+              {/* Addtional Information */}
+              <div className={styles.info_container}>
                 <div className="d-flex justify-content-between">
-                  <h3 className={styles.table_title}>Additional Information</h3>
+                  <h4 className={styles.secondary_title}>Additional Information</h4>
+
                   <Link href="/brochure/additional">
-                    <a className={styles.edit_link}>Edit</a>
+                    <a>
+                      <div className="d-flex align-items-center">
+                        <img src="/brochure/pencil-icon.png" alt="pencil" />
+                        <span className={styles.edit_link}>EDIT</span>
+                      </div>
+                    </a>
                   </Link>
                 </div>
 
-                <Row className={styles.table_content}>
-                  <Col md={6}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Desired Move-In Date:</h4>
-                      <p className={styles.table_detail}>
-                        {`${moveMonth}/${moveDate}/${moveYear}`}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Pets:</h4>
-                      <p className={styles.table_detail}>
-                        {petYes ? `Yes, ${petInfo}` : "No"}<br />
-                        ESA: {esaYes ? "Yes" : "No"}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Smoker:</h4>
-                      <p className={styles.table_detail}>
-                        {smokerYes ? "Yes" : "No"}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Evictions:</h4>
-                      <p className={styles.table_detail}>
-                        {evictionYes ? `Yes, ${evictionInfo}` : "No"}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Judgements or liens:</h4>
-                      <p className={styles.table_detail}>
-                        {judgeYes ? `Yes, ${judgeInfo}` : "No"}
-                      </p>
-                    </div>
+                <Row className={styles.info_content}>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Desired Move-In Date</p>
+                    <p className={styles.info_detail}>{moveMonth}/{moveDate}/{moveYear}</p>
                   </Col>
-
-                  <Col md={6} className={styles.right_content}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Bankruptcy:</h4>
-                      <p className={styles.table_detail}>
-                        {bankruptcyYes ? `Yes, ${bankruptcyMonth}/${bankruptcyDate}/${bankruptcyYear}` : "No"}
-                      </p>
-                    </div>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Smoker</p>
+                    <p className={styles.info_detail}>{smokerYes ? "Yes" : "No"}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Judgements/Liens</p>
+                    <p className={styles.info_detail}>{judgeYes ? `Yes, ${judgeInfo}` : "No"}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Evictions</p>
+                    <p className={styles.info_detail}>{evictionYes ? `Yes, ${evictionInfo}` : "No"}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Bankruptcy</p>
+                    <p className={styles.info_detail}>{bankruptcyYes ? `Yes, ${bankruptcyMonth}/${bankruptcyDate}/${bankruptcyYear}` : "No"}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Pets</p>
+                    <p className={styles.info_detail}>
+                      {petYes ? `Yes, ${petInfo}. ESA: ${esaYes ? "Yes" : "No"}` : "No"}
+                    </p>
                   </Col>
                 </Row>
               </div>
+              <hr />
 
-              <div className={styles.info_table}>
+              {/* Employment Information */}
+              <div className={styles.info_container}>
                 <div className="d-flex justify-content-between">
-                  <h3 className={styles.table_title}>Employment Information</h3>
+                  <h4 className={styles.secondary_title}>Employment Information</h4>
+
                   <Link href="/brochure/employment">
-                    <a className={styles.edit_link}>Edit</a>
+                    <a>
+                      <div className="d-flex align-items-center">
+                        <img src="/brochure/pencil-icon.png" alt="pencil" />
+                        <span className={styles.edit_link}>EDIT</span>
+                      </div>
+                    </a>
                   </Link>
                 </div>
 
-                <Row className={styles.table_content}>
-                  <Col md={6}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Present occupation:</h4>
-                      <p className={styles.table_detail}>
-                        {employerOccupation}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Employer name:</h4>
-                      <p className={styles.table_detail}>
-                        {employerName}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Time with employer:</h4>
-                      <p className={styles.table_detail}>
-                        {employerLength}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Employer address:</h4>
-                      <p className={styles.table_detail}>
-                        {employerAddress}<br />
-                        {employerCity} ${employerState}, {employerZipcode}
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Gross Monthly Income:</h4>
-                      <p className={styles.table_detail}>
-                        {myIncome}
-                      </p>
-                    </div>
+                <Row className={styles.info_content}>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Employer Name</p>
+                    <p className={styles.info_detail}>{employerName}</p>
                   </Col>
-
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Length of Time</p>
+                    <p className={styles.info_detail}>{employerLength}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Gross Monthly Icome</p>
+                    <p className={styles.info_detail}>{myIncome}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Current Occupation</p>
+                    <p className={styles.info_detail}>{employerOccupation}</p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Employer Address</p>
+                    <p className={styles.info_detail}>
+                      {employerAddress}<br />
+                      {employerCity} {employerState}, {employerZipcode}
+                    </p>
+                  </Col>
                   {useGuarantor &&
-                    <Col md={6}>
-                      <div className={styles.table_item}>
-                        <h4 className={styles.table_subtitle}>Guarantor's Monthly Income:</h4>
-                        <p className={styles.table_detail}>
-                          {guarantorIncome}
-                        </p>
-                      </div>
-
-                      <div className={styles.table_item}>
-                        <h4 className={styles.table_subtitle}>Roommate's Monthly Income:</h4>
-                        <p className={styles.table_detail}>
-                          ${roommateIncome}
-                        </p>
-                      </div>
+                    <Col xs={6} md={4}>
+                      <p className={styles.info_title}>Roommate Monthly Income</p>
+                      <p className={styles.info_detail}>${roommateIncome}</p>
                     </Col>
                   }
                 </Row>
               </div>
+              <hr />
 
-              <div className={styles.info_table}>
+              {/* Preferences */}
+              <div className={styles.info_container}>
                 <div className="d-flex justify-content-between">
-                  <h3 className={styles.table_title}>Preferences</h3>
+                  <h4 className={styles.secondary_title}>Preferences</h4>
+
                   <Link href="/bed">
-                    <a className={styles.edit_link}>Edit</a>
+                    <a>
+                      <div className="d-flex align-items-center">
+                        <img src="/brochure/pencil-icon.png" alt="pencil" />
+                        <span className={styles.edit_link}>EDIT</span>
+                      </div>
+                    </a>
                   </Link>
                 </div>
 
-                <Row className={styles.table_content}>
-                  <Col md={6}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Roommates, Beds, and Baths:</h4>
-                      <p className={styles.table_detail}>
-                        {roommateNum} Roommate<br />
-                        {bedroomNum} Bed<br />
-                        {bathroomNum} Bath<br />
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Unique Features:</h4>
-                      <p className={styles.table_detail}>
-                        {(inunitMust || inunitNice) && <div>In-unit washer/dryer</div>}
-                        {(connectionMust || connectionNice) && <div>Washer & dryer connection</div>}
-                        {(laundryMust || laundryNice) && <div>On-site laundry</div>}
-                        {(dishwasherMust || dishwasherNice) && <div>Dishwasher</div>}
-                        {(balconyMust || balconyNice) && <div>Balcony/Patio</div>}
-                        {(parkingMust || parkingNice) && <div>Parking</div>}
-                        {(garageMust || garageNice) && <div>Garage/Covered parking</div>}
-                        {(fitnessMust || fitnessNice) && <div>Fitness center</div>}
-                        {(yardMust || yardNice) && <div>Enclosed yard</div>}
-                        {(petMust || petNice) && <div>Pets allowed</div>}
-                        {(poolMust || poolNice) && <div>Swimming pool</div>}
-                      </p>
-                    </div>
-
+                <Row className={styles.info_content}>
+                  <Col md={4}>
+                    <p className={styles.info_title}>Roommates, Beds and Baths</p>
+                    <p className={styles.info_detail}>
+                      {roommateNum} Roommate<br />
+                      {bedroomNum} Bed<br />
+                      {bathroomNum} Bath<br />
+                    </p>
                   </Col>
-
-                  <Col md={6} className={styles.right_content}>
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Budget & Lease Length:</h4>
-                      <p className={styles.table_detail}>
-                        ${budget}/month, {leaseLeng} months
-                      </p>
-                    </div>
-
-                    <div className={styles.table_item}>
-                      <h4 className={styles.table_subtitle}>Credit Score:</h4>
-                      <p className={styles.table_detail}>
-                        Self: {myCredit}<br />
-                        {useGuarantor ? `Roommate: ${roommateCredit}` : ''}<br />
-                        {useGuarantor ? `Guarantor: ${guarantorCredit}` : ''}
-                      </p>
-                    </div>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Unique Features</p>
+                    <p className={styles.info_detail}>
+                      {inunitToggle && <div>In-unit washer/dryer</div>}
+                      {connectionToggle && <div>Washer & dryer connection</div>}
+                      {laundryToggle && <div>On-site laundry</div>}
+                      {dishwasherToggle && <div>Dishwasher</div>}
+                      {balconyToggle && <div>Balcony/Patio</div>}
+                      {parkingToggle && <div>Parking</div>}
+                      {garageToggle && <div>Garage/Covered parking</div>}
+                      {fitnessToggle && <div>Fitness center</div>}
+                      {yardToggle && <div>Enclosed yard</div>}
+                      {petToggle && <div>Pets allowed</div>}
+                      {poolToggle && <div>Swimming pool</div>}
+                    </p>
                   </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Budget & Lease Length</p>
+                    <p className={styles.info_detail}>
+                      ${budgetMin} - ${budgetMax} /month<br />
+                      {lengthMin}-{lengthMax} months
+                    </p>
+                  </Col>
+                  <Col xs={6} md={4}>
+                    <p className={styles.info_title}>Credit Score</p>
+                    <p className={styles.info_detail}>{myCredit}</p>
+                  </Col>
+                  {useGuarantor &&
+                    <Col xs={6} md={4}>
+                      <p className={styles.info_title}>Roommate Credit Score</p>
+                      <p className={styles.info_detail}>{roommateCredit}</p>
+                    </Col>
+                  }
                 </Row>
               </div>
+              <hr />
 
-              <div className="text-center text-md-right">
-                <Link href="/brochure">
-                  <a><MyButton green={true} width="205px" height="45px" margin="10px">SUBMIT</MyButton></a>
+              <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <Link href="/brochure/employment">
+                  <a className={utils.prev_link}>PREVIOUS PAGE</a>
+                </Link>
+
+                <Link href="/brochure/approve">
+                  <a className={utils.continue_btn}>CONTINUE</a>
                 </Link>
               </div>
             </div>
-          </Container>
+          </div>
         </main>
 
         <Footer />

@@ -64,7 +64,7 @@ export default class Employment extends React.Component {
 
   componentDidMount() {
     const employerOccupation = localStorage.getItem('employerOccupation') !== null ? localStorage.getItem('employerOccupation') : 'Teacher at Renner Middle School';
-    const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : 'Mark Smith';
+    const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : 'Hollis Co.';
     const employerLength = localStorage.getItem('employerLength') !== null ? localStorage.getItem('employerLength') : '3 years';
     const employerAddress = localStorage.getItem('employerAddress') !== null ? localStorage.getItem('employerAddress') : '1234 Magnolia Ave';
     const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : 'City 1';
@@ -91,7 +91,7 @@ export default class Employment extends React.Component {
     return (
       <div>
         <Head>
-          <title>Employment</title>
+          <title>Employment Information</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
