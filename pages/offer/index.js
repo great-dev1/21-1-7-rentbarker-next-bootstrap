@@ -1,33 +1,28 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import MyButton from '../../components/MyButton'
 import OfferCard from './OfferCard'
-import utils from '../../styles/utils.module.css'
 import styles from './Offer.module.css'
 
-export default class Offer extends React.Component {
+export default class Property extends React.Component {
   state = {
     logged: false,
-    firstName: '',
   }
 
   componentDidMount() {
     const logged = localStorage.getItem('logged') === 'true';
-    const firstName = logged ? localStorage.getItem('fullName').split(' ')[0] : '';
-    this.setState({ logged, firstName });
+    this.setState({ logged });
   }
 
   render() {
-    const { logged, firstName } = this.state;
+    const { logged } = this.state;
 
     return (
       <div>
-        {/* <img src="/testback-14.png" style={{ position: "absolute", "zIndex": "99", top: "0", width: "100%", opacity: "0.5" }} /> */}
-
         <Head>
           <title>Offers</title>
           <link rel="icon" href="/favicon.ico" />
@@ -35,47 +30,138 @@ export default class Offer extends React.Component {
 
         <Navbar />
 
-        <main className={styles.main}>
-          <Container className={utils.container}>
-            <h1 className={utils.primary_title}>Welcome, {logged ? firstName : 'Amanda'}!</h1>
-            <h2 className={utils.secondary_title}>You have 4 new offers!</h2>
+        <div className="d-flex">
+          {logged &&
+            <div className={styles.sidebar}>
+              <div>
+                <Link href="/offer">
+                  <a className={styles.sidebar_menu_active}>
+                    <img src="/sidebar/mailbox-green.png" alt="mailbox" />
+                    <span className={styles.sidebar_text}>Offers</span>
+                  </a>
+                </Link>
 
-            <div className={styles.offer_block}>
-              <h2 className={styles.offer_title}>Solicited Offers</h2>
+                <Link href="/brochure">
+                  <a className={styles.sidebar_menu}>
+                    <img src="/sidebar/contact-grey.png" alt="contact" />
+                    <span className={styles.sidebar_text}>Barker Brochure</span>
+                  </a>
+                </Link>
 
-              <Row className={styles.offer_row}>
-                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                  <OfferCard img="/offer/offer-1.jpg" />
-                </Col>
+                <Link href="/message">
+                  <a className={styles.sidebar_menu}>
+                    <img src="/sidebar/message-grey.png" alt="message" />
+                    <span className={styles.sidebar_text}>Messages</span>
+                  </a>
+                </Link>
 
-                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                  <OfferCard img="/offer/offer-2.jpg" />
-                </Col>
+                <Link href="/setting">
+                  <a className={styles.sidebar_menu}>
+                    <img src="/sidebar/setting-grey.png" alt="setting" />
+                    <span className={styles.sidebar_text}>Settings</span>
+                  </a>
+                </Link>
+              </div>
 
-                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                  <OfferCard img="/offer/offer-3.jpg" />
-                </Col>
-              </Row>
-
-              <div className={styles.view_btn}>
-                <MyButton width="190px" height="44px" margin="10px">+ ADD A PROPERTY</MyButton>
+              <div>
+                <Link href="/">
+                  <a className={styles.sidebar_menu}>
+                    <img src="/sidebar/exit-grey.png" alt="exit" />
+                    <span className={styles.sidebar_text}>Log Out</span>
+                  </a>
+                </Link>
               </div>
             </div>
+          }
 
-            <div className={styles.offer_block}>
-              <h2 className={styles.offer_title}>Unsolicited Offers</h2>
+          <main className={styles.main}>
+            <Container>
+              <h2 className={styles.primary_title}>Offers</h2>
+              <h2 className={styles.primary_detail}>Sunday, 13 December 2020</h2>
 
-              <Row className={styles.offer_row}>
-                <Col md={6} xl={4} className={styles.offer_card_wrapper}>
-                  <OfferCard img="/offer/offer-4.jpg" />
-                </Col>
-              </Row>
-            </div>
-          </Container>
-        </main>
+              {/* Solicited Offers */}
+              <div className={styles.offer_group}>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className={styles.group_title}>Solicited Offers</h4>
+                  <Link href="/property">
+                    <a className={styles.add_link}>
+                      <img src="/offer/plus-icon.png" alt="plus" />
+                      <span className="ml-2">ADD PROPERTY</span>
+                    </a>
+                  </Link>
+                </div>
+                <hr />
 
+                <Row className={styles.offer_row}>
+                  <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                    <OfferCard
+                      status="available"
+                      img="/offer/offer-1.jpg"
+                      name="Unit Name 1"
+                      price="1,775"
+                      address="4845 Saturn st, Los Angeles, CA 90019"
+                      bed="2"
+                      bath="2"
+                      size="89"
+                    />
+                  </Col>
+
+                  <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                    <OfferCard
+                      status="unavailable"
+                      img="/offer/offer-2.jpg"
+                      name="Unit Name 2"
+                      price="2,500"
+                      address="4845 Saturn st, Los Angeles, CA 90019"
+                      bed="3"
+                      bath="4"
+                      size="105"
+                    />
+                  </Col>
+
+                  <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                    <OfferCard
+                      status="pending"
+                      img="/offer/offer-3.jpg"
+                      name="Unit Name 3"
+                      price="2,850"
+                      address="4845 Saturn st, Los Angeles, CA 90019"
+                      bed="3"
+                      bath="4"
+                      size="124"
+                    />
+                  </Col>
+                </Row>
+
+                <a href="#" className={styles.show_more}>SHOW MORE</a>
+              </div>
+
+              {/* Unsolicited Offers */}
+              <div className={styles.offer_group}>
+                <h4 className={styles.group_title}>Unsolicited Offers</h4>
+                <hr />
+
+                <Row className={styles.offer_row}>
+                  <Col md={6} xl={4} className={styles.offer_card_wrapper}>
+                    <OfferCard
+                      status="available"
+                      img="/offer/offer-4.jpg"
+                      name="Unit Name 4"
+                      price="1,500"
+                      address="4845 Saturn st, Los Angeles, CA 90019"
+                      bed="2"
+                      bath="2"
+                      size="72"
+                    />
+                  </Col>
+                </Row>
+              </div>
+
+            </Container>
+          </main>
+        </div>
         <Footer />
-      </div>
+      </div >
     )
   }
 }

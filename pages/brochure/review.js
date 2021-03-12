@@ -321,11 +321,9 @@ export default class Review extends React.Component {
                   <h4 className={styles.secondary_title}>Personal Information</h4>
 
                   <Link href="/brochure">
-                    <a>
-                      <div className="d-flex align-items-center">
-                        <img src="/brochure/pencil-icon.png" alt="pencil" />
-                        <span className={styles.edit_link}>EDIT</span>
-                      </div>
+                    <a className={styles.edit_link}>
+                      <img src="/brochure/pencil-icon.png" alt="pencil" />
+                      <span className="ml-2">EDIT</span>
                     </a>
                   </Link>
                 </div>
@@ -393,11 +391,9 @@ export default class Review extends React.Component {
                   <h4 className={styles.secondary_title}>Additional Information</h4>
 
                   <Link href="/brochure/additional">
-                    <a>
-                      <div className="d-flex align-items-center">
-                        <img src="/brochure/pencil-icon.png" alt="pencil" />
-                        <span className={styles.edit_link}>EDIT</span>
-                      </div>
+                    <a className={styles.edit_link}>
+                      <img src="/brochure/pencil-icon.png" alt="pencil" />
+                      <span className="ml-2">EDIT</span>
                     </a>
                   </Link>
                 </div>
@@ -439,11 +435,9 @@ export default class Review extends React.Component {
                   <h4 className={styles.secondary_title}>Employment Information</h4>
 
                   <Link href="/brochure/employment">
-                    <a>
-                      <div className="d-flex align-items-center">
-                        <img src="/brochure/pencil-icon.png" alt="pencil" />
-                        <span className={styles.edit_link}>EDIT</span>
-                      </div>
+                    <a className={styles.edit_link}>
+                      <img src="/brochure/pencil-icon.png" alt="pencil" />
+                      <span className="ml-2">EDIT</span>
                     </a>
                   </Link>
                 </div>
@@ -488,11 +482,9 @@ export default class Review extends React.Component {
                   <h4 className={styles.secondary_title}>Preferences</h4>
 
                   <Link href="/bed">
-                    <a>
-                      <div className="d-flex align-items-center">
-                        <img src="/brochure/pencil-icon.png" alt="pencil" />
-                        <span className={styles.edit_link}>EDIT</span>
-                      </div>
+                    <a className={styles.edit_link}>
+                      <img src="/brochure/pencil-icon.png" alt="pencil" />
+                      <span className="ml-2">EDIT</span>
                     </a>
                   </Link>
                 </div>

@@ -9,8 +9,12 @@ p {
   margin: 0;
 }
 
-a, a:hover {
+a {
+  text-decoration: none;
   color: inherit;
+}
+
+a:hover {
   text-decoration: none;
 }
 

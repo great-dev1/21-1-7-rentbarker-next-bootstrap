@@ -1,191 +1,134 @@
-.body {
-  filter: blur(4px);
+/* Sidebar */
+
+.sidebar {
+  display: none;
 }
 
-.main {
-  padding: 64px 0;
-}
-
-.offer_block {
-  margin: 80px 0 0;
-}
-
-.offer_title {
-  margin: 0 10px;
-  font-size: 30px;
+.sidebar_menu, .sidebar_menu_active {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 14px;
   font-weight: bold;
 }
 
-.offer_card_wrapper {
-  padding: 20px 25px;
-}
-
-@media only screen and (min-width: 768px) {
-  .offer_block {
-    margin: 80px 0;
-  }
-}
-
-/* Accept Offer */
-
-.prev_link {
-  display: block;
-  margin-top: 13px;
-  margin-left: 6.5%;
-  font-size: 14px;
+.sidebar_menu {
+  color: grey;
   transition: 0.3s;
 }
 
-.prev_link:hover {
-  text-decoration: none;
-  color: grey;
+.sidebar_menu_active {
+  color: #126660;
 }
 
-.arrow_left {
-  position: relative;
-  top: -2px;
-  width: 8px;
-  margin-right: 8px;
+.sidebar_menu:hover, .sidebar_menu_active:hover {
+  color: #126660;
 }
 
-.content {
-  max-width: 790px;
+.sidebar_text {
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    padding-top: 85px;
+    padding-left: 48px;
+    border-right: 1px solid #d3dbde;
+  }
+}
+
+/* Main */
+
+.main {
   margin: auto;
+  padding: 20px 0;
 }
 
 .primary_title {
-  margin: 20px 0 15px;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 15px;
-  text-align: center;
-}
-
-.offer_table {
-  position: relative;
-  padding: 40px 0;
-  background-color: #fbfbfb;
-}
-
-.table_img {
-  max-width: 100%;
-  margin-bottom: 30px;
-}
-
-.secondary_title {
-  margin-bottom: 16px;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
 }
 
-.table_content {
-  margin-top: 0;
-}
-
-.table_item {
-  margin-bottom: 30px;
-}
-
-.table_subtitle {
-  margin-bottom: 0;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.table_detail {
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-.green_bar {
-  margin-top: -8px;
-  padding: 25px;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  background-color: #007c77;
-}
-
-.offer_detail {
-  line-height: 1.4;
-}
-
-.btn_group {
-  margin: 30px 0;
+.primary_detail {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #888e8e;
 }
 
 @media only screen and (min-width: 768px) {
+  .main {
+    padding: 32px 0 70px;
+  }
   .primary_title {
-    margin: 22px 0 34px;
+    font-size: 28px;
   }
-  .subtitle {
-    font-size: 18px;
-  }
-  .offer_table {
-    margin: 157px 0 53px;
-    padding: 190px 29px 40px;
-  }
-  .table_img {
-    position: absolute;
-    top: -124px;
-    left: calc(50% - 205px);
-  }
-  .table_content {
-    margin-top: 43px;
-  }
-  .table_item {
-    margin-bottom: 40px;
-  }
-  .btn_group {
-    margin: 72px 0;
+  .primary_detail {
+    margin-bottom: 48px;
   }
 }
 
-/* Accept Modal */
+/* Property Group */
 
-.modal_container {
+.group_title {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.add_link {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 60px 20px 30px;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0 3px 8px 2px rgba(0, 0, 0, 0.2);
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.add_link:hover {
+  color: grey;
+}
+
+.show_more {
+  display: block;
+  margin: 14px 0 30px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   text-align: center;
+  text-decoration: underline;
+  color: #126660;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.modal_detail {
-  margin: 30px 0;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 27px;
-}
-
-.modal_btn_group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.show_more:hover {
+  color: grey;
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 768px) {
-  .modal_container {
-    position: relative;
-    right: calc(38vw - 250px);
-    width: 76vw;
-    padding: 83px 21% 75px;
-    border-radius: 45px;
+  .group_title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-transform: capitalize;
   }
-  .modal_detail {
-    margin: 32px 0;
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 27px;
+  .add_link {
+    font-size: 14px;
+    letter-spacing: 0.5px;
   }
+}
+
+/* Offer Card */
+
+.offer_card_wrapper {
+  margin-bottom: 24px;
 }

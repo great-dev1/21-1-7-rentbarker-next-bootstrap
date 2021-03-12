@@ -1,30 +1,120 @@
 .offer_card {
-  border: 1px solid #d6d6d6;
-  border-radius: 0;
+  position: relative;
+  padding: 12px;
+  border: 1px solid #dce6e6;
+  border-radius: 4px;
 }
 
-.card_img {
-  border-radius: 0;
+.action_btn {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+}
+
+.offer_img {
+  border-radius: 4px;
+}
+
+.offer_body {
+  padding: 12px 0;
 }
 
 .offer_name {
-  margin-bottom: 15px;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.offer_price {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #086627;
 }
 
 .offer_address {
-  margin: 10px 0 10px;
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #606d6b;
+}
+
+.offer_feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0 12px;
+  padding: 14px 4px;
+  border-top: 1px solid #e1e8eb;
+  border-bottom: 1px solid #e1e8eb;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.feature_icon {
+  margin-right: 8px;
+}
+
+.splitbar {
+  margin: 0 10px;
   font-weight: bold;
+  color: #d8d8d8;
 }
 
-.offer_cost {
-  margin-bottom: 5px;
-  font-size: 13px;
+.sup {
+  left: -4%;
 }
 
-.offer_deposit {
-  margin-bottom: 15px;
-  font-size: 13px;
+.amenity_title {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.67px;
+  color: #b0b8b8;
+}
+
+.amenity_item {
+  font-size: 12px;
+  line-height: 1.83;
+}
+
+.view_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border: 1.2px solid #126660;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.view_link:hover {
+  color: white;
+  background-color: grey;
+}
+
+.unavailable, .pending {
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.unavailable {
+  color: #888e8e;
+}
+
+.pending {
+  color: #f36b16;
 }

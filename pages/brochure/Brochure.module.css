@@ -258,12 +258,19 @@
 /* Review & Submit */
 
 .edit_link {
+  display: flex;
+  align-items: center;
   margin-left: 10px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
   color: #126660;
-  opacity: 0.75;
+  /* opacity: 0.75; */
+  transition: 0.3s;
+}
+
+.edit_link:hover {
+  color: grey;
 }
 
 .info_title {
