@@ -1,17 +1,32 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Modal } from 'react-bootstrap'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import MyButton from '../../components/MyButton'
+import utils from '../../styles/utils.module.css'
 import styles from './Offer.module.css'
 
 export default class Review extends React.Component {
   state = {
     logged: false,
+    show: false,
+  }
+
+  handleShow = () => {
+    this.setState({
+      show: true
+    })
+  }
+
+  handleClose = () => {
+    this.setState({
+      show: false
+    })
   }
 
   componentDidMount() {
@@ -20,10 +35,10 @@ export default class Review extends React.Component {
   }
 
   render() {
-    const { logged } = this.state;
+    const { logged, show } = this.state;
 
     return (
-      <div>
+      <div className={show ? styles.blur_effect : null}>
         <Head>
           <title>Offers</title>
           <link rel="icon" href="/favicon.ico" />
@@ -264,15 +279,37 @@ export default class Review extends React.Component {
 
                   <div className={styles.btn_group}>
                     <div className="d-flex flex-column flex-sm-row align-items-center">
-                      <Link href="/offer/accept">
-                        <a className={styles.accept_btn}>ACCEPT OFFER</a>
-                      </Link>
+                      <a className={styles.accept_btn} onClick={this.handleShow}>ACCEPT OFFER</a>
 
                       <Link href="/message">
                         <a className={styles.message_link}>MESSAGE LANDLORD</a>
                       </Link>
                     </div>
                   </div>
+
+                  {/* Accept Confirm Modal */}
+                  <Modal show={show} onHide={this.handleClose} centered>
+                    <div className={styles.modal_container}>
+                      <img src="/offer/logo-large.png" alt="logo" />
+
+                      <h4 className={styles.modal_title}>Important Fact!</h4>
+
+                      <p className={styles.modal_detail}>
+                        You may only accept one offer. Upon accecpting, all other offers will be voided and the
+                        landlord will contact you with all of the necessary documents to move forward with the
+                        leasing process. Do you agress to release your contact information, such as your name,
+                        phone number, and email to this landlord?
+                      </p>
+
+                      <Link href="/offer/success">
+                        <a className={styles.modal_btn}>
+                          <MyButton height="46px" margin="auto">AGREE & ACCEPT OFFER</MyButton>
+                        </a>
+                      </Link>
+
+                      <a className={styles.message_link} href="#" onClick={this.handleClose}>BACK TO OFFER</a>
+                    </div>
+                  </Modal>
                 </div>
               </div>
             </Container>

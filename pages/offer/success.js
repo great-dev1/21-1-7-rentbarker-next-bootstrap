@@ -22,7 +22,7 @@ export default function Success() {
       </div>
 
       <header className={styles.header}>
-        <Link href="/offer/accept">
+        <Link href="/offer/review">
           <a>
             <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
           </a>

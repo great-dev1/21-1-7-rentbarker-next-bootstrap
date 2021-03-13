@@ -327,6 +327,8 @@
   color: #888e8e;
 }
 
+/* Accept Button and Message Link */
+
 .accept_btn {
   display: flex;
   justify-content: center;
@@ -343,6 +345,7 @@
   color: white;
   background-color: #126660;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .accept_btn:hover {
@@ -367,11 +370,13 @@
   width: 100%;
   height: 46px;
   border: 2px solid #126660;
+  border-radius: 2px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
   color: #126660;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .message_link:hover {
@@ -390,6 +395,51 @@
   .message_link:hover {
     text-decoration: underline;
     color: grey;
+  }
+}
+
+/* Confirm Modal */
+
+.blur_effect {
+  filter: blur(4px);
+}
+
+.modal_container {
+  padding: 30px 20px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: white;
+}
+
+.modal_title {
+  margin: 28px 0 16px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal_detail {
+  max-width: 572px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #888e8e;
+}
+
+.modal_btn {
+  display: block;
+  margin: 24px auto 16px;
+}
+
+@media only screen and (min-width: 992px) {
+  .modal_container {
+    position: relative;
+    right: 150px;
+    /* [width(800) - default width(500)] / 2 = 150 */
+    width: 800px;
+    padding: 50px;
+  }
+  .modal_btn {
+    margin: 44px auto 24px;
   }
 }
 
