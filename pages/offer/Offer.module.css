@@ -132,3 +132,366 @@
 .offer_card_wrapper {
   margin-bottom: 24px;
 }
+
+/* ---------------------- Offer Review Page ---------------------- */
+
+.prev_link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888e8e;
+  transition: 0.3s;
+}
+
+.prev_link:hover {
+  color: #126660;
+}
+
+.arrow_left {
+  position: relative;
+  top: -1px;
+  width: 10px;
+  margin-right: 10px;
+}
+
+.review_container {
+  margin-bottom: 20px;
+}
+
+.review_header {
+  padding: 12px 0;
+}
+
+.review_title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+@media only screen and (min-width: 768px) {
+  .review_container {
+    margin: 24px 0 80px;
+    border: 1px solid #d3dbde;
+    border-radius: 4px;
+  }
+  .review_header {
+    padding: 32px 36px 30px;
+    border-bottom: 1px solid #d3dbde;
+  }
+  .review_title {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .review_content {
+    padding: 32px 32px 40px;
+  }
+}
+
+/* Offer Summary */
+
+.offer_img {
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+.offer_name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.offer_address {
+  margin: 8px 0 24px;
+  font-size: 12px;
+  color: #888e8e;
+}
+
+.description_title {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #89a3a3;
+}
+
+.description_detail {
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.offer_feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+}
+
+.feature_icon {
+  margin-left: 16px;
+}
+
+.splitbar {
+  margin: 0 30px;
+  font-weight: bold;
+  color: #d8d8d8;
+}
+
+.amenity_item {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.83;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .offer_img {
+    margin-bottom: 0;
+  }
+  .offer_name {
+    font-size: 24px;
+  }
+  .offer_address {
+    font-size: 14px;
+  }
+  .offer_feature {
+    justify-content: start;
+  }
+  .amenity_item {
+    letter-spacing: 0.7px;
+  }
+}
+
+/* Offer Detail */
+
+.section_title {
+  margin: 32px 0 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.detail_title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #888e8e;
+}
+
+.detail_content {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+/* Offer Profits */
+
+.offer_profit {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: #f0f5f5;
+}
+
+.logo {
+  margin-top: 4px;
+  margin-right: 16px;
+}
+
+.profit_title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #888e8e;
+}
+
+.profit_detail {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+}
+
+@media only screen and (min-width: 768px) {
+  .offer_profit {
+    margin-bottom: 0;
+  }
+}
+
+/* Before You Accept */
+
+.accept_detail {
+  margin-bottom: 32px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #888e8e;
+}
+
+.accept_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: #126660;
+  transition: 0.3s;
+}
+
+.accept_btn:hover {
+  color: white;
+  background-color: grey;
+}
+
+@media only screen and (min-width: 576px) {
+  .accept_btn {
+    width: 214px;
+    height: 44px;
+    margin-right: 32px;
+    margin-bottom: 0;
+    border-radius: 6px;
+  }
+}
+
+.message_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  border: 2px solid #126660;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.message_link:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+@media only screen and (min-width: 576px) {
+  .message_link {
+    display: inline;
+    width: auto;
+    height: auto;
+    border: none;
+    text-decoration: underline;
+  }
+  .message_link:hover {
+    text-decoration: underline;
+    color: grey;
+  }
+}
+
+/* ---------------------- Offer Success Page ---------------------- */
+
+/* Navbar */
+
+.navbar {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    display: block;
+  }
+}
+
+/* Header */
+
+.header {
+  display: block;
+  background-color: #126660;
+}
+
+.chevron_left {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  width: 16px;
+  height: auto;
+  color: white;
+  opacity: 0.6;
+}
+
+.brand {
+  display: inline-block;
+  margin: 18px 0 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    display: none;
+  }
+}
+
+/* Main */
+
+.approve_main {
+  background-color: #126660;
+}
+
+.approve_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.check_icon {
+  width: 61px;
+  height: auto;
+  margin: 24px 0;
+}
+
+.approve_primary_title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.33;
+  color: white;
+}
+
+.approve_content {
+  margin: 20px auto;
+  padding: 20px 15px;
+  background-color: white;
+}
+
+.contact_detail {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #131f1e;
+}
+
+@media only screen and (min-width: 992px) {
+  .approve_main {
+    padding-bottom: 96px;
+  }
+  .check_icon {
+    width: auto;
+    margin: 40px 0 20px;
+  }
+  .approve_primary_title {
+    font-size: 28px;
+  }
+  .approve_content {
+    max-width: 984px;
+    margin: 40px auto;
+    padding: 32px;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  }
+}

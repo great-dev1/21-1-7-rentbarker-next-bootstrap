@@ -223,7 +223,7 @@ export default class Approve extends React.Component {
     return (
       <div>
         <Head>
-          <title>Your Barker Brochure</title>
+          <title>Approve Brochure</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
@@ -245,7 +245,6 @@ export default class Approve extends React.Component {
               </a>
             </Link>
           </div>
-
         </header>
 
         <main className={styles.approve_main}>

@@ -238,13 +238,13 @@
   }
 }
 
-/* Additional Information */
+/* ---------------------- Additional Information Page ---------------------- */
 
 .radio_group {
   margin-bottom: 20px;
 }
 
-/* Employment Information */
+/* ---------------------- Employment Information Page ---------------------- */
 
 .add_text {
   margin-left: 7px;
@@ -255,7 +255,7 @@
   color: #56918d;
 }
 
-/* Review & Submit */
+/* ---------------------- Review & Submit Page ---------------------- */
 
 .edit_link {
   display: flex;
@@ -287,7 +287,7 @@
   line-height: 1.38;
 }
 
-/* Approve */
+/* ---------------------- Approve Brochure Page ---------------------- */
 
 .approve_main {
   background-color: #126660;
