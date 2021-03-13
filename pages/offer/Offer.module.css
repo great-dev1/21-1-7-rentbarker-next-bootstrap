@@ -405,15 +405,15 @@
 }
 
 .modal_container {
-  padding: 30px 20px;
+  padding: 40px 20px 30px;
   border-radius: 4px;
   text-align: center;
   background-color: white;
 }
 
 .modal_title {
-  margin: 28px 0 16px;
-  font-size: 28px;
+  margin: 24px 0 20px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -427,7 +427,7 @@
 
 .modal_btn {
   display: block;
-  margin: 24px auto 16px;
+  margin: 50px auto 16px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -437,6 +437,10 @@
     /* [width(800) - default width(500)] / 2 = 150 */
     width: 800px;
     padding: 50px;
+  }
+  .modal_title {
+    margin: 28px 0 16px;
+    font-size: 28px;
   }
   .modal_btn {
     margin: 44px auto 24px;

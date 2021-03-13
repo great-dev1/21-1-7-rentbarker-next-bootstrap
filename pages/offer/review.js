@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import MyButton from '../../components/MyButton'
-import utils from '../../styles/utils.module.css'
 import styles from './Offer.module.css'
 
 export default class Review extends React.Component {
@@ -94,7 +93,7 @@ export default class Review extends React.Component {
             <Container>
               <div className="d-none d-md-block">
                 <h2 className={styles.primary_title}>Offers</h2>
-                <h2 className={styles.primary_detail}>Sunday, 13 December 2020</h2>
+                <p className={styles.primary_detail}>Sunday, 13 December 2020</p>
               </div>
 
               <Link href="/offer">
@@ -297,7 +296,9 @@ export default class Review extends React.Component {
                       <p className={styles.modal_detail}>
                         You may only accept one offer. Upon accecpting, all other offers will be voided and the
                         landlord will contact you with all of the necessary documents to move forward with the
-                        leasing process. Do you agress to release your contact information, such as your name,
+                        leasing process.<br className="d-block d-md-none" />
+                        <br className="d-block d-md-none" />
+                        Do you agress to release your contact information, such as your name,
                         phone number, and email to this landlord?
                       </p>
 

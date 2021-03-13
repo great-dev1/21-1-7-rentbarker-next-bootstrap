@@ -77,7 +77,7 @@ export default class Property extends React.Component {
           <main className={styles.main}>
             <Container>
               <h2 className={styles.primary_title}>Offers</h2>
-              <h2 className={styles.primary_detail}>Sunday, 13 December 2020</h2>
+              <p className={styles.primary_detail}>Sunday, 13 December 2020</p>
 
               {/* Solicited Offers */}
               <div className={styles.offer_group}>

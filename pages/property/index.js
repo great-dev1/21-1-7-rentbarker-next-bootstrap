@@ -78,7 +78,7 @@ export default class Property extends React.Component {
           <main className={styles.main}>
             <Container>
               <h2 className={styles.primary_title}>Add your properties</h2>
-              <h2 className={styles.primary_detail}>Search for the properties you would like to compete for you.</h2>
+              <p className={styles.primary_detail}>Search for the properties you would like to compete for you.</p>
             </Container>
 
             <Container className={styles.container}>

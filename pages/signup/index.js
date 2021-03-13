@@ -133,7 +133,7 @@ export default class Signup extends React.Component {
                     </Link>
                   </label>
                 </div>
-                
+
                 <Link href="/welcome">
                   <button className={utils.sign_btn} onClick={this.handleSubmit} type="submit">CREATE YOUR ACCOUNT</button>
                 </Link>
