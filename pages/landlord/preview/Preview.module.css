@@ -1,0 +1,317 @@
+/* Navbar */
+
+.navbar {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    display: block;
+  }
+}
+
+/* Header */
+
+.header {
+  display: block;
+  background-image: url("../../../public/pattern.jpg");
+}
+
+.chevron_left {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  width: 16px;
+  height: auto;
+  color: white;
+  opacity: 0.6;
+}
+
+.brand {
+  display: inline-block;
+  margin: 18px 0 20px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    display: none;
+  }
+}
+
+/* Main */
+
+.approve_main {
+  background-image: url("../../../public/pattern.jpg");
+}
+
+/* Header */
+
+.approve_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.note_icon {
+  width: 60px;
+  height: auto;
+  margin: 18px 0;
+}
+
+.approve_primary_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.approve_primary_detail {
+  font-size: 14px;
+  line-height: 1.43;
+  color: white;
+  opacity: 0.6;
+}
+
+.signup_link {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 70px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  color: #fff;
+  opacity: 0.4;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.signup_link:hover {
+  text-decoration: underline;
+  color: #fa893c;
+  opacity: 1;
+}
+
+.arrow_right {
+  width: 16px;
+  margin-left: 10px;
+}
+
+/* Signup Confirm Modal */
+
+.blur_effect {
+  filter: blur(4px);
+}
+
+.modal_container {
+  padding: 27px 20px 35px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: white;
+}
+
+.modal_logo {
+  width: auto;
+  height: 49px;
+}
+
+.modal_title {
+  margin: 28px 0 18px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal_detail {
+  max-width: 420px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #888e8e;
+}
+
+.modal_btn {
+  display: block;
+  margin: 41px auto 16px;
+}
+
+.learn_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  border: 2px solid #126660;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #126660;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.learn_link:hover {
+  border: none;
+  color: white;
+  background-color: grey;
+}
+
+@media only screen and (min-width: 576px) {
+  .learn_link {
+    display: inline;
+    width: auto;
+    height: auto;
+    border: none;
+    text-decoration: underline;
+  }
+  .learn_link:hover {
+    text-decoration: underline;
+    color: grey;
+    background-color: white;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .modal_container {
+    position: relative;
+    right: 40px;
+    width: 580px;
+    padding: 28px 78px;
+  }
+  .modal_logo {
+    width: auto;
+    height: 39px;
+  }
+  .modal_title {
+    margin: 28px 0 16px;
+    font-size: 28px;
+  }
+  .modal_btn {
+    margin: 26px auto 22px;
+  }
+}
+
+/* Content */
+
+.approve_content {
+  padding: 20px 15px;
+  background-color: white;
+}
+
+.approve_username {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.approve_summary_item {
+  margin-top: 19px;
+}
+
+.approve_icon {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.approve_title {
+  font-size: 14px;
+  line-height: 1.57;
+  color: #888e8e;
+}
+
+.approve_detail {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+}
+
+.approve_section_title {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #89a3a3;
+}
+
+.approve_item {
+  margin-bottom: 16px;
+}
+
+.approve_rating_detail {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.38;
+}
+
+.approve_stars, .approve_score {
+  margin-left: 20px;
+}
+
+.approve_star {
+  margin: 2px;
+}
+
+.approve_info_detail {
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+.flat_card {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  border: solid 1.2px #56918d;
+  border-radius: 4px;
+}
+
+.flat_address {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.flat_price {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  color: #606d6d;
+}
+
+.flat_match {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.69;
+  color: #086627;
+}
+
+@media only screen and (min-width: 768px) {
+  .approve_main {
+    padding-bottom: 96px;
+  }
+  .note_icon {
+    width: auto;
+    margin: 75px 0 11px;
+  }
+  .approve_primary_title {
+    font-size: 28px;
+  }
+  .signup_link {
+    margin: 29px 0 40px;
+  }
+  .approve_content {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 32px 44px 44px;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
+  }
+  .approve_rating_detail {
+    font-size: 16px;
+  }
+  .approve_star {
+    margin: 4px;
+  }
+}

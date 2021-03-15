@@ -48,7 +48,7 @@ export default function Home() {
               <Col lg={5} className="d-flex align-items-center">
                 <div className={styles.hero_content}>
                   <h1 className={styles.hero_title}>Lorem Ipsum is a Dummy Text of the Printing Industry.</h1>
-                  <p class={styles.hero_detail}>
+                  <p className={styles.hero_detail}>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                     the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
                   </p>

@@ -13,18 +13,18 @@ import styles from './Offer.module.css'
 export default class Review extends React.Component {
   state = {
     logged: false,
-    show: false,
+    modalShow: false,
   }
 
   handleShow = () => {
     this.setState({
-      show: true
+      modalShow: true
     })
   }
 
   handleClose = () => {
     this.setState({
-      show: false
+      modalShow: false
     })
   }
 
@@ -34,10 +34,10 @@ export default class Review extends React.Component {
   }
 
   render() {
-    const { logged, show } = this.state;
+    const { logged, modalShow } = this.state;
 
     return (
-      <div className={show ? styles.blur_effect : null}>
+      <div className={modalShow ? styles.blur_effect : null}>
         <Head>
           <title>Offers</title>
           <link rel="icon" href="/favicon.ico" />
@@ -287,7 +287,7 @@ export default class Review extends React.Component {
                   </div>
 
                   {/* Accept Confirm Modal */}
-                  <Modal show={show} onHide={this.handleClose} centered>
+                  <Modal show={modalShow} onHide={this.handleClose} centered>
                     <div className={styles.modal_container}>
                       <img src="/offer/logo-large.png" alt="logo" />
 
