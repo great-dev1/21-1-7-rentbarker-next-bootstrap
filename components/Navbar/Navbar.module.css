@@ -15,6 +15,10 @@
   left: calc(50vw - 70px);
 }
 
+.nav_links {
+  padding-top: 10px;
+}
+
 .username {
   font-size: 13px;
   font-weight: 600;
@@ -43,8 +47,11 @@
     padding: 18px 40px;
   }
   .brand {
-    left: 26px;
-    font-size: 26px;
+    top: 23px;
+    left: 40px;
+  }
+  .nav_links {
+    padding-top: 0;
   }
   .link {
     margin: 0 6px;

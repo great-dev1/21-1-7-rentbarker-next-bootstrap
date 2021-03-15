@@ -31,25 +31,23 @@ export default class Navmenu extends React.Component {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>
-            <Nav>
-              {logged ? (
-                <Nav>
-                  <img className="d-none d-md-inline" src="/navbar/avatar.png" alt="avatar" />
-                  <NavDropdown alignRight className={styles.username} title={name}>
-                    <NavDropdown.Item className={styles.dropdown_item} href="#">Offers(2)</NavDropdown.Item>
-                    <NavDropdown.Item className={styles.dropdown_item} href="/message">Inbox(3)</NavDropdown.Item>
-                    <NavDropdown.Item className={styles.dropdown_item} href="#">Sign out</NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-              ) : (
-                  <Nav>
-                    <Nav.Link className={styles.link} href="/login">
-                      <img className="d-none d-md-inline mr-2" src="/navbar/user-icon.png" alt="user" />
-                        SIGN IN
-                      </Nav.Link>
-                  </Nav>
-                )}
-            </Nav>
+            {logged ? (
+              <Nav className={styles.nav_links}>
+                <img className="d-none d-md-inline" src="/navbar/avatar.png" alt="avatar" />
+                <NavDropdown alignRight className={styles.username} title={name}>
+                  <NavDropdown.Item className={styles.dropdown_item} href="#">Offers(2)</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="/message">Inbox(3)</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="#">Sign out</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            ) : (
+              <Nav className={styles.nav_links}>
+                <Nav.Link className={styles.link} href="/login">
+                  <img className="d-none d-md-inline mr-2" src="/navbar/user-icon.png" alt="user" />
+                  SIGN IN
+                </Nav.Link>
+              </Nav>
+            )}
           </Navbar.Collapse>
         </Navbar>
       </div>
