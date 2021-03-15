@@ -1,12 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Navbar, Nav, Container, Row, Col, Form, FormControl, InputGroup } from 'react-bootstrap'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Navbar, Nav, Row, Col } from 'react-bootstrap'
 
 import MyButton from '../components/MyButton'
-import utils from '../styles/utils.module.css'
 import styles from '../styles/index.module.css'
 
 export default function Home() {
@@ -306,7 +302,10 @@ export default function Home() {
                   </p>
                   <Link href="/">
                     <a className="">
-                      <MyButton width="180px" height="48px">GET STARTED</MyButton>
+                      <MyButton width="180px" height="48px">
+                        <span className="d-block d-sm-none text-uppercase">Get Started</span>
+                        <span className="d-none d-sm-block text-capitalize">Get Started</span>
+                      </MyButton>
                     </a>
                   </Link>
                 </div>
@@ -341,7 +340,8 @@ export default function Home() {
             <Link href="/property">
               <a className={styles.tenant_btn}>
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#126660" backgroundColor="#fff">
-                  For Tenants
+                  <span className="d-block d-sm-none text-uppercase">For Tenants</span>
+                  <span className="d-none d-sm-block text-capitalize">For Tenants</span>
                 </MyButton>
               </a>
             </Link>
@@ -349,7 +349,8 @@ export default function Home() {
             <Link href="/landlord">
               <a className="">
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#fff" backgroundColor="#126660">
-                  For Landlords
+                  <span className="d-block d-sm-none text-uppercase">For Landlords</span>
+                  <span className="d-none d-sm-block text-capitalize">For Landlords</span>
                 </MyButton>
               </a>
             </Link>

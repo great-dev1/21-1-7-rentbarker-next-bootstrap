@@ -14,7 +14,7 @@
 
 .header {
   display: block;
-  background-color: #126660;
+  background-image: url("../../public/pattern.jpg");
 }
 
 .chevron_left {
@@ -98,7 +98,7 @@
   width: 267px;
   padding-top: 52px;
   padding-left: 48px;
-  background-color: #126660;
+  background-image: url("../../public/pattern.jpg");
 }
 
 .progress_header {
@@ -244,6 +244,23 @@
   margin-bottom: 20px;
 }
 
+.radio_btn {
+  opacity: 1;
+  margin: 0;
+}
+
+.radio_check {
+  width: 14px;
+  height: auto;
+  margin-top: -5px;
+  margin-left: -1px;
+  margin-right: 5px;
+}
+
+.green_text {
+  color: #126660;
+}
+
 /* ---------------------- Employment Information Page ---------------------- */
 
 .add_text {
@@ -290,7 +307,7 @@
 /* ---------------------- Approve Brochure Page ---------------------- */
 
 .approve_main {
-  background-color: #126660;
+  background-image: url("../../public/pattern.jpg");
 }
 
 .approve_header {

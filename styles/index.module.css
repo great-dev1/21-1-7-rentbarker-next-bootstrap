@@ -462,6 +462,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .choose_section {
     padding: 128px 15px;
   }
   .choose_title {

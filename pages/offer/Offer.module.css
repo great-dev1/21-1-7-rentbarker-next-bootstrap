@@ -464,7 +464,7 @@
 
 .header {
   display: block;
-  background-color: #126660;
+  background-image: url("../../public/pattern.jpg");
 }
 
 .chevron_left {
@@ -491,7 +491,7 @@
 /* Main */
 
 .approve_main {
-  background-color: #126660;
+  background-image: url("../../public/pattern.jpg");
 }
 
 .approve_header {

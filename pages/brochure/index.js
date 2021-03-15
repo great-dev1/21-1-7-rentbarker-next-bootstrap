@@ -126,7 +126,7 @@ export default class Personal extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className={styles.body}>
         <Head>
           <title>Personal Information</title>
           <link rel="icon" href="/favicon.ico" />

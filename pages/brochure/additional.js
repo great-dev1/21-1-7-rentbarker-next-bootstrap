@@ -159,6 +159,10 @@ export default class Additional extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+
   render() {
     const {
       moveMonth, moveDate, moveYear, petYes, petNo, petInfo, esaYes, esaNo,
@@ -321,112 +325,165 @@ export default class Additional extends React.Component {
                 <div className={styles.quiz}>
                   <h4 className={styles.secondary_title}>Do you (or any household member) have any pets?</h4>
                   <div className={styles.radio_group}>
-                    <Form.Check
-                      id="petRadio1"
-                      name="petYes"
-                      checked={petYes}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="Yes"
-                      required
-                    />
-                    <Form.Check
-                      id="petRadio2"
-                      name="petYes"
-                      checked={petNo}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="No"
-                      required
-                    />
+                    {!petYes &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="petRadio1"
+                        name="petYes"
+                        checked={petYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {petYes &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={petYes ? styles.green_text : null}>Yes</label><br />
+
+                    {!petNo &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="petRadio2"
+                        name="petYes"
+                        checked={petNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+
+                        inline
+                      />
+                    }
+                    {petNo &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={petNo ? styles.green_text : null}>No</label>
                   </div>
 
                   {petYes &&
-                    <div className={styles.addition_input}>
-                      <Form.Control
-                        className={styles.input_box}
-                        name="petInfo"
-                        value={petInfo}
-                        onChange={this.handleChange}
-                        type="text"
-                        placeholder="Please provide the species, breed, age, and weight of the pet:"
-                        required
-                      />
+                    <div>
+                      <div className={styles.addition_input}>
+                        <Form.Control
+                          className={styles.input_box}
+                          name="petInfo"
+                          value={petInfo}
+                          onChange={this.handleChange}
+                          type="text"
+                          placeholder="Please provide the species, breed, age, and weight of the pet:"
+                          required
+                        />
+                      </div>
+                      <div className={styles.quiz}>
+                        <h4 className={styles.secondary_title}>Is the pet a registered Emotional Support Animal?</h4>
+                        <div className={styles.radio_group}>
+                          {!esaYes &&
+                            <Form.Check
+                              className={styles.radio_btn}
+                              id="esaRadio1"
+                              name="esaYes"
+                              checked={esaYes}
+                              onChange={this.handleRadio}
+                              type="radio"
+                              inline
+                            />
+                          }
+                          {esaYes &&
+                            <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                          }
+                          <label className={esaYes ? styles.green_text : null}>Yes</label><br />
+
+                          {!esaNo &&
+                            <Form.Check
+                              className={styles.radio_btn}
+                              id="esaRadio2"
+                              name="esaYes"
+                              checked={esaNo}
+                              onChange={this.handleRadio}
+                              type="radio"
+                              inline
+                            />
+                          }
+                          {esaNo &&
+                            <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                          }
+                          <label className={esaNo ? styles.green_text : null}>No</label>
+
+                        </div>
+                      </div>
                     </div>
                   }
                 </div>
 
-                {petYes &&
-                  <div className={styles.quiz}>
-                    <h4 className={styles.secondary_title}>Is the pet a registered Emotional Support Animal?</h4>
-                    <div className={styles.radio_group}>
-                      <Form.Check
-                        id="esaRadio1"
-                        name="esaYes"
-                        checked={esaYes}
-                        onChange={this.handleRadio}
-                        type="radio"
-                        label="Yes"
-                        required
-                      />
-                      <Form.Check
-                        id="esaRadio2"
-                        name="esaYes"
-                        checked={esaNo}
-                        onChange={this.handleRadio}
-                        type="radio"
-                        label="No"
-                        required
-                      />
-                    </div>
-                  </div>
-                }
-
                 <div className={styles.quiz}>
                   <h4 className={styles.secondary_title}>Are you (or any household member) a smoker?</h4>
                   <div className={styles.radio_group}>
-                    <Form.Check
-                      id="smokerRadio1"
-                      name="smokerYes"
-                      checked={smokerYes}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="Yes"
-                      required
-                    />
-                    <Form.Check
-                      id="smokerRadio2"
-                      name="smokerYes"
-                      checked={smokerNo}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="No"
-                      required
-                    />
+                    {!smokerYes &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="smokerRadio1"
+                        name="smokerYes"
+                        checked={smokerYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {smokerYes &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={smokerYes ? styles.green_text : null}>Yes</label><br />
+
+                    {!smokerNo &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="smokerRadio2"
+                        name="smokerYes"
+                        checked={smokerNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {smokerNo &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={smokerNo ? styles.green_text : null}>No</label>
                   </div>
                 </div>
 
                 <div className={styles.quiz}>
                   <h4 className={styles.secondary_title}>Have you ever been evicted?</h4>
                   <div className={styles.radio_group}>
-                    <Form.Check
-                      id="evictionRadio1"
-                      name="evictionYes"
-                      checked={evictionYes}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="Yes"
-                      required
-                    />
-                    <Form.Check
-                      id="evictionRadio2"
-                      name="evictionYes"
-                      checked={evictionNo}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="No"
-                      required
-                    />
+                    {!evictionYes &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="evictionRadio1"
+                        name="evictionYes"
+                        checked={evictionYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {evictionYes &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={evictionYes ? styles.green_text : null}>Yes</label><br />
+
+                    {!evictionNo &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="evictionRadio2"
+                        name="evictionYes"
+                        checked={evictionNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {evictionNo &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={evictionNo ? styles.green_text : null}>No</label>
                   </div>
 
                   {evictionYes &&
@@ -447,24 +504,37 @@ export default class Additional extends React.Component {
                 <div className={styles.quiz}>
                   <h4 className={styles.secondary_title}>Do you have any judgements or liens?</h4>
                   <div className={styles.radio_group}>
-                    <Form.Check
-                      id="judgeRadio1"
-                      name="judgeYes"
-                      checked={judgeYes}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="Yes"
-                      required
-                    />
-                    <Form.Check
-                      id="judgeRadio2"
-                      name="judgeYes"
-                      checked={judgeNo}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="No"
-                      required
-                    />
+                    {!judgeYes &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="judgeRadio1"
+                        name="judgeYes"
+                        checked={judgeYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {judgeYes &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={judgeYes ? styles.green_text : null}>Yes</label><br />
+
+                    {!judgeNo &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="judgeRadio2"
+                        name="judgeYes"
+                        checked={judgeNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {judgeNo &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={judgeNo ? styles.green_text : null}>No</label>
                   </div>
 
                   {judgeYes &&
@@ -485,24 +555,37 @@ export default class Additional extends React.Component {
                 <div className={styles.quiz}>
                   <h4 className={styles.secondary_title}>Have you ever filed for bankruptcy?</h4>
                   <div className={styles.radio_group}>
-                    <Form.Check
-                      id="bankruptcyRadio1"
-                      name="bankruptcyYes"
-                      checked={bankruptcyYes}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="Yes"
-                      required
-                    />
-                    <Form.Check
-                      id="bankruptcyRadio2"
-                      name="bankruptcyYes"
-                      checked={bankruptcyNo}
-                      onChange={this.handleRadio}
-                      type="radio"
-                      label="No"
-                      required
-                    />
+                    {!bankruptcyYes &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="bankruptcyRadio1"
+                        name="bankruptcyYes"
+                        checked={bankruptcyYes}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {bankruptcyYes &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={bankruptcyYes ? styles.green_text : null}>Yes</label><br />
+
+                    {!bankruptcyNo &&
+                      <Form.Check
+                        className={styles.radio_btn}
+                        id="bankruptcyRadio2"
+                        name="bankruptcyYes"
+                        checked={bankruptcyNo}
+                        onChange={this.handleRadio}
+                        type="radio"
+                        inline
+                      />
+                    }
+                    {bankruptcyNo &&
+                      <img className={styles.radio_check} src="/brochure/radio-check.png" alt="radio" />
+                    }
+                    <label className={bankruptcyNo ? styles.green_text : null}>No</label>
                   </div>
 
                   {bankruptcyYes &&

@@ -47,7 +47,7 @@
     padding: 18px 40px;
   }
   .brand {
-    top: 23px;
+    top: auto;
     left: 40px;
   }
   .nav_links {
