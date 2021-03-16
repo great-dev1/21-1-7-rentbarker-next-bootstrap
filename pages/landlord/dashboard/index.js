@@ -21,6 +21,7 @@ export default class Dashboard extends React.Component {
         <Navbar />
 
         <div className="d-flex">
+          {/* Sidebar */}
           <div className={styles.sidebar}>
             <div>
               <Link href="/landlord/dashboard">
@@ -76,6 +77,7 @@ export default class Dashboard extends React.Component {
             </div>
           </div>
 
+          {/* Main */}
           <main className={styles.main}>
             <Container>
               <h2 className={styles.primary_title}>Dashboard</h2>

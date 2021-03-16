@@ -32,6 +32,7 @@
 @media only screen and (min-width: 1200px) {
   .sidebar {
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     justify-content: space-between;
     width: 240px;

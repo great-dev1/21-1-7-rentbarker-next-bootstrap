@@ -466,7 +466,7 @@ export default class Preview extends React.Component {
             }
 
             <h4 className={styles.preview_section_title}>COMPETITORS</h4>
-            <Row className={styles.preview_roommate}>
+            <Row className={styles.preview_competitor}>
               <Col md={6} className={styles.preview_item}>
                 <div className={styles.flat_card}>
                   <img src="/brochure/flat-1.jpg" alt="flat" />
