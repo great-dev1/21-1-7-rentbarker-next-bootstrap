@@ -16,6 +16,7 @@
   font-weight: bold;
   letter-spacing: 0.5px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn_style:hover, .btn_style:focus {

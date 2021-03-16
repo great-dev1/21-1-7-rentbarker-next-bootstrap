@@ -45,8 +45,6 @@ export default class Lead extends React.Component {
 
   handleChange = (num) => () => this.setState({ property: num });
 
-  handleClick = () => fileUp.click();
-
   componentDidMount() {
     const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : '';
     const middleName = localStorage.getItem('middleName') !== null ? localStorage.getItem('middleName') : '';

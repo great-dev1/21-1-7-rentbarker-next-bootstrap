@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Form, InputGroup, FormControl } from 'react-bootstrap'
+import { Form, InputGroup, FormControl, Modal } from 'react-bootstrap'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -12,6 +12,7 @@ import styles from './Property.module.css'
 
 export default class Property extends React.Component {
   state = {
+    modalShow: false,
     property: 1,
 
     firstName: '', middleName: '', lastName: '', birthMonth: '', birthDate: '', birthYear: '',
@@ -47,7 +48,17 @@ export default class Property extends React.Component {
 
   handleChange = (num) => () => this.setState({ property: num });
 
-  handleClick = () => fileUp.click();
+  handleShow = () => {
+    this.setState({
+      modalShow: true
+    })
+  }
+
+  handleClose = () => {
+    this.setState({
+      modalShow: false
+    })
+  }
 
   componentDidMount() {
     const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : '';
@@ -188,7 +199,7 @@ export default class Property extends React.Component {
 
   render() {
     const {
-      property,
+      modalShow, property,
 
       firstName, middleName, lastName, birthMonth, birthDate, birthYear,
       currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
@@ -221,7 +232,7 @@ export default class Property extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className={modalShow ? styles.blur_effect : null}>
         <Head>
           <title>Properties</title>
           <link rel="icon" href="/favicon.ico" />
@@ -447,11 +458,54 @@ export default class Property extends React.Component {
                 <div className={styles.preview_header}>
                   <div className="d-flex justify-content-between align-items-center">
                     <h3 className={styles.preview_title}>Apartments</h3>
-                    <Link href="">
-                      <a className="">
-                        <MyButton width="144px" height="36px" color="#126660" backgroundColor="#fff">+INVITE MEMBER</MyButton>
-                      </a>
-                    </Link>
+
+                    <a href="#" onClick={this.handleShow}>
+                      <MyButton width="144px" height="36px" color="#126660" backgroundColor="#fff">+INVITE MEMBER</MyButton>
+                    </a>
+
+                    {/* Invite Member Modal */}
+                    <Modal show={modalShow} onHide={this.handleClose} centered>
+                      <div className={styles.modal}>
+                        <img className={styles.close_icon} onClick={this.handleClose} src="/landlord/property/close-icon.png" alt="close" />
+                        <div className={styles.modal_content}>
+                          <h4 className={styles.modal_title}>Invite Member</h4>
+                          <img className={styles.modal_img} src="/landlord/property/user.png" alt="user" />
+
+                          <Form className={styles.form}>
+                            <Form.Control
+                              className={styles.input_box}
+                              name="name"
+                              type="text"
+                              placeholder="Name"
+                              required
+                            />
+
+                            <Form.Control
+                              className={styles.input_box}
+                              name="email"
+                              type="email"
+                              placeholder="Email Address"
+                              required
+                            />
+
+                            <Form.Control
+                              className={styles.input_box}
+                              name="status"
+                              as="select"
+                              custom
+                              required
+                            >
+                              <option value="">Status</option>
+                              <option value="Property Manager">Property Manager</option>
+                              <option value="Tenant">Tenant</option>
+                              <option value="Landlord">Landlord</option>
+                            </Form.Control>
+
+                            <MyButton width="144px" height="40px">SEND INVITE</MyButton>
+                          </Form>
+                        </div>
+                      </div>
+                    </Modal>
                   </div>
 
                   <div className={styles.apartment_overview}>
