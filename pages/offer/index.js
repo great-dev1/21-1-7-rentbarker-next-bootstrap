@@ -8,7 +8,7 @@ import Footer from '../../components/Footer'
 import OfferCard from './OfferCard'
 import styles from './Offer.module.css'
 
-export default class Property extends React.Component {
+export default class Offers extends React.Component {
   state = {
     logged: false,
   }

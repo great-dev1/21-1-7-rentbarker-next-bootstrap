@@ -4,7 +4,7 @@ import Link from 'next/link'
 import utils from '../../styles/utils.module.css'
 import styles from './Reset.module.css'
 
-export default function Login() {
+export default function Reset() {
   return (
     <div>
       <Head>

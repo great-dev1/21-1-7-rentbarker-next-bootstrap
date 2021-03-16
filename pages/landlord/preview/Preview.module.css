@@ -40,13 +40,13 @@
 
 /* Main */
 
-.approve_main {
+.preview_main {
   background-image: url("../../../public/pattern.jpg");
 }
 
 /* Header */
 
-.approve_header {
+.preview_header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,13 +60,13 @@
   margin: 18px 0;
 }
 
-.approve_primary_title {
+.preview_primary_title {
   font-size: 24px;
   font-weight: bold;
   color: white;
 }
 
-.approve_primary_detail {
+.preview_primary_detail {
   font-size: 14px;
   line-height: 1.43;
   color: white;
@@ -194,39 +194,39 @@
 
 /* Content */
 
-.approve_content {
+.preview_content {
   padding: 20px 15px;
   background-color: white;
 }
 
-.approve_username {
+.preview_username {
   margin-left: 16px;
   font-size: 20px;
   font-weight: 600;
 }
 
-.approve_summary_item {
+.preview_summary_item {
   margin-top: 19px;
 }
 
-.approve_icon {
+.preview_icon {
   margin-top: 15px;
   margin-right: 10px;
 }
 
-.approve_title {
+.preview_title {
   font-size: 14px;
   line-height: 1.57;
   color: #888e8e;
 }
 
-.approve_detail {
+.preview_detail {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.57;
 }
 
-.approve_section_title {
+.preview_section_title {
   margin-top: 24px;
   margin-bottom: 16px;
   font-size: 12px;
@@ -235,25 +235,25 @@
   color: #89a3a3;
 }
 
-.approve_item {
+.preview_item {
   margin-bottom: 16px;
 }
 
-.approve_rating_detail {
+.preview_rating_detail {
   font-size: 20px;
   font-weight: bold;
   line-height: 1.38;
 }
 
-.approve_stars, .approve_score {
+.preview_stars, .preview_score {
   margin-left: 20px;
 }
 
-.approve_star {
+.preview_star {
   margin: 2px;
 }
 
-.approve_info_detail {
+.preview_info_detail {
   font-size: 16px;
   line-height: 1.38;
 }
@@ -288,30 +288,30 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .approve_main {
+  .preview_main {
     padding-bottom: 96px;
   }
   .note_icon {
     width: auto;
     margin: 75px 0 11px;
   }
-  .approve_primary_title {
+  .preview_primary_title {
     font-size: 28px;
   }
   .signup_link {
     margin: 29px 0 40px;
   }
-  .approve_content {
+  .preview_content {
     max-width: 750px;
     margin: 0 auto;
     padding: 32px 44px 44px;
     border-radius: 4px;
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
   }
-  .approve_rating_detail {
+  .preview_rating_detail {
     font-size: 16px;
   }
-  .approve_star {
+  .preview_star {
     margin: 4px;
   }
 }

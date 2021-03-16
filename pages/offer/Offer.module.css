@@ -44,6 +44,7 @@
 /* Main */
 
 .main {
+  flex-grow: 1;
   margin: auto;
   padding: 20px 0;
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Form } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import MyButton from '../../components/MyButton'
-import styles from './message.module.css'
+import styles from './Message.module.css'
 
-export default class Property extends React.Component {
+export default class Message extends React.Component {
   state = {
     logged: false,
     property: 1,
@@ -29,7 +29,7 @@ export default class Property extends React.Component {
     return (
       <div>
         <Head>
-          <title>Offers</title>
+          <title>Messages</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

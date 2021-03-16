@@ -256,11 +256,11 @@ export default class Preview extends React.Component {
           </div>
         </header>
 
-        <main className={styles.approve_main}>
-          <div className={styles.approve_header}>
-            <img className={styles.note_icon} src="/landlord/preview/note.png" alt="note" />
-            <h2 className={styles.approve_primary_title}>You Have a Lead!</h2>
-            <p className={styles.approve_primary_detail}>
+        <main className={styles.preview_main}>
+          <div className={styles.preview_header}>
+            <img className={styles.note_icon} src="/landlord/preview/note-icon.png" alt="note" />
+            <h2 className={styles.preview_primary_title}>You Have a Lead!</h2>
+            <p className={styles.preview_primary_detail}>
               Lorem Ipsum is simply dummy text of the printing<br className="d-none d-sm-block" />
               and typesetting industry.
             </p>
@@ -292,114 +292,114 @@ export default class Preview extends React.Component {
             </Modal>
           </div>
 
-          <div className={styles.approve_content}>
+          <div className={styles.preview_content}>
             <div className="d-flex flex-column flex-md-row align-items-center">
               <img className="mb-2 mb-md-0" src="/brochure/user-icon.png" alt="user" />
-              <span className={styles.approve_username}>{firstName} {middleName} {lastName}</span>
+              <span className={styles.preview_username}>{firstName} {middleName} {lastName}</span>
             </div>
 
-            <Row className={styles.approve_summary}>
-              <Col xs={6} md={4} className={styles.approve_summary_item}>
+            <Row className={styles.preview_summary}>
+              <Col xs={6} md={4} className={styles.preview_summary_item}>
                 <div className="d-flex flex-column flex-md-row align-items-start">
-                  <img className={styles.approve_icon} src="/brochure/dollar-icon.png" alt="dollar" />
+                  <img className={styles.preview_icon} src="/brochure/dollar-icon.png" alt="dollar" />
                   <div className="mt-2 mt-md-0">
-                    <p className={styles.approve_title}>Rent</p>
-                    <p className={styles.approve_detail}>${currentRent} Monthly</p>
+                    <p className={styles.preview_title}>Rent</p>
+                    <p className={styles.preview_detail}>${currentRent} Monthly</p>
                   </div>
                 </div>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_summary_item}>
+              <Col xs={6} md={4} className={styles.preview_summary_item}>
                 <div className="d-flex flex-column flex-md-row align-items-start">
-                  <img className={styles.approve_icon} src="/brochure/room-icon.png" alt="room" />
+                  <img className={styles.preview_icon} src="/brochure/room-icon.png" alt="room" />
                   <div className="mt-2 mt-md-0">
-                    <p className={styles.approve_title}>Flat Details</p>
-                    <p className={styles.approve_detail}>Unit 303 | 1 bed, 1 bath</p>
+                    <p className={styles.preview_title}>Flat Details</p>
+                    <p className={styles.preview_detail}>Unit 303 | 1 bed, 1 bath</p>
                   </div>
                 </div>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_summary_item}>
+              <Col xs={6} md={4} className={styles.preview_summary_item}>
                 <div className="d-flex flex-column flex-md-row align-items-start">
-                  <img className={styles.approve_icon} src="/brochure/map-icon.png" alt="map" />
+                  <img className={styles.preview_icon} src="/brochure/map-icon.png" alt="map" />
                   <div className="mt-2 mt-md-0">
-                    <p className={styles.approve_title}>Address</p>
-                    <p className={styles.approve_detail}>{currentAddress} {currentUnit} {currentCity}, {currentState}</p>
+                    <p className={styles.preview_title}>Address</p>
+                    <p className={styles.preview_detail}>{currentAddress} {currentUnit} {currentCity}, {currentState}</p>
                   </div>
                 </div>
               </Col>
             </Row>
             <hr />
 
-            <h4 className={styles.approve_section_title}>RATING</h4>
-            <Row className={styles.approve_rating}>
-              <Col md={6} className={styles.approve_item}>
+            <h4 className={styles.preview_section_title}>RATING</h4>
+            <Row className={styles.preview_rating}>
+              <Col md={6} className={styles.preview_item}>
                 <div className="d-flex justify-content-between justify-content-md-start align-items-center">
                   <div>
-                    <p className={styles.approve_title}>Match</p>
-                    <p className={styles.approve_rating_detail}>88%</p>
+                    <p className={styles.preview_title}>Match</p>
+                    <p className={styles.preview_rating_detail}>88%</p>
                   </div>
-                  <div className={styles.approve_stars}>
-                    <img className={styles.approve_star} src="/brochure/star.png" alt="star" />
-                    <img className={styles.approve_star} src="/brochure/star.png" alt="star" />
-                    <img className={styles.approve_star} src="/brochure/star.png" alt="star" />
-                    <img className={styles.approve_star} src="/brochure/star.png" alt="star" />
-                    <img className={styles.approve_star} src="/brochure/star.png" alt="star" />
+                  <div className={styles.preview_stars}>
+                    <img className={styles.preview_star} src="/brochure/star.png" alt="star" />
+                    <img className={styles.preview_star} src="/brochure/star.png" alt="star" />
+                    <img className={styles.preview_star} src="/brochure/star.png" alt="star" />
+                    <img className={styles.preview_star} src="/brochure/star.png" alt="star" />
+                    <img className={styles.preview_star} src="/brochure/star.png" alt="star" />
                   </div>
                 </div>
               </Col>
 
-              <Col md={6} className={styles.approve_item}>
+              <Col md={6} className={styles.preview_item}>
                 <div className="d-flex justify-content-between justify-content-md-start align-items-center">
                   <div>
-                    <p className={styles.approve_title}>Credit Score</p>
-                    <p className={styles.approve_rating_detail}>{myCredit}</p>
+                    <p className={styles.preview_title}>Credit Score</p>
+                    <p className={styles.preview_rating_detail}>{myCredit}</p>
                   </div>
-                  <img className={styles.approve_score} src="/brochure/score-bar.png" alt="score" />
+                  <img className={styles.preview_score} src="/brochure/score-bar.png" alt="score" />
                 </div>
               </Col>
             </Row>
 
-            <h4 className={styles.approve_section_title}>BASIC INFORMATION</h4>
-            <Row className={styles.approve_basic}>
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Total Monthly Income</p>
-                <p className={styles.approve_info_detail}>${myIncome}</p>
+            <h4 className={styles.preview_section_title}>BASIC INFORMATION</h4>
+            <Row className={styles.preview_basic}>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Total Monthly Income</p>
+                <p className={styles.preview_info_detail}>${myIncome}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Desired Move-In Date</p>
-                <p className={styles.approve_info_detail}>{moveMonth}/{moveDate}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Desired Move-In Date</p>
+                <p className={styles.preview_info_detail}>{moveMonth}/{moveDate}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Desired Lease Length</p>
-                <p className={styles.approve_info_detail}>{lengthMin}-{lengthMax} months</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Desired Lease Length</p>
+                <p className={styles.preview_info_detail}>{lengthMin}-{lengthMax} months</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Monthly Rent Budget</p>
-                <p className={styles.approve_info_detail}>${budgetMin} - ${budgetMax}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Monthly Rent Budget</p>
+                <p className={styles.preview_info_detail}>${budgetMin} - ${budgetMax}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Smoker/Non-Smoker</p>
-                <p className={styles.approve_info_detail}>{smokerYes ? "Smoker" : "Non-Smoker"}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Smoker/Non-Smoker</p>
+                <p className={styles.preview_info_detail}>{smokerYes ? "Smoker" : "Non-Smoker"}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Bed/Bath Rooms Prefer</p>
-                <p className={styles.approve_info_detail}>{bedroomNum} bed | {bathroomNum} bath</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Bed/Bath Rooms Prefer</p>
+                <p className={styles.preview_info_detail}>{bedroomNum} bed | {bathroomNum} bath</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Number of Pets</p>
-                <p className={styles.approve_info_detail}>{petYes ? `${petInfo}` : "0"}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Number of Pets</p>
+                <p className={styles.preview_info_detail}>{petYes ? `${petInfo}` : "0"}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Features</p>
-                <p className={styles.approve_info_detail}>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Features</p>
+                <p className={styles.preview_info_detail}>
                   {inunitToggle && <div>In-unit washer/dryer</div>}
                   {connectionToggle && <div>Washer & dryer connection</div>}
                   {laundryToggle && <div>On-site laundry</div>}
@@ -415,59 +415,59 @@ export default class Preview extends React.Component {
               </Col>
             </Row>
 
-            <h4 className={styles.approve_section_title}>ADDITIONAL INFORMATION</h4>
-            <Row className={styles.approve_additional}>
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Evictions</p>
-                <p className={styles.approve_info_detail}>{evictionYes ? `Yes, ${evictionInfo}` : "No"}</p>
+            <h4 className={styles.preview_section_title}>ADDITIONAL INFORMATION</h4>
+            <Row className={styles.preview_additional}>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Evictions</p>
+                <p className={styles.preview_info_detail}>{evictionYes ? `Yes, ${evictionInfo}` : "No"}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Bankruptcy</p>
-                <p className={styles.approve_info_detail}>{bankruptcyYes ? `Yes, ${bankruptcyMonth}/${bankruptcyDate}/${bankruptcyYear}` : "No"}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Bankruptcy</p>
+                <p className={styles.preview_info_detail}>{bankruptcyYes ? `Yes, ${bankruptcyMonth}/${bankruptcyDate}/${bankruptcyYear}` : "No"}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Judgments/Liens</p>
-                <p className={styles.approve_info_detail}>{judgeYes ? `Yes, ${judgeInfo}` : "No"}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Judgments/Liens</p>
+                <p className={styles.preview_info_detail}>{judgeYes ? `Yes, ${judgeInfo}` : "No"}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Current Occupation</p>
-                <p className={styles.approve_info_detail}>{employerOccupation}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Current Occupation</p>
+                <p className={styles.preview_info_detail}>{employerOccupation}</p>
               </Col>
 
-              <Col xs={6} md={4} className={styles.approve_item}>
-                <p className={styles.approve_title}>Length of Time</p>
-                <p className={styles.approve_info_detail}>{employerLength}</p>
+              <Col xs={6} md={4} className={styles.preview_item}>
+                <p className={styles.preview_title}>Length of Time</p>
+                <p className={styles.preview_info_detail}>{employerLength}</p>
               </Col>
             </Row>
 
             {useGuarantor &&
               <div>
-                <h4 className={styles.approve_section_title}>ROOMMATE (GUARANTOR)</h4>
-                <Row className={styles.approve_roommate}>
-                  <Col xs={6} md={4} className={styles.approve_item}>
-                    <p className={styles.approve_title}>Number of Roommates</p>
-                    <p className={styles.approve_info_detail}>{roommateNum}</p>
+                <h4 className={styles.preview_section_title}>ROOMMATE (GUARANTOR)</h4>
+                <Row className={styles.preview_roommate}>
+                  <Col xs={6} md={4} className={styles.preview_item}>
+                    <p className={styles.preview_title}>Number of Roommates</p>
+                    <p className={styles.preview_info_detail}>{roommateNum}</p>
                   </Col>
 
-                  <Col xs={6} md={4} className={styles.approve_item}>
-                    <p className={styles.approve_title}>Roommate Monthly Income</p>
-                    <p className={styles.approve_info_detail}>${roommateIncome}</p>
+                  <Col xs={6} md={4} className={styles.preview_item}>
+                    <p className={styles.preview_title}>Roommate Monthly Income</p>
+                    <p className={styles.preview_info_detail}>${roommateIncome}</p>
                   </Col>
 
-                  <Col xs={6} md={4} className={styles.approve_item}>
-                    <p className={styles.approve_title}>Roommate Credit Score</p>
-                    <p className={styles.approve_info_detail}>{roommateCredit}</p>
+                  <Col xs={6} md={4} className={styles.preview_item}>
+                    <p className={styles.preview_title}>Roommate Credit Score</p>
+                    <p className={styles.preview_info_detail}>{roommateCredit}</p>
                   </Col>
                 </Row>
               </div>
             }
 
-            <h4 className={styles.approve_section_title}>COMPETITORS</h4>
-            <Row className={styles.approve_roommate}>
-              <Col md={6} className={styles.approve_item}>
+            <h4 className={styles.preview_section_title}>COMPETITORS</h4>
+            <Row className={styles.preview_roommate}>
+              <Col md={6} className={styles.preview_item}>
                 <div className={styles.flat_card}>
                   <img src="/brochure/flat-1.jpg" alt="flat" />
                   <div className="ml-2">
@@ -478,7 +478,7 @@ export default class Preview extends React.Component {
                 </div>
               </Col>
 
-              <Col md={6} className={styles.approve_item}>
+              <Col md={6} className={styles.preview_item}>
                 <div className={styles.flat_card}>
                   <img src="/brochure/flat-2.jpg" alt="flat" />
                   <div className="ml-2">
@@ -490,54 +490,54 @@ export default class Preview extends React.Component {
               </Col>
             </Row>
 
-            <Row className={styles.approve_residence}>
+            <Row className={styles.preview_residence}>
               <Col md={6}>
-                <h4 className={styles.approve_section_title}>CURRENT RESIDENCE</h4>
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Address</p>
-                  <p className={styles.approve_info_detail}>
+                <h4 className={styles.preview_section_title}>CURRENT RESIDENCE</h4>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Address</p>
+                  <p className={styles.preview_info_detail}>
                     {currentAddress} {currentUnit} {currentCity}, {currentState}
                   </p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Monthly Rent</p>
-                  <p className={styles.approve_info_detail}>{currentRent}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Monthly Rent</p>
+                  <p className={styles.preview_info_detail}>{currentRent}</p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Duration of Stay</p>
-                  <p className={styles.approve_info_detail}>{currentLength}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Duration of Stay</p>
+                  <p className={styles.preview_info_detail}>{currentLength}</p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Reason for leaving</p>
-                  <p className={styles.approve_info_detail}>{currentReason}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Reason for leaving</p>
+                  <p className={styles.preview_info_detail}>{currentReason}</p>
                 </div>
               </Col>
 
               <Col md={6}>
-                <h4 className={styles.approve_section_title}>PREVIOUS RESIDENCE</h4>
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Address</p>
-                  <p className={styles.approve_info_detail}>
+                <h4 className={styles.preview_section_title}>PREVIOUS RESIDENCE</h4>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Address</p>
+                  <p className={styles.preview_info_detail}>
                     {prevAddress} {prevUnit} {prevCity}, {prevState}
                   </p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Monthly Rent</p>
-                  <p className={styles.approve_info_detail}>{prevRent}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Monthly Rent</p>
+                  <p className={styles.preview_info_detail}>{prevRent}</p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Duration of Stay</p>
-                  <p className={styles.approve_info_detail}>{prevLength}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Duration of Stay</p>
+                  <p className={styles.preview_info_detail}>{prevLength}</p>
                 </div>
 
-                <div className={styles.approve_item}>
-                  <p className={styles.approve_title}>Reason for leaving</p>
-                  <p className={styles.approve_info_detail}>{prevReason}</p>
+                <div className={styles.preview_item}>
+                  <p className={styles.preview_title}>Reason for leaving</p>
+                  <p className={styles.preview_info_detail}>{prevReason}</p>
                 </div>
               </Col>
             </Row>
