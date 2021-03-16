@@ -306,9 +306,9 @@ export default class Lead extends React.Component {
                   </div>
 
                   <div className={styles.status_btns}>
-                    <a href="#" className={styles.status_btn_active}>ALL</a>
+                    <a href="/landlord/lead" className={styles.status_btn_active}>ALL</a>
                     <a href="#" className={styles.status_btn}>ACTIVE</a>
-                    <a href="#" className={styles.status_btn}>PENDING</a>
+                    <a href="/landlord/lead/pending" className={styles.status_btn}>PENDING</a>
                     <a href="#" className={styles.status_btn}>APPROVED</a>
                     <a href="#" className={styles.status_btn}>DECLINE</a>
                   </div>
