@@ -624,6 +624,7 @@
 }
 
 .tenant_match {
+  margin-left: 8px;
   font-size: 14px;
   font-weight: 600;
   color: #086627;

@@ -2,8 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container, Form, Row, Col } from 'react-bootstrap'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -69,7 +67,7 @@ export default class Submit extends React.Component {
               <Link href="/landlord/search">
                 <a className={styles.sidebar_menu}>
                   <img src="/sidebar/search-grey.png" alt="search" />
-                  <span className={styles.sidebar_text}>Tenant Search</span>
+                  <span className={styles.sidebar_text}>Prospect Search</span>
                 </a>
               </Link>
 

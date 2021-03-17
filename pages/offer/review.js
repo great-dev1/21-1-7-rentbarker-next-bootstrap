@@ -16,17 +16,9 @@ export default class Review extends React.Component {
     modalShow: false,
   }
 
-  handleShow = () => {
-    this.setState({
-      modalShow: true
-    })
-  }
+  handleShow = () => this.setState({ modalShow: true });
 
-  handleClose = () => {
-    this.setState({
-      modalShow: false
-    })
-  }
+  handleClose = () => this.setState({ modalShow: false });
 
   componentDidMount() {
     const logged = localStorage.getItem('logged') === 'true';

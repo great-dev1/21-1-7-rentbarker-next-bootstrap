@@ -46,67 +46,67 @@ export default class Lead extends React.Component {
   handleChange = (num) => () => this.setState({ property: num });
 
   componentDidMount() {
-    const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : '';
+    const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : 'Saepul';
     const middleName = localStorage.getItem('middleName') !== null ? localStorage.getItem('middleName') : '';
-    const lastName = localStorage.getItem('lastName') !== null ? localStorage.getItem('lastName') : '';
-    const birthMonth = localStorage.getItem('birthMonth') !== null ? localStorage.getItem('birthMonth') : '';
-    const birthDate = localStorage.getItem('birthDate') !== null ? localStorage.getItem('birthDate') : '';
-    const birthYear = localStorage.getItem('birthYear') !== null ? localStorage.getItem('birthYear') : '';
-    const currentAddress = localStorage.getItem('currentAddress') !== null ? localStorage.getItem('currentAddress') : '';
+    const lastName = localStorage.getItem('lastName') !== null ? localStorage.getItem('lastName') : 'Rohman';
+    const birthMonth = localStorage.getItem('birthMonth') !== null ? localStorage.getItem('birthMonth') : '01';
+    const birthDate = localStorage.getItem('birthDate') !== null ? localStorage.getItem('birthDate') : '03';
+    const birthYear = localStorage.getItem('birthYear') !== null ? localStorage.getItem('birthYear') : '1986';
+    const currentAddress = localStorage.getItem('currentAddress') !== null ? localStorage.getItem('currentAddress') : '1234 Magnolia Ave';
     const currentUnit = localStorage.getItem('currentUnit') !== null ? localStorage.getItem('currentUnit') : '';
-    const currentCity = localStorage.getItem('currentCity') !== null ? localStorage.getItem('currentCity') : '';
-    const currentState = localStorage.getItem('currentState') !== null ? localStorage.getItem('currentState') : '';
-    const currentZipcode = localStorage.getItem('currentZipcode') !== null ? localStorage.getItem('currentZipcode') : '';
-    const currentRent = localStorage.getItem('currentRent') !== null ? localStorage.getItem('currentRent') : '';
-    const currentLength = localStorage.getItem('currentLength') !== null ? localStorage.getItem('currentLength') : '';
-    const currentReason = localStorage.getItem('currentReason') !== null ? localStorage.getItem('currentReason') : '';
-    const prevAddress = localStorage.getItem('prevAddress') !== null ? localStorage.getItem('prevAddress') : '';
+    const currentCity = localStorage.getItem('currentCity') !== null ? localStorage.getItem('currentCity') : 'City 1';
+    const currentState = localStorage.getItem('currentState') !== null ? localStorage.getItem('currentState') : 'TX';
+    const currentZipcode = localStorage.getItem('currentZipcode') !== null ? localStorage.getItem('currentZipcode') : '55555';
+    const currentRent = localStorage.getItem('currentRent') !== null ? localStorage.getItem('currentRent') : '1000';
+    const currentLength = localStorage.getItem('currentLength') !== null ? localStorage.getItem('currentLength') : '12 months';
+    const currentReason = localStorage.getItem('currentReason') !== null ? localStorage.getItem('currentReason') : 'Too far from work';
+    const prevAddress = localStorage.getItem('prevAddress') !== null ? localStorage.getItem('prevAddress') : '837 Magnolia Ave';
     const prevUnit = localStorage.getItem('prevUnit') !== null ? localStorage.getItem('prevUnit') : '';
-    const prevCity = localStorage.getItem('prevCity') !== null ? localStorage.getItem('prevCity') : '';
-    const prevState = localStorage.getItem('prevState') !== null ? localStorage.getItem('prevState') : '';
-    const prevZipcode = localStorage.getItem('prevZipcode') !== null ? localStorage.getItem('prevZipcode') : '';
-    const prevRent = localStorage.getItem('prevRent') !== null ? localStorage.getItem('prevRent') : '';
-    const prevLength = localStorage.getItem('prevLength') !== null ? localStorage.getItem('prevLength') : '';
-    const prevReason = localStorage.getItem('prevReason') !== null ? localStorage.getItem('prevReason') : '';
+    const prevCity = localStorage.getItem('prevCity') !== null ? localStorage.getItem('prevCity') : 'City 2';
+    const prevState = localStorage.getItem('prevState') !== null ? localStorage.getItem('prevState') : 'NY';
+    const prevZipcode = localStorage.getItem('prevZipcode') !== null ? localStorage.getItem('prevZipcode') : '33333';
+    const prevRent = localStorage.getItem('prevRent') !== null ? localStorage.getItem('prevRent') : '899';
+    const prevLength = localStorage.getItem('prevLength') !== null ? localStorage.getItem('prevLength') : '2 years';
+    const prevReason = localStorage.getItem('prevReason') !== null ? localStorage.getItem('prevReason') : 'Wanted to upgrade to a bigger place';
 
-    const moveMonth = localStorage.getItem('moveMonth') !== null ? localStorage.getItem('moveMonth') : '';
-    const moveDate = localStorage.getItem('moveDate') !== null ? localStorage.getItem('moveDate') : '';
-    const moveYear = localStorage.getItem('moveYear') !== null ? localStorage.getItem('moveYear') : '';
-    const petYes = localStorage.getItem('petYes') === 'true';
+    const moveMonth = localStorage.getItem('moveMonth') !== null ? localStorage.getItem('moveMonth') : '12';
+    const moveDate = localStorage.getItem('moveDate') !== null ? localStorage.getItem('moveDate') : '01';
+    const moveYear = localStorage.getItem('moveYear') !== null ? localStorage.getItem('moveYear') : '2020';
+    const petYes = 'true';
     const petNo = localStorage.getItem('petNo') === 'true';
-    const petInfo = localStorage.getItem('petInfo') !== null ? localStorage.getItem('petInfo') : '';
+    const petInfo = localStorage.getItem('petInfo') !== null ? localStorage.getItem('petInfo') : 'Dog, Yellow, Lab, 2 years old, 60 lbs';
     const esaYes = localStorage.getItem('esaYes') === 'true';
     const esaNo = localStorage.getItem('esaNo') === 'true';
     const smokerYes = localStorage.getItem('smokerYes') === 'true';
     const smokerNo = localStorage.getItem('smokerNo') === 'true';
     const evictionYes = localStorage.getItem('evictionYes') === 'true';
     const evictionNo = localStorage.getItem('evictionNo') === 'true';
-    const evictionInfo = localStorage.getItem('evictionInfo') !== null ? localStorage.getItem('evictionInfo') : '';
+    const evictionInfo = localStorage.getItem('evictionInfo') !== null ? localStorage.getItem('evictionInfo') : 'Eviction info';
     const judgeYes = localStorage.getItem('judgeYes') === 'true';
     const judgeNo = localStorage.getItem('judgeNo') === 'true';
-    const judgeInfo = localStorage.getItem('judgeInfo') !== null ? localStorage.getItem('judgeInfo') : '';
+    const judgeInfo = localStorage.getItem('judgeInfo') !== null ? localStorage.getItem('judgeInfo') : 'Judgement info';
     const bankruptcyYes = localStorage.getItem('bankruptcyYes') === 'true';
     const bankruptcyNo = localStorage.getItem('bankruptcyNo') === 'true';
-    const bankruptcyMonth = localStorage.getItem('bankruptcyMonth') !== null ? localStorage.getItem('bankruptcyMonth') : '';
-    const bankruptcyDate = localStorage.getItem('bankruptcyDate') !== null ? localStorage.getItem('bankruptcyDate') : '';
-    const bankruptcyYear = localStorage.getItem('bankruptcyYear') !== null ? localStorage.getItem('bankruptcyYear') : '';
+    const bankruptcyMonth = localStorage.getItem('bankruptcyMonth') !== null ? localStorage.getItem('bankruptcyMonth') : '01';
+    const bankruptcyDate = localStorage.getItem('bankruptcyDate') !== null ? localStorage.getItem('bankruptcyDate') : '01';
+    const bankruptcyYear = localStorage.getItem('bankruptcyYear') !== null ? localStorage.getItem('bankruptcyYear') : '2018';
 
-    const employerOccupation = localStorage.getItem('employerOccupation') !== null ? localStorage.getItem('employerOccupation') : '';
-    const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : '';
-    const employerLength = localStorage.getItem('employerLength') !== null ? localStorage.getItem('employerLength') : '';
-    const employerAddress = localStorage.getItem('employerAddress') !== null ? localStorage.getItem('employerAddress') : '';
-    const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : '';
-    const employerState = localStorage.getItem('employerState') !== null ? localStorage.getItem('employerState') : '';
-    const employerZipcode = localStorage.getItem('employerZipcode') !== null ? localStorage.getItem('employerZipcode') : '';
-    const myIncome = localStorage.getItem('myIncome') !== null ? localStorage.getItem('myIncome') : '';
-    const guarantorIncome = localStorage.getItem('guarantorIncome') !== null ? localStorage.getItem('guarantorIncome') : '';
-    const roommateIncome = localStorage.getItem('roommateIncome') !== null ? localStorage.getItem('roommateIncome') : '';
+    const employerOccupation = localStorage.getItem('employerOccupation') !== null ? localStorage.getItem('employerOccupation') : 'Teacher at Renner Middle School';
+    const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : 'Hollis Co.';
+    const employerLength = localStorage.getItem('employerLength') !== null ? localStorage.getItem('employerLength') : '3 years';
+    const employerAddress = localStorage.getItem('employerAddress') !== null ? localStorage.getItem('employerAddress') : '1234 Magnolia Ave';
+    const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : 'City 1';
+    const employerState = localStorage.getItem('employerState') !== null ? localStorage.getItem('employerState') : 'TX';
+    const employerZipcode = localStorage.getItem('employerZipcode') !== null ? localStorage.getItem('employerZipcode') : '44444';
+    const myIncome = localStorage.getItem('myIncome') !== null ? localStorage.getItem('myIncome') : '4000';
+    const guarantorIncome = localStorage.getItem('guarantorIncome') !== null ? localStorage.getItem('guarantorIncome') : '8000';
+    const roommateIncome = localStorage.getItem('roommateIncome') !== null ? localStorage.getItem('roommateIncome') : '5000';
 
-    const roommateNum = localStorage.getItem('roommateNum') !== null ? localStorage.getItem('roommateNum') : '';
-    const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : '';
-    const bathroomNum = localStorage.getItem('bathroomNum') !== null ? localStorage.getItem('bathroomNum') : '';
+    const roommateNum = localStorage.getItem('roommateNum') !== null ? localStorage.getItem('roommateNum') : '1';
+    const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : '2';
+    const bathroomNum = localStorage.getItem('bathroomNum') !== null ? localStorage.getItem('bathroomNum') : '1';
 
-    const inunitToggle = localStorage.getItem('inunitToggle') === 'true';
+    const inunitToggle = 'true';
     const inunitMust = localStorage.getItem('inunitMust') === 'true';
     const inunitNice = localStorage.getItem('inunitNice') === 'true';
     const connectionToggle = localStorage.getItem('connectionToggle') === 'true';
@@ -121,7 +121,7 @@ export default class Lead extends React.Component {
     const balconyToggle = localStorage.getItem('balconyToggle') === 'true';
     const balconyMust = localStorage.getItem('balconyMust') === 'true';
     const balconyNice = localStorage.getItem('balconyNice') === 'true';
-    const parkingToggle = localStorage.getItem('parkingToggle') === 'true';
+    const parkingToggle = 'true';
     const parkingMust = localStorage.getItem('parkingMust') === 'true';
     const parkingNice = localStorage.getItem('parkingNice') === 'true';
     const garageToggle = localStorage.getItem('garageToggle') === 'true';
@@ -140,15 +140,15 @@ export default class Lead extends React.Component {
     const poolMust = localStorage.getItem('poolMust') === 'true';
     const poolNice = localStorage.getItem('poolNice') === 'true';
 
-    const budgetMin = localStorage.getItem('budgetMin') !== null ? localStorage.getItem('budgetMin') : '';
-    const budgetMax = localStorage.getItem('budgetMax') !== null ? localStorage.getItem('budgetMax') : '';
-    const lengthMin = localStorage.getItem('lengthMin') !== null ? localStorage.getItem('lengthMin') : '';
-    const lengthMax = localStorage.getItem('lengthMax') !== null ? localStorage.getItem('lengthMax') : '';
+    const budgetMin = localStorage.getItem('budgetMin') !== null ? localStorage.getItem('budgetMin') : '900';
+    const budgetMax = localStorage.getItem('budgetMax') !== null ? localStorage.getItem('budgetMax') : '1150';
+    const lengthMin = localStorage.getItem('lengthMin') !== null ? localStorage.getItem('lengthMin') : '6';
+    const lengthMax = localStorage.getItem('lengthMax') !== null ? localStorage.getItem('lengthMax') : '15';
 
     const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '';
-    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : '';
-    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : '';
+    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '720+';
+    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : '680-719';
+    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : '640-679';
 
     this.setState({
       firstName, middleName, lastName, birthMonth, birthDate, birthYear,
@@ -253,7 +253,7 @@ export default class Lead extends React.Component {
               <Link href="/landlord/search">
                 <a className={styles.sidebar_menu}>
                   <img src="/sidebar/search-grey.png" alt="search" />
-                  <span className={styles.sidebar_text}>Tenant Search</span>
+                  <span className={styles.sidebar_text}>Prospect Search</span>
                 </a>
               </Link>
 

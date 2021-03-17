@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { Form, InputGroup, FormControl, Row, Col } from 'react-bootstrap'
+import { Form, Row, Col } from 'react-bootstrap'
 
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -55,7 +55,7 @@ export default class Message extends React.Component {
               <Link href="/landlord/search">
                 <a className={styles.sidebar_menu}>
                   <img src="/sidebar/search-grey.png" alt="search" />
-                  <span className={styles.sidebar_text}>Tenant Search</span>
+                  <span className={styles.sidebar_text}>Prospect Search</span>
                 </a>
               </Link>
 

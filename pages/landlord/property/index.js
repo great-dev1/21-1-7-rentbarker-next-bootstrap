@@ -14,222 +14,16 @@ export default class Property extends React.Component {
   state = {
     modalShow: false,
     property: 1,
-
-    firstName: '', middleName: '', lastName: '', birthMonth: '', birthDate: '', birthYear: '',
-    currentAddress: '', currentUnit: '', currentCity: '', currentState: '', currentZipcode: '', currentRent: '', currentLength: '', currentReason: '',
-    prevAddress: '', prevUnit: '', prevCity: '', prevState: '', prevZipcode: '', prevRent: '', prevLength: '', prevReason: '',
-
-    moveMonth: '', moveDate: '', moveYear: '', petYes: false, petNo: false, petInfo: '', esaYes: false, esaNo: false,
-    smokerYes: false, smokerNo: false, evictionYes: false, evictionNo: false, evictionInfo: '',
-    judgeYes: false, judgeNo: false, judgeInfo: '', bankruptcyYes: false, backruptcyNo: false,
-    bankruptcyMonth: '', bankruptcyDate: '', bankruptcyYear: '',
-
-    employerOccupation: '', employerName: '', employerLength: '', employerAddress: '', employerCity: '', employerState: '', employerZipcode: '',
-    myIncome: '', guarantorIncome: '', roommateIncome: '',
-
-    roommateNum: '', bedroomNum: '', bathroomNum: '',
-
-    inunitToggle: false, inunitMust: false, inunitNice: false,
-    connectionToggle: false, connectionMust: false, connectionNice: false,
-    laundryToggle: false, laundryMust: false, laundryNice: false,
-    dishwasherToggle: false, dishwasherMust: false, dishwasherNice: false,
-    balconyToggle: false, balconyMust: false, balconyNice: false,
-    parkingToggle: false, parkingMust: false, parkingNice: false,
-    garageToggle: false, garageMust: false, garageNice: false,
-    fitnessToggle: false, fitnessMust: false, fitnessNice: false,
-    yardToggle: false, yardMust: false, yardNice: false,
-    petToggle: false, petMust: false, petNice: false,
-    poolToggle: false, poolMust: false, poolNice: false,
-
-    budgetMin: '', budgetMax: '', lengthMin: '', lengthMax: '',
-
-    useGuarantor: false, myCredit: '', roommateCredit: '', guarantorCredit: '',
   }
 
   handleChange = (num) => () => this.setState({ property: num });
 
-  handleShow = () => {
-    this.setState({
-      modalShow: true
-    })
-  }
+  handleShow = () => this.setState({ modalShow: true });
 
-  handleClose = () => {
-    this.setState({
-      modalShow: false
-    })
-  }
-
-  componentDidMount() {
-    const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : '';
-    const middleName = localStorage.getItem('middleName') !== null ? localStorage.getItem('middleName') : '';
-    const lastName = localStorage.getItem('lastName') !== null ? localStorage.getItem('lastName') : '';
-    const birthMonth = localStorage.getItem('birthMonth') !== null ? localStorage.getItem('birthMonth') : '';
-    const birthDate = localStorage.getItem('birthDate') !== null ? localStorage.getItem('birthDate') : '';
-    const birthYear = localStorage.getItem('birthYear') !== null ? localStorage.getItem('birthYear') : '';
-    const currentAddress = localStorage.getItem('currentAddress') !== null ? localStorage.getItem('currentAddress') : '';
-    const currentUnit = localStorage.getItem('currentUnit') !== null ? localStorage.getItem('currentUnit') : '';
-    const currentCity = localStorage.getItem('currentCity') !== null ? localStorage.getItem('currentCity') : '';
-    const currentState = localStorage.getItem('currentState') !== null ? localStorage.getItem('currentState') : '';
-    const currentZipcode = localStorage.getItem('currentZipcode') !== null ? localStorage.getItem('currentZipcode') : '';
-    const currentRent = localStorage.getItem('currentRent') !== null ? localStorage.getItem('currentRent') : '';
-    const currentLength = localStorage.getItem('currentLength') !== null ? localStorage.getItem('currentLength') : '';
-    const currentReason = localStorage.getItem('currentReason') !== null ? localStorage.getItem('currentReason') : '';
-    const prevAddress = localStorage.getItem('prevAddress') !== null ? localStorage.getItem('prevAddress') : '';
-    const prevUnit = localStorage.getItem('prevUnit') !== null ? localStorage.getItem('prevUnit') : '';
-    const prevCity = localStorage.getItem('prevCity') !== null ? localStorage.getItem('prevCity') : '';
-    const prevState = localStorage.getItem('prevState') !== null ? localStorage.getItem('prevState') : '';
-    const prevZipcode = localStorage.getItem('prevZipcode') !== null ? localStorage.getItem('prevZipcode') : '';
-    const prevRent = localStorage.getItem('prevRent') !== null ? localStorage.getItem('prevRent') : '';
-    const prevLength = localStorage.getItem('prevLength') !== null ? localStorage.getItem('prevLength') : '';
-    const prevReason = localStorage.getItem('prevReason') !== null ? localStorage.getItem('prevReason') : '';
-
-    const moveMonth = localStorage.getItem('moveMonth') !== null ? localStorage.getItem('moveMonth') : '';
-    const moveDate = localStorage.getItem('moveDate') !== null ? localStorage.getItem('moveDate') : '';
-    const moveYear = localStorage.getItem('moveYear') !== null ? localStorage.getItem('moveYear') : '';
-    const petYes = localStorage.getItem('petYes') === 'true';
-    const petNo = localStorage.getItem('petNo') === 'true';
-    const petInfo = localStorage.getItem('petInfo') !== null ? localStorage.getItem('petInfo') : '';
-    const esaYes = localStorage.getItem('esaYes') === 'true';
-    const esaNo = localStorage.getItem('esaNo') === 'true';
-    const smokerYes = localStorage.getItem('smokerYes') === 'true';
-    const smokerNo = localStorage.getItem('smokerNo') === 'true';
-    const evictionYes = localStorage.getItem('evictionYes') === 'true';
-    const evictionNo = localStorage.getItem('evictionNo') === 'true';
-    const evictionInfo = localStorage.getItem('evictionInfo') !== null ? localStorage.getItem('evictionInfo') : '';
-    const judgeYes = localStorage.getItem('judgeYes') === 'true';
-    const judgeNo = localStorage.getItem('judgeNo') === 'true';
-    const judgeInfo = localStorage.getItem('judgeInfo') !== null ? localStorage.getItem('judgeInfo') : '';
-    const bankruptcyYes = localStorage.getItem('bankruptcyYes') === 'true';
-    const bankruptcyNo = localStorage.getItem('bankruptcyNo') === 'true';
-    const bankruptcyMonth = localStorage.getItem('bankruptcyMonth') !== null ? localStorage.getItem('bankruptcyMonth') : '';
-    const bankruptcyDate = localStorage.getItem('bankruptcyDate') !== null ? localStorage.getItem('bankruptcyDate') : '';
-    const bankruptcyYear = localStorage.getItem('bankruptcyYear') !== null ? localStorage.getItem('bankruptcyYear') : '';
-
-    const employerOccupation = localStorage.getItem('employerOccupation') !== null ? localStorage.getItem('employerOccupation') : '';
-    const employerName = localStorage.getItem('employerName') !== null ? localStorage.getItem('employerName') : '';
-    const employerLength = localStorage.getItem('employerLength') !== null ? localStorage.getItem('employerLength') : '';
-    const employerAddress = localStorage.getItem('employerAddress') !== null ? localStorage.getItem('employerAddress') : '';
-    const employerCity = localStorage.getItem('employerCity') !== null ? localStorage.getItem('employerCity') : '';
-    const employerState = localStorage.getItem('employerState') !== null ? localStorage.getItem('employerState') : '';
-    const employerZipcode = localStorage.getItem('employerZipcode') !== null ? localStorage.getItem('employerZipcode') : '';
-    const myIncome = localStorage.getItem('myIncome') !== null ? localStorage.getItem('myIncome') : '';
-    const guarantorIncome = localStorage.getItem('guarantorIncome') !== null ? localStorage.getItem('guarantorIncome') : '';
-    const roommateIncome = localStorage.getItem('roommateIncome') !== null ? localStorage.getItem('roommateIncome') : '';
-
-    const roommateNum = localStorage.getItem('roommateNum') !== null ? localStorage.getItem('roommateNum') : '';
-    const bedroomNum = localStorage.getItem('bedroomNum') !== null ? localStorage.getItem('bedroomNum') : '';
-    const bathroomNum = localStorage.getItem('bathroomNum') !== null ? localStorage.getItem('bathroomNum') : '';
-
-    const inunitToggle = localStorage.getItem('inunitToggle') === 'true';
-    const inunitMust = localStorage.getItem('inunitMust') === 'true';
-    const inunitNice = localStorage.getItem('inunitNice') === 'true';
-    const connectionToggle = localStorage.getItem('connectionToggle') === 'true';
-    const connectionMust = localStorage.getItem('connectionMust') === 'true';
-    const connectionNice = localStorage.getItem('connectionNice') === 'true';
-    const laundryToggle = localStorage.getItem('laundryToggle') === 'true';
-    const laundryMust = localStorage.getItem('laundryMust') === 'true';
-    const laundryNice = localStorage.getItem('laundryNice') === 'true';
-    const dishwasherToggle = localStorage.getItem('dishwasherToggle') === 'true';
-    const dishwasherMust = localStorage.getItem('dishwasherMust') === 'true';
-    const dishwasherNice = localStorage.getItem('dishwasherNice') === 'true';
-    const balconyToggle = localStorage.getItem('balconyToggle') === 'true';
-    const balconyMust = localStorage.getItem('balconyMust') === 'true';
-    const balconyNice = localStorage.getItem('balconyNice') === 'true';
-    const parkingToggle = localStorage.getItem('parkingToggle') === 'true';
-    const parkingMust = localStorage.getItem('parkingMust') === 'true';
-    const parkingNice = localStorage.getItem('parkingNice') === 'true';
-    const garageToggle = localStorage.getItem('garageToggle') === 'true';
-    const garageMust = localStorage.getItem('garageMust') === 'true';
-    const garageNice = localStorage.getItem('garageNice') === 'true';
-    const fitnessToggle = localStorage.getItem('fitnessToggle') === 'true';
-    const fitnessMust = localStorage.getItem('fitnessMust') === 'true';
-    const fitnessNice = localStorage.getItem('fitnessNice') === 'true';
-    const yardToggle = localStorage.getItem('yardToggle') === 'true';
-    const yardMust = localStorage.getItem('yardMust') === 'true';
-    const yardNice = localStorage.getItem('yardNice') === 'true';
-    const petToggle = localStorage.getItem('petToggle') === 'true';
-    const petMust = localStorage.getItem('petMust') === 'true';
-    const petNice = localStorage.getItem('petNice') === 'true';
-    const poolToggle = localStorage.getItem('poolToggle') === 'true';
-    const poolMust = localStorage.getItem('poolMust') === 'true';
-    const poolNice = localStorage.getItem('poolNice') === 'true';
-
-    const budgetMin = localStorage.getItem('budgetMin') !== null ? localStorage.getItem('budgetMin') : '';
-    const budgetMax = localStorage.getItem('budgetMax') !== null ? localStorage.getItem('budgetMax') : '';
-    const lengthMin = localStorage.getItem('lengthMin') !== null ? localStorage.getItem('lengthMin') : '';
-    const lengthMax = localStorage.getItem('lengthMax') !== null ? localStorage.getItem('lengthMax') : '';
-
-    const useGuarantor = localStorage.getItem('useGuarantor') === 'true';
-    const myCredit = localStorage.getItem('myCredit') !== null ? localStorage.getItem('myCredit') : '';
-    const roommateCredit = localStorage.getItem('roommateCredit') !== null ? localStorage.getItem('roommateCredit') : '';
-    const guarantorCredit = localStorage.getItem('guarantorCredit') !== null ? localStorage.getItem('guarantorCredit') : '';
-
-    this.setState({
-      firstName, middleName, lastName, birthMonth, birthDate, birthYear,
-      currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
-      prevAddress, prevUnit, prevCity, prevState, prevZipcode, prevRent, prevLength, prevReason,
-
-      moveMonth, moveDate, moveYear, petYes, petNo, petInfo, esaYes, esaNo,
-      smokerYes, smokerNo, evictionYes, evictionNo, evictionInfo, judgeYes, judgeNo, judgeInfo,
-      bankruptcyYes, bankruptcyNo, bankruptcyMonth, bankruptcyDate, bankruptcyYear,
-
-      employerOccupation, employerName, employerLength, employerAddress, employerCity,
-      employerState, employerZipcode, myIncome, guarantorIncome, roommateIncome,
-
-      roommateNum, bedroomNum, bathroomNum,
-
-      inunitToggle, inunitMust, inunitNice,
-      connectionToggle, connectionMust, connectionNice,
-      laundryToggle, laundryMust, laundryNice,
-      dishwasherToggle, dishwasherMust, dishwasherNice,
-      balconyToggle, balconyToggle, balconyMust, balconyNice,
-      parkingToggle, parkingToggle, parkingMust, parkingNice,
-      garageToggle, garageMust, garageNice,
-      fitnessToggle, fitnessMust, fitnessNice,
-      yardToggle, yardMust, yardNice,
-      petToggle, petMust, petNice,
-      poolToggle, poolMust, poolNice,
-
-      budgetMin, budgetMax, lengthMin, lengthMax,
-
-      useGuarantor, myCredit, roommateCredit, guarantorCredit,
-    });
-  }
+  handleClose = () => this.setState({ modalShow: false });
 
   render() {
-    const {
-      modalShow, property,
-
-      firstName, middleName, lastName, birthMonth, birthDate, birthYear,
-      currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
-      prevAddress, prevUnit, prevCity, prevState, prevZipcode, prevRent, prevLength, prevReason,
-
-      moveMonth, moveDate, moveYear, petYes, petNo, petInfo, esaYes, esaNo,
-      smokerYes, smokerNo, evictionYes, evictionNo, evictionInfo, judgeYes, judgeNo, judgeInfo,
-      bankruptcyYes, bankruptcyNo, bankruptcyMonth, bankruptcyDate, bankruptcyYear,
-
-      employerOccupation, employerName, employerLength, employerAddress, employerCity,
-      employerState, employerZipcode, myIncome, guarantorIncome, roommateIncome,
-
-      roommateNum, bedroomNum, bathroomNum,
-
-      inunitToggle, inunitMust, inunitNice,
-      connectionToggle, connectionMust, connectionNice,
-      laundryToggle, laundryMust, laundryNice,
-      dishwasherToggle, dishwasherMust, dishwasherNice,
-      balconyToggle, balconyMust, balconyNice,
-      parkingToggle, parkingMust, parkingNice,
-      garageToggle, garageMust, garageNice,
-      fitnessToggle, fitnessMust, fitnessNice,
-      yardToggle, yardMust, yardNice,
-      petToggle, petMust, petNice,
-      poolToggle, poolMust, poolNice,
-
-      budgetMin, budgetMax, lengthMin, lengthMax,
-
-      useGuarantor, myCredit, roommateCredit, guarantorCredit,
-    } = this.state;
+    const { modalShow, property } = this.state;
 
     return (
       <div className={modalShow ? styles.blur_effect : null}>
@@ -268,7 +62,7 @@ export default class Property extends React.Component {
               <Link href="/landlord/search">
                 <a className={styles.sidebar_menu}>
                   <img src="/sidebar/search-grey.png" alt="search" />
-                  <span className={styles.sidebar_text}>Tenant Search</span>
+                  <span className={styles.sidebar_text}>Prospect Search</span>
                 </a>
               </Link>
 

@@ -48,7 +48,7 @@ export default class Dashboard extends React.Component {
               <Link href="/landlord/search">
                 <a className={styles.sidebar_menu}>
                   <img src="/sidebar/search-grey.png" alt="search" />
-                  <span className={styles.sidebar_text}>Tenant Search</span>
+                  <span className={styles.sidebar_text}>Prospect Search</span>
                 </a>
               </Link>
 
@@ -243,7 +243,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>95% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
@@ -271,7 +271,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>91% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
@@ -299,7 +299,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>91% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
@@ -327,7 +327,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>86% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
@@ -355,7 +355,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>81% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
@@ -383,7 +383,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <p className={styles.match_text}>80% Match</p>
                           </div>
-                          <Link href="/lead">
+                          <Link href="/landlord/lead">
                             <a>
                               <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                             </a>
