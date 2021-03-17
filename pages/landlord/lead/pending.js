@@ -572,30 +572,30 @@ export default class Lead extends React.Component {
                   </div>
 
                   <Row className={styles.preview_summary}>
-                    <Col xs={6} md={4} className={styles.preview_summary_item}>
-                      <div className="d-flex flex-column flex-md-row align-items-start">
+                    <Col xs={6} sm={4} className={styles.preview_summary_item}>
+                      <div className="d-flex flex-column flex-sm-row align-items-start">
                         <img className={styles.preview_icon} src="/brochure/dollar-icon.png" alt="dollar" />
-                        <div className="mt-2 mt-md-0">
+                        <div className="mt-2 mt-sm-0">
                           <p className={styles.preview_title}>Rent</p>
                           <p className={styles.preview_detail}>${currentRent} Monthly</p>
                         </div>
                       </div>
                     </Col>
 
-                    <Col xs={6} md={4} className={styles.preview_summary_item}>
-                      <div className="d-flex flex-column flex-md-row align-items-start">
+                    <Col xs={6} sm={4} className={styles.preview_summary_item}>
+                      <div className="d-flex flex-column flex-sm-row align-items-start">
                         <img className={styles.preview_icon} src="/brochure/room-icon.png" alt="room" />
-                        <div className="mt-2 mt-md-0">
+                        <div className="mt-2 mt-sm-0">
                           <p className={styles.preview_title}>Flat Details</p>
                           <p className={styles.preview_detail}>Unit 303 | 1 bed, 1 bath</p>
                         </div>
                       </div>
                     </Col>
 
-                    <Col xs={6} md={4} className={styles.preview_summary_item}>
-                      <div className="d-flex flex-column flex-md-row align-items-start">
+                    <Col xs={6} sm={4} className={styles.preview_summary_item}>
+                      <div className="d-flex flex-column flex-sm-row align-items-start">
                         <img className={styles.preview_icon} src="/brochure/map-icon.png" alt="map" />
-                        <div className="mt-2 mt-md-0">
+                        <div className="mt-2 mt-sm-0">
                           <p className={styles.preview_title}>Address</p>
                           <p className={styles.preview_detail}>{currentAddress} {currentUnit} {currentCity}, {currentState}</p>
                         </div>

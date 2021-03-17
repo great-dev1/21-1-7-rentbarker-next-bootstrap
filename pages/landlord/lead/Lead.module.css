@@ -233,8 +233,9 @@
   color: #888e8e;
 }
 
-.preview_summary_item {
-  margin-top: 19px;
+.preview_icon {
+  margin-top: 15px;
+  margin-right: 10px;
 }
 
 .preview_title {
@@ -247,11 +248,6 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.57;
-}
-
-.preview_icon {
-  margin-top: 15px;
-  margin-right: 10px;
 }
 
 .preview_section_title {
@@ -313,6 +309,12 @@
   font-weight: 600;
   line-height: 1.69;
   color: #086627;
+}
+
+@media only screen and (min-width: 576px) {
+  .preview_summary_item {
+    margin-top: 19px;
+  }
 }
 
 @media only screen and (min-width: 992px) {

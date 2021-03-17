@@ -625,7 +625,7 @@ export default class Property extends React.Component {
                         </div>
                       </div>
 
-                      <Link href="/lead">
+                      <Link href="/landlord/lead">
                         <a>
                           <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                         </a>
@@ -719,7 +719,7 @@ export default class Property extends React.Component {
                         </div>
                       </div>
 
-                      <Link href="/lead">
+                      <Link href="/landlord/lead">
                         <a>
                           <FontAwesomeIcon icon={faChevronRight} className={styles.chevron_right} />
                         </a>
