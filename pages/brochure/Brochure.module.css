@@ -203,6 +203,7 @@
 }
 
 .input_box:hover, .input_box:active, .input_box:focus {
+  border-color: #126660;
   box-shadow: none !important;
 }
 

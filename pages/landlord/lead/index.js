@@ -556,7 +556,7 @@ export default class Lead extends React.Component {
                     </div>
 
                     <div className="d-flex">
-                      <Link href="">
+                      <Link href="/landlord/lead/submit">
                         <a className="d-none d-sm-block">
                           <MyButton width="132px" height="44px">SEND OFFER</MyButton>
                         </a>
@@ -601,7 +601,7 @@ export default class Lead extends React.Component {
                     </Col>
                   </Row>
 
-                  <Link href="">
+                  <Link href="/landlord/lead/submit">
                     <a className="d-block d-sm-none mt-4">
                       <MyButton width="132px" height="44px">SEND OFFER</MyButton>
                     </a>

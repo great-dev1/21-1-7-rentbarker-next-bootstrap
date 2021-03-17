@@ -221,7 +221,7 @@ export default class Lead extends React.Component {
     return (
       <div>
         <Head>
-          <title>Leads</title>
+          <title>Leads - Pending</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
