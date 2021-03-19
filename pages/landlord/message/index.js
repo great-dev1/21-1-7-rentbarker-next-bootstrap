@@ -5,7 +5,7 @@ import { Form, Row, Col } from 'react-bootstrap'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import Navbar from '../../../components/Navbar'
+import Navbar_1 from '../../../components/Navbar_1'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
 import styles from './Message.module.css'
@@ -37,7 +37,7 @@ export default class Message extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <Navbar_1 />
 
         <div className="d-flex">
           {/* Sidebar */}

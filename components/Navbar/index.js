@@ -35,9 +35,12 @@ export default class Navmenu extends React.Component {
               <Nav className={styles.nav_links}>
                 <img className="d-none d-md-inline" src="/navbar/avatar.png" alt="avatar" />
                 <NavDropdown alignRight className={styles.username} title={name}>
-                  <NavDropdown.Item className={styles.dropdown_item} href="#">Offers(2)</NavDropdown.Item>
-                  <NavDropdown.Item className={styles.dropdown_item} href="/message">Inbox(3)</NavDropdown.Item>
-                  <NavDropdown.Item className={styles.dropdown_item} href="#">Sign out</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="/offer">Offers</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="/brochure">Barker Brochure</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="/message">Messages</NavDropdown.Item>
+                  <NavDropdown.Item className={styles.dropdown_item} href="/setting">Settings</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item className={styles.dropdown_item} href="#">Log out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             ) : (

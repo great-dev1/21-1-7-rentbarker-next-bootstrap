@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Container, Form, Row, Col } from 'react-bootstrap'
 
-import Navbar from '../../../components/Navbar'
+import Navbar_1 from '../../../components/Navbar_1'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
 import styles from './Lead.module.css'
@@ -37,7 +37,7 @@ export default class Submit extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <Navbar_1 />
 
         <div className="d-flex">
           {/* Sidebar */}

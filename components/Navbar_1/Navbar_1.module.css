@@ -1,0 +1,59 @@
+.navbar {
+  padding: 12px 0;
+  text-align: center;
+  background-color: white;
+}
+
+.toggle, .toggle:hover, .toggle:active {
+  border: none;
+  outline: none;
+}
+
+.brand {
+  position: absolute;
+  top: 8px;
+  left: calc(50vw - 70px);
+}
+
+.nav_links {
+  padding-top: 10px;
+}
+
+.username {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  color: #126660 !important;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: grey !important;
+  text-decoration: underline;
+}
+
+.dropdown_item {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    padding: 18px 40px;
+  }
+  .brand {
+    top: auto;
+    left: 40px;
+  }
+  .nav_links {
+    padding-top: 0;
+  }
+  .link {
+    margin: 0 6px;
+  }
+}

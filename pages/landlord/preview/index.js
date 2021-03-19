@@ -5,7 +5,7 @@ import { Modal, Row, Col } from 'react-bootstrap'
 import { faChevronLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import Navbar from '../../../components/Navbar'
+import Navbar_1 from '../../../components/Navbar_1'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
 import CreditScoreBar from '../../../components/CreditScoreBar'
@@ -229,7 +229,7 @@ export default class Preview extends React.Component {
         </Head>
 
         <div className={styles.navbar}>
-          <Navbar />
+          <Navbar_1 />
         </div>
 
         {/* Mobile Header */}

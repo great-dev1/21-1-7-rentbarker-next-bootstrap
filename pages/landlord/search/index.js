@@ -6,7 +6,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider'
 
-import Navbar from '../../../components/Navbar'
+import Navbar_1 from '../../../components/Navbar_1'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
 import Handle from './Handle'
@@ -73,7 +73,7 @@ export default class Search extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Navbar />
+        <Navbar_1 />
 
         <div className="d-flex">
           {/* Sidebar */}
