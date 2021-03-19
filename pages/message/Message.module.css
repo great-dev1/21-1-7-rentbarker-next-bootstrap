@@ -29,7 +29,7 @@
   margin-left: 20px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1200px) {
   .sidebar {
     display: flex;
     flex-shrink: 0;
@@ -43,6 +43,19 @@
 }
 
 /* Contact Section */
+
+.contact_section_mobile_hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .contact_section, .contact_section_mobile_hidden {
+    display: block;
+    flex-shrink: 0;
+    width: 407px;
+    border-right: 1px solid #d3dbde;
+  }
+}
 
 .contact_header {
   margin: 15px 15px 0;
@@ -103,10 +116,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .contact_section {
-    width: 407px;
-    border-right: 1px solid #d3dbde;
-  }
   .contact_header {
     margin: 32px 48px 0;
     border-bottom: 1px solid #e1e8eb;
@@ -131,13 +140,36 @@
 /* Message Section */
 
 .message_section {
-  padding: 50px 15px;
+  padding: 15px;
+}
+
+.message_section_mobile_hidden {
+  display: none;
 }
 
 .message_header {
   padding: 24px 0;
-  border-top: 1px solid #e1e8eb;
   border-bottom: 1px solid #e1e8eb;
+}
+
+.prev_link {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888e8e;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.prev_link:hover {
+  color: #126660;
+}
+
+.chevron_left {
+  position: relative;
+  top: -1px;
+  width: 10px;
+  margin-right: 10px;
 }
 
 .message_name {
@@ -254,9 +286,16 @@
   cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
-  .message_section {
+@media only screen and (min-width: 992px) {
+  .message_section, .message_section_mobile_hidden {
+    display: block;
     flex-grow: 1;
     padding: 114px 48px 55px;
+  }
+  .prev_link {
+    display: none;
+  }
+  .message_header {
+    border-top: 1px solid #e1e8eb;
   }
 }

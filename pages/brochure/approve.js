@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import CreditScoreBar from '../../components/CreditScoreBar'
 import styles from './Brochure.module.css'
 
 export default class Approve extends React.Component {
@@ -348,7 +349,9 @@ export default class Approve extends React.Component {
                     <p className={styles.approve_title}>Credit Score</p>
                     <p className={styles.approve_rating_detail}>{myCredit}</p>
                   </div>
-                  <img className={styles.approve_score} src="/brochure/score-bar.png" alt="score" />
+                  <div className={styles.approve_score}>
+                    <CreditScoreBar credit={myCredit} />
+                  </div>
                 </div>
               </Col>
             </Row>

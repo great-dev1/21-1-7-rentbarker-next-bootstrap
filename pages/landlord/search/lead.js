@@ -9,6 +9,7 @@ import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
+import CreditScoreBar from '../../../components/CreditScoreBar'
 import Handle from './Handle'
 import Track from './Track'
 import Tick from './Tick'
@@ -248,7 +249,9 @@ export default class Search extends React.Component {
                           <p className={styles.preview_title}>Credit Score</p>
                           <p className={styles.preview_rating_detail}>680-720</p>
                         </div>
-                        <img className={styles.preview_score} src="/brochure/score-bar.png" alt="score" />
+                        <div className={styles.preview_score}>
+                          <CreditScoreBar credit={myCredit} />
+                        </div>
                       </div>
                     </Col>
                   </Row>

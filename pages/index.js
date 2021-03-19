@@ -59,7 +59,7 @@ export default function Home() {
                       </a>
                     </Link>
 
-                    <Link href="/landlord">
+                    <Link href="/landlord/preview">
                       <a className="">
                         <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">For Landlords</MyButton>
                       </a>

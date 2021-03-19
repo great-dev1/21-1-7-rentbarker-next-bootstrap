@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import MyButton from '../../../components/MyButton'
+import CreditScoreBar from '../../../components/CreditScoreBar'
 import styles from './Preview.module.css'
 
 export default class Preview extends React.Component {
@@ -272,7 +273,7 @@ export default class Preview extends React.Component {
                   Sign up or Log In to view prospect tenant details and send an offer. Don’t let this lead get away!
                 </p>
 
-                <Link href="/signup">
+                <Link href="/landlord/dashboard">
                   <a className={styles.modal_btn}>
                     <MyButton width="268px" height="44px" margin="auto">SIGN UP FREE</MyButton>
                   </a>
@@ -347,7 +348,9 @@ export default class Preview extends React.Component {
                     <p className={styles.preview_title}>Credit Score</p>
                     <p className={styles.preview_rating_detail}>{myCredit}</p>
                   </div>
-                  <img className={styles.preview_score} src="/brochure/score-bar.png" alt="score" />
+                  <div className={styles.preview_score}>
+                    <CreditScoreBar credit={myCredit} />
+                  </div>
                 </div>
               </Col>
             </Row>

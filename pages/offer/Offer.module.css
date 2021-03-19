@@ -396,6 +396,7 @@
   .message_link:hover {
     text-decoration: underline;
     color: grey;
+    background-color: transparent;
   }
 }
 

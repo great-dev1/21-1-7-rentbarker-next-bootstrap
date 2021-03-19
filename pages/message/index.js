@@ -2,6 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Form } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -10,21 +12,27 @@ import styles from './Message.module.css'
 
 export default class Message extends React.Component {
   state = {
-    logged: false,
     property: 1,
+    page: 1,
   }
 
-  handleChange = (num) => () => this.setState({ property: num });
+  handlePropertyChange = (num) => () => {
+    this.setState({
+      property: num,
+      page: 2,
+    });
+  }
+
+  handleReturn = () => this.setState({ page: 1 });
 
   handleClick = () => fileUp.click();
 
-  componentDidMount() {
-    const logged = localStorage.getItem('logged') === 'true';
-    this.setState({ logged });
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
-    const { logged, property } = this.state;
+    const { property, page } = this.state;
 
     return (
       <div>
@@ -36,52 +44,50 @@ export default class Message extends React.Component {
         <Navbar />
 
         <div className="d-flex">
-          {logged &&
-            <div className={styles.sidebar}>
-              <div>
-                <Link href="/offer">
-                  <a className={styles.sidebar_menu}>
-                    <img src="/sidebar/mailbox-grey.png" alt="mailbox" />
-                    <span className={styles.sidebar_text}>Offers</span>
-                  </a>
-                </Link>
+          <div className={styles.sidebar}>
+            <div>
+              <Link href="/offer">
+                <a className={styles.sidebar_menu}>
+                  <img src="/sidebar/mailbox-grey.png" alt="mailbox" />
+                  <span className={styles.sidebar_text}>Offers</span>
+                </a>
+              </Link>
 
-                <Link href="/brochure">
-                  <a className={styles.sidebar_menu}>
-                    <img src="/sidebar/contact-grey.png" alt="contact" />
-                    <span className={styles.sidebar_text}>Barker Brochure</span>
-                  </a>
-                </Link>
+              <Link href="/brochure">
+                <a className={styles.sidebar_menu}>
+                  <img src="/sidebar/contact-grey.png" alt="contact" />
+                  <span className={styles.sidebar_text}>Barker Brochure</span>
+                </a>
+              </Link>
 
-                <Link href="/message">
-                  <a className={styles.sidebar_menu_active}>
-                    <img src="/sidebar/message-green.png" alt="message" />
-                    <span className={styles.sidebar_text}>Messages</span>
-                  </a>
-                </Link>
+              <Link href="/message">
+                <a className={styles.sidebar_menu_active}>
+                  <img src="/sidebar/message-green.png" alt="message" />
+                  <span className={styles.sidebar_text}>Messages</span>
+                </a>
+              </Link>
 
-                <Link href="/setting">
-                  <a className={styles.sidebar_menu}>
-                    <img src="/sidebar/setting-grey.png" alt="setting" />
-                    <span className={styles.sidebar_text}>Settings</span>
-                  </a>
-                </Link>
-              </div>
-
-              <div>
-                <Link href="/">
-                  <a className={styles.sidebar_menu}>
-                    <img src="/sidebar/exit-grey.png" alt="exit" />
-                    <span className={styles.sidebar_text}>Log Out</span>
-                  </a>
-                </Link>
-              </div>
+              <Link href="/setting">
+                <a className={styles.sidebar_menu}>
+                  <img src="/sidebar/setting-grey.png" alt="setting" />
+                  <span className={styles.sidebar_text}>Settings</span>
+                </a>
+              </Link>
             </div>
-          }
+
+            <div>
+              <Link href="/">
+                <a className={styles.sidebar_menu}>
+                  <img src="/sidebar/exit-grey.png" alt="exit" />
+                  <span className={styles.sidebar_text}>Log Out</span>
+                </a>
+              </Link>
+            </div>
+          </div>
 
           <main className="flex-grow-1">
-            <div className="d-flex flex-column flex-md-row">
-              <div className={styles.contact_section}>
+            <div className="d-flex flex-column flex-lg-row">
+              <div className={page === 1 ? styles.contact_section : styles.contact_section_mobile_hidden}>
                 <div className={styles.contact_header}>
                   <h2 className={styles.primary_title}>Messages</h2>
                   <p className={styles.primary_detail}>Sunday, 13 December 2020</p>
@@ -91,7 +97,7 @@ export default class Message extends React.Component {
                 <div className={styles.contact_group}>
                   <div
                     className={property === 1 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(1)}
+                    onClick={this.handlePropertyChange(1)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -115,7 +121,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 2 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(2)}
+                    onClick={this.handlePropertyChange(2)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -139,7 +145,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 3 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(3)}
+                    onClick={this.handlePropertyChange(3)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -163,7 +169,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 4 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(4)}
+                    onClick={this.handlePropertyChange(4)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -187,7 +193,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 5 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(5)}
+                    onClick={this.handlePropertyChange(5)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -211,7 +217,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 6 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(6)}
+                    onClick={this.handlePropertyChange(6)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -235,7 +241,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 7 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(7)}
+                    onClick={this.handlePropertyChange(7)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -259,7 +265,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 8 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(8)}
+                    onClick={this.handlePropertyChange(8)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -283,7 +289,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 9 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(9)}
+                    onClick={this.handlePropertyChange(9)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -307,7 +313,7 @@ export default class Message extends React.Component {
 
                   <div
                     className={property === 10 ? styles.contact_item_active : styles.contact_item_inactive}
-                    onClick={this.handleChange(10)}
+                    onClick={this.handlePropertyChange(10)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -331,13 +337,20 @@ export default class Message extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.message_section}>
+              <div className={page === 2 ? styles.message_section : styles.message_section_mobile_hidden}>
+                <a className={styles.prev_link} onClick={this.handleReturn}>
+                  <div className="d-flex align-items-center">
+                    <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
+                    Return to the list
+                  </div>
+                </a>
+
                 <div className={styles.message_header}>
-                  <div className="d-flex justify-content-center justify-content-md-between align-items-center">
-                    <div className="d-flex flex-column flex-md-row align-items-center text-center text-md-left">
+                  <div className="d-flex justify-content-center justify-content-sm-between align-items-center">
+                    <div className="d-flex flex-column flex-sm-row align-items-center text-center text-sm-left">
                       <img src="/message/user-1.png" alt="user" />
 
-                      <div className="m-0 ml-md-3">
+                      <div className="m-0 ml-sm-3">
                         <p className={styles.message_name}>Property 2</p>
                         <div className="d-flex align-items-center flex-wrap">
                           <div className={styles.stars_1}>
@@ -354,7 +367,7 @@ export default class Message extends React.Component {
                     </div>
 
                     <Link href="">
-                      <a className="d-none d-md-block">
+                      <a className="d-none d-sm-block">
                         <MyButton width="160px" height="44px" color="#126660" backgroundColor="#fff">SCHEDULE TOUR</MyButton>
                       </a>
                     </Link>
@@ -369,7 +382,7 @@ export default class Message extends React.Component {
                   </div>
 
                   <Link href="">
-                    <a className="d-block d-md-none mt-4">
+                    <a className="d-block d-sm-none mt-4">
                       <MyButton width="160px" height="44px" color="#126660" backgroundColor="#fff">SCHEDULE TOUR</MyButton>
                     </a>
                   </Link>

@@ -2,14 +2,18 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Form, InputGroup, FormControl, Row, Col } from 'react-bootstrap'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import CreditScoreBar from '../../../components/CreditScoreBar'
 import styles from './Lead.module.css'
 
 export default class Lead extends React.Component {
   state = {
     property: 1,
+    page: 1,
 
     firstName: '', middleName: '', lastName: '', birthMonth: '', birthDate: '', birthYear: '',
     currentAddress: '', currentUnit: '', currentCity: '', currentState: '', currentZipcode: '', currentRent: '', currentLength: '', currentReason: '',
@@ -42,7 +46,14 @@ export default class Lead extends React.Component {
     useGuarantor: false, myCredit: '', roommateCredit: '', guarantorCredit: '',
   }
 
-  handleChange = (num) => () => this.setState({ property: num });
+  handlePropertyChange = (num) => () => {
+    this.setState({
+      property: num,
+      page: 2,
+    });
+  }
+
+  handleReturn = () => this.setState({ page: 1 });
 
   handleClick = () => fileUp.click();
 
@@ -185,7 +196,7 @@ export default class Lead extends React.Component {
 
   render() {
     const {
-      property,
+      property, page,
 
       firstName, middleName, lastName, birthMonth, birthDate, birthYear,
       currentAddress, currentUnit, currentCity, currentState, currentZipcode, currentRent, currentLength, currentReason,
@@ -286,7 +297,7 @@ export default class Lead extends React.Component {
           {/* Main */}
           <main className="flex-grow-1">
             <div className="d-flex flex-column flex-lg-row">
-              <div className={styles.lead_section}>
+              <div className={page === 1 ? styles.lead_section : styles.lead_section_mobile_hidden}>
                 <div className={styles.lead_header}>
                   <h2 className={styles.primary_title}>Leads</h2>
                   <p className={styles.primary_detail}>Sunday, 13 December 2020</p>
@@ -325,7 +336,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 1 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(1)}
+                    onClick={this.handlePropertyChange(1)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -349,7 +360,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 2 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(2)}
+                    onClick={this.handlePropertyChange(2)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -373,7 +384,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 3 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(3)}
+                    onClick={this.handlePropertyChange(3)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -401,7 +412,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 4 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(4)}
+                    onClick={this.handlePropertyChange(4)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -425,7 +436,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 5 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(5)}
+                    onClick={this.handlePropertyChange(5)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -449,7 +460,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 6 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(6)}
+                    onClick={this.handlePropertyChange(6)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -477,7 +488,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 7 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(7)}
+                    onClick={this.handlePropertyChange(7)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -501,7 +512,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 8 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(8)}
+                    onClick={this.handlePropertyChange(8)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -525,7 +536,7 @@ export default class Lead extends React.Component {
 
                   <div
                     className={property === 9 ? styles.lead_item_active : styles.lead_item_inactive}
-                    onClick={this.handleChange(9)}
+                    onClick={this.handlePropertyChange(9)}
                   >
                     <div className="d-flex align-items-center">
                       <img src="/message/user.png" alt="user" />
@@ -549,7 +560,14 @@ export default class Lead extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.preview_section}>
+              <div className={page === 2 ? styles.preview_section : styles.preview_section_mobile_hidden}>
+                <a className={styles.prev_link} onClick={this.handleReturn}>
+                  <div className="d-flex align-items-center">
+                    <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
+                    Return to the list
+                  </div>
+                </a>
+
                 <div className={styles.preview_header}>
                   <div className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center">
                     <div className="d-flex flex-column flex-sm-row align-items-center text-center text-sm-left">
@@ -627,7 +645,9 @@ export default class Lead extends React.Component {
                         <p className={styles.preview_title}>Credit Score</p>
                         <p className={styles.preview_rating_detail}>{myCredit}</p>
                       </div>
-                      <img className={styles.preview_score} src="/brochure/score-bar.png" alt="score" />
+                      <div className={styles.preview_score}>
+                        <CreditScoreBar credit={myCredit} />
+                      </div>
                     </div>
                   </Col>
                 </Row>
