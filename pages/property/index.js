@@ -165,7 +165,85 @@ export default class Property extends React.Component {
                 </Tab>
 
                 <Tab className={styles.property_tab} eventKey="address" title="Address">
-                  Address content ...
+                  <Form>
+                    <InputGroup>
+                      <InputGroup.Prepend>
+                        <InputGroup.Text className={styles.prepend_content}>
+                          <img className={styles.search_icon} src="/property/search-icon.png" alt="search" />
+                        </InputGroup.Text>
+                      </InputGroup.Prepend>
+                      <FormControl className={styles.input_box} type="text" placeholder="Insert official address" />
+                    </InputGroup>
+                  </Form>
+
+                  <div className={styles.property_group}>
+                    <h4 className={styles.group_title}>Search Result</h4>
+
+                    <Row className={styles.property_row}>
+                      <Col md={6} xl={4} className={styles.property_card_wrapper}>
+                        <PropertyCard
+                          img="/property/property-1.jpg"
+                          name="Unit Name 1"
+                          price="1,775"
+                          address="4845 Saturn st, Los Angeles, CA 90019"
+                          bed="2"
+                          bath="2"
+                          size="89"
+                        />
+                      </Col>
+                    </Row>
+                  </div>
+
+                  <div className={styles.property_group}>
+                    <h4 className={styles.group_title}>Added Properties</h4>
+                    <Row className={styles.property_row}>
+                      <Col md={6} xl={4} className={styles.property_card_wrapper}>
+                        <PropertyCard
+                          added
+                          img="/property/property-2.jpg"
+                          name="Unit Name 2"
+                          price="2,500"
+                          address="4845 Saturn st, Los Angeles, CA 90019"
+                          bed="3"
+                          bath="4"
+                          size="105"
+                        />
+                      </Col>
+
+                      <Col md={6} xl={4} className={styles.property_card_wrapper}>
+                        <PropertyCard
+                          added
+                          img="/property/property-3.jpg"
+                          name="Unit Name 3"
+                          price="2,850"
+                          address="4845 Saturn st, Los Angeles, CA 90019"
+                          bed="3"
+                          bath="4"
+                          size="124"
+                        />
+                      </Col>
+
+                      <Col md={6} xl={4} className={styles.property_card_wrapper}>
+                        <PropertyCard
+                          added
+                          img="/property/property-4.jpg"
+                          name="Unit Name 4"
+                          price="2,850"
+                          address="4845 Saturn st, Los Angeles, CA 90019"
+                          bed="3"
+                          bath="4"
+                          size="124"
+                        />
+                      </Col>
+                    </Row>
+                  </div>
+
+                  <div className={styles.submit_btn}>
+                    <Link href="/bed">
+                      <a><MyButton>SUBMIT</MyButton></a>
+                    </Link>
+                  </div>
+
                 </Tab>
               </Tabs>
             </Container>

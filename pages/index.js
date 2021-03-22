@@ -27,7 +27,7 @@ export default function Home() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>
             <Nav className={styles.nav_links}>
-              <Nav.Link className={styles.nav_link} href="/landlord">Landlords</Nav.Link>
+              <Nav.Link className={styles.nav_link} href="/landlord/preview">Landlords</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/faq">FAQs</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/contact">Contact Us</Nav.Link>
             </Nav>
@@ -91,7 +91,7 @@ export default function Home() {
                 </a>
               </Link>
 
-              <Link href="/landlord">
+              <Link href="/landlord/preview">
                 <a className="">
                   <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">FOR LANDLORDS</MyButton>
                 </a>
@@ -346,7 +346,7 @@ export default function Home() {
               </a>
             </Link>
 
-            <Link href="/landlord">
+            <Link href="/landlord/preview">
               <a className="">
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#fff" backgroundColor="#126660">
                   <span className="d-block d-sm-none text-uppercase">For Landlords</span>
@@ -416,7 +416,7 @@ export default function Home() {
         <div className={styles.footer_mobile}>
           <img className={styles.footer_logo} src="/footer/logo.png" alt="logo" />
           <div className={styles.footer_links_mobile}>
-            <Link href="/landlord">
+            <Link href="/landlord/preview">
               <a className={styles.footer_link_mobile}>Landlords</a>
             </Link>
             <Link href="/">
