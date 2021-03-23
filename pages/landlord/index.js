@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Navbar, Nav, Row, Col } from 'react-bootstrap'
 
 import MyButton from '../../components/MyButton'
-import styles from './index.module.css'
+import styles from './Landlord.module.css'
 
 export default function Landlord() {
   return (
@@ -27,7 +27,7 @@ export default function Landlord() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>
             <Nav className={styles.nav_links}>
-              <Nav.Link className={styles.nav_link} href="/landlord/preview">Landlords</Nav.Link>
+              <Nav.Link className={styles.nav_link} href="/landlord">Landlords</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/faq">FAQs</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/contact">Contact Us</Nav.Link>
             </Nav>
@@ -331,19 +331,19 @@ export default function Landlord() {
             </div>
             <ul className={styles.plan_list}>
               <li className={styles.plan_item}>
-                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                <img className={styles.check_icon} src="/landlord/home/check-icon.png" alt="check" />
                 No upfront cost or fee
               </li>
               <li className={styles.plan_item}>
-                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                <img className={styles.check_icon} src="/landlord/home/check-icon.png" alt="check" />
                 Received leads on pre-screened tenants
               </li>
               <li className={styles.plan_item}>
-                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                <img className={styles.check_icon} src="/landlord/home/check-icon.png" alt="check" />
                 Review anonymous application profiles
               </li>
               <li className={styles.plan_item}>
-                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                <img className={styles.check_icon} src="/landlord/home/check-icon.png" alt="check" />
                 Submit offers
               </li>
             </ul>
@@ -364,7 +364,7 @@ export default function Landlord() {
         <div className={styles.choose_section}>
           <h2 className={styles.choose_title}>Choose a better way to work</h2>
           <div className="d-sm-flex">
-            <Link href="/property">
+            <Link href="/">
               <a className={styles.tenant_btn}>
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#126660" backgroundColor="#fff">
                   <span className="d-block d-sm-none text-uppercase">For Tenants</span>
@@ -373,7 +373,7 @@ export default function Landlord() {
               </a>
             </Link>
 
-            <Link href="/landlord/preview">
+            <Link href="/landlord">
               <a className="">
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#fff" backgroundColor="#126660">
                   <span className="d-block d-sm-none text-uppercase">For Landlords</span>
@@ -390,8 +390,11 @@ export default function Landlord() {
         <div className={styles.footer_desktop}>
           <div className={styles.container}>
             <div className={styles.footer_top}>
-              <img src="/footer/logo.png" alt="logo" />
-
+              <Link href="/">
+                <a>
+                  <img src="/footer/logo.png" alt="logo" />
+                </a>
+              </Link>
               <div className={styles.footer_links}>
                 <Link href="/landloard">
                   <a className={styles.footer_link}>Landlords</a>
@@ -441,9 +444,13 @@ export default function Landlord() {
         </div>
 
         <div className={styles.footer_mobile}>
-          <img className={styles.footer_logo} src="/footer/logo.png" alt="logo" />
+          <Link href="/">
+            <a>
+              <img className={styles.footer_logo} src="/footer/logo.png" alt="logo" />
+            </a>
+          </Link>
           <div className={styles.footer_links_mobile}>
-            <Link href="/landlord/preview">
+            <Link href="/landlord">
               <a className={styles.footer_link_mobile}>Landlords</a>
             </Link>
             <Link href="/">

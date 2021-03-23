@@ -27,7 +27,7 @@ export default function Home() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>
             <Nav className={styles.nav_links}>
-              <Nav.Link className={styles.nav_link} href="/landlord/preview">Landlords</Nav.Link>
+              <Nav.Link className={styles.nav_link} href="/landlord">Landlords</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/faq">FAQs</Nav.Link>
               <Nav.Link className={styles.nav_link} href="/contact">Contact Us</Nav.Link>
             </Nav>
@@ -59,7 +59,7 @@ export default function Home() {
                       </a>
                     </Link>
 
-                    <Link href="/landlord/preview">
+                    <Link href="/landlord">
                       <a className="">
                         <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">For Landlords</MyButton>
                       </a>
@@ -91,7 +91,7 @@ export default function Home() {
                 </a>
               </Link>
 
-              <Link href="/landlord/preview">
+              <Link href="/landlord">
                 <a className="">
                   <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">FOR LANDLORDS</MyButton>
                 </a>
@@ -116,7 +116,7 @@ export default function Home() {
                   After all, you’re a perfect ten(ant).
                 </p>
 
-                <Link href="/">
+                <Link href="/property">
                   <a className="d-none d-sm-block">
                     <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">Start Barking</MyButton>
                   </a>
@@ -155,7 +155,7 @@ export default function Home() {
               </Col>
             </Row>
 
-            <Link href="/">
+            <Link href="/property">
               <a className="d-block d-sm-none">
                 <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">START BARKING</MyButton>
               </a>
@@ -177,7 +177,7 @@ export default function Home() {
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                   the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
                 </p>
-                <Link href="/">
+                <Link href="/property">
                   <a className="d-none d-sm-block">
                     <MyButton width="180px" height="48px">Get Started</MyButton>
                   </a>
@@ -185,7 +185,7 @@ export default function Home() {
               </Col>
             </Row>
 
-            <Link href="/">
+            <Link href="/property">
               <a className="d-block d-sm-none">
                 <MyButton width="180px" height="48px">GET STARTED</MyButton>
               </a>
@@ -300,7 +300,7 @@ export default function Home() {
                     about your identity or contact information until you accept an offer, so you are assured not to be
                     hassled with unwanted emails and phone calls, and that the process is 100% fair.
                   </p>
-                  <Link href="/">
+                  <Link href="/property">
                     <a className="">
                       <MyButton width="180px" height="48px">
                         <span className="d-block d-sm-none text-uppercase">Get Started</span>
@@ -337,7 +337,7 @@ export default function Home() {
         <div className={styles.choose_section}>
           <h2 className={styles.choose_title}>Choose a better way to work</h2>
           <div className="d-sm-flex">
-            <Link href="/property">
+            <Link href="/">
               <a className={styles.tenant_btn}>
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#126660" backgroundColor="#fff">
                   <span className="d-block d-sm-none text-uppercase">For Tenants</span>
@@ -346,7 +346,7 @@ export default function Home() {
               </a>
             </Link>
 
-            <Link href="/landlord/preview">
+            <Link href="/landlord">
               <a className="">
                 <MyButton width="180px" height="48px" borderColor="#fff" color="#fff" backgroundColor="#126660">
                   <span className="d-block d-sm-none text-uppercase">For Landlords</span>
@@ -363,8 +363,11 @@ export default function Home() {
         <div className={styles.footer_desktop}>
           <div className={styles.container}>
             <div className={styles.footer_top}>
-              <img src="/footer/logo.png" alt="logo" />
-
+              <Link href="/">
+                <a>
+                  <img src="/footer/logo.png" alt="logo" />
+                </a>
+              </Link>
               <div className={styles.footer_links}>
                 <Link href="/landloard">
                   <a className={styles.footer_link}>Landlords</a>
@@ -414,9 +417,13 @@ export default function Home() {
         </div>
 
         <div className={styles.footer_mobile}>
-          <img className={styles.footer_logo} src="/footer/logo.png" alt="logo" />
+          <Link href="/">
+            <a>
+              <img src="/footer/logo.png" alt="logo" />
+            </a>
+          </Link>
           <div className={styles.footer_links_mobile}>
-            <Link href="/landlord/preview">
+            <Link href="/landlord">
               <a className={styles.footer_link_mobile}>Landlords</a>
             </Link>
             <Link href="/">
