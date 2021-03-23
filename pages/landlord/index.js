@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Navbar, Nav, Row, Col } from 'react-bootstrap'
 
-import MyButton from '../components/MyButton'
-import styles from '../styles/index.module.css'
+import MyButton from '../../components/MyButton'
+import styles from './index.module.css'
 
-export default function Home() {
+export default function Landlord() {
   return (
     <div>
       <Head>
-        <title>RentBarker</title>
+        <title>Landlord</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -47,21 +47,15 @@ export default function Home() {
             <Row>
               <Col lg={5} className="d-flex align-items-center pr-xl-0">
                 <div className={styles.hero_content}>
-                  <h1 className={styles.hero_title}>Lorem Ipsum is Simply Dummy Text of the Printing Industry.</h1>
+                  <h1 className={styles.hero_title}>Finding Great Tenants Made Easier</h1>
                   <p className={styles.hero_detail}>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                     the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
                   </p>
                   <div className="d-none d-sm-flex">
-                    <Link href="/property">
-                      <a className={styles.tenant_btn}>
-                        <MyButton width="180px" height="48px">For Tenants</MyButton>
-                      </a>
-                    </Link>
-
                     <Link href="/landlord/preview">
-                      <a className="">
-                        <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">For Landlords</MyButton>
+                      <a className={styles.tenant_btn}>
+                        <MyButton width="180px" height="48px">Get Started</MyButton>
                       </a>
                     </Link>
                   </div>
@@ -70,126 +64,150 @@ export default function Home() {
 
               <Col lg={7}>
                 <div className={styles.hero_right}>
-                  <img className={styles.hero_img} src="/home/hero.png" alt="hero" />
-                  <div className={styles.hero_orange}>
-                    <h4 className={styles.orange_title}>songkick</h4>
-                    <p className={styles.orange_detail}>
-                      The RentBarker process was so easy. Whoever designed this website should get a raise!
-                      Very user friendly and simple process.
-                    </p>
-                    <p className={styles.orange_name}>Felicia Harrison</p>
-                    <p className={styles.orange_address}>Dallas, TX</p>
-                  </div>
+                  <img className={styles.hero_img} src="/landlord/home/hero.png" alt="hero" />
                 </div>
               </Col>
             </Row>
 
             <div className="d-block d-sm-none">
-              <Link href="/property">
-                <a className={styles.tenant_btn_1}>
-                  <MyButton width="180px" height="48px">FOR TENANTS</MyButton>
-                </a>
-              </Link>
-
               <Link href="/landlord/preview">
-                <a className="">
-                  <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">FOR LANDLORDS</MyButton>
+                <a className={styles.tenant_btn_1}>
+                  <MyButton width="180px" height="48px">GET STARTED</MyButton>
                 </a>
               </Link>
             </div>
           </div>
         </div>
 
-        {/* About Section */}
-        <div className={styles.about_section}>
+        {/* Checking Section */}
+        <div className={styles.checking_section}>
           <div className={styles.container}>
-            <h2 className={styles.about_title}>About RentBarker</h2>
-            <Row>
-              <Col md={6} className="mb-0 mb-sm-5">
-                <p className={styles.about_detail}>
-                  You’ve worked hard to be an attractive tenant, so you deserve the best deal on your next lease. Landlords are desperately seeking reliable tenants like you,
-                  and RentBarker’s job is to hook you up with their lowest offers. Did you know that advertised leasing prices are not fixed?<br />
-                  <br />
-                  Landlords can have great flexibility with their numbers,
-                  but they are experts at playing hard to get. We eliminate the back-and-forth negotiation, compelling landlords to compete with each other and sweep you off your feet.  It’s like blind dating, except we promise that you will always go home with your top choice.<br />
-                  <br />
-                  After all, you’re a perfect ten(ant).
-                </p>
+            <h2 className={styles.checking_title}>Tenants are checking you out</h2>
+            <p className={styles.checking_detail}>
+              Stop spending money on shotgun advertising and waiting for the perfect tenant to find you.<br />
+              RentBarker matches you with qualified tenants that are searching for homes in your neighborhood.<br />
+              Finding great tenants just got a whole lot easier.<br />
+            </p>
 
-                <Link href="/">
-                  <a className="d-none d-sm-block">
-                    <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">Start Barking</MyButton>
-                  </a>
-                </Link>
+            <Row>
+              <Col md={4} className={styles.checking_item}>
+                <img src="/landlord/home/person-icon.png" alt="person-icon" />
+                <h4 className={styles.checking_item_title}>
+                  Receive Reliable<br className="d-none d-md-block" />
+                  Tenant Leads
+                </h4>
+                <p className={styles.checking_item_detail}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                </p>
               </Col>
 
-              <Col md={6}>
-                <Row>
-                  <Col sm={6} md={12} lg={6}>
-                    <img src="/home/person.png" alt="person" />
-                    <h4 className={styles.about_subtitle}>The Secret Admirer</h4>
-                    <p className={styles.about_subdetail}>
-                      Our process is 100% anonymous. We create your personalized Barker Brochure,
-                      highlighting what a perfect catch you are.
-                    </p>
-                  </Col>
+              <Col md={4} className={styles.checking_item}>
+                <img src="/landlord/home/note-icon.png" alt="note-icon" />
+                <h4 className={styles.checking_item_title}>
+                  Send Offers<br className="d-none d-md-block" />
+                  to Tenants
+                </h4>
+                <p className={styles.checking_item_detail}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                </p>
+              </Col>
 
-                  <Col sm={6} md={12} lg={6}>
-                    <img src="/home/megaphone.png" alt="megaphone" />
-                    <h4 className={styles.about_subtitle}>The Potential Suitors</h4>
-                    <p className={styles.about_subdetail}>
-                      We contact each of the properties you have your eye on. In an attempt to win you over,
-                      landlords bid against each other, driving their prices down.
-                    </p>
-                  </Col>
-
-                  <Col sm={6} md={12} lg={6}>
-                    <img src="/home/house.png" alt="house" />
-                    <h4 className={styles.about_subtitle}>The Proposals</h4>
-                    <p className={styles.about_subdetail}>
-                      Ultimately, we send you each property’s absolute lowest offer. Now, the ball’s in your court,
-                      and you are in complete control. May the best proposal win!
-                    </p>
-                  </Col>
-                </Row>
+              <Col md={4} className={styles.checking_item}>
+                <img src="/landlord/home/home-icon.png" alt="home-icon" />
+                <h4 className={styles.checking_item_title}>
+                  Only Pay if Lease<br className="d-none d-md-block" />
+                  is Signed
+                </h4>
+                <p className={styles.checking_item_detail}>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                </p>
               </Col>
             </Row>
-
-            <Link href="/">
-              <a className="d-block d-sm-none">
-                <MyButton width="180px" height="48px" color="#126660" backgroundColor="#fff">START BARKING</MyButton>
-              </a>
-            </Link>
           </div>
         </div>
 
-        {/* Start Section */}
-        <div className={styles.start_section}>
+        {/* Free Section 1 */}
+        <div className={styles.free_section}>
           <div className={styles.container}>
-            <Row>
-              <Col lg={6}>
-                <img className="img-fluid" src="/home/start.png" alt="start" />
+            <Row className={styles.free_application}>
+              <Col md={5} className="d-flex align-items-center">
+                <div>
+                  <h2 className={styles.free_title}>
+                    Easliy Add<br />
+                    Your Listings
+                  </h2>
+                  <p className={styles.free_detail}>
+                    Add your tenant requirements and existing listings
+                    via URL when registering for free with RentBarker.
+                  </p>
+                  <div className="d-flex">
+                    <div className={styles.feature_item}>
+                      <img className={styles.feature_img} src="/landlord/home/database-icon.png" alt="database" />
+                      <p className={styles.feature_text}>
+                        Competitive<br />
+                        Platform
+                      </p>
+                    </div>
+
+                    <div className={styles.feature_item}>
+                      <img className={styles.feature_img} src="/landlord/home/window-icon.png" alt="window" />
+                      <p className={styles.feature_text}>
+                        Simple<br />
+                        Interface
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="d-flex">
+                    <div className={styles.feature_item}>
+                      <img className={styles.feature_img} src="/landlord/home/aim-icon.png" alt="aim" />
+                      <p className={styles.feature_text}>
+                        Increase<br />
+                        Sales
+                      </p>
+                    </div>
+
+                    <div className={styles.feature_item}>
+                      <img className={styles.feature_img} src="/landlord/home/mail-icon.png" alt="mail" />
+                      <p className={styles.feature_text}>
+                        Support<br />
+                        24/7
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Col>
 
-              <Col lg={6}>
-                <h2 className={styles.start_title}>Are You a Rental Property Professional or Landlord?</h2>
-                <p className={styles.start_detail}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.
-                </p>
-                <Link href="/">
-                  <a className="d-none d-sm-block">
-                    <MyButton width="180px" height="48px">Get Started</MyButton>
-                  </a>
-                </Link>
+              <Col md={7}>
+                <img className="img-fluid" src="/landlord/home/composition.png" alt="composition" />
               </Col>
             </Row>
 
-            <Link href="/">
-              <a className="d-block d-sm-none">
-                <MyButton width="180px" height="48px">GET STARTED</MyButton>
-              </a>
-            </Link>
+            <Row>
+              <Col md={6}>
+                <img className="img-fluid" src="landlord/home/leads.png" alt="leads" />
+              </Col>
+
+              <Col md={6} className="d-flex align-items-center">
+                <div>
+                  <h2 className={styles.free_title}>
+                    Let the Leads<br />
+                    Come to You
+                  </h2>
+                  <p className={styles.free_detail}>
+                    Receive tenant leads that inform you of tenant qualifications and occupancy needs. We will provide you with a Barker Brochure, detailing important information such as income, job history, credit score range, eviction history, desired lease commencement date and other key preferences.
+                  </p>
+                  <Link href="/landlord/preview">
+                    <a className="">
+                      <MyButton width="180px" height="48px">
+                        <span className="d-block d-sm-none text-uppercase">Get Started</span>
+                        <span className="d-none d-sm-block text-capitalize">Get Started</span>
+                      </MyButton>
+                    </a>
+                  </Link>
+                </div>
+              </Col>
+            </Row>
           </div>
         </div>
 
@@ -233,74 +251,47 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Free Section */}
+        {/* Free Section 2 */}
         <div className={styles.free_section}>
           <div className={styles.container}>
             <Row className={styles.free_application}>
               <Col md={5} className="d-flex align-items-center">
                 <div>
-                  <h2 className={styles.free_title}>Free Application</h2>
+                  <h2 className={styles.free_title}>
+                    We Do<br />
+                    the Heavy Lifting
+                  </h2>
                   <p className={styles.free_detail}>
-                    You will already be filling out a free application with us. We are aware this takes time,
-                    so we will reimburse you up to $100 should you have to fill out another upon accepting an offer.
+                    Don’t let those vacant units sit on the market any longer! Limit your vacancies with RentBarker by matching the lease commencement dates of qualified tenants with your anticipated vacancy dates.
                   </p>
-                  <div className="d-flex">
-                    <div className={styles.feature_item}>
-                      <img className={styles.feature_img} src="/home/database.png" alt="database" />
-                      <p className={styles.feature_text}>
-                        Competitive<br />
-                        Platform
-                      </p>
-                    </div>
-
-                    <div className={styles.feature_item}>
-                      <img className={styles.feature_img} src="/home/dollar.png" alt="dollar" />
-                      <p className={styles.feature_text}>
-                        Reimburse<br />
-                        $100
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="d-flex">
-                    <div className={styles.feature_item}>
-                      <img className={styles.feature_img} src="/home/chat.png" alt="chat" />
-                      <p className={styles.feature_text}>
-                        Messaging<br />
-                        Insight
-                      </p>
-                    </div>
-
-                    <div className={styles.feature_item}>
-                      <img className={styles.feature_img} src="/home/group.png" alt="group" />
-                      <p className={styles.feature_text}>
-                        Simple<br />
-                        Interface
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </Col>
 
               <Col md={7}>
-                <img className="img-fluid" src="/home/free-1.png" alt="free" />
+                <img className="img-fluid" src="/landlord/home/bedroom.png" alt="bedroom" />
               </Col>
             </Row>
 
-            <Row className={styles.free_discrimination}>
+            <Row>
               <Col md={6}>
-                <img className="img-fluid" src="/home/free-2.png" alt="free" />
+                <img className="img-fluid" src="landlord/home/protect.png" alt="protect" />
               </Col>
 
               <Col md={6} className="d-flex align-items-center">
                 <div>
-                  <h2 className={styles.free_title}>Free of Discrimination</h2>
+                  <h2 className={styles.free_title}>
+                    Protecting You From<br />
+                    Discrimination Claims
+                  </h2>
                   <p className={styles.free_detail}>
-                    We ensure a fair process, free from discrimination and harassment. We will not disclose anything
-                    about your identity or contact information until you accept an offer, so you are assured not to be
-                    hassled with unwanted emails and phone calls, and that the process is 100% fair.
+                    Fair housing lawsuits and claims are on the rise nationwide. Our Barker Brochure only provides
+                    information that may be legally requested and considered when underwriting a tenant.<br />
+                    <br />
+                    Race, color, religion, sex, disability, familial status, and national origin will never be disclosed
+                    and the name and contact information of a tenant will not be provided until a tenant accepts your offer.
+                    This ensures a fair process and protects landlords from claims of discrimination.
                   </p>
-                  <Link href="/">
+                  <Link href="/landlord/preview">
                     <a className="">
                       <MyButton width="180px" height="48px">
                         <span className="d-block d-sm-none text-uppercase">Get Started</span>
@@ -311,25 +302,61 @@ export default function Home() {
                 </div>
               </Col>
             </Row>
+          </div>
+        </div>
 
-            <Row className={styles.free_hassle}>
-              <Col md={5} className="d-flex align-items-center">
-                <div>
-                  <h2 className={styles.free_title}>Free of Hassle</h2>
-                  <p className={styles.free_detail}>
-                    The leasing process is outdated. The days of hidden fees, expensive applications, and
-                    badgering from landlords are over.<br />
-                    <br />
-                    Stop wasting your valuable time, money, and energy. RentBarker is here to flip the script
-                    and change the game, before the landlord even knows your name.
-                  </p>
-                </div>
-              </Col>
+        {/* Plan Section */}
+        <div className={styles.plan_section}>
+          <h2 className={styles.plan_title}>Tenants Love RentBarker</h2>
+          <p className={styles.plan_detail}>
+            Pay only once when lease is executed
+          </p>
 
-              <Col md={7}>
-                <img className="img-fluid" src="/home/free-3.png" alt="free" />
-              </Col>
-            </Row>
+          <div className={styles.plan_card}>
+            <h4 className={styles.plan_card_title}>Pay only if lease is executed</h4>
+            <p className={styles.plan_percent}>25<span className={styles.percent_icon}>%</span></p>
+            <div className="d-flex align-items-center mb-0 mb-sm-4">
+              <p className={styles.plan_text}>of average one-month lease</p>
+              <img src="/landlord/home/question-icon.png" alt="question" />
+            </div>
+            <div className="d-none d-sm-block">
+              <Link href="/landlord/preview">
+                <a className="">
+                  <MyButton width="284px" height="48px">
+                    <span className="d-block d-sm-none text-uppercase">Get Started</span>
+                    <span className="d-none d-sm-block text-capitalize">Get Started</span>
+                  </MyButton>
+                </a>
+              </Link>
+            </div>
+            <ul className={styles.plan_list}>
+              <li className={styles.plan_item}>
+                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                No upfront cost or fee
+              </li>
+              <li className={styles.plan_item}>
+                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                Received leads on pre-screened tenants
+              </li>
+              <li className={styles.plan_item}>
+                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                Review anonymous application profiles
+              </li>
+              <li className={styles.plan_item}>
+                <img className="mr-2 mr-sm-3" src="/landlord/home/check-icon.png" alt="check" />
+                Submit offers
+              </li>
+            </ul>
+            <div className="d-block d-sm-none w-100">
+              <Link href="/landlord/preview">
+                <a className="">
+                  <MyButton width="284px" height="48px">
+                    <span className="d-block d-sm-none text-uppercase">Get Started</span>
+                    <span className="d-none d-sm-block text-capitalize">Get Started</span>
+                  </MyButton>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
 
