@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div>
       <Head>
-        <title>Contact</title>
+        <title>Contact Us</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
