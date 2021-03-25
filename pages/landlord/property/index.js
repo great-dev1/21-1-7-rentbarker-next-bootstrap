@@ -336,7 +336,7 @@ export default class Property extends React.Component {
 
                 <div className={styles.unit_card}>
                   <div className={styles.unit_overview}>
-                    <img className={styles.unit_img} src="/landlord/property/unit.jpg" alt="unit" />
+                    <img className={styles.unit_img} src="/landlord/property/unit-1.jpg" alt="unit" />
                     <div className={styles.unit_detail}>
                       <div className="d-flex justify-content-between align-items-start">
                         <div className="mb-3">
@@ -430,7 +430,7 @@ export default class Property extends React.Component {
 
                 <div className={styles.unit_card}>
                   <div className={styles.unit_overview}>
-                    <img className={styles.unit_img} src="/landlord/property/unit.jpg" alt="unit" />
+                    <img className={styles.unit_img} src="/landlord/property/unit-2.jpg" alt="unit" />
                     <div className={styles.unit_detail}>
                       <div className="d-flex justify-content-between align-items-start">
                         <div className="mb-3">
