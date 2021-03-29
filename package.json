@@ -14,6 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
     "bootstrap": "^4.5.3",
+    "caniuse-lite": "^1.0.30001204",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-bootstrap": "^1.4.0",

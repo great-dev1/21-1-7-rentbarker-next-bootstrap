@@ -8,6 +8,7 @@ import styles from './Signup.module.css'
 export default class Signup extends React.Component {
   state = {
     fullName: '',
+    isLandlord: false,
   }
 
   handleChange = (e) => {
@@ -19,16 +20,22 @@ export default class Signup extends React.Component {
 
     localStorage.setItem('fullName', fullName);
     localStorage.setItem('logged', true);
+    // localStorage.setItem('isLandlord', false)
   }
 
   componentDidMount() {
     const fullName = localStorage.getItem('fullName') !== null ? localStorage.getItem('fullName') : 'Saepul Rohman';
+    const isLandlord = localStorage.getItem('isLandlord') === 'true';
 
-    this.setState({ fullName });
+    this.setState({ fullName, isLandlord });
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
-    const { fullName } = this.state;
+    const { fullName, isLandlord } = this.state;
 
     return (
       <div>
@@ -134,7 +141,7 @@ export default class Signup extends React.Component {
                   </label>
                 </div>
 
-                <Link href="/welcome">
+                <Link href={isLandlord ? "/landlord/property/add" : "/brochure"}>
                   <button className={utils.sign_btn} onClick={this.handleSubmit} type="submit">CREATE YOUR ACCOUNT</button>
                 </Link>
               </form>

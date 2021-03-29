@@ -50,6 +50,10 @@ export default class Preview extends React.Component {
 
   handleClose = () => this.setState({ modalShow: false });
 
+  handleClick = () => {
+    localStorage.setItem('isLandlord', true);
+  }
+
   componentDidMount() {
     const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : 'Saepul';
     const middleName = localStorage.getItem('middleName') !== null ? localStorage.getItem('middleName') : '';
@@ -222,7 +226,7 @@ export default class Preview extends React.Component {
     } = this.state;
 
     return (
-      <div className={modalShow ? styles.blur_effect : null}>
+      <div>
         <Head>
           <title>Landlord Preview</title>
           <link rel="icon" href="/favicon.ico" />
@@ -234,7 +238,7 @@ export default class Preview extends React.Component {
 
         {/* Mobile Header */}
         <header className={styles.header}>
-          <Link href="/brochure/review">
+          <Link href="/landlord">
             <a>
               <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron_left} />
             </a>
@@ -273,12 +277,12 @@ export default class Preview extends React.Component {
                   Sign up or Log In to view prospect tenant details and send an offer. Don’t let this lead get away!
                 </p>
 
-                <Link href="/landlord/dashboard">
-                  <a className={styles.modal_btn}>
+                <Link href="/signup">
+                  <a className={styles.modal_btn} onClick={this.handleClick}>
                     <MyButton width="268px" height="44px" margin="auto">SIGN UP FREE</MyButton>
                   </a>
                 </Link>
-                <Link href="">
+                <Link href="#">
                   <a className={styles.learn_link}>LEARN MORE</a>
                 </Link>
               </div>
@@ -485,7 +489,7 @@ export default class Preview extends React.Component {
               </Col>
             </Row>
 
-            <Row className={styles.preview_residence}>
+            <Row className={styles.blur_effect}>
               <Col md={6}>
                 <h4 className={styles.preview_section_title}>CURRENT RESIDENCE</h4>
                 <div className={styles.preview_item}>
