@@ -1,5 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useDropzone } from 'react-dropzone'
+
+import styles from './Dropzone.module.css'
 
 const baseStyle = {
   display: 'flex',
@@ -66,7 +68,7 @@ function DropzoneComponent(props) {
   const thumbs = files.map(file => (
     <div key={file.name}>
       <img
-        style={{ width: "100%", height: 200, objectFit: "cover" }}
+        className={styles.upload_img}
         src={file.preview}
         alt={file.name}
       />
@@ -83,9 +85,15 @@ function DropzoneComponent(props) {
       {thumbs.length == 0 &&
         <div {...getRootProps({ style })}>
           <input {...getInputProps()} />
-          <div>
-            Drag & Drop your image here<br />
-            or <u style={{ fontWeight: 600, color: "#126660", cursor: "pointer" }}>browse</u>
+          <div className="d-flex flex-column align-items-center">
+            <img className="d-block mb-3" src="/landlord/property/img-icon.png" alt="img" />
+            <div className="d-none d-md-block">
+              Drag & Drop your image here<br />
+              or <u className={styles.green_text}>browse</u>
+            </div>
+            <div className="d-block d-md-none">
+              <u className={styles.green_text}>Take Image</u>
+            </div>
           </div>
         </div>
       }

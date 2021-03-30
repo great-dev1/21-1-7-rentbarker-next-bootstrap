@@ -22,6 +22,7 @@ export default class Add extends React.Component {
     onsite: false,
     laundry: false,
     stainless: false,
+    unitNum: 1,
   }
 
   handleCheck = (e) => {
@@ -30,12 +31,33 @@ export default class Add extends React.Component {
     this.setState({ [name]: value });
   }
 
+  increase = () => {
+    const { unitNum } = this.state;
+    this.setState({ unitNum: unitNum + 1 });
+  }
+
+  decrease = () => {
+    const { unitNum } = this.state;
+    this.setState({ unitNum: unitNum - 1 });
+  }
+
   componentDidUpdate() {
     console.log(this.state);
   }
 
   render() {
-    const { ac, central, hardwood, offstreet, covered, dishwasher, onsite, laundry, stainless } = this.state;
+    const {
+      ac,
+      central,
+      hardwood,
+      offstreet,
+      covered,
+      dishwasher,
+      onsite,
+      laundry,
+      stainless,
+      unitNum
+    } = this.state;
 
     return (
       <div>
@@ -302,6 +324,26 @@ export default class Add extends React.Component {
                     File should be Jpg, Png
                   </p>
                   <Dropzone />
+                  <div className={styles.unit_select}>
+                    <div className="d-flex align-items-center">
+                      <img src="/landlord/property/unit-icon.png" alt="unit" />
+                      <p className="ml-3">Number of units</p>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <button className={styles.select_btn} onClick={this.decrease}>-</button>
+                      <p className={styles.unit_number}>{unitNum}</p>
+                      <button className={styles.select_btn} onClick={this.increase}>+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="d-block d-sm-none mt-5">
+                  <Link href="/landlord/add-1">
+                    <a className={utils.continue_btn} onClick={this.handleSubmit}>
+                      <span className="pl-3">CONTINUE</span>
+                      <img className="ml-2" src="/right-arrow.png" alt="arrow" />
+                    </a>
+                  </Link>
                 </div>
               </div>
 
