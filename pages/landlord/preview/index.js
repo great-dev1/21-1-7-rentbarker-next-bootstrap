@@ -50,9 +50,7 @@ export default class Preview extends React.Component {
 
   handleClose = () => this.setState({ modalShow: false });
 
-  handleClick = () => {
-    localStorage.setItem('isLandlord', true);
-  }
+  handleClick = () => localStorage.setItem('isLandlord', true);
 
   componentDidMount() {
     const firstName = localStorage.getItem('firstName') !== null ? localStorage.getItem('firstName') : 'Saepul';

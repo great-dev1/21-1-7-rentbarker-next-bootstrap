@@ -247,10 +247,10 @@ export default class Search extends React.Component {
                       <div className="d-flex justify-content-between justify-content-md-start align-items-center">
                         <div>
                           <p className={styles.preview_title}>Credit Score</p>
-                          <p className={styles.preview_rating_detail}>680-720</p>
+                          <p className={styles.preview_rating_detail}>680-719</p>
                         </div>
                         <div className={styles.preview_score}>
-                          <CreditScoreBar credit={myCredit} />
+                          <CreditScoreBar credit="680-719" />
                         </div>
                       </div>
                     </Col>

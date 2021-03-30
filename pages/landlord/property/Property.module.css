@@ -408,3 +408,167 @@
     right: 32px;
   }
 }
+
+/* ---------------------------- Add Apartment Page ---------------------------- */
+
+.add_main {
+  flex-grow: 1;
+}
+
+.prev_link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888e8e;
+  transition: 0.3s;
+}
+
+.prev_link:hover {
+  color: #126660;
+}
+
+.chevron_left {
+  position: relative;
+  top: -1px;
+  width: 10px;
+  margin-right: 10px;
+}
+
+.add_content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.add_title {
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.green_text {
+  color: #126660;
+}
+
+.add_detail {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 576px) {
+  .add_content {
+    margin-top: 24px;
+    padding: 32px;
+    border: 1px solid #d3dbde;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .add_content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .add_title {
+    font-size: 28px;
+  }
+}
+
+/* Add Form */
+
+.add_subtitle {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.add_subdetail {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #888e8e;
+}
+
+.input_box {
+  height: 46px;
+  margin-bottom: 32px;
+  border: 1px solid #c9d6d5;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input_box:hover, .input_box:active, .input_box:focus {
+  border-color: #126660;
+  box-shadow: none !important;
+}
+
+.input_box::placeholder {
+  font-weight: normal;
+  color: #888e8e;
+}
+
+.input_box[type="date"]::before {
+  content: attr(placeholder) !important;
+  font-weight: normal;
+  color: #888e8e;
+  margin-right: 0.5em;
+}
+
+.input_box[type="date"]:focus::before, .input_box[type="date"]:valid::before {
+  content: "" !important;
+}
+
+.check_label, .check_label_active {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.38;
+}
+
+.check_label_active {
+  color: #126660;
+}
+
+.check_box {
+  position: relative;
+  top: 2px;
+  margin-right: 7px;
+}
+
+.check_box[type=checkbox] {
+  transform: scale(1.2);
+}
+
+@media only screen and (min-width: 992px) {
+  .check_label, .check_label_active {
+    font-size: 16px;
+  }
+  .add_form {
+    flex-grow: 1;
+    margin-right: 48px;
+  }
+}
+
+/* Upload Section */
+
+.upload_section {
+  flex-shrink: 0;
+  margin-top: 24px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .upload_section {
+    margin-top: 38px;
+    margin-bottom: 0;
+    width: 408px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .upload_section {}
+}
