@@ -230,7 +230,7 @@
 }
 
 .apartment_amenity {
-  margin-top: 26px;
+  margin-top: 24px;
 }
 
 .amenity_title {
@@ -409,7 +409,7 @@
   }
 }
 
-/* ---------------------------- Add Apartment Page ---------------------------- */
+/* ---------------------------- Add Apartment Page 1 ---------------------------- */
 
 .add_main {
   flex-grow: 1;
@@ -434,12 +434,10 @@
 }
 
 .add_content {
-  display: flex;
-  flex-direction: column;
   padding: 10px 0;
 }
 
-.add_title {
+.add_title, .add_title_1 {
   margin-bottom: 0;
   font-size: 24px;
   font-weight: bold;
@@ -449,7 +447,7 @@
   color: #126660;
 }
 
-.add_detail {
+.add_detail, .add_detail_1 {
   margin-top: 8px;
   margin-bottom: 32px;
   font-size: 14px;
@@ -468,11 +466,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .add_content {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .add_title {
+  .add_title, .add_title_1 {
     font-size: 28px;
   }
 }
@@ -480,7 +474,6 @@
 /* Add Form */
 
 .add_subtitle {
-  margin-top: 8px;
   font-size: 18px;
   font-weight: 600;
 }
@@ -555,7 +548,7 @@
 
 /* Upload Section */
 
-.upload_section {
+.upload_section, .upload_section_1 {
   flex-shrink: 0;
   margin-top: 24px;
 }
@@ -596,10 +589,55 @@
 }
 
 @media only screen and (min-width: 992px) {
-  .upload_section {
+  .upload_section, .upload_section_1 {
     margin-top: 38px;
     margin-bottom: 0;
     width: 408px;
     text-align: center;
+  }
+}
+
+/* ---------------------------- Add Apartment Page 2 ---------------------------- */
+
+.add_title_1 {
+  margin-bottom: 32px;
+}
+
+.split_line {
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.add_unit {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.add_text {
+  margin-left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #56918d;
+  transition: 0.3s;
+}
+
+.add_text:hover {
+  color: grey;
+}
+
+.add_detail_1 {
+  margin-bottom: 18px;
+}
+
+@media only screen and (min-width: 992px) {
+  .upload_section_1 {
+    margin-top: 0;
+  }
+  .add_unit {
+    margin-top: 0;
   }
 }

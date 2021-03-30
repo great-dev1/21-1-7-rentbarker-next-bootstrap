@@ -9,7 +9,7 @@ import Navbar_1 from '../../../components/Navbar_1'
 import Footer from '../../../components/Footer'
 import utils from '../../../styles/utils.module.css'
 import styles from './Property.module.css'
-import Dropzone from './Dropzone';
+import Dropzone from './Dropzone'
 
 export default class Add extends React.Component {
   state = {
@@ -150,195 +150,188 @@ export default class Add extends React.Component {
               </div>
 
               <div className={styles.add_content}>
-                <Form className={styles.add_form}>
-                  <h4 className={styles.add_title}>
-                    <span className={styles.green_text}>01. </span>
+                <div className="d-flex flex-column flex-lg-row align-items-lg-start">
+                  <Form className={styles.add_form}>
+                    <h4 className={styles.add_title}>
+                      <span className={styles.green_text}>01. </span>
                       Property Details
                     </h4>
-                  <p className={styles.add_detail}>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry,
-                    lorem ipsum has been the industry's standard dummy text ever since.
+                    <p className={styles.add_detail}>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry,
+                      lorem ipsum has been the industry's standard dummy text ever since.
                     </p>
-                  <Form.Control
-                    className={styles.input_box}
-                    name="name"
-                    type="text"
-                    placeholder="Property Name (optional)"
-                    required
-                  />
-                  <Form.Control
-                    className={styles.input_box}
-                    name="address"
-                    type="text"
-                    placeholder="Address"
-                    required
-                  />
-                  <Form.Control
-                    className={styles.input_box}
-                    name="city"
-                    type="text"
-                    placeholder="City"
-                    required
-                  />
-                  <Row>
-                    <Col xs={6}>
-                      <Form.Control
-                        className={styles.input_box}
-                        name="state"
-                        as="select"
-                        onChange={this.handleChange}
-                        custom
-                        required
-                      >
-                        <option value="">State</option>
-                        <option value="TX">TX</option>
-                        <option value="WA">WA</option>
-                        <option value="NY">NY</option>
-                      </Form.Control>
-                    </Col>
-                    <Col xs={6}>
-                      <Form.Control
-                        className={styles.input_box}
-                        name="currentZipcode"
-                        type="text"
-                        placeholder="Zipcode"
-                        required
-                      />
-                    </Col>
-                  </Row>
+                    <Form.Control
+                      className={styles.input_box}
+                      name="name"
+                      type="text"
+                      placeholder="Property Name (optional)"
+                      required
+                    />
+                    <Form.Control
+                      className={styles.input_box}
+                      name="address"
+                      type="text"
+                      placeholder="Address"
+                      required
+                    />
+                    <Form.Control
+                      className={styles.input_box}
+                      name="city"
+                      type="text"
+                      placeholder="City"
+                      required
+                    />
+                    <Row>
+                      <Col xs={6}>
+                        <Form.Control
+                          className={styles.input_box}
+                          name="state"
+                          as="select"
+                          onChange={this.handleChange}
+                          custom
+                          required
+                        >
+                          <option value="">State</option>
+                          <option value="TX">TX</option>
+                          <option value="WA">WA</option>
+                          <option value="NY">NY</option>
+                        </Form.Control>
+                      </Col>
+                      <Col xs={6}>
+                        <Form.Control
+                          className={styles.input_box}
+                          name="currentZipcode"
+                          type="text"
+                          placeholder="Zipcode"
+                          required
+                        />
+                      </Col>
+                    </Row>
 
-                  <h4 className={styles.add_subtitle}>Add pet fees and deposits</h4>
-                  <p className={styles.add_subdetail}>
-                    Complete and accurate details provides good tenant leads
-                  </p>
-                  <Row>
-                    <Col xs={6}>
-                      <label className={ac ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="ac"
-                          type="checkbox"
-                          checked={ac}
-                          onChange={this.handleCheck}
-                        />
-                          A/C
-                        </label>
-                      <label className={central ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="central"
-                          type="checkbox"
-                          checked={central}
-                          onChange={this.handleCheck}
-                        />
-                          Central Heating
-                        </label>
-                      <label className={hardwood ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="hardwood"
-                          type="checkbox"
-                          checked={hardwood}
-                          onChange={this.handleCheck}
-                        />
-                          Hardwood Floors
-                        </label>
-                      <label className={offstreet ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="offstreet"
-                          type="checkbox"
-                          checked={offstreet}
-                          onChange={this.handleCheck}
-                        />
-                          Off-street Parking
-                        </label>
-                      <label className={covered ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="covered"
-                          type="checkbox"
-                          checked={covered}
-                          onChange={this.handleCheck}
-                        />
-                          Covered Parking
-                        </label>
-                    </Col>
-                    <Col xs={6}>
-                      <label className={dishwasher ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="dishwasher"
-                          type="checkbox"
-                          checked={dishwasher}
-                          onChange={this.handleCheck}
-                        />
-                          Dishwasher
-                        </label>
-                      <label className={onsite ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="onsite"
-                          type="checkbox"
-                          checked={onsite}
-                          onChange={this.handleCheck}
-                        />
-                          On-site Laundry
-                        </label>
-                      <label className={laundry ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="laundry"
-                          type="checkbox"
-                          checked={laundry}
-                          onChange={this.handleCheck}
-                        />
-                          Laundry in unit
-                        </label>
-                      <label className={stainless ? styles.check_label_active : styles.check_label}>
-                        <input
-                          className={styles.check_box}
-                          name="stainless"
-                          type="checkbox"
-                          checked={stainless}
-                          onChange={this.handleCheck}
-                        />
-                          Stainless steel appliances
-                        </label>
-                    </Col>
-                  </Row>
+                    <h4 className={styles.add_subtitle}>Add pet fees and deposits</h4>
+                    <p className={styles.add_subdetail}>
+                      Complete and accurate details provides good tenant leads
+                    </p>
+                    <Row>
+                      <Col xs={6}>
+                        <label className={ac ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="ac"
+                            type="checkbox"
+                            checked={ac}
+                            onChange={this.handleCheck}
+                          />
+                            A/C
+                          </label>
+                        <label className={central ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="central"
+                            type="checkbox"
+                            checked={central}
+                            onChange={this.handleCheck}
+                          />
+                            Central Heating
+                          </label>
+                        <label className={hardwood ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="hardwood"
+                            type="checkbox"
+                            checked={hardwood}
+                            onChange={this.handleCheck}
+                          />
+                            Hardwood Floors
+                          </label>
+                        <label className={offstreet ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="offstreet"
+                            type="checkbox"
+                            checked={offstreet}
+                            onChange={this.handleCheck}
+                          />
+                            Off-street Parking
+                          </label>
+                        <label className={covered ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="covered"
+                            type="checkbox"
+                            checked={covered}
+                            onChange={this.handleCheck}
+                          />
+                            Covered Parking
+                          </label>
+                      </Col>
+                      <Col xs={6}>
+                        <label className={dishwasher ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="dishwasher"
+                            type="checkbox"
+                            checked={dishwasher}
+                            onChange={this.handleCheck}
+                          />
+                            Dishwasher
+                          </label>
+                        <label className={onsite ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="onsite"
+                            type="checkbox"
+                            checked={onsite}
+                            onChange={this.handleCheck}
+                          />
+                            On-site Laundry
+                          </label>
+                        <label className={laundry ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="laundry"
+                            type="checkbox"
+                            checked={laundry}
+                            onChange={this.handleCheck}
+                          />
+                            Laundry in unit
+                          </label>
+                        <label className={stainless ? styles.check_label_active : styles.check_label}>
+                          <input
+                            className={styles.check_box}
+                            name="stainless"
+                            type="checkbox"
+                            checked={stainless}
+                            onChange={this.handleCheck}
+                          />
+                            Stainless steel appliances
+                          </label>
+                      </Col>
+                    </Row>
+                  </Form>
 
-                  <div className="d-none d-sm-block mt-3 mt-lg-5">
-                    <Link href="/landlord/add-1">
-                      <a className={utils.continue_btn} onClick={this.handleSubmit}>
-                        <span className="pl-3">CONTINUE</span>
-                        <img className="ml-2" src="/right-arrow.png" alt="arrow" />
-                      </a>
-                    </Link>
-                  </div>
-                </Form>
-
-                <div className={styles.upload_section}>
-                  <h4 className={styles.add_subtitle}>Upload your image</h4>
-                  <p className={styles.add_detail}>
-                    File should be Jpg, Png
-                  </p>
-                  <Dropzone />
-                  <div className={styles.unit_select}>
-                    <div className="d-flex align-items-center">
-                      <img src="/landlord/property/unit-icon.png" alt="unit" />
-                      <p className="ml-3">Number of units</p>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <button className={styles.select_btn} onClick={this.decrease}>-</button>
-                      <p className={styles.unit_number}>{unitNum}</p>
-                      <button className={styles.select_btn} onClick={this.increase}>+</button>
+                  <div className={styles.upload_section}>
+                    <h4 className={styles.add_subtitle}>Upload your image</h4>
+                    <p className={styles.add_detail}>
+                      File should be Jpg, Png
+                    </p>
+                    <Dropzone />
+                    <div className={styles.unit_select}>
+                      <div className="d-flex align-items-center">
+                        <img src="/landlord/property/unit-icon.png" alt="unit" />
+                        <p className="ml-3">Number of units</p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <button className={styles.select_btn} onClick={this.decrease}>-</button>
+                        <p className={styles.unit_number}>{unitNum}</p>
+                        <button className={styles.select_btn} onClick={this.increase}>+</button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="d-block d-sm-none mt-5">
-                  <Link href="/landlord/add-1">
+                <div className="mt-4 mt-sm-5">
+                  <Link href="/landlord/property/add-1">
                     <a className={utils.continue_btn} onClick={this.handleSubmit}>
                       <span className="pl-3">CONTINUE</span>
                       <img className="ml-2" src="/right-arrow.png" alt="arrow" />
