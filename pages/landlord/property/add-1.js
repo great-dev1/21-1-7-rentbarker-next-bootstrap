@@ -118,33 +118,33 @@ export default class Add extends React.Component {
                 </Link>
               </div>
 
+              {/* 01. Property Details */}
               <div className="d-none d-md-block">
                 <div className={styles.add_content}>
                   <div className="flex-grow-1">
-                    <h4 className={styles.add_title}>
-                      <span className={styles.green_text}>01. </span>
-                      Property Details
-                    </h4>
+                    <div className="d-flex justify-content-between align-items-ceter">
+                      <h4 className={styles.add_title}>
+                        <span className={styles.green_text}>01. </span>
+                        Property Details
+                      </h4>
+
+                      <Link href="/landlord/property/add">
+                        <a className={styles.edit_link}>
+                          <img src="/brochure/pencil-icon.png" alt="pencil" />
+                          <span className="ml-2">EDIT</span>
+                        </a>
+                      </Link>
+                    </div>
                     <p className={styles.add_detail}>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry,
-                      lorem ipsum has been the industry's standard dummy text ever since.
-                  </p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry, lorem ipsum has been the industry's standard dummy text ever since.
+                    </p>
 
                     <div className={styles.apartment_overview}>
                       <img src="/landlord/property/apartment.jpg" alt="apartment" />
                       <div className={styles.apartment_detail}>
-                        <div className="d-flex justify-content-between align-items-ceter">
-                          <div>
-                            <h4 className={styles.apartment_name}>Propery Name</h4>
-                            <p className={styles.apartment_address}>4845 Saturn St, Los Angeles, CA 90019</p>
-                          </div>
-
-                          <Link href="/landlord/property/add">
-                            <a className={styles.edit_link}>
-                              <img src="/brochure/pencil-icon.png" alt="pencil" />
-                              <span className="ml-2">EDIT</span>
-                            </a>
-                          </Link>
+                        <div>
+                          <h4 className={styles.apartment_name}>Propery Name</h4>
+                          <p className={styles.apartment_address}>4845 Saturn St, Los Angeles, CA 90019</p>
                         </div>
 
                         <div className={styles.apartment_amenity}>
@@ -164,6 +164,7 @@ export default class Add extends React.Component {
                 </div>
               </div>
 
+              {/* 02. Available Units */}
               <div className={styles.add_content}>
                 <div className="d-flex flex-column flex-lg-row align-items-lg-start">
                   <Form className={styles.add_form}>
@@ -359,6 +360,7 @@ export default class Add extends React.Component {
                 </div>
               </div>
 
+              {/* 03. Tenant Criteria */}
               <div className="d-none d-md-block">
                 <div className={styles.add_content}>
                   <h4 className={styles.add_title}>

@@ -149,6 +149,7 @@ export default class Add extends React.Component {
                 </Link>
               </div>
 
+              {/* 01. Property Details */}
               <div className={styles.add_content}>
                 <div className="d-flex flex-column flex-lg-row align-items-lg-start">
                   <Form className={styles.add_form}>
@@ -222,8 +223,8 @@ export default class Add extends React.Component {
                             checked={ac}
                             onChange={this.handleCheck}
                           />
-                            A/C
-                          </label>
+                          A/C
+                        </label>
                         <label className={central ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -232,8 +233,8 @@ export default class Add extends React.Component {
                             checked={central}
                             onChange={this.handleCheck}
                           />
-                            Central Heating
-                          </label>
+                          Central Heating
+                        </label>
                         <label className={hardwood ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -242,8 +243,8 @@ export default class Add extends React.Component {
                             checked={hardwood}
                             onChange={this.handleCheck}
                           />
-                            Hardwood Floors
-                          </label>
+                          Hardwood Floors
+                        </label>
                         <label className={offstreet ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -252,8 +253,8 @@ export default class Add extends React.Component {
                             checked={offstreet}
                             onChange={this.handleCheck}
                           />
-                            Off-street Parking
-                          </label>
+                          Off-street Parking
+                        </label>
                         <label className={covered ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -262,8 +263,8 @@ export default class Add extends React.Component {
                             checked={covered}
                             onChange={this.handleCheck}
                           />
-                            Covered Parking
-                          </label>
+                          Covered Parking
+                        </label>
                       </Col>
                       <Col xs={6}>
                         <label className={dishwasher ? styles.check_label_active : styles.check_label}>
@@ -274,8 +275,8 @@ export default class Add extends React.Component {
                             checked={dishwasher}
                             onChange={this.handleCheck}
                           />
-                            Dishwasher
-                          </label>
+                          Dishwasher
+                        </label>
                         <label className={onsite ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -284,8 +285,8 @@ export default class Add extends React.Component {
                             checked={onsite}
                             onChange={this.handleCheck}
                           />
-                            On-site Laundry
-                          </label>
+                          On-site Laundry
+                        </label>
                         <label className={laundry ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -294,8 +295,8 @@ export default class Add extends React.Component {
                             checked={laundry}
                             onChange={this.handleCheck}
                           />
-                            Laundry in unit
-                          </label>
+                          Laundry in unit
+                        </label>
                         <label className={stainless ? styles.check_label_active : styles.check_label}>
                           <input
                             className={styles.check_box}
@@ -304,8 +305,8 @@ export default class Add extends React.Component {
                             checked={stainless}
                             onChange={this.handleCheck}
                           />
-                            Stainless steel appliances
-                          </label>
+                          Stainless steel appliances
+                        </label>
                       </Col>
                     </Row>
                   </Form>
@@ -341,6 +342,7 @@ export default class Add extends React.Component {
               </div>
 
               <div className="d-none d-md-block">
+                {/* 02. Available Units */}
                 <div className={styles.add_content}>
                   <h4 className={styles.add_title}>
                     <span className={styles.green_text}>02. </span>
@@ -348,6 +350,7 @@ export default class Add extends React.Component {
                   </h4>
                 </div>
 
+                {/* 03. Tenant Criteria */}
                 <div className={styles.add_content}>
                   <h4 className={styles.add_title}>
                     <span className={styles.green_text}>03. </span>
