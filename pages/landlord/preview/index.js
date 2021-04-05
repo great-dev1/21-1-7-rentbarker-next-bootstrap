@@ -260,13 +260,14 @@ export default class Preview extends React.Component {
               and typesetting industry.
             </p>
 
-            <a className={styles.signup_link} onClick={this.handleShow}>
+            <a className={styles.signup_link}>
+              {/* <a className={styles.signup_link} onClick={this.handleShow}> */}
               SIGN UP TO VIEW MORE
               <FontAwesomeIcon icon={faArrowRight} className={styles.arrow_right} />
             </a>
 
             {/* Signup Confirm Modal */}
-            <Modal show={modalShow} onHide={this.handleClose} centered>
+            {/* <Modal show={modalShow} onHide={this.handleClose} centered>
               <div className={styles.modal_container}>
                 <img className={styles.modal_logo} src="/offer/logo-large.png" alt="logo" />
 
@@ -284,7 +285,7 @@ export default class Preview extends React.Component {
                   <a className={styles.learn_link}>LEARN MORE</a>
                 </Link>
               </div>
-            </Modal>
+            </Modal> */}
           </div>
 
           <div className={styles.preview_content}>
@@ -370,11 +371,13 @@ export default class Preview extends React.Component {
               </Col>
 
               <Col xs={6} md={4} className={styles.preview_item}>
-                <p className={styles.preview_title}>Desired Lease Length</p>
-                <p className={styles.preview_info_detail}>{lengthMin}-{lengthMax} months</p>
+                <div className="d-none d-md-block">
+                  <p className={styles.preview_title}>Desired Lease Length</p>
+                  <p className={styles.preview_info_detail}>{lengthMin}-{lengthMax} months</p>
+                </div>
               </Col>
 
-              <Col xs={6} md={4} className={styles.preview_item}>
+              {/* <Col xs={6} md={4} className={styles.preview_item}>
                 <p className={styles.preview_title}>Monthly Rent Budget</p>
                 <p className={styles.preview_info_detail}>${budgetMin} - ${budgetMax}</p>
               </Col>
@@ -409,10 +412,10 @@ export default class Preview extends React.Component {
                   {petToggle && <div>Pets allowed</div>}
                   {poolToggle && <div>Swimming pool</div>}
                 </p>
-              </Col>
+              </Col> */}
             </Row>
 
-            <h4 className={styles.preview_section_title}>ADDITIONAL INFORMATION</h4>
+            {/* <h4 className={styles.preview_section_title}>ADDITIONAL INFORMATION</h4>
             <Row className={styles.preview_additional}>
               <Col xs={6} md={4} className={styles.preview_item}>
                 <p className={styles.preview_title}>Evictions</p>
@@ -460,7 +463,25 @@ export default class Preview extends React.Component {
                   </Col>
                 </Row>
               </div>
-            }
+            } */}
+
+            <div className={styles.modal_container}>
+              <img className={styles.modal_logo} src="/offer/logo-large.png" alt="logo" />
+
+              <h4 className={styles.modal_title}>Sign Up to Send Offer</h4>
+              <p className={styles.modal_detail}>
+                Sign up or Log In to view prospect tenant details and send an offer. Don’t let this lead get away!
+                </p>
+
+              <Link href="/signup">
+                <a className={styles.modal_btn} onClick={this.handleClick}>
+                  <MyButton width="268px" height="44px" margin="auto">SIGN UP FREE</MyButton>
+                </a>
+              </Link>
+              <Link href="#">
+                <a className={styles.learn_link}>LEARN MORE</a>
+              </Link>
+            </div>
 
             <h4 className={styles.preview_section_title}>COMPETITORS</h4>
             <Row className={styles.preview_competitor}>

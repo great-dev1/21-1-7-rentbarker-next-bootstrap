@@ -105,8 +105,10 @@
 }
 
 .modal_container {
+  margin: auto;
   padding: 27px 20px 35px;
   border-radius: 4px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   background-color: white;
 }
@@ -141,11 +143,12 @@
   align-items: center;
   width: 100%;
   height: 46px;
-  border: 2px solid #126660;
-  border-radius: 2px;
+  /* border: 2px solid #126660; */
+  /* border-radius: 2px; */
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
+  text-decoration: underline;
   color: #126660;
   transition: 0.3s;
   cursor: pointer;
@@ -153,8 +156,9 @@
 
 .learn_link:hover {
   border: none;
-  color: white;
-  background-color: grey;
+  text-decoration: underline;
+  color: grey;
+  /* background-color: grey; */
 }
 
 @media only screen and (min-width: 576px) {
@@ -163,10 +167,10 @@
     width: auto;
     height: auto;
     border: none;
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
   .learn_link:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: grey;
     background-color: white;
   }
@@ -174,7 +178,7 @@
 
 @media only screen and (min-width: 992px) {
   .modal_container {
-    position: relative;
+    /* position: relative; */
     right: 40px;
     width: 580px;
     padding: 28px 78px;

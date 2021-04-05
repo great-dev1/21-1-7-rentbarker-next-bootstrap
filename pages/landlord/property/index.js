@@ -311,7 +311,7 @@ export default class Property extends React.Component {
                           <p className={styles.apartment_address}>4845 Saturn St, Los Angeles, CA 90019</p>
                         </div>
 
-                        <Link href="">
+                        <Link href="/landlord/property/add">
                           <a className={styles.edit_link}>
                             <img src="/brochure/pencil-icon.png" alt="pencil" />
                             <span className="ml-2">EDIT</span>
@@ -344,7 +344,7 @@ export default class Property extends React.Component {
                           <p className={styles.unit_price}>$2,775</p>
                         </div>
 
-                        <Link href="">
+                        <Link href="/landlord/property/add-1">
                           <a className={styles.edit_link}>
                             <img src="/brochure/pencil-icon.png" alt="pencil" />
                             <span className="ml-2">EDIT</span>
@@ -438,7 +438,7 @@ export default class Property extends React.Component {
                           <p className={styles.unit_price}>$4,500</p>
                         </div>
 
-                        <Link href="">
+                        <Link href="/landlord/property/add-2">
                           <a className={styles.edit_link}>
                             <img src="/brochure/pencil-icon.png" alt="pencil" />
                             <span className="ml-2">EDIT</span>
