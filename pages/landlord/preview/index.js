@@ -473,7 +473,7 @@ export default class Preview extends React.Component {
                 Sign up or Log In to view prospect tenant details and send an offer. Don’t let this lead get away!
                 </p>
 
-              <Link href="/signup">
+              <Link href="/landlord/property/add">
                 <a className={styles.modal_btn} onClick={this.handleClick}>
                   <MyButton width="268px" height="44px" margin="auto">SIGN UP FREE</MyButton>
                 </a>
