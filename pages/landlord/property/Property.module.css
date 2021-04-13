@@ -1,0 +1,713 @@
+/* Sidebar */
+
+.sidebar {
+  display: none;
+}
+
+.sidebar_menu, .sidebar_menu_active {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sidebar_menu {
+  color: grey;
+  transition: 0.3s;
+}
+
+.sidebar_menu_active {
+  color: #126660;
+}
+
+.sidebar_menu:hover, .sidebar_menu_active:hover {
+  color: #126660;
+}
+
+.sidebar_text {
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .sidebar {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    padding-top: 85px;
+    padding-left: 48px;
+    border-right: 1px solid #d3dbde;
+  }
+}
+
+/* Property Header */
+
+.property_header {
+  margin: 15px 15px 0;
+}
+
+.primary_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.primary_detail {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #888e8e;
+}
+
+.prepend_content {
+  border-right: 0;
+  background-color: #f6fafa;
+}
+
+.search_icon {
+  width: 16px;
+  height: auto;
+}
+
+.search_box {
+  height: 44px;
+  padding-left: 0;
+  border: 1px solid #c9d6d5;
+  border-radius: 4px;
+  border-left: 0;
+  font-size: 14px;
+  background-color: #f6fafa;
+}
+
+.search_box:focus {
+  border-color: #c9d6d5;
+  box-shadow: none;
+}
+
+.search_box::placeholder {
+  color: #4f8581;
+}
+
+.property_title {
+  margin-top: 32px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+  .property_section {
+    flex-shrink: 0;
+    width: 343px;
+    border-right: 1px solid #d3dbde;
+  }
+  .property_header {
+    margin: 32px 48px 0;
+    border-bottom: 1px solid #e1e8eb;
+  }
+  .primary_title {
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+  .primary_detail {
+    margin-bottom: 50px;
+  }
+  .property_title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: none;
+  }
+}
+
+/* All Leads */
+
+.property_group {
+  margin: 12px 0;
+}
+
+.property_item_active, .property_item_inactive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.property_item_active, .property_item_inactive:hover {
+  border-color: #126660;
+  background-color: #f5fafa;
+}
+
+.property_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.property_text {
+  margin-left: 24px;
+}
+
+.property_name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.property_address {
+  font-size: 12px;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 992px) {
+  .property_item_active, .property_item_inactive {
+    padding: 12px 48px;
+  }
+}
+
+/* Preview Section */
+
+.preview_section {
+  padding: 30px 15px;
+}
+
+@media only screen and (min-width: 992px) {
+  .preview_section {
+    flex-grow: 1;
+    padding: 114px 48px 55px;
+  }
+}
+
+/* Preview Header */
+
+.preview_header {
+  padding: 24px 0;
+  border-top: 1px solid #e1e8eb;
+}
+
+.preview_title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.apartment_overview {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.apartment_detail {
+  margin-top: 20px;
+}
+
+.apartment_name {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.apartment_address {
+  font-size: 14px;
+  color: #888e8e;
+}
+
+.edit_link {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #126660;
+  transition: 0.3s;
+}
+
+.edit_link:hover {
+  color: grey;
+}
+
+.apartment_amenity {
+  margin-top: 24px;
+}
+
+.amenity_title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #89a3a3;
+}
+
+.amenity_item {
+  display: inline-block;
+  width: 156px;
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+@media only screen and (min-width: 576px) {
+  .apartment_overview {
+    flex-direction: row;
+  }
+  .apartment_detail {
+    flex-grow: 1;
+    margin-top: 0;
+    margin-left: 24px;
+  }
+}
+
+/* Unit Card */
+
+.unit_card {
+  margin-bottom: 12px;
+  padding: 24px;
+  border: 2px solid #e1ebeb;
+  border-radius: 2px;
+}
+
+.unit_overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.unit_img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.unit_detail {
+  margin-top: 20px;
+}
+
+.unit_price {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #086627;
+}
+
+.description_detail {
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.unit_feature {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0 8px;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.feature_icon {
+  margin-left: 16px;
+}
+
+.splitbar {
+  margin: 0 18px;
+  font-weight: bold;
+  color: #d8d8d8;
+}
+
+.potential_leads {
+  margin-top: 20px;
+}
+
+.potential_lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.lead_num {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lead_match {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.83;
+  color: #086627;
+}
+
+.chevron_right {
+  width: 10px;
+  height: auto;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 576px) {
+  .unit_overview {
+    flex-direction: row;
+  }
+  .unit_img {
+    width: 40%;
+  }
+  .unit_detail {
+    margin-top: 0;
+    margin-left: 32px;
+  }
+}
+
+/* Invite Member Modal */
+
+.modal {
+  position: relative;
+}
+
+.close_icon {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  cursor: pointer;
+}
+
+.modal_content {
+  max-width: 300px;
+  margin: 28px auto 48px;
+}
+
+.modal_title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal_img {
+  display: block;
+  margin: 24px auto 44px;
+}
+
+.input_box {
+  height: 46px;
+  margin-bottom: 32px;
+  border: 1px solid #c9d6d5;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input_box:hover, .input_box:active, .input_box:focus {
+  border-color: #126660;
+  box-shadow: none !important;
+}
+
+.input_box::placeholder {
+  font-weight: normal;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 576px) {
+  .close_icon {
+    top: 35px;
+    right: 32px;
+  }
+}
+
+/* ---------------------------- Add Apartment Page 0 ---------------------------- */
+
+.add_main {
+  flex-grow: 1;
+  margin-bottom: 50px;
+}
+
+.prev_link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #888e8e;
+  transition: 0.3s;
+}
+
+.prev_link:hover {
+  color: #126660;
+}
+
+.chevron_left {
+  position: relative;
+  top: -1px;
+  width: 10px;
+  margin-right: 10px;
+}
+
+.add_content {
+  padding: 10px 0;
+}
+
+.add_title, .add_title_1 {
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.green_text {
+  color: #126660;
+}
+
+.add_detail, .add_detail_1 {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 576px) {
+  .add_content {
+    margin-top: 24px;
+    padding: 32px;
+    border: 1px solid #d3dbde;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .add_title, .add_title_1 {
+    font-size: 28px;
+  }
+}
+
+/* Add Form */
+
+.add_subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.add_subdetail {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #888e8e;
+}
+
+.input_box {
+  height: 46px;
+  margin-bottom: 32px;
+  border: 1px solid #c9d6d5;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input_box:hover, .input_box:active, .input_box:focus {
+  border-color: #126660;
+  box-shadow: none !important;
+}
+
+.input_box::placeholder {
+  font-weight: normal;
+  color: #888e8e;
+}
+
+.input_box[type="date"]::before {
+  content: attr(placeholder) !important;
+  font-weight: normal;
+  color: #888e8e;
+  margin-right: 0.5em;
+}
+
+.input_box[type="date"]:focus::before, .input_box[type="date"]:valid::before {
+  content: "" !important;
+}
+
+.check_label, .check_label_active {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.38;
+}
+
+.check_label_active {
+  color: #126660;
+}
+
+.check_box {
+  position: relative;
+  top: 2px;
+  margin-right: 7px;
+}
+
+.check_box[type=checkbox] {
+  transform: scale(1.2);
+}
+
+@media only screen and (min-width: 992px) {
+  .check_label, .check_label_active {
+    font-size: 16px;
+  }
+  .add_form {
+    flex-grow: 1;
+    margin-right: 48px;
+  }
+}
+
+/* Upload Section */
+
+.upload_section, .upload_section_1 {
+  flex-shrink: 0;
+  margin-top: 24px;
+}
+
+.unit_select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888e8e;
+}
+
+.select_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1.3px solid #56918d;
+  border-radius: 3px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #56918d;
+  background-color: white;
+}
+
+.select_btn:hover {
+  background-color: #fafcfb;
+}
+
+.unit_number {
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #126660;
+}
+
+@media only screen and (min-width: 992px) {
+  .upload_section, .upload_section_1 {
+    margin-top: 38px;
+    margin-bottom: 0;
+    width: 408px;
+    text-align: center;
+  }
+}
+
+/* ---------------------------- Add Apartment Page 1 ---------------------------- */
+
+.add_title_1 {
+  margin-bottom: 32px;
+}
+
+.split_line {
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.add_unit {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.add_text {
+  margin-left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #56918d;
+  transition: 0.3s;
+}
+
+.add_text:hover {
+  color: grey;
+}
+
+.add_detail_1 {
+  margin-bottom: 18px;
+}
+
+@media only screen and (min-width: 992px) {
+  .upload_section_1 {
+    margin-top: 0;
+  }
+  .add_unit {
+    margin-top: 0;
+  }
+}
+
+/* ---------------------------- Add Apartment Page 2 ---------------------------- */
+
+.unit_img_2 {
+  width: 100%;
+  max-width: 268px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.filter_title {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.filter_value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #126660;
+}
+
+.filter_boxes {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.box_active, .box_inactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin: 0 6px;
+  border: 1px solid #40918b;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.box_active, .box_inactive:hover {
+  color: white;
+  background-color: #40918b;
+}
+
+.filter_detail {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888e8e;
+}
+
+@media only screen and (min-width: 576px) {
+  .box_active, .box_inactive {
+    width: 64px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .filter_section {
+    width: 408px;
+    margin-bottom: 0;
+  }
+}
