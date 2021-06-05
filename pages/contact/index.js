@@ -76,7 +76,7 @@ export default function Contact() {
               />
 
               <div className="d-sm-flex">
-                <Link href="#">
+                <Link href="/">
                   <a className={styles.submit_btn}>
                     <MyButton width="180px" height="48px">Send Message</MyButton>
                   </a>

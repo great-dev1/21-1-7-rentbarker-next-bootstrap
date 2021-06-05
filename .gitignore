@@ -32,3 +32,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# some pages
+/pages/budget
+/pages/landlord/property
+/pages/landlord/search
