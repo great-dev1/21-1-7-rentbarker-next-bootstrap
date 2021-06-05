@@ -1,0 +1,35 @@
+.choose_section {
+  padding: 40px 15px;
+  background-color: #126660;
+}
+
+.choose_title {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.17;
+  text-align: center;
+  color: white;
+}
+
+.tenant_btn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 576px) {
+  .choose_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .choose_section {
+    padding: 128px 15px;
+  }
+  .choose_title {
+    font-size: 48px;
+  }
+}

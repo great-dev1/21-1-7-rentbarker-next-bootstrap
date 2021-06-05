@@ -1,3 +1,5 @@
+// This is a navbar for tenant pages
+
 import React from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
