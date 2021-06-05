@@ -4,7 +4,7 @@ import { Row, Col, Form } from 'react-bootstrap'
 
 import Navbar_2 from '../../components/Navbar_2'
 import Footer_1 from '../../components/Footer_1'
-import Choose from '../components/Choose'
+import Choose from '../../components/Choose'
 import MyButton from '../../components/MyButton'
 import styles from './Contact.module.css'
 
